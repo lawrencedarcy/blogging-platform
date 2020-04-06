@@ -1,10 +1,18 @@
 import React from 'react';
 import './Feed.css';
+import Card from '../Card/Card';
 
-function Feed(props) {
+function Feed({posts}) {
   return (
-    <div className="feed_card">
-      <div className="feed_card_inner"></div>
+    <div >
+     
+      {  posts.map(post => 
+            <div className="feed_card">
+            <Card title={post.title} />
+            </div>
+        )}
+
+  
     </div>
   );
 }

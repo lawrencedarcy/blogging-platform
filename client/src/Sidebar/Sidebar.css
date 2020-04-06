@@ -1,0 +1,16 @@
+.sidebar {
+  flex:2;
+  max-width: 35rem;
+  min-width: 22rem;
+  border: 1px solid rgb(199, 199, 199);
+  height: 100vh;
+  margin: 1.5rem;
+  background-color: white;
+  
+}
+
+@media only screen and (max-width: 740px) {
+  .sidebar {
+    display: none;
+  }
+}
