@@ -6,7 +6,7 @@ function Feed({posts}) {
   return (
     <div >
      
-      {  posts.map(post => 
+      {  posts.slice(0, 10).map(post => 
             <div className="feed_card">
             <Card title={post.title} />
             </div>
