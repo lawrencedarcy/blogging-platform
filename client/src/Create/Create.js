@@ -19,9 +19,9 @@ import './Create.css';
   return (
     
     <div className="create_wrapper">
-      <span>Headline:</span>
+      <span className="headline_span">Headline:</span>
       <input className="create_headline" value={headline} onChange={changeHandler} ></input>
-    <span>Body:</span>
+    <span className="body_span">Body:</span>
     <ReactQuill theme="snow" value={value} onChange={setValue} />
     <div className="submit_btn"> Submit post </div>
     </div>

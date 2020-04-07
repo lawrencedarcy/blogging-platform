@@ -13,3 +13,7 @@ a {
   color: inherit;
   font-family: inherit;
 }
+
+body {
+  background-color: #fafafa;
+}
