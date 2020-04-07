@@ -10,7 +10,7 @@ function Dashboard() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
+    axios.get('http://localhost:3001/posts')
     .then(function (res) {
       console.log(res.data);
       setPosts(res.data);
@@ -19,6 +19,8 @@ function Dashboard() {
       console.log(error);
     })
   }, []);
+
+ 
 
 
   return (

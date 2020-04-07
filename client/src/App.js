@@ -13,7 +13,7 @@ function App() {
       <Switch>
       <Route path="/" component={Dashboard} exact />
       <Route path="/write" component={Create} />
-      <Route path="/article/:article" component={Article} />
+      <Route path="/article/:article" render={props => <Article  props={props}/> } />
 
       </Switch>
     </div>

@@ -8,9 +8,9 @@ function Feed({posts}) {
   return (
     <div >
      
-      {  posts.slice(0, 10).map(post => 
+      {  posts.slice(4, 6).map(post => 
             <div className="feed_card">
-            <Card title={post.title} key={post.id}/>
+            <Card key={post.id} post={post}/>
             </div>
         )}
 

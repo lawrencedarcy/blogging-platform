@@ -12,13 +12,15 @@ const getPosts = async (req, res) => {
 
 const addPost = async (req, res) => {
   
-  console.log(req.body);// eslint-disable-line
+  console.log('req body', req.body);// eslint-disable-line
   const post = new Post(
     {
-      title: req.body.title,
-      img_url: req.body.img,
+      title: req.body.p.headline,
+      body: req.body.p.body,
+      img_url: req.body.p.img,
       votes: 0, 
-      author: req.body.author
+      timestamp: Date.now(),
+      author: req.body.p.author || 'No author'
     }
   );
   try {

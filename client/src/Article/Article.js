@@ -1,8 +1,14 @@
 import React from 'react';
 import './Article.css';
+import axios from 'axios';
 
 function Article({props}) {
+
+  console.log(props)
+
+  
   return (
+  
     <div>
    <div className="whitespace"></div>
     

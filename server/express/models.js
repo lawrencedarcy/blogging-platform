@@ -4,8 +4,9 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema({
   
   title: String,
+  body: String,
   img_url: String,
-  timestamp: Date.now(),
+  timestamp: Number,
   votes: Number,
   author: String
 

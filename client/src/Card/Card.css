@@ -10,18 +10,21 @@
   font-family: 'Lora', serif;
   font-weight: bold;
   line-height: 2.1rem;
+  color: rgba(0, 0, 0, 0.84);
+
 }
 
 .card_tags {
   display: flex;
-  padding: 0.5rem 0rem;
+  padding: 0.5rem .1rem;
 }
 
 .tag {
   cursor: pointer;
   font-size: .75rem;
-  padding: 0.2rem;
-  background-color: #fde56eb2;
+  padding: 0.25rem;
+  background-color: #fd6e9e;
+  color: white;
   margin: 0.1rem 0rem 0rem 0.27rem;
 }
 
@@ -34,9 +37,9 @@
 .card_btn {
   float: right;
   padding: .5rem;
-  color: black;
-  background-color: transparent;
-  border: 1px solid black;
+  color: white;
+  background-color: #6ecdfd;
+  border: 1px solid transparent;
   cursor: pointer;
   border-radius: 4px;
   font-size: .8rem;
@@ -45,7 +48,14 @@
 
 .card_btn:hover {
   
-  background-color: #6EFD9D;
-  border: 1px solid white;
-  color: white;
+  background-color: #9efd6e;
+  
 }
+
+.card_img {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 1rem;
+  
+}
+
