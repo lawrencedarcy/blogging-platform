@@ -5,31 +5,33 @@
 }
 .navbar {
   background-color: #fde56eb2;
-  height: 6.8rem;
-  font-size: 2.5rem;
+  height: 3.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
-  margin-bottom: 2rem;
+  padding: 1rem 2.3rem;
+  margin-bottom: 1.5rem;
 }
 
 .navbar_logo {
   color: black;
-  border-radius: 0.5rem;
-  padding: 1rem;
+  padding: .5rem;
   font-family: 'Lora', serif;
-  letter-spacing: 0.1rem;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .navbar_write {
   color: rgb(0, 0, 0);
   cursor: pointer;
   font-family: 'Lora', serif;
-  padding: 0.8rem 1rem;
-  font-size: 1.3rem;
+  padding: 0.5rem .7rem;
+  font-size: 1rem;
+
   border: 1px solid black;
   border-radius: 5px;
 }
