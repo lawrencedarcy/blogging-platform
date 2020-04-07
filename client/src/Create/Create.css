@@ -34,7 +34,7 @@
 .ql-editor {
 /*   font-size: 2.6rem !important; */
   height: 60vh !important;
-  width: 800px !important;
+  width: 80% !important;
   background-color: white !important;
 }
 .ql-toolbar {

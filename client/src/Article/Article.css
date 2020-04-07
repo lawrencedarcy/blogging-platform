@@ -1,0 +1,44 @@
+body {
+  background-color: #fafafa
+
+}
+
+.article_body {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  margin: 2rem 0rem;
+}
+
+p {
+  padding-bottom: 1.5rem;
+}
+
+.whitespace{
+  height: 12vh;
+}
+
+.body_wrapper {
+  margin: 0rem auto;
+  height: 100%;
+  width: 80%;
+  border: 1px solid rgb(199, 199, 199);
+  background-color: white;
+  padding: 2rem;
+  
+}
+
+.article_title {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+  line-height: 3.7rem;
+  font-weight: bold;
+  padding: 1rem 0rem;
+}
+
+.article_author {
+  color: rgba(0, 0, 0, 0.548);
+  font-weight: medium;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+
+}
