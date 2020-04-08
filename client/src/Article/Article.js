@@ -1,10 +1,11 @@
 import React from 'react';
 import './Article.css';
+import Footer from './Footer/Footer';
 
 
-function Article({props, post}) {
+function Article({props, post, upVote}) {
 
-
+console.log(props);
 const postInfo = post;
   
   return (
@@ -32,11 +33,12 @@ const postInfo = post;
 </p>
 
       </div>
+      <Footer upVote={upVote} post={post} />
     </div>
 
     <div className="article_sidebar"></div>
 
-
+    
     </div>
   );
 }

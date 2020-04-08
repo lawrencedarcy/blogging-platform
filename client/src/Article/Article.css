@@ -8,6 +8,7 @@ body {
   font-size: 1.1rem;
   margin: 2rem 0rem;
   color: rgba(0, 0, 0, 0.84);
+
 }
 
 p {
@@ -22,6 +23,7 @@ p {
   margin: 0rem auto;
   height: 100%;
   width: 80%;
+  max-width: 800px;
   border: 1px solid rgb(199, 199, 199);
   background-color: white;
   padding: 2rem;

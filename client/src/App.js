@@ -23,10 +23,21 @@ function App() {
   }, []);
 
   const findPost = (url) => {
-  
     const res = posts.filter(post => post.title && post.title.replace(/\s/g, '-').toLowerCase() === url);
     console.log('foundpost', res[0])
     return res[0];
+  }
+
+  const upVote = (id) => {
+    
+    axios.put(`http://localhost:3001/posts/${id}/up`)
+    .then(function (res) {
+      console.log(res.data);
+      console.log('success')
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
 
   return (
@@ -35,7 +46,7 @@ function App() {
       <Switch>
       <Route path="/" render={() => <Dashboard posts={posts}/>} exact />
       <Route path="/write" component={Create} />
-      <Route path="/article/:headline" render={props => <Article props={props} post={findPost(props.match.params.headline)}/> } />
+      <Route path="/article/:headline" render={props => <Article props={props} upVote={upVote} post={findPost(props.match.params.headline)}/> } />
 
       </Switch>
     </div>
