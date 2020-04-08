@@ -11,12 +11,15 @@ const getPosts = async (req, res) => {
 };
 
 const addPost = async (req, res) => {
-  
+  req.body.p.tags = req.body.p.tags.replace(/\s/g, '').split(",").map(function(tag) {
+    return { "name": tag };
+});
   console.log('req body', req.body);// eslint-disable-line
   const post = new Post(
     {
       title: req.body.p.headline,
       body: req.body.p.body,
+      tags: req.body.p.tags,
       img_url: req.body.p.img,
       votes: 0, 
       timestamp: Date.now(),

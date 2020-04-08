@@ -1,30 +1,22 @@
-.submit_btn {
-  color: rgba(0, 0, 0, 0.84);
-  border: 1px solid black;
-  height: 3rem;
-  width: 14rem;
-}
 
 .headline_span, .body_span  {
   font-weight: bold;
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  letter-spacing: .017rem;
   color: rgba(0, 0, 0, 0.84);
-
 }
 
 
-
-.create_headline {
+.create_headline, .create_tags  {
   color: rgba(0, 0, 0, 0.84);
-  height: 4rem;
   width: 100%;
-  padding: 1rem;
-  margin: .4rem 0rem 1.2rem 0rem;
-  font-size: 1.4rem;
+  padding: .6rem;
+  margin: .4rem 0rem 1rem 0rem;
+  font-size: 1.2rem;
 }
+
+
 
 
 .ql-editor {
@@ -32,6 +24,7 @@
   height: 60vh !important;
   width: 80% !important;
   background-color: white !important;
+  color: rgba(0, 0, 0, 0.84);
 }
 .ql-toolbar {
   margin-top: .4rem;
@@ -44,3 +37,25 @@
   padding: 7rem 5rem;
 }
 
+.btn_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 1rem 0rem;
+
+}
+
+.submit_btn {
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  height: 3rem;
+  width: 14rem;
+  background-color: #6ecdfd;
+  
+  font-size: 1.1rem;
+}
+
+.submit_btn:hover {
+  background-color: #9efd6e;
+}
