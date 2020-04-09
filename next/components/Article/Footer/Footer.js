@@ -1,0 +1,20 @@
+import React from 'react';
+import styles from './Footer.module.css';
+function Footer({upVote, post}) {
+
+  const clickHandler = () => {
+  
+    upVote(post._id);
+  }
+  return (
+    <div className={styles.footer_wrapper}>
+      <div className={styles.footer}>
+        <div className={styles.footer_upvote} onClick={clickHandler}>upvote</div>
+        <div className={styles.footer_share}>share</div>
+        <div className={styles.footer_share}>comment</div>
+        </div>
+    </div>
+  );
+}
+
+export default Footer;

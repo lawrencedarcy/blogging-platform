@@ -1,0 +1,24 @@
+.footer_wrapper {
+  width: 80%;
+  max-width: inherit;
+  height: 3rem;
+  position: fixed;
+  left: 10%;
+  bottom: 1.4%;
+  margin: auto;
+}
+
+.footer {
+  background-color: #6ecdfd;
+  height: 3.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.3rem;
+
+}
+
+.footer_upvote, .footer_share {
+  color: white;
+  cursor: pointer;
+}
