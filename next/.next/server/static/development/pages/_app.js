@@ -108,19 +108,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavBar.module.css */ "./components/NavBar/NavBar.module.css");
 /* harmony import */ var _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_NavBar_module_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/NavBar/NavBar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
+
+
 function NavBar() {
+  const {
+    isAuthenticated,
+    isLoading,
+    login,
+    logout
+  } = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["useAuth"])();
+  const {
+    pathname,
+    query
+  } = Object(next_router__WEBPACK_IMPORTED_MODULE_4__["useRouter"])();
   return __jsx("div", {
     className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.nav_wrapper,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 14,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -128,7 +144,7 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 15,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -136,7 +152,7 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 16,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -144,14 +160,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 16,
       columnNumber: 45
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 16,
       columnNumber: 60
     }
   }, "Stagetime"))), __jsx("div", {
@@ -159,7 +175,7 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 18,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -167,14 +183,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 18,
       columnNumber: 46
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 18,
       columnNumber: 66
     }
   }, "Write a post")))));
@@ -2055,6 +2071,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/NavBar/NavBar */ "./components/NavBar/NavBar.js");
 /* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-quill/dist/quill.snow.css */ "./node_modules/react-quill/dist/quill.snow.css");
 /* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2068,22 +2086,23 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
+
 function MyApp({
   Component,
   pageProps
 }) {
-  return __jsx(next_app__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+  return __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 15
+      lineNumber: 15,
+      columnNumber: 5
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 16,
       columnNumber: 6
     }
   }, __jsx("link", {
@@ -2092,7 +2111,7 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 17,
       columnNumber: 6
     }
   }), __jsx("link", {
@@ -2101,24 +2120,34 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 18,
       columnNumber: 5
     }
-  })), __jsx(_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  })), __jsx(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_6__["Auth0Provider"], {
+    domain: 'dev-yf8xdikq.eu.auth0.com',
+    clientId: 'k6MOcu2j7WVg5ZfForZqdq6RVVIwyNpm',
+    redirectUri: 'http://localhost:3000',
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 20,
+      columnNumber: 6
+    }
+  }, __jsx(_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
       columnNumber: 6
     }
   }), __jsx(Component, _extends({}, pageProps, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 25,
       columnNumber: 5
     }
-  })));
+  }))));
 } // Only uncomment this method if you have blocking data requirements for
 // every single page in your application. This disables the ability to
 // perform automatic static optimization, causing every page in your app to
@@ -2167,6 +2196,17 @@ module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
@@ -2222,6 +2262,17 @@ module.exports = require("react-is");
 /***/ (function(module, exports) {
 
 module.exports = require("url");
+
+/***/ }),
+
+/***/ "use-auth0-hooks":
+/*!**********************************!*\
+  !*** external "use-auth0-hooks" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("use-auth0-hooks");
 
 /***/ })
 

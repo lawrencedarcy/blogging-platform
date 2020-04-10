@@ -7,6 +7,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.form {
+  padding: 6rem;
+  margin: 5rem;
+}
+
 a {
 
   text-decoration: none;

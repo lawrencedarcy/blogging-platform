@@ -7,7 +7,10 @@ const ReactQuill = typeof window === 'object' ? require('react-quill') : () => f
 /* https://github.com/zenoamaro/react-quill
  */
 
- function Create() {
+import { withAuth, withLoginRequired } from 'use-auth0-hooks';
+
+
+ function Create({auth}) {
 
   const [value, setValue] = useState('');
   const [headline, setHeadline] = useState('');
@@ -52,4 +55,6 @@ const ReactQuill = typeof window === 'object' ? require('react-quill') : () => f
     </div>
   );
   }
-export default Create;
+export default withLoginRequired(
+  withAuth(Create)
+);

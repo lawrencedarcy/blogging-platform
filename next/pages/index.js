@@ -5,6 +5,7 @@ import Dashboard from '../components/Dashboard/Dashboard';
 import Create from './write';
 import Post from './post';
 
+
 function App({ posts }) {
   const findPost = url => {
     const res = posts.filter(

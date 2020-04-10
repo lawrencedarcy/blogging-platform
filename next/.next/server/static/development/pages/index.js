@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -374,7 +374,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function Feed({
   posts
 }) {
+  console.log(posts);
   /* const URL_title = post.title.replace(regex, '-').toLowerCase(); */
+
   return __jsx("div", {
     __self: this,
     __source: {
@@ -443,19 +445,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavBar.module.css */ "./components/NavBar/NavBar.module.css");
 /* harmony import */ var _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_NavBar_module_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/NavBar/NavBar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
+
+
 function NavBar() {
+  const {
+    isAuthenticated,
+    isLoading,
+    login,
+    logout
+  } = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["useAuth"])();
+  const {
+    pathname,
+    query
+  } = Object(next_router__WEBPACK_IMPORTED_MODULE_4__["useRouter"])();
   return __jsx("div", {
     className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.nav_wrapper,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 14,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -463,7 +481,7 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 15,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -471,7 +489,7 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 16,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -479,14 +497,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 16,
       columnNumber: 45
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 16,
       columnNumber: 60
     }
   }, "Stagetime"))), __jsx("div", {
@@ -494,7 +512,7 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 18,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -502,14 +520,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 18,
       columnNumber: 46
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 18,
       columnNumber: 66
     }
   }, "Write a post")))));
@@ -2283,7 +2301,7 @@ function App({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 21,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2291,7 +2309,7 @@ function App({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 23,
       columnNumber: 7
     }
   }));
@@ -2332,6 +2350,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/pages/write/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -2343,7 +2363,11 @@ const ReactQuill = false ? undefined : () => false;
 /* https://github.com/zenoamaro/react-quill
  */
 
-function Create() {
+
+
+function Create({
+  auth
+}) {
   const {
     0: value,
     1: setValue
@@ -2391,7 +2415,7 @@ function Create() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 47,
       columnNumber: 5
     }
   }, __jsx("span", {
@@ -2399,7 +2423,7 @@ function Create() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 48,
       columnNumber: 7
     }
   }, "Headline:"), __jsx("input", {
@@ -2410,7 +2434,7 @@ function Create() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 49,
       columnNumber: 7
     }
   }), __jsx("span", {
@@ -2418,7 +2442,7 @@ function Create() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 50,
       columnNumber: 7
     }
   }, "Tags:"), __jsx("input", {
@@ -2429,7 +2453,7 @@ function Create() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 51,
       columnNumber: 7
     }
   }), __jsx("span", {
@@ -2437,7 +2461,7 @@ function Create() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 52,
       columnNumber: 5
     }
   }, "Body:"), __jsx(ReactQuill, {
@@ -2447,7 +2471,7 @@ function Create() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 53,
       columnNumber: 5
     }
   }), __jsx("div", {
@@ -2455,7 +2479,7 @@ function Create() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 54,
       columnNumber: 4
     }
   }, __jsx("button", {
@@ -2465,17 +2489,17 @@ function Create() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 54,
       columnNumber: 33
     }
   }, " Publish ")));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Create);
+/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__["withLoginRequired"])(Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__["withAuth"])(Create)));
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2495,6 +2519,17 @@ module.exports = __webpack_require__(/*! /Users/lawrence_wakefield/Documents/Dev
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
@@ -2561,6 +2596,17 @@ module.exports = require("react-moment");
 /***/ (function(module, exports) {
 
 module.exports = require("url");
+
+/***/ }),
+
+/***/ "use-auth0-hooks":
+/*!**********************************!*\
+  !*** external "use-auth0-hooks" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("use-auth0-hooks");
 
 /***/ })
 
