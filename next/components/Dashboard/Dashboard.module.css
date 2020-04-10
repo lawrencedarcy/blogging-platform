@@ -3,7 +3,8 @@
 .body-wrapper{
   background-color: #fafafa;
   display: flex;
-  width: calc(70% + 80px);
+
+  width: calc(100%);
   margin: auto;
   padding-top: calc(9vh + 2%);
 }

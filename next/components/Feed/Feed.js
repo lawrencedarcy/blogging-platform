@@ -5,14 +5,19 @@ import Link from 'next/link';
 
 
 function Feed({ posts }) {
+
   console.log(posts);
   /* const URL_title = post.title.replace(regex, '-').toLowerCase(); */
-
+  const sortedList = posts.sort(function(a, b) {
+    a = a.votes;
+    b = b.votes;
+    return a > b ? -1 : a < b ? 1 : 0;
+});
   return (
    
     <div>
      
-     { posts.slice(4, 8).map(post => (
+     { sortedList.slice(0, 8).map(post => (
         <Link href={`/post/${post._id}`}  >
         <div className={styles.feed_card}>
           <Card key={post.id} post={post} />

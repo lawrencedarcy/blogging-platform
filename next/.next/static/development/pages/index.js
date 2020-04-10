@@ -366,20 +366,25 @@ function Feed(_ref) {
   console.log(posts);
   /* const URL_title = post.title.replace(regex, '-').toLowerCase(); */
 
+  var sortedList = posts.sort(function (a, b) {
+    a = a.votes;
+    b = b.votes;
+    return a > b ? -1 : a < b ? 1 : 0;
+  });
   return __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 18,
       columnNumber: 5
     }
-  }, posts.slice(4, 8).map(function (post) {
+  }, sortedList.slice(0, 8).map(function (post) {
     return __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
       href: "/post/".concat(post._id),
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16,
+        lineNumber: 21,
         columnNumber: 9
       }
     }, __jsx("div", {
@@ -387,7 +392,7 @@ function Feed(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 22,
         columnNumber: 9
       }
     }, __jsx(_Card_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -396,7 +401,7 @@ function Feed(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 23,
         columnNumber: 11
       }
     })));
@@ -647,23 +652,87 @@ if (true) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar.module.css */ "./components/Sidebar/Sidebar.module.css");
+/* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+
 function Sidebar(props) {
   return __jsx("div", {
-    className: "Sidebar",
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5,
+      lineNumber: 6,
       columnNumber: 5
     }
-  });
+  }, "hello from sidebar");
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
+
+/***/ }),
+
+/***/ "./components/Sidebar/Sidebar.module.css":
+/*!***********************************************!*\
+  !*** ./components/Sidebar/Sidebar.module.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!../../node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./Sidebar.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/Sidebar/Sidebar.module.css");
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = function(element){// These elements should always exist. If they do not,
+// this code should fail.
+var anchorElement=document.querySelector('#__next_css__DO_NOT_USE__');var parentNode=anchorElement.parentNode;// Normally <head>
+// Each style tag should be placed right before our
+// anchor. By inserting before and not after, we do not
+// need to track the last inserted element.
+parentNode.insertBefore(element,anchorElement)// Remember: this is development only code.
+//
+// After styles are injected, we need to remove the
+// <style> tags that set `body { display: none; }`.
+//
+// We use `requestAnimationFrame` as a way to defer
+// this operation since there may be multiple style
+// tags.
+;(self.requestAnimationFrame||setTimeout)(function(){for(var x=document.querySelectorAll('[data-next-hide-fouc]'),i=x.length;i--;){x[i].parentNode.removeChild(x[i]);}});};
+options.singleton = false;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+if (true) {
+  if (!content.locals) {
+    module.hot.accept(
+      /*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!../../node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./Sidebar.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/Sidebar/Sidebar.module.css",
+      function () {
+        var newContent = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!../../node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./Sidebar.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/Sidebar/Sidebar.module.css");
+
+        if (typeof newContent === 'string') {
+          newContent = [[module.i, newContent, '']];
+        }
+        
+        update(newContent);
+      }
+    )
+  }
+
+  module.hot.dispose(function() { 
+    update();
+  });
+}
 
 /***/ }),
 
@@ -5895,7 +5964,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "\n\n.Dashboard_body-wrapper__2IkOv{\n  background-color: #fafafa;\n  display: flex;\n  width: calc(70% + 80px);\n  margin: auto;\n  padding-top: calc(9vh + 2%);\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Dashboard/Dashboard.module.css"],"names":[],"mappings":";;AAEA;EACE,yBAAyB;EACzB,aAAa;EACb,uBAAuB;EACvB,YAAY;EACZ,2BAA2B;AAC7B","file":"Dashboard.module.css","sourcesContent":["\n\n.body-wrapper{\n  background-color: #fafafa;\n  display: flex;\n  width: calc(70% + 80px);\n  margin: auto;\n  padding-top: calc(9vh + 2%);\n}"]}]);
+exports.push([module.i, "\n\n.Dashboard_body-wrapper__2IkOv{\n  background-color: #fafafa;\n  display: flex;\n\n  width: calc(100%);\n  margin: auto;\n  padding-top: calc(9vh + 2%);\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Dashboard/Dashboard.module.css"],"names":[],"mappings":";;AAEA;EACE,yBAAyB;EACzB,aAAa;;EAEb,iBAAiB;EACjB,YAAY;EACZ,2BAA2B;AAC7B","file":"Dashboard.module.css","sourcesContent":["\n\n.body-wrapper{\n  background-color: #fafafa;\n  display: flex;\n\n  width: calc(100%);\n  margin: auto;\n  padding-top: calc(9vh + 2%);\n}"]}]);
 // Exports
 exports.locals = {
 	"body-wrapper": "Dashboard_body-wrapper__2IkOv"
@@ -5912,7 +5981,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem 0rem;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n\n}\n\n.Feed_feed_card__1q6Np:hover {\n \n  \n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;;AAEhB;;AAEA;;;AAGA","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem 0rem;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n\n}\n\n.feed_card:hover {\n \n  \n}\n\n"]}]);
+exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem 0rem;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  \n\n}\n\n.Feed_feed_card__1q6Np:hover {\n \n  \n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;;;AAGhB;;AAEA;;;AAGA","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem 0rem;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  \n\n}\n\n.feed_card:hover {\n \n  \n}\n\n"]}]);
 // Exports
 exports.locals = {
 	"feed_card": "Feed_feed_card__1q6Np"
@@ -5936,6 +6005,23 @@ exports.locals = {
 	"navbar": "NavBar_navbar__1e5Hf",
 	"navbar_logo": "NavBar_navbar_logo__3bO5G",
 	"navbar_write": "NavBar_navbar_write__EY4SA"
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/Sidebar/Sidebar.module.css":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!./node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./components/Sidebar/Sidebar.module.css ***!
+  \**************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n  \n  max-width: 12rem;\n  min-width: 6rem;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100vh;\n  margin: .5rem;\n  background-color: white;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,gBAAgB;EAChB,eAAe;EACf,oCAAoC;EACpC,aAAa;EACb,aAAa;EACb,uBAAuB;;AAEzB;;AAEA;EACE;IACE,aAAa;EACf;AACF","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n  \n  max-width: 12rem;\n  min-width: 6rem;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100vh;\n  margin: .5rem;\n  background-color: white;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .sidebar {\n    display: none;\n  }\n}"]}]);
+// Exports
+exports.locals = {
+	"sidebar": "Sidebar_sidebar__ma1yP"
 };
 
 /***/ }),
@@ -51494,7 +51580,7 @@ function Create(_ref) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************************************/
@@ -51517,5 +51603,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
