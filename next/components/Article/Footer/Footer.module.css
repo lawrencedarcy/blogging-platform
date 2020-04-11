@@ -14,11 +14,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2.3rem;
+  padding: 1rem 3rem;
 
 }
 
 .footer_upvote, .footer_share {
   color: white;
   cursor: pointer;
+  border: 1px solid white;
+  padding: .4rem .6rem;
+  font-size: .9rem;
+  border-radius: 4px;
 }
+
+.footer_upvote:hover, .footer_share:hover{
+  background-color: #9efd6e;
+}
+
+
+@media only screen and (max-width: 400px) {
+  .footer_upvote, .footer_share {
+    font-size: .8rem;
+    
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .footer{
+    padding: 1rem 1rem;
+
+    overflow: none;
+}}

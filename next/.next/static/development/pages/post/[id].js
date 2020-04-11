@@ -67,7 +67,7 @@ function Footer(_ref) {
       lineNumber: 14,
       columnNumber: 9
     }
-  }, "comment")));
+  }, "discuss")));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -1969,7 +1969,7 @@ module.exports = {
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Footer_footer_wrapper__1jiLN {\n  width: 80%;\n  max-width: inherit;\n  height: 3rem;\n  position: fixed;\n  left: 10%;\n  bottom: 1.4%;\n  margin: auto;\n}\n\n.Footer_footer__2hIWU {\n  background-color: #6ecdfd;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n\n}\n\n.Footer_footer_upvote__DJDup, .Footer_footer_share__v23DR {\n  color: white;\n  cursor: pointer;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Article/Footer/Footer.module.css"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,kBAAkB;EAClB,YAAY;EACZ,eAAe;EACf,SAAS;EACT,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,yBAAyB;EACzB,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,oBAAoB;;AAEtB;;AAEA;EACE,YAAY;EACZ,eAAe;AACjB","file":"Footer.module.css","sourcesContent":[".footer_wrapper {\n  width: 80%;\n  max-width: inherit;\n  height: 3rem;\n  position: fixed;\n  left: 10%;\n  bottom: 1.4%;\n  margin: auto;\n}\n\n.footer {\n  background-color: #6ecdfd;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n\n}\n\n.footer_upvote, .footer_share {\n  color: white;\n  cursor: pointer;\n}"]}]);
+exports.push([module.i, ".Footer_footer_wrapper__1jiLN {\n  width: 80%;\n  max-width: inherit;\n  height: 3rem;\n  position: fixed;\n  left: 10%;\n  bottom: 1.4%;\n  margin: auto;\n}\n\n.Footer_footer__2hIWU {\n  background-color: #6ecdfd;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 3rem;\n\n}\n\n.Footer_footer_upvote__DJDup, .Footer_footer_share__v23DR {\n  color: white;\n  cursor: pointer;\n  border: 1px solid white;\n  padding: .4rem .6rem;\n  font-size: .9rem;\n  border-radius: 4px;\n}\n\n.Footer_footer_upvote__DJDup:hover, .Footer_footer_share__v23DR:hover{\n  background-color: #9efd6e;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .Footer_footer_upvote__DJDup, .Footer_footer_share__v23DR {\n    font-size: .8rem;\n    \n  }\n}\n\n@media only screen and (max-width: 400px) {\n  .Footer_footer__2hIWU{\n    padding: 1rem 1rem;\n\n    overflow: none;\n}}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Article/Footer/Footer.module.css"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,kBAAkB;EAClB,YAAY;EACZ,eAAe;EACf,SAAS;EACT,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,yBAAyB;EACzB,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,kBAAkB;;AAEpB;;AAEA;EACE,YAAY;EACZ,eAAe;EACf,uBAAuB;EACvB,oBAAoB;EACpB,gBAAgB;EAChB,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;AAC3B;;;AAGA;EACE;IACE,gBAAgB;;EAElB;AACF;;AAEA;EACE;IACE,kBAAkB;;IAElB,cAAc;AAClB,CAAC","file":"Footer.module.css","sourcesContent":[".footer_wrapper {\n  width: 80%;\n  max-width: inherit;\n  height: 3rem;\n  position: fixed;\n  left: 10%;\n  bottom: 1.4%;\n  margin: auto;\n}\n\n.footer {\n  background-color: #6ecdfd;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 3rem;\n\n}\n\n.footer_upvote, .footer_share {\n  color: white;\n  cursor: pointer;\n  border: 1px solid white;\n  padding: .4rem .6rem;\n  font-size: .9rem;\n  border-radius: 4px;\n}\n\n.footer_upvote:hover, .footer_share:hover{\n  background-color: #9efd6e;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .footer_upvote, .footer_share {\n    font-size: .8rem;\n    \n  }\n}\n\n@media only screen and (max-width: 400px) {\n  .footer{\n    padding: 1rem 1rem;\n\n    overflow: none;\n}}"]}]);
 // Exports
 exports.locals = {
 	"footer_wrapper": "Footer_footer_wrapper__1jiLN",
@@ -4636,14 +4636,14 @@ function Post(_ref) {
       lineNumber: 28,
       columnNumber: 5
     }
-  }, post.tags.map(function (tag) {
+  }, post.tags.slice(0, 3).map(function (tag) {
     return __jsx("div", {
       className: "article_tag",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 28,
-        columnNumber: 57
+        columnNumber: 68
       }
     }, "#", tag);
   })), __jsx("div", {
@@ -4714,7 +4714,7 @@ Post.getInitialProps = function _callee(_ref2) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!***************************************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fpost%2F%5Bid%5D&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Fpost%2F%5Bid%5D.js ***!
   \***************************************************************************************************************************************************************************************************************************/
@@ -4737,5 +4737,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

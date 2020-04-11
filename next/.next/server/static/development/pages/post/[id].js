@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -160,7 +160,7 @@ function Footer({
       lineNumber: 14,
       columnNumber: 9
     }
-  }, "comment")));
+  }, "discuss")));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -265,13 +265,13 @@ function Post({
       lineNumber: 28,
       columnNumber: 5
     }
-  }, post.tags.map(tag => __jsx("div", {
+  }, post.tags.slice(0, 3).map(tag => __jsx("div", {
     className: "article_tag",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28,
-      columnNumber: 57
+      columnNumber: 68
     }
   }, "#", tag))), __jsx("div", {
     className: "article_body",
@@ -326,7 +326,7 @@ Post.getInitialProps = async ({
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!**********************************!*\
   !*** multi ./pages/post/[id].js ***!
   \**********************************/

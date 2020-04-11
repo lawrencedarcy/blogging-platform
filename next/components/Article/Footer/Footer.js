@@ -11,7 +11,7 @@ function Footer({upVote, post}) {
       <div className={styles.footer}>
         <div className={styles.footer_upvote} onClick={clickHandler}>upvote</div>
         <div className={styles.footer_share}>share</div>
-        <div className={styles.footer_share}>comment</div>
+        <div className={styles.footer_share}>discuss</div>
         </div>
     </div>
   );
