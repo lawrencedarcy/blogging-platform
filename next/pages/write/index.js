@@ -17,7 +17,6 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
   const [tags, setTags] = useState('');
 
   const createPost = (p) => {
-
     axios.post('http://localhost:3001/posts', {p})
     .then(function (response) {
       console.log(response);

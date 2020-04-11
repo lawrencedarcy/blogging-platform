@@ -24,6 +24,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function Card(_ref) {
   var post = _ref.post;
   var regex = /\s/g;
+  console.log(post.tags);
   return __jsx("div", {
     __self: this,
     __source: {
@@ -72,7 +73,7 @@ function Card(_ref) {
       lineNumber: 22,
       columnNumber: 17
     }
-  }, '#' + post.tags[0].name), post.tags[1] && __jsx("div", {
+  }, '#' + post.tags[0]), post.tags[1] && __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
     __self: this,
     __source: {
@@ -80,7 +81,7 @@ function Card(_ref) {
       lineNumber: 25,
       columnNumber: 17
     }
-  }, post.tags[1] && '#' + post.tags[1].name), post.tags[2] && __jsx("div", {
+  }, post.tags[1] && '#' + post.tags[1]), post.tags[2] && __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
     __self: this,
     __source: {
@@ -88,7 +89,7 @@ function Card(_ref) {
       lineNumber: 30,
       columnNumber: 17
     }
-  }, post.tags[2] && '#' + post.tags[2].name)), __jsx("div", {
+  }, post.tags[2] && '#' + post.tags[2])), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_line,
     __self: this,
     __source: {
@@ -243,7 +244,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function Dashboard(_ref) {
   var posts = _ref.posts,
-      upVote = _ref.upVote;
+      upVote = _ref.upVote,
+      tags = _ref.tags,
+      getPostByTag = _ref.getPostByTag;
   return __jsx("div", {
     className: _Dashboard_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.body_wrapper,
     __self: this,
@@ -252,20 +255,22 @@ function Dashboard(_ref) {
       lineNumber: 8,
       columnNumber: 5
     }
-  }, __jsx(_Feed_Feed__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, __jsx(_Sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    tags: tags,
+    getPostByTag: getPostByTag,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 7
+    }
+  }), __jsx(_Feed_Feed__WEBPACK_IMPORTED_MODULE_1__["default"], {
     posts: posts,
     upVote: upVote,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 7
-    }
-  }), __jsx(_Sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 11,
       columnNumber: 7
     }
   }));
@@ -659,16 +664,77 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-function Sidebar(props) {
+function Sidebar(_ref) {
+  var _this = this;
+
+  var tags = _ref.tags,
+      getPostByTag = _ref.getPostByTag;
+  var tagsList = new Set();
+  tags.map(function (arr) {
+    return arr.map(function (tag) {
+      return tagsList.add(tag);
+    });
+  });
+  var tagsArr = Array.from(tagsList);
+
+  var clickHandler = function clickHandler(evt) {
+    console.log('clickhandler says', evt.target.value);
+    getPostByTag(evt.target.value);
+  };
+
   return __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6,
+      lineNumber: 16,
       columnNumber: 5
     }
-  }, "hello from sidebar");
+  }, __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 7
+    }
+  }), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 7
+    }
+  }), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_title,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 7
+    }
+  }, "Filter by tag"), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tags,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 7
+    }
+  }, tagsArr.map(function (tag) {
+    return __jsx("button", {
+      className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tag,
+      value: tag,
+      onClick: clickHandler,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22,
+        columnNumber: 25
+      }
+    }, "#".concat(tag.toLowerCase()));
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
@@ -5964,10 +6030,10 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "\n\n.Dashboard_body-wrapper__2IkOv{\n  background-color: #fafafa;\n  display: flex;\n\n  width: calc(100%);\n  margin: auto;\n  padding-top: calc(9vh + 2%);\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Dashboard/Dashboard.module.css"],"names":[],"mappings":";;AAEA;EACE,yBAAyB;EACzB,aAAa;;EAEb,iBAAiB;EACjB,YAAY;EACZ,2BAA2B;AAC7B","file":"Dashboard.module.css","sourcesContent":["\n\n.body-wrapper{\n  background-color: #fafafa;\n  display: flex;\n\n  width: calc(100%);\n  margin: auto;\n  padding-top: calc(9vh + 2%);\n}"]}]);
+exports.push([module.i, "\n\n.Dashboard_body_wrapper__3t8n0{\n  background-color: #fafafa;\n  display: flex;\n\n  width: calc(100%);\n  margin: auto;\n  padding-top: calc(9vh + 2%);\n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Dashboard/Dashboard.module.css"],"names":[],"mappings":";;AAEA;EACE,yBAAyB;EACzB,aAAa;;EAEb,iBAAiB;EACjB,YAAY;EACZ,2BAA2B;AAC7B","file":"Dashboard.module.css","sourcesContent":["\n\n.body_wrapper{\n  background-color: #fafafa;\n  display: flex;\n\n  width: calc(100%);\n  margin: auto;\n  padding-top: calc(9vh + 2%);\n}\n\n"]}]);
 // Exports
 exports.locals = {
-	"body-wrapper": "Dashboard_body-wrapper__2IkOv"
+	"body_wrapper": "Dashboard_body_wrapper__3t8n0"
 };
 
 /***/ }),
@@ -5981,7 +6047,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem 0rem;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  \n\n}\n\n.Feed_feed_card__1q6Np:hover {\n \n  \n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;;;AAGhB;;AAEA;;;AAGA","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem 0rem;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  \n\n}\n\n.feed_card:hover {\n \n  \n}\n\n"]}]);
+exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem 0rem;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 5 1;\n\n}\n\n.Feed_feed_card__1q6Np:hover {\n \n  \n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;;AAET;;AAEA;;;AAGA","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem 0rem;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 5;\n\n}\n\n.feed_card:hover {\n \n  \n}\n\n"]}]);
 // Exports
 exports.locals = {
 	"feed_card": "Feed_feed_card__1q6Np"
@@ -6018,10 +6084,13 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n  \n  max-width: 12rem;\n  min-width: 6rem;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100vh;\n  margin: .5rem;\n  background-color: white;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,gBAAgB;EAChB,eAAe;EACf,oCAAoC;EACpC,aAAa;EACb,aAAa;EACb,uBAAuB;;AAEzB;;AAEA;EACE;IACE,aAAa;EACf;AACF","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n  \n  max-width: 12rem;\n  min-width: 6rem;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100vh;\n  margin: .5rem;\n  background-color: white;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .sidebar {\n    display: none;\n  }\n}"]}]);
+exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n  flex: 2 1;\n  width: 22rem;\n  max-width: 22rem;\n  min-width: 14rem;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n \n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;EACE,SAAO;EACP,YAAY;EACZ,gBAAgB;EAChB,gBAAgB;EAChB,oCAAoC;EACpC,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,aAAa;;AAEf;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;;;AAGA;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n  flex: 2;\n  width: 22rem;\n  max-width: 22rem;\n  min-width: 14rem;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_tags {\n \n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}"]}]);
 // Exports
 exports.locals = {
-	"sidebar": "Sidebar_sidebar__ma1yP"
+	"sidebar": "Sidebar_sidebar__ma1yP",
+	"sidebar_title": "Sidebar_sidebar_title__3lZ-e",
+	"sidebar_tags": "Sidebar_sidebar_tags__1IP9J",
+	"sidebar_tag": "Sidebar_sidebar_tag__yktie"
 };
 
 /***/ }),
@@ -51352,7 +51421,16 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 function App(_ref) {
-  var posts = _ref.posts;
+  var postList = _ref.postList,
+      tags = _ref.tags;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
+      posts = _useState[0],
+      setPosts = _useState[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    setPosts(postList);
+  }, []);
 
   var findPost = function findPost(url) {
     var res = posts.filter(function (post) {
@@ -51362,43 +51440,73 @@ function App(_ref) {
     return res[0];
   };
 
+  var getPostByTag = function getPostByTag(tag) {
+    var res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getPostByTag$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/posts/".concat(tag)).then(function (data) {
+              return setPosts(data.data);
+            }));
+
+          case 2:
+            res = _context.sent;
+
+          case 3:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, null, null, Promise);
+  };
+
   return __jsx("div", {
     className: "app_body",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 33,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_4__["default"], {
     posts: posts,
+    tags: tags,
+    getPostByTag: getPostByTag,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 35,
       columnNumber: 7
     }
   }));
 }
 
 App.getInitialProps = function _callee(ctx) {
-  var res;
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context) {
+  var res, tags;
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context2) {
     while (1) {
-      switch (_context.prev = _context.next) {
+      switch (_context2.prev = _context2.next) {
         case 0:
-          _context.next = 2;
+          _context2.next = 2;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost:3001/posts'));
 
         case 2:
-          res = _context.sent;
-          return _context.abrupt("return", {
-            posts: res.data
+          res = _context2.sent;
+          _context2.next = 5;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost:3001/tags'));
+
+        case 5:
+          tags = _context2.sent;
+          return _context2.abrupt("return", {
+            postList: res.data,
+            tags: tags.data
           });
 
-        case 4:
+        case 7:
         case "end":
-          return _context.stop();
+          return _context2.stop();
       }
     }
   }, null, null, null, Promise);
@@ -51496,7 +51604,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 46,
       columnNumber: 5
     }
   }, __jsx("span", {
@@ -51504,7 +51612,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 47,
       columnNumber: 7
     }
   }, "Headline:"), __jsx("input", {
@@ -51515,7 +51623,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 48,
       columnNumber: 7
     }
   }), __jsx("span", {
@@ -51523,7 +51631,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 49,
       columnNumber: 7
     }
   }, "Tags:"), __jsx("input", {
@@ -51534,7 +51642,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 50,
       columnNumber: 7
     }
   }), __jsx("span", {
@@ -51542,7 +51650,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 51,
       columnNumber: 5
     }
   }, "Body:"), __jsx(ReactQuill, {
@@ -51552,7 +51660,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 52,
       columnNumber: 5
     }
   }), __jsx("div", {
@@ -51560,7 +51668,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 53,
       columnNumber: 4
     }
   }, __jsx("button", {
@@ -51570,7 +51678,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 53,
       columnNumber: 33
     }
   }, " Publish ")));

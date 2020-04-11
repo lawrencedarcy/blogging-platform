@@ -1,6 +1,6 @@
 
 
-.body-wrapper{
+.body_wrapper{
   background-color: #fafafa;
   display: flex;
 
@@ -8,3 +8,4 @@
   margin: auto;
   padding-top: calc(9vh + 2%);
 }
+

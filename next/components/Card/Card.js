@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 
 function Card({ post }) {
   const regex = /\s/g;
-
+  console.log(post.tags)
   return (
   
     <div>
@@ -19,16 +19,16 @@ function Card({ post }) {
           {post.tags.length > 0 && (
             <div className={styles.card_tags}>
               {post.tags[0] && (
-                <div className={styles.tag}>{'#' + post.tags[0].name}</div>
+                <div className={styles.tag}>{'#' + post.tags[0]}</div>
               )}
               {post.tags[1] && (
                 <div className={styles.tag}>
-                  {post.tags[1] && '#' + post.tags[1].name}
+                  {post.tags[1] && '#' + post.tags[1]}
                 </div>
               )}
               {post.tags[2] && (
                 <div className={styles.tag}>
-                  {post.tags[2] && '#' + post.tags[2].name}
+                  {post.tags[2] && '#' + post.tags[2]}
                 </div>
               )}
             </div>

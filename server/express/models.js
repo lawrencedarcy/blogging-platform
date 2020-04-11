@@ -1,15 +1,12 @@
 const mongoose = require('./db');
 const Schema = mongoose.Schema;
 
-const tagSchema = new Schema({
-  name: String
-});
 
 const postSchema = new Schema({
   
   title: String,
   body: String,
-  tags: [tagSchema],
+  tags: [String],
   img_url: String,
   timestamp: Number,
   votes: Number,
@@ -18,6 +15,5 @@ const postSchema = new Schema({
 });
 
 
-
 const Post = mongoose.model('Post', postSchema);
-module.exports = Post;
+module.exports = {Post};

@@ -3,11 +3,13 @@ import Feed from '../Feed/Feed';
 import Sidebar from '../Sidebar/Sidebar';
 import styles from './Dashboard.module.css';
 
-function Dashboard({ posts, upVote }) {
+function Dashboard({ posts, upVote, tags, getPostByTag }) {
   return (
     <div className={styles.body_wrapper}>
-      <Feed posts={posts} upVote={upVote} />
-      <Sidebar />
+    
+      <Sidebar tags={tags} getPostByTag={getPostByTag}/>
+      <Feed posts={posts} upVote={upVote}  />
+      
     </div>
   );
 }

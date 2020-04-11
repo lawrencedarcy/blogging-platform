@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -118,6 +118,7 @@ function Card({
   post
 }) {
   const regex = /\s/g;
+  console.log(post.tags);
   return __jsx("div", {
     __self: this,
     __source: {
@@ -166,7 +167,7 @@ function Card({
       lineNumber: 22,
       columnNumber: 17
     }
-  }, '#' + post.tags[0].name), post.tags[1] && __jsx("div", {
+  }, '#' + post.tags[0]), post.tags[1] && __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
     __self: this,
     __source: {
@@ -174,7 +175,7 @@ function Card({
       lineNumber: 25,
       columnNumber: 17
     }
-  }, post.tags[1] && '#' + post.tags[1].name), post.tags[2] && __jsx("div", {
+  }, post.tags[1] && '#' + post.tags[1]), post.tags[2] && __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
     __self: this,
     __source: {
@@ -182,7 +183,7 @@ function Card({
       lineNumber: 30,
       columnNumber: 17
     }
-  }, post.tags[2] && '#' + post.tags[2].name)), __jsx("div", {
+  }, post.tags[2] && '#' + post.tags[2])), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_line,
     __self: this,
     __source: {
@@ -301,7 +302,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function Dashboard({
   posts,
-  upVote
+  upVote,
+  tags,
+  getPostByTag
 }) {
   return __jsx("div", {
     className: _Dashboard_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.body_wrapper,
@@ -311,20 +314,22 @@ function Dashboard({
       lineNumber: 8,
       columnNumber: 5
     }
-  }, __jsx(_Feed_Feed__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, __jsx(_Sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    tags: tags,
+    getPostByTag: getPostByTag,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 7
+    }
+  }), __jsx(_Feed_Feed__WEBPACK_IMPORTED_MODULE_1__["default"], {
     posts: posts,
     upVote: upVote,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 7
-    }
-  }), __jsx(_Sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 11,
       columnNumber: 7
     }
   }));
@@ -343,7 +348,7 @@ function Dashboard({
 
 // Exports
 module.exports = {
-	"body-wrapper": "Dashboard_body-wrapper__2IkOv"
+	"body_wrapper": "Dashboard_body_wrapper__3t8n0"
 };
 
 /***/ }),
@@ -577,16 +582,70 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-function Sidebar(props) {
+function Sidebar({
+  tags,
+  getPostByTag
+}) {
+  const tagsList = new Set();
+  tags.map(arr => arr.map(tag => tagsList.add(tag)));
+  const tagsArr = Array.from(tagsList);
+
+  const clickHandler = evt => {
+    console.log('clickhandler says', evt.target.value);
+    getPostByTag(evt.target.value);
+  };
+
   return __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6,
+      lineNumber: 16,
       columnNumber: 5
     }
-  }, "hello from sidebar");
+  }, __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 7
+    }
+  }), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 7
+    }
+  }), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_title,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 7
+    }
+  }, "Filter by tag"), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tags,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 7
+    }
+  }, tagsArr.map(tag => __jsx("button", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tag,
+    value: tag,
+    onClick: clickHandler,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 25
+    }
+  }, `#${tag.toLowerCase()}`))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
@@ -602,7 +661,10 @@ function Sidebar(props) {
 
 // Exports
 module.exports = {
-	"sidebar": "Sidebar_sidebar__ma1yP"
+	"sidebar": "Sidebar_sidebar__ma1yP",
+	"sidebar_title": "Sidebar_sidebar_title__3lZ-e",
+	"sidebar_tags": "Sidebar_sidebar_tags__1IP9J",
+	"sidebar_tag": "Sidebar_sidebar_tag__yktie"
 };
 
 /***/ }),
@@ -2310,12 +2372,25 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function App({
-  posts
+  postList,
+  tags
 }) {
+  const {
+    0: posts,
+    1: setPosts
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    setPosts(postList);
+  }, []);
+
   const findPost = url => {
     const res = posts.filter(post => post.title && post.title.replace(/\s/g, '-').toLowerCase() === url);
     console.log('foundpost', res[0]);
     return res[0];
+  };
+
+  const getPostByTag = async tag => {
+    const res = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/posts/${tag}`).then(data => setPosts(data.data));
   };
 
   return __jsx("div", {
@@ -2323,15 +2398,17 @@ function App({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 33,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {
     posts: posts,
+    tags: tags,
+    getPostByTag: getPostByTag,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 35,
       columnNumber: 7
     }
   }));
@@ -2339,8 +2416,10 @@ function App({
 
 App.getInitialProps = async ctx => {
   const res = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:3001/posts');
+  const tags = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:3001/tags');
   return {
-    posts: res.data
+    postList: res.data,
+    tags: tags.data
   };
 };
 
@@ -2437,7 +2516,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 46,
       columnNumber: 5
     }
   }, __jsx("span", {
@@ -2445,7 +2524,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 47,
       columnNumber: 7
     }
   }, "Headline:"), __jsx("input", {
@@ -2456,7 +2535,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 48,
       columnNumber: 7
     }
   }), __jsx("span", {
@@ -2464,7 +2543,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 49,
       columnNumber: 7
     }
   }, "Tags:"), __jsx("input", {
@@ -2475,7 +2554,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 50,
       columnNumber: 7
     }
   }), __jsx("span", {
@@ -2483,7 +2562,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 51,
       columnNumber: 5
     }
   }, "Body:"), __jsx(ReactQuill, {
@@ -2493,7 +2572,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 52,
       columnNumber: 5
     }
   }), __jsx("div", {
@@ -2501,7 +2580,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 53,
       columnNumber: 4
     }
   }, __jsx("button", {
@@ -2511,7 +2590,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 53,
       columnNumber: 33
     }
   }, " Publish ")));
@@ -2521,7 +2600,7 @@ function Create({
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

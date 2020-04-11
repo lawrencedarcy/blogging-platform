@@ -1,7 +1,7 @@
-const Post = require('./models');
+const {Post}= require('./models');
 
 const getPosts = async (req, res) => {
-  console.log('get request received!'); // eslint-disable-line
+ 
   try {
     const posts = await Post.find();   
     res.json(posts);
@@ -10,10 +10,29 @@ const getPosts = async (req, res) => {
   }
 };
 
-const addPost = async (req, res) => {
-  req.body.p.tags = req.body.p.tags.replace(/\s/g, '').split(",").map(function(tag) {
-    return { "name": tag };
-});
+const getTags = async (req, res) => {
+  console.log('tag request received!'); // eslint-disable-line
+  try {
+    const tags = await Post.find({}, 'tags');   
+  
+    res.json(tags.map(tag => tag.tags ));
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+const getPostsByTag = async (req, res) => {
+ 
+  try {
+    const posts = await Post.find({tags: {$in: req.params.tag}});   
+    res.json(posts);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+const addPost = async (req, res) => { 
+  req.body.p.tags = req.body.p.tags.replace(/\s/g, '').split(",");
   console.log('req body', req.body);// eslint-disable-line
   const post = new Post(
     {
@@ -59,8 +78,12 @@ const getPostByUrl = () => {
 }
 
 
+
+
 module.exports = {
   getPosts,
+  getTags,
+  getPostsByTag,
   addPost,
   upVote,
   getPostById

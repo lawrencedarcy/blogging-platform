@@ -4,7 +4,7 @@ import styles from './Feed.module.css';
 import Link from 'next/link';
 
 
-function Feed({ posts }) {
+function Feed({posts}) {
 
   console.log(posts);
   /* const URL_title = post.title.replace(regex, '-').toLowerCase(); */
