@@ -6030,7 +6030,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "\n\n.Dashboard_body_wrapper__3t8n0{\n  background-color: #fafafa;\n  display: flex;\n\n  width: calc(100%);\n  margin: auto;\n  padding-top: calc(9vh + 2%);\n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Dashboard/Dashboard.module.css"],"names":[],"mappings":";;AAEA;EACE,yBAAyB;EACzB,aAAa;;EAEb,iBAAiB;EACjB,YAAY;EACZ,2BAA2B;AAC7B","file":"Dashboard.module.css","sourcesContent":["\n\n.body_wrapper{\n  background-color: #fafafa;\n  display: flex;\n\n  width: calc(100%);\n  margin: auto;\n  padding-top: calc(9vh + 2%);\n}\n\n"]}]);
+exports.push([module.i, "\n\n.Dashboard_body_wrapper__3t8n0{\n  background-color: #fafafa;\n  display: flex;\n\n  width: 100%;\n  margin: auto;\n  padding-top: calc(2vh + 2%);\n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Dashboard/Dashboard.module.css"],"names":[],"mappings":";;AAEA;EACE,yBAAyB;EACzB,aAAa;;EAEb,WAAW;EACX,YAAY;EACZ,2BAA2B;AAC7B","file":"Dashboard.module.css","sourcesContent":["\n\n.body_wrapper{\n  background-color: #fafafa;\n  display: flex;\n\n  width: 100%;\n  margin: auto;\n  padding-top: calc(2vh + 2%);\n}\n\n"]}]);
 // Exports
 exports.locals = {
 	"body_wrapper": "Dashboard_body_wrapper__3t8n0"
@@ -6047,7 +6047,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem 0rem;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 5 1;\n\n}\n\n.Feed_feed_card__1q6Np:hover {\n \n  \n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;;AAET;;AAEA;;;AAGA","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem 0rem;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 5;\n\n}\n\n.feed_card:hover {\n \n  \n}\n\n"]}]);
+exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 5 1;\n\n\n}\n\n.Feed_feed_card__1q6Np:hover {\n \n  \n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;;;AAGT;;AAEA;;;AAGA","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 5;\n\n\n}\n\n.feed_card:hover {\n \n  \n}\n\n"]}]);
 // Exports
 exports.locals = {
 	"feed_card": "Feed_feed_card__1q6Np"
@@ -6084,7 +6084,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n  flex: 2 1;\n  width: 22rem;\n  max-width: 22rem;\n  min-width: 14rem;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n \n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;EACE,SAAO;EACP,YAAY;EACZ,gBAAgB;EAChB,gBAAgB;EAChB,oCAAoC;EACpC,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,aAAa;;AAEf;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;;;AAGA;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n  flex: 2;\n  width: 22rem;\n  max-width: 22rem;\n  min-width: 14rem;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_tags {\n \n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}"]}]);
+exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n\n  min-width: 20vw;\n  flex: 2 1;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n \n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,eAAe;EACf,SAAO;EACP,oCAAoC;EACpC,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,aAAa;;AAEf;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;;;AAGA;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n\n  min-width: 20vw;\n  flex: 2;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_tags {\n \n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}"]}]);
 // Exports
 exports.locals = {
 	"sidebar": "Sidebar_sidebar__ma1yP",
@@ -51688,7 +51688,7 @@ function Create(_ref) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************************************/
@@ -51711,5 +51711,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

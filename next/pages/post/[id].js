@@ -25,7 +25,7 @@ function Post({post}) {
     <div className="body_wrapper">
       <div className="article_title">{post.title}</div>
       <div className="article_author">{post.author}</div>
-    <div className="article_tags">{post.tags.map(tag => <div>tag</div>)}</div>
+    <div className="article_tags">{post.tags.map(tag => <div className="article_tag">#{tag}</div>)}</div>
      <div className="article_body">
        
        

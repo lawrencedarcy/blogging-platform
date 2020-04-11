@@ -1,8 +1,7 @@
 .sidebar {
+
+  min-width: 20vw;
   flex: 2;
-  width: 22rem;
-  max-width: 22rem;
-  min-width: 14rem;
   border: 1px solid rgb(199, 199, 199);
   height: 100%;
   margin: .5rem;
