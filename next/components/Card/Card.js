@@ -4,14 +4,14 @@ import Moment from 'react-moment';
 
 function Card({ post }) {
   const regex = /\s/g;
-  console.log(post.tags)
+  console.log(post)
   return (
   
     <div>
       
         <div className={styles.feed_card_inner}>
           <img
-            src='https://uploads.guim.co.uk/2020/04/04/daniel-sessler-N98aPtXcDYs-unsplash.jpg'
+            src={post.img_url}
             className={styles.card_img}
           ></img>
           <div className={styles.card_title}>{post.title}</div>
@@ -42,7 +42,7 @@ function Card({ post }) {
           </div>
         </div>
         <div className={styles.card_bottom}>
-          <div className={styles.card_votes}>♡ {post.votes}</div>
+        <img className={styles.card_upvote} src="https://uploads.guim.co.uk/2020/04/15/culture.png"></img><div className={styles.card_votes}>{post.votes}</div>
           <div className={styles.card_btn}>Save</div>
         </div>
        

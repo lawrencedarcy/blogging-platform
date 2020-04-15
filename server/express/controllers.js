@@ -39,7 +39,7 @@ const addPost = async (req, res) => {
       title: req.body.p.headline,
       body: req.body.p.body,
       tags: req.body.p.tags,
-      img_url: req.body.p.img,
+      img_url: req.body.p.image,
       votes: 0, 
       timestamp: Date.now(),
       author: req.body.p.author || 'No author'

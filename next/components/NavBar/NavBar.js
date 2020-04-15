@@ -13,7 +13,10 @@ function NavBar() {
   return (
     <div className={styles.nav_wrapper}>
       <div className={styles.navbar}>
-        <div className={styles.navbar_logo}><Link href="/"><a>Stagetime</a></Link></div>
+      <Link href="/"><a>  <img className={styles.logo_png} src="https://uploads.guim.co.uk/2020/04/15/culture.png"></img></a></Link>
+
+        <div className={styles.navbar_logo}><Link href="/"><a>       
+ Stagetime</a></Link></div>
 
         <div className={styles.navbar_write}><Link href="/write"><a>Write a post</a></Link></div>
       </div>

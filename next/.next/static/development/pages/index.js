@@ -24,7 +24,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function Card(_ref) {
   var post = _ref.post;
   var regex = /\s/g;
-  console.log(post.tags);
+  console.log(post);
   return __jsx("div", {
     __self: this,
     __source: {
@@ -41,7 +41,7 @@ function Card(_ref) {
       columnNumber: 9
     }
   }, __jsx("img", {
-    src: "https://uploads.guim.co.uk/2020/04/04/daniel-sessler-N98aPtXcDYs-unsplash.jpg",
+    src: post.img_url,
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_img,
     __self: this,
     __source: {
@@ -136,15 +136,24 @@ function Card(_ref) {
       lineNumber: 44,
       columnNumber: 9
     }
-  }, __jsx("div", {
+  }, __jsx("img", {
+    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_upvote,
+    src: "https://uploads.guim.co.uk/2020/04/15/culture.png",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 9
+    }
+  }), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_votes,
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 45,
-      columnNumber: 11
+      columnNumber: 107
     }
-  }, "\u2661 ", post.votes), __jsx("div", {
+  }, post.votes), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn,
     __self: this,
     __source: {
@@ -383,7 +392,7 @@ function Feed(_ref) {
       lineNumber: 18,
       columnNumber: 5
     }
-  }, sortedList.slice(0, 8).map(function (post) {
+  }, sortedList.slice(0, 15).map(function (post) {
     return __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
       href: "/post/".concat(post._id),
       __self: _this,
@@ -532,12 +541,36 @@ function NavBar() {
       lineNumber: 15,
       columnNumber: 7
     }
-  }, __jsx("div", {
-    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navbar_logo,
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16,
+      columnNumber: 7
+    }
+  }, __jsx("a", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 22
+    }
+  }, "  ", __jsx("img", {
+    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logo_png,
+    src: "https://uploads.guim.co.uk/2020/04/15/culture.png",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 27
+    }
+  }))), __jsx("div", {
+    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navbar_logo,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -545,14 +578,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 45
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 60
     }
   }, "Stagetime"))), __jsx("div", {
@@ -560,7 +593,7 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -568,14 +601,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 46
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 66
     }
   }, "Write a post")))));
@@ -659,10 +692,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar.module.css */ "./components/Sidebar/Sidebar.module.css");
 /* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! use-auth0-hooks */ "./node_modules/use-auth0-hooks/dist/index.js");
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "./node_modules/use-auth0-hooks/dist/index.js");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -673,6 +712,12 @@ function Sidebar(_ref) {
   var tags = _ref.tags,
       getPostByTag = _ref.getPostByTag,
       auth = _ref.auth;
+
+  var _useRouter = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])(),
+      pathname = _useRouter.pathname,
+      query = _useRouter.query; // const { isAuthenticated, isLoading, login, logout } = useAuth0();
+
+
   var user = auth.user;
   console.log('user', user);
   var tagsList = new Set();
@@ -693,16 +738,16 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 27,
       columnNumber: 5
     }
-  }, user && __jsx("div", {
+  }, user ? __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
-      columnNumber: 16
+      lineNumber: 30,
+      columnNumber: 7
     }
   }, __jsx("img", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_img,
@@ -710,7 +755,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 31,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -718,15 +763,74 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 32,
       columnNumber: 9
     }
-  }, " ", user.name)), __jsx("div", {
+  }, " ", user.name), __jsx("button", {
+    onClick: function onClick() {
+      return logout({
+        returnTo: 'http://localhost:3000'
+      });
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 7
+    }
+  }, "Logout")) : __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 7
+    }
+  }, __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tagline,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 7
+    }
+  }, "Stagetime is a community of comedians."), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_text,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 91
+    }
+  }, " Sign in below to write a post and join the discussion."), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 9
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/write",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 47
+    }
+  }, __jsx("a", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 67
+    }
+  }, "Login")))), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 42,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -734,15 +838,15 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 43,
       columnNumber: 7
     }
-  }, "Filter by tag"), __jsx("div", {
+  }, "Filter feed by tag"), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tags,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 44,
       columnNumber: 7
     }
   }, tagsArr.map(function (tag) {
@@ -753,14 +857,14 @@ function Sidebar(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29,
+        lineNumber: 45,
         columnNumber: 25
       }
     }, "#".concat(tag.toLowerCase()));
   })));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__["withAuth"])(Sidebar));
+/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["withAuth"])(Sidebar));
 
 /***/ }),
 
@@ -6025,7 +6129,7 @@ module.exports = factory(
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Card_feed_card_inner__164zN {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.Card_card_title__2OGLL {\n  font-size: 2rem;\n  margin: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 2.1rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.Card_card_tags__dn97P {\n  display: flex;\n  padding: 0.5rem .1rem;\n}\n\n.Card_tag__HkkY2 {\n  cursor: pointer;\n  font-size: .75rem;\n  padding: 0.25rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n}\n\n\n.Card_card_btn__B3f3Z {\n  float: right;\n  padding: .5rem;\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n}\n\n\n.Card_card_btn__B3f3Z:hover {\n  \n  background-color: #9efd6e;\n  \n}\n\n.Card_card_img__1Mpef {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  \n}\n\n\n\n.Card_card_votes__1orTj {\n font-size: 1.1rem; \n color: rgba(0, 0, 0, 0.548);\n margin: 0;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: flex-end;\n font-family: 'Roboto', sans-serif !important;\n\n}\n.Card_card_line__sDNBB {\n  display: flex;\n}\n.Card_card_author__3ZBUC {\n  font-size: 1rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 500;\n}\n\n.Card_card_timestamp__3sHBz {\n  color: rgba(0, 0, 0, 0.548);\n  font-size: 1rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.Card_card_font__2FMP5 {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.Card_card_bottom__8m777 {\n  margin-top: 1rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Card/Card.module.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,eAAe;EACf,aAAa;EACb,0BAA0B;EAC1B,iBAAiB;EACjB,mBAAmB;EACnB,0BAA0B;;AAE5B;;AAEA;EACE,aAAa;EACb,qBAAqB;AACvB;;AAEA;EACE,eAAe;EACf,iBAAiB;EACjB,gBAAgB;EAChB,yBAAyB;EACzB,YAAY;EACZ,gCAAgC;AAClC;;;AAGA;EACE,YAAY;EACZ,cAAc;EACd,YAAY;EACZ,yBAAyB;EACzB,6BAA6B;EAC7B,eAAe;EACf,kBAAkB;EAClB,gBAAgB;AAClB;;;AAGA;;EAEE,yBAAyB;;AAE3B;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,mBAAmB;;AAErB;;;;AAIA;CACC,iBAAiB;CACjB,2BAA2B;CAC3B,SAAS;CACT,UAAU;CACV,aAAa;CACb,sBAAsB;CACtB,qBAAqB;CACrB,yBAAyB;CACzB,4CAA4C;;AAE7C;AACA;EACE,aAAa;AACf;AACA;EACE,eAAe;EACf,sBAAsB;EACtB,2BAA2B;EAC3B,4CAA4C;EAC5C,gBAAgB;AAClB;;AAEA;EACE,2BAA2B;EAC3B,eAAe;EACf,sBAAsB;AACxB;;AAEA;EACE,iCAAiC;;AAEnC;;AAEA;EACE,gBAAgB;EAChB,kBAAkB;EAClB,aAAa;EACb,8BAA8B;AAChC","file":"Card.module.css","sourcesContent":[".feed_card_inner {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.card_title {\n  font-size: 2rem;\n  margin: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 2.1rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.card_tags {\n  display: flex;\n  padding: 0.5rem .1rem;\n}\n\n.tag {\n  cursor: pointer;\n  font-size: .75rem;\n  padding: 0.25rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n}\n\n\n.card_btn {\n  float: right;\n  padding: .5rem;\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n}\n\n\n.card_btn:hover {\n  \n  background-color: #9efd6e;\n  \n}\n\n.card_img {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  \n}\n\n\n\n.card_votes {\n font-size: 1.1rem; \n color: rgba(0, 0, 0, 0.548);\n margin: 0;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: flex-end;\n font-family: 'Roboto', sans-serif !important;\n\n}\n.card_line {\n  display: flex;\n}\n.card_author {\n  font-size: 1rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 500;\n}\n\n.card_timestamp {\n  color: rgba(0, 0, 0, 0.548);\n  font-size: 1rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.card_font {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.card_bottom {\n  margin-top: 1rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n}\n\n"]}]);
+exports.push([module.i, ".Card_feed_card_inner__164zN {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.Card_card_title__2OGLL {\n  font-size: 2rem;\n  margin: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 2.1rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.Card_card_tags__dn97P {\n  display: flex;\n  padding: 0.5rem .1rem;\n}\n\n.Card_tag__HkkY2 {\n  cursor: pointer;\n  font-size: .75rem;\n  padding: 0.25rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n}\n\n\n.Card_card_btn__B3f3Z {\n  float: right;\n  padding: .5rem;\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n}\n\n\n.Card_card_btn__B3f3Z:hover {\n  \n  background-color: #9efd6e;\n  \n}\n\n.Card_card_img__1Mpef {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  \n}\n\n.Card_card_upvote__2Jvhx {\nflex: 1 1;\nwidth: 5%;\nheight: 5%;\n\nmin-width: 30px;\nmax-width: 35px;\npadding: 0rem;\n\n}\n\n.Card_card_votes__1orTj {\n  flex: 15 1;\n font-size: 1.3rem; \n color: rgba(0, 0, 0, 0.747);\n margin: 0 .5rem;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: center;\n font-family: 'Roboto', sans-serif !important;\n\n}\n.Card_card_line__sDNBB {\n  display: flex;\n}\n.Card_card_author__3ZBUC {\n  font-size: 1rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 500;\n}\n\n.Card_card_timestamp__3sHBz {\n  color: rgba(0, 0, 0, 0.548);\n  font-size: 1rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.Card_card_font__2FMP5 {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.Card_card_bottom__8m777 {\n  margin-top: 1rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Card/Card.module.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,eAAe;EACf,aAAa;EACb,0BAA0B;EAC1B,iBAAiB;EACjB,mBAAmB;EACnB,0BAA0B;;AAE5B;;AAEA;EACE,aAAa;EACb,qBAAqB;AACvB;;AAEA;EACE,eAAe;EACf,iBAAiB;EACjB,gBAAgB;EAChB,yBAAyB;EACzB,YAAY;EACZ,gCAAgC;AAClC;;;AAGA;EACE,YAAY;EACZ,cAAc;EACd,YAAY;EACZ,yBAAyB;EACzB,6BAA6B;EAC7B,eAAe;EACf,kBAAkB;EAClB,gBAAgB;AAClB;;;AAGA;;EAEE,yBAAyB;;AAE3B;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,mBAAmB;;AAErB;;AAEA;AACA,SAAO;AACP,SAAS;AACT,UAAU;;AAEV,eAAe;AACf,eAAe;AACf,aAAa;;AAEb;;AAEA;EACE,UAAQ;CACT,iBAAiB;CACjB,2BAA2B;CAC3B,eAAe;CACf,UAAU;CACV,aAAa;CACb,sBAAsB;CACtB,qBAAqB;CACrB,uBAAuB;CACvB,4CAA4C;;AAE7C;AACA;EACE,aAAa;AACf;AACA;EACE,eAAe;EACf,sBAAsB;EACtB,2BAA2B;EAC3B,4CAA4C;EAC5C,gBAAgB;AAClB;;AAEA;EACE,2BAA2B;EAC3B,eAAe;EACf,sBAAsB;AACxB;;AAEA;EACE,iCAAiC;;AAEnC;;AAEA;EACE,gBAAgB;EAChB,kBAAkB;EAClB,aAAa;EACb,8BAA8B;AAChC","file":"Card.module.css","sourcesContent":[".feed_card_inner {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.card_title {\n  font-size: 2rem;\n  margin: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 2.1rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.card_tags {\n  display: flex;\n  padding: 0.5rem .1rem;\n}\n\n.tag {\n  cursor: pointer;\n  font-size: .75rem;\n  padding: 0.25rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n}\n\n\n.card_btn {\n  float: right;\n  padding: .5rem;\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n}\n\n\n.card_btn:hover {\n  \n  background-color: #9efd6e;\n  \n}\n\n.card_img {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  \n}\n\n.card_upvote {\nflex: 1;\nwidth: 5%;\nheight: 5%;\n\nmin-width: 30px;\nmax-width: 35px;\npadding: 0rem;\n\n}\n\n.card_votes {\n  flex: 15;\n font-size: 1.3rem; \n color: rgba(0, 0, 0, 0.747);\n margin: 0 .5rem;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: center;\n font-family: 'Roboto', sans-serif !important;\n\n}\n.card_line {\n  display: flex;\n}\n.card_author {\n  font-size: 1rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 500;\n}\n\n.card_timestamp {\n  color: rgba(0, 0, 0, 0.548);\n  font-size: 1rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.card_font {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.card_bottom {\n  margin-top: 1rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n}\n\n"]}]);
 // Exports
 exports.locals = {
 	"feed_card_inner": "Card_feed_card_inner__164zN",
@@ -6034,6 +6138,7 @@ exports.locals = {
 	"tag": "Card_tag__HkkY2",
 	"card_btn": "Card_card_btn__B3f3Z",
 	"card_img": "Card_card_img__1Mpef",
+	"card_upvote": "Card_card_upvote__2Jvhx",
 	"card_votes": "Card_card_votes__1orTj",
 	"card_line": "Card_card_line__sDNBB",
 	"card_author": "Card_card_author__3ZBUC",
@@ -6087,12 +6192,13 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "\n.NavBar_nav_wrapper__1WR3A {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n.NavBar_navbar__1e5Hf {\n  background-color: #fde56eb2;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1.5rem;\n\n}\n\n.NavBar_navbar_logo__3bO5G {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.NavBar_navbar_write__EY4SA {\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .7rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.NavBar_navbar_write__EY4SA:hover {\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid #6ecdfd;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .NavBar_navbar_write__EY4SA {\n    font-size: .8rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .NavBar_navbar_write__EY4SA {\n    display: none;\n  }\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/NavBar/NavBar.module.css"],"names":[],"mappings":";AACA;EACE,eAAe;EACf,WAAW;EACX,cAAc;EACd,MAAM;;AAER;AACA;EACE,2BAA2B;EAC3B,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,oBAAoB;EACpB,qBAAqB;;AAEvB;;AAEA;EACE,0BAA0B;EAC1B,cAAc;EACd,0BAA0B;EAC1B,iBAAiB;EACjB,iBAAiB;EACjB,aAAa;EACb,mBAAmB;EACnB,uBAAuB;;AAEzB;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,gBAAgB;EAChB,gBAAgB;EAChB,qCAAqC;EACrC,kBAAkB;;AAEpB;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,yBAAyB;AAC3B;;;AAGA;EACE;IACE,gBAAgB;EAClB;AACF;AACA;EACE;IACE,aAAa;EACf;AACF","file":"NavBar.module.css","sourcesContent":["\n.nav_wrapper {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n.navbar {\n  background-color: #fde56eb2;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1.5rem;\n\n}\n\n.navbar_logo {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.navbar_write {\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .7rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.navbar_write:hover {\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid #6ecdfd;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .navbar_write {\n    font-size: .8rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .navbar_write {\n    display: none;\n  }\n}"]}]);
+exports.push([module.i, "\n.NavBar_nav_wrapper__1WR3A {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n.NavBar_navbar__1e5Hf {\n  background-color: #fde56eb2;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1.5rem;\n \n}\n\n@media only screen and (min-width: 1000px) {\n  .NavBar_navbar__1e5Hf {\n    padding: 0 4rem;\n  }\n}\n\n.NavBar_navbar_logo__3bO5G {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  justify-self: flex-start;\n  \n\n}\n\n.NavBar_logo_png__386SP {\n\ncolor: rgba(0, 0, 0, 0.84);\n\ndisplay: inline-block;\nwidth: 2.5rem;\npadding: .3rem;\n\n}\n\n.NavBar_navbar_write__EY4SA {\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .7rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.NavBar_navbar_write__EY4SA:hover {\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid #6ecdfd;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .NavBar_navbar_write__EY4SA {\n    font-size: .8rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .NavBar_navbar_write__EY4SA {\n    display: none;\n  }\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/NavBar/NavBar.module.css"],"names":[],"mappings":";AACA;EACE,eAAe;EACf,WAAW;EACX,cAAc;EACd,MAAM;;AAER;AACA;EACE,2BAA2B;EAC3B,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,oBAAoB;EACpB,qBAAqB;;AAEvB;;AAEA;EACE;IACE,eAAe;EACjB;AACF;;AAEA;EACE,0BAA0B;EAC1B,cAAc;EACd,0BAA0B;EAC1B,iBAAiB;EACjB,iBAAiB;EACjB,aAAa;EACb,wBAAwB;;;AAG1B;;AAEA;;AAEA,0BAA0B;;AAE1B,qBAAqB;AACrB,aAAa;AACb,cAAc;;AAEd;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,gBAAgB;EAChB,gBAAgB;EAChB,qCAAqC;EACrC,kBAAkB;;AAEpB;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,yBAAyB;AAC3B;;;AAGA;EACE;IACE,gBAAgB;EAClB;AACF;AACA;EACE;IACE,aAAa;EACf;AACF","file":"NavBar.module.css","sourcesContent":["\n.nav_wrapper {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n.navbar {\n  background-color: #fde56eb2;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1.5rem;\n \n}\n\n@media only screen and (min-width: 1000px) {\n  .navbar {\n    padding: 0 4rem;\n  }\n}\n\n.navbar_logo {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  justify-self: flex-start;\n  \n\n}\n\n.logo_png {\n\ncolor: rgba(0, 0, 0, 0.84);\n\ndisplay: inline-block;\nwidth: 2.5rem;\npadding: .3rem;\n\n}\n\n.navbar_write {\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .7rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.navbar_write:hover {\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid #6ecdfd;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .navbar_write {\n    font-size: .8rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .navbar_write {\n    display: none;\n  }\n}"]}]);
 // Exports
 exports.locals = {
 	"nav_wrapper": "NavBar_nav_wrapper__1WR3A",
 	"navbar": "NavBar_navbar__1e5Hf",
 	"navbar_logo": "NavBar_navbar_logo__3bO5G",
+	"logo_png": "NavBar_logo_png__386SP",
 	"navbar_write": "NavBar_navbar_write__EY4SA"
 };
 
@@ -6107,7 +6213,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n\n  min-width: 20vw;\n  flex: 2 1;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n \n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.Sidebar_sidebar_profile__19RNM {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: 1rem;\n  \n}\n\n.Sidebar_sidebar_img__2FNKS {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.Sidebar_sidebar_name__3zubS {\n  padding: 1rem;\n  font-weight: 500;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,eAAe;EACf,SAAO;EACP,oCAAoC;EACpC,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,aAAa;;AAEf;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;;;AAGA;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd;;AAEA;EACE,UAAU;EACV,oCAAoC;EACpC,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,wBAAwB;EACxB,kBAAkB;EAClB,aAAa;;AAEf;;AAEA;EACE,UAAU;EACV,kBAAkB;EAClB,YAAY;EACZ,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;AAClB","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n\n  min-width: 20vw;\n  flex: 2;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_tags {\n \n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.sidebar_profile {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: 1rem;\n  \n}\n\n.sidebar_img {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.sidebar_name {\n  padding: 1rem;\n  font-weight: 500;\n}"]}]);
+exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n\n  min-width: 20vw;\n  flex: 2 1;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n  \n}\n\n@media only screen and (max-width: 720px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n \n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.Sidebar_sidebar_tag__yktie:focus {\n  background-color: #6ecdfd;\n}\n\n.Sidebar_sidebar_profile__19RNM {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.Sidebar_sidebar_img__2FNKS {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.Sidebar_sidebar_name__3zubS {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.Sidebar_sidebar_login__2lKjx{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.7rem .3rem;\n  margin: .1rem auto;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid #6ecdfd;  border-radius: 5px;\n  background-color: #6ecdfd;\n  color: white;\n  width: 50%;\n  min-width: 4rem;\n\n  \n}\n\n.Sidebar_sidebar_login__2lKjx:hover {\n \n  background-color: #9efd6e;\n  border: 1px solid #9efd6e;\n}\n\n.Sidebar_sidebar_text__g7JSJ {\n  font-size: 1rem;\n  padding: .4rem;\n\n}\n\n\n.Sidebar_sidebar_tagline__1Rpho {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 990px) {\n  .Sidebar_sidebar_text__g7JSJ {\n    display: none;\n  }\n  .Sidebar_sidebar_tagline__1Rpho {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,eAAe;EACf,SAAO;EACP,oCAAoC;EACpC,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,aAAa;;;AAGf;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;;;AAGA;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,UAAU;EACV,oCAAoC;EACpC,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,wBAAwB;EACxB,kBAAkB;EAClB,cAAc;;;AAGhB;;AAEA;EACE,UAAU;EACV,kBAAkB;EAClB,YAAY;EACZ,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;AAClB;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,kBAAkB;EAClB,gBAAgB;EAChB,gBAAgB;EAChB,yBAAyB,GAAG,kBAAkB;EAC9C,yBAAyB;EACzB,YAAY;EACZ,UAAU;EACV,eAAe;;;AAGjB;;AAEA;;EAEE,yBAAyB;EACzB,yBAAyB;AAC3B;;AAEA;EACE,eAAe;EACf,cAAc;;AAEhB;;;AAGA;EACE,eAAe;EACf,cAAc;EACd,gBAAgB;;AAElB;;AAEA;EACE;IACE,aAAa;EACf;EACA;IACE,gBAAgB;IAChB,aAAa;EACf;AACF","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n\n  min-width: 20vw;\n  flex: 2;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n  \n}\n\n@media only screen and (max-width: 720px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_tags {\n \n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.sidebar_tag:focus {\n  background-color: #6ecdfd;\n}\n\n.sidebar_profile {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.sidebar_img {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.sidebar_name {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.sidebar_login{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.7rem .3rem;\n  margin: .1rem auto;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid #6ecdfd;  border-radius: 5px;\n  background-color: #6ecdfd;\n  color: white;\n  width: 50%;\n  min-width: 4rem;\n\n  \n}\n\n.sidebar_login:hover {\n \n  background-color: #9efd6e;\n  border: 1px solid #9efd6e;\n}\n\n.sidebar_text {\n  font-size: 1rem;\n  padding: .4rem;\n\n}\n\n\n.sidebar_tagline {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 990px) {\n  .sidebar_text {\n    display: none;\n  }\n  .sidebar_tagline {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}"]}]);
 // Exports
 exports.locals = {
 	"sidebar": "Sidebar_sidebar__ma1yP",
@@ -6116,7 +6222,10 @@ exports.locals = {
 	"sidebar_tag": "Sidebar_sidebar_tag__yktie",
 	"sidebar_profile": "Sidebar_sidebar_profile__19RNM",
 	"sidebar_img": "Sidebar_sidebar_img__2FNKS",
-	"sidebar_name": "Sidebar_sidebar_name__3zubS"
+	"sidebar_name": "Sidebar_sidebar_name__3zubS",
+	"sidebar_login": "Sidebar_sidebar_login__2lKjx",
+	"sidebar_text": "Sidebar_sidebar_text__g7JSJ",
+	"sidebar_tagline": "Sidebar_sidebar_tagline__1Rpho"
 };
 
 /***/ }),
@@ -29331,7 +29440,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var e,t=(e=__webpack_require__(/*! querystring */ "./node_modules/querystring-es3/index.js"))&&"object"==typeof e&&"default"in e?e.default:e,r=/https?|ftp|gopher|file/;function o(e){"string"==typeof e&&(e=f(e));var o=function(e,t,r){var o=e.auth,a=e.hostname,s=e.protocol||"",h=e.pathname||"",c=e.hash||"",p=e.query||"",n=!1;o=o?encodeURIComponent(o).replace(/%3A/i,":")+"@":"",e.host?n=o+e.host:a&&(n=o+(~a.indexOf(":")?"["+a+"]":a),e.port&&(n+=":"+e.port)),p&&"object"==typeof p&&(p=t.encode(p));var l=e.search||p&&"?"+p||"";return s&&":"!==s.substr(-1)&&(s+=":"),e.slashes||(!s||r.test(s))&&!1!==n?(n="//"+(n||""),h&&"/"!==h[0]&&(h="/"+h)):n||(n=""),c&&"#"!==c[0]&&(c="#"+c),l&&"?"!==l[0]&&(l="?"+l),{protocol:s,host:n,pathname:h=h.replace(/[?#]/g,encodeURIComponent),search:l=l.replace("#","%23"),hash:c}}(e,t,r);return""+o.protocol+o.host+o.pathname+o.search+o.hash}var a="http://",s="w.w",h=a+s,c=/^https?|ftp|gopher|file/,p=/^(.*?)([#?].*)/,n=/^([a-z0-9.+-]*:)(\/{0,3})(.*)/i,l=/^([a-z0-9.+-]*:)?\/\/\/*/i,i=/^([a-z0-9.+-]*:)(\/{0,2})\[(.*)\]$/i;function u(e){try{return decodeURI(e)}catch(t){return e}}function f(e,r,a){void 0===r&&(r=!1),void 0===a&&(a=!1);var f=(e=e.trim()).match(p);e=f?u(f[1]).replace(/\\/g,"/")+f[2]:u(e).replace(/\\/g,"/"),i.test(e)&&"/"!==e.slice(-1)&&(e+="/");var m=!/(^javascript)/.test(e)&&e.match(n),v=l.test(e),d="";m&&(c.test(m[1])||(d=m[1].toLowerCase(),e=""+m[2]+m[3]),m[2]||(v=!1,c.test(m[1])?(d=m[1],e=""+m[3]):e="//"+m[3]),3!==m[2].length&&1!==m[2].length||(d=m[1],e="/"+m[3]));var g,b=e.match(/(:[0-9]+)/),y="";b&&b[1]&&3===b[1].length&&(e=e.replace(y=b[1],y+"00"));var w={},x="",R="";try{g=new URL(e)}catch(t){x=t,d||a||!/^\/\//.test(e)||/^\/\/.+[@.]/.test(e)||(R="/",e=e.substr(1));try{g=new URL(e,h)}catch(e){return w.protocol=d,w.href=d,w}}w.slashes=v&&!R,w.host=g.host===s?"":g.host,w.hostname=g.hostname===s?"":g.hostname.replace(/(\[|\])/g,""),w.protocol=x?d||null:g.protocol,w.search=g.search.replace(/\\/g,"%5C"),w.hash=g.hash.replace(/\\/g,"%5C");var U=e.split("#");!w.search&&~U[0].indexOf("?")&&(w.search="?"),w.hash||""!==U[1]||(w.hash="#"),w.query=r?t.decode(g.search.substr(1)):w.search.substr(1),w.pathname=R+u(g.pathname).replace(/"/g,"%22"),"about:"===w.protocol&&"blank"===w.pathname&&(w.protocol="",w.pathname=""),x&&"/"!==e[0]&&(w.pathname=w.pathname.substr(1)),d&&!c.test(d)&&"/"!==e.slice(-1)&&"/"===w.pathname&&(w.pathname=""),w.path=w.pathname+w.search,w.auth=[g.username,g.password].map(decodeURIComponent).filter(Boolean).join(":"),w.port=g.port,y&&(w.host=w.host.replace(y+"00",y),w.port=w.port.slice(0,-2)),w.href=R?""+w.pathname+w.search+w.hash:o(w);var j=/^(file)/.test(w.href)?["host","hostname"]:[];return Object.keys(w).forEach(function(e){~j.indexOf(e)||(w[e]=w[e]||null)}),w}var m=/^([a-z0-9.+-]*:\/\/\/)([a-z0-9.+-]:\/*)?/i,v=/https?|ftp|gopher|file/;function d(e,t){var r="string"==typeof e?f(e):e;e="object"==typeof e?o(e):e;var s=f(t),c="";r.protocol&&!r.slashes&&(c=r.protocol,e=e.replace(r.protocol,""),c+="/"===t[0]||"/"===e[0]?"/":""),c&&s.protocol&&(c="",s.slashes||(c=s.protocol,t=t.replace(s.protocol,"")));var p=e.match(m);p&&!s.protocol&&(e=e.substr((c=p[1]+(p[2]||"")).length),/^\/\/[^\/]/.test(t)&&(c=c.slice(0,-1)));var n=new URL(e,h+"/"),l=new URL(t,n).toString().replace(h,""),i=s.protocol||r.protocol;return i+=r.slashes||s.slashes?"//":"",!c&&i?l=l.replace(a,i):c&&(l=l.replace(a,"")),v.test(l)||~t.indexOf(".")||"/"===e.slice(-1)||"/"===t.slice(-1)||"/"!==l.slice(-1)||(l=l.slice(0,-1)),c&&(l=c+("/"===l[0]?l.substr(1):l)),l}exports.parse=f,exports.format=o,exports.resolve=d,exports.resolveObject=function(e,t){return f(d(e,t))};
+var e,t=(e=__webpack_require__(/*! querystring */ "./node_modules/querystring-es3/index.js"))&&"object"==typeof e&&"default"in e?e.default:e,r=/https?|ftp|gopher|file/;function o(e){"string"==typeof e&&(e=g(e));var o=function(e,t,r){var o=e.auth,a=e.hostname,s=e.protocol||"",c=e.pathname||"",h=e.hash||"",p=e.query||"",n=!1;o=o?encodeURIComponent(o).replace(/%3A/i,":")+"@":"",e.host?n=o+e.host:a&&(n=o+(~a.indexOf(":")?"["+a+"]":a),e.port&&(n+=":"+e.port)),p&&"object"==typeof p&&(p=t.encode(p));var l=e.search||p&&"?"+p||"";return s&&":"!==s.substr(-1)&&(s+=":"),e.slashes||(!s||r.test(s))&&!1!==n?(n="//"+(n||""),c&&"/"!==c[0]&&(c="/"+c)):n||(n=""),h&&"#"!==h[0]&&(h="#"+h),l&&"?"!==l[0]&&(l="?"+l),{protocol:s,host:n,pathname:c=c.replace(/[?#]/g,encodeURIComponent),search:l=l.replace("#","%23"),hash:h}}(e,t,r);return""+o.protocol+o.host+o.pathname+o.search+o.hash}var a="http://",s="w.w",c=a+s,h=/^([a-z0-9.+-]*:\/\/\/)([a-z0-9.+-]:\/*)?/i,p=/https?|ftp|gopher|file/;function n(e,t){var r="string"==typeof e?g(e):e;e="object"==typeof e?o(e):e;var s=g(t),n="";r.protocol&&!r.slashes&&(n=r.protocol,e=e.replace(r.protocol,""),n+="/"===t[0]||"/"===e[0]?"/":""),n&&s.protocol&&(n="",s.slashes||(n=s.protocol,t=t.replace(s.protocol,"")));var l=e.match(h);l&&!s.protocol&&(e=e.substr((n=l[1]+(l[2]||"")).length),/^\/\/[^/]/.test(t)&&(n=n.slice(0,-1)));var i=new URL(e,c+"/"),f=new URL(t,i).toString().replace(c,""),u=s.protocol||r.protocol;return u+=r.slashes||s.slashes?"//":"",!n&&u?f=f.replace(a,u):n&&(f=f.replace(a,"")),p.test(f)||~t.indexOf(".")||"/"===e.slice(-1)||"/"===t.slice(-1)||"/"!==f.slice(-1)||(f=f.slice(0,-1)),n&&(f=n+("/"===f[0]?f.substr(1):f)),f}function l(){}l.parse=g,l.format=o,l.resolve=n,l.resolveObject=n;var i=/^https?|ftp|gopher|file/,f=/^(.*?)([#?].*)/,u=/^([a-z0-9.+-]*:)(\/{0,3})(.*)/i,m=/^([a-z0-9.+-]*:)?\/\/\/*/i,v=/^([a-z0-9.+-]*:)(\/{0,2})\[(.*)\]$/i;function d(e){try{return decodeURI(e)}catch(t){return e}}function g(e,r,a){if(void 0===r&&(r=!1),void 0===a&&(a=!1),e&&"object"==typeof e&&e instanceof l)return e;var h=(e=e.trim()).match(f);e=h?d(h[1]).replace(/\\/g,"/")+h[2]:d(e).replace(/\\/g,"/"),v.test(e)&&"/"!==e.slice(-1)&&(e+="/");var p=!/(^javascript)/.test(e)&&e.match(u),n=m.test(e),g="";p&&(i.test(p[1])||(g=p[1].toLowerCase(),e=""+p[2]+p[3]),p[2]||(n=!1,i.test(p[1])?(g=p[1],e=""+p[3]):e="//"+p[3]),3!==p[2].length&&1!==p[2].length||(g=p[1],e="/"+p[3]));var b,y=(h?h[1]:e).match(/(:[0-9]+)/),j="";y&&y[1]&&3===y[1].length&&(e=e.replace(j=y[1],j+"00"));var w=new l,x="",U="";try{b=new URL(e)}catch(t){x=t,g||a||!/^\/\//.test(e)||/^\/\/.+[@.]/.test(e)||(U="/",e=e.substr(1));try{b=new URL(e,c)}catch(e){return w.protocol=g,w.href=g,w}}w.slashes=n&&!U,w.host=b.host===s?"":b.host,w.hostname=b.hostname===s?"":b.hostname.replace(/(\[|\])/g,""),w.protocol=x?g||null:b.protocol,w.search=b.search.replace(/\\/g,"%5C"),w.hash=b.hash.replace(/\\/g,"%5C");var R=e.split("#");!w.search&&~R[0].indexOf("?")&&(w.search="?"),w.hash||""!==R[1]||(w.hash="#"),w.query=r?t.decode(b.search.substr(1)):w.search.substr(1),w.pathname=U+d(b.pathname).replace(/"/g,"%22"),"about:"===w.protocol&&"blank"===w.pathname&&(w.protocol="",w.pathname=""),x&&"/"!==e[0]&&(w.pathname=w.pathname.substr(1)),g&&!i.test(g)&&"/"!==e.slice(-1)&&"/"===w.pathname&&(w.pathname=""),w.path=w.pathname+w.search,w.auth=[b.username,b.password].map(decodeURIComponent).filter(Boolean).join(":"),w.port=b.port,j&&(w.host=w.host.replace(j+"00",j),w.port=w.port.slice(0,-2)),w.href=U?""+w.pathname+w.search+w.hash:o(w);var O=/^(file)/.test(w.href)?["host","hostname"]:[];return Object.keys(w).forEach(function(e){~O.indexOf(e)||(w[e]=w[e]||null)}),w}exports.parse=g,exports.format=o,exports.resolve=n,exports.resolveObject=function(e,t){return g(n(e,t))},exports.Url=l;
 //# sourceMappingURL=index.js.map
 
 
@@ -29421,6 +29530,8 @@ var _url = __webpack_require__(/*! url */ "./node_modules/native-url/dist/index.
 var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
 
 var _router = _interopRequireDefault(__webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js"));
+
+var _router2 = __webpack_require__(/*! ../next-server/lib/router/router */ "./node_modules/next/dist/next-server/lib/router/router.js");
 
 function isLocal(href) {
   var url = (0, _url.parse)(href, false, true);
@@ -29521,8 +29632,8 @@ var Link = /*#__PURE__*/function (_react$Component) {
 
     _this.formatUrls = memoizedFormatUrl(function (href, asHref) {
       return {
-        href: formatUrl(href),
-        as: asHref ? formatUrl(asHref) : asHref
+        href: (0, _router2.addBasePath)(formatUrl(href)),
+        as: asHref ? (0, _router2.addBasePath)(formatUrl(asHref)) : asHref
       };
     });
 
@@ -29790,7 +29901,7 @@ var singletonRouter = {
   }
 }; // Create public properties and methods of the router in the singletonRouter
 
-var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback'];
+var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback', 'basePath'];
 var routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
 var coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
 
@@ -30041,6 +30152,10 @@ var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/
 
 exports.RouterContext = React.createContext(null);
 
+if (true) {
+  exports.RouterContext.displayName = 'RouterContext';
+}
+
 /***/ }),
 
 /***/ "./node_modules/next/dist/next-server/lib/router/router.js":
@@ -30083,10 +30198,16 @@ var route_matcher_1 = __webpack_require__(/*! ./utils/route-matcher */ "./node_m
 
 var route_regex_1 = __webpack_require__(/*! ./utils/route-regex */ "./node_modules/next/dist/next-server/lib/router/utils/route-regex.js");
 
+var basePath =  false || '';
+
 function addBasePath(path) {
-  // variable is always a string
-  var p = "";
-  return path.indexOf(p) !== 0 ? p + path : path;
+  return path.indexOf(basePath) !== 0 ? basePath + path : path;
+}
+
+exports.addBasePath = addBasePath;
+
+function delBasePath(path) {
+  return path.indexOf(basePath) === 0 ? path.substr(basePath.length) || '/' : path;
 }
 
 function toRoute(path) {
@@ -30258,6 +30379,7 @@ var Router = /*#__PURE__*/function () {
 
     this.asPath = // @ts-ignore this is temporarily global (attached to window)
     is_dynamic_1.isDynamicRoute(pathname) && __NEXT_DATA__.autoExport ? pathname : as;
+    this.basePath = basePath;
     this.sub = subscription;
     this.clc = null;
     this._wrapApp = wrapApp; // make sure to ignore extra popState in safari on navigating
@@ -30364,7 +30486,9 @@ var Router = /*#__PURE__*/function () {
 
 
         var url = typeof _url === 'object' ? utils_1.formatWithValidation(_url) : _url;
-        var as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as; // Add the ending slash to the paths. So, we can serve the
+        var as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as;
+        url = addBasePath(url);
+        as = addBasePath(as); // Add the ending slash to the paths. So, we can serve the
         // "<page>/index.html" directly for the SSR page.
 
         if (false) { var rewriteUrlForNextExport; }
@@ -30380,7 +30504,7 @@ var Router = /*#__PURE__*/function () {
           _this2.asPath = as;
           Router.events.emit('hashChangeStart', as);
 
-          _this2.changeState(method, url, addBasePath(as), options);
+          _this2.changeState(method, url, as, options);
 
           _this2.scrollToHash(as);
 
@@ -30450,7 +30574,7 @@ var Router = /*#__PURE__*/function () {
 
           Router.events.emit('beforeHistoryChange', as);
 
-          _this2.changeState(method, url, addBasePath(as), options);
+          _this2.changeState(method, url, as, options);
 
           if (true) {
             var appComp = _this2.components['/_app'].Component;
@@ -30720,7 +30844,8 @@ var Router = /*#__PURE__*/function () {
           return;
         }
 
-        Promise.all([_this4.pageLoader.prefetchData(url, asPath), _this4.pageLoader[options.priority ? 'loadPage' : 'prefetch'](toRoute(pathname))]).then(function () {
+        var route = delBasePath(toRoute(pathname));
+        Promise.all([_this4.pageLoader.prefetchData(url, delBasePath(asPath)), _this4.pageLoader[options.priority ? 'loadPage' : 'prefetch'](route)]).then(function () {
           return resolve();
         }, reject);
       });
@@ -30739,14 +30864,15 @@ var Router = /*#__PURE__*/function () {
                 cancelled = true;
               };
 
-              _context.next = 4;
+              route = delBasePath(route);
+              _context.next = 5;
               return _regeneratorRuntime.awrap(this.pageLoader.loadPage(route));
 
-            case 4:
+            case 5:
               componentResult = _context.sent;
 
               if (!cancelled) {
-                _context.next = 9;
+                _context.next = 10;
                 break;
               }
 
@@ -30754,14 +30880,14 @@ var Router = /*#__PURE__*/function () {
               error.cancelled = true;
               throw error;
 
-            case 9:
+            case 10:
               if (cancel === this.clc) {
                 this.clc = null;
               }
 
               return _context.abrupt("return", componentResult);
 
-            case 11:
+            case 12:
             case "end":
               return _context.stop();
           }
@@ -30890,7 +31016,16 @@ function getRouteMatcher(routeRegex) {
       return false;
     }
 
-    var decode = decodeURIComponent;
+    var decode = function decode(param) {
+      try {
+        return decodeURIComponent(param);
+      } catch (_) {
+        var err = new Error('failed to decode param');
+        err.code = 'DECODE_FAILED';
+        throw err;
+      }
+    };
+
     var params = {};
     Object.keys(groups).forEach(function (slugName) {
       var g = groups[slugName];
@@ -30972,19 +31107,12 @@ var url_1 = __webpack_require__(/*! url */ "./node_modules/native-url/dist/index
 
 
 function execOnce(fn) {
-  var _this = this;
-
   var used = false;
-  var result = null;
+  var result;
   return function () {
     if (!used) {
       used = true;
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      result = fn.apply(_this, args);
+      result = fn.apply(void 0, arguments);
     }
 
     return result;
@@ -51223,7 +51351,7 @@ function parse(input, options) {
 
 		// Missing `=` should be `null`:
 		// http://w3.org/TR/2012/WD-url-20120524/#collect-url-parameters
-		value = value === undefined ? null : options.arrayFormat === 'comma' ? value : decode(value, options);
+		value = value === undefined ? null : ['comma', 'separator'].includes(options.arrayFormat) ? value : decode(value, options);
 		formatter(decode(key, options), value, ret);
 	}
 
@@ -51597,6 +51725,10 @@ function Create(_ref) {
       tags = _useState3[0],
       setTags = _useState3[1];
 
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      image = _useState4[0],
+      setImage = _useState4[1];
+
   var createPost = function createPost(p) {
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:3001/posts', {
       p: p
@@ -51611,11 +51743,13 @@ function Create(_ref) {
     var combinePost = {
       headline: headline,
       tags: tags,
-      body: value
+      body: value,
+      image: image
     };
     createPost(combinePost);
     setValue('');
     setHeadline('');
+    setImage('');
   };
 
   var changeHandler = function changeHandler(e) {
@@ -51626,12 +51760,16 @@ function Create(_ref) {
     setTags(e.target.value);
   };
 
+  var imageChangeHandler = function imageChangeHandler(e) {
+    setImage(e.target.value);
+  };
+
   return __jsx("div", {
     className: "create_wrapper",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 51,
       columnNumber: 5
     }
   }, __jsx("span", {
@@ -51639,7 +51777,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 52,
       columnNumber: 7
     }
   }, "Headline:"), __jsx("input", {
@@ -51650,7 +51788,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 53,
       columnNumber: 7
     }
   }), __jsx("span", {
@@ -51658,7 +51796,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 54,
       columnNumber: 7
     }
   }, "Tags:"), __jsx("input", {
@@ -51669,7 +51807,26 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 55,
+      columnNumber: 7
+    }
+  }), __jsx("span", {
+    className: "headline_span",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56,
+      columnNumber: 7
+    }
+  }, "Image:"), __jsx("input", {
+    className: "create_tags",
+    value: image,
+    onChange: imageChangeHandler,
+    placeholder: "Add an optional image url...",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
       columnNumber: 7
     }
   }), __jsx("span", {
@@ -51677,7 +51834,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 58,
       columnNumber: 5
     }
   }, "Body:"), __jsx(ReactQuill, {
@@ -51687,7 +51844,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 59,
       columnNumber: 5
     }
   }), __jsx("div", {
@@ -51695,7 +51852,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 60,
       columnNumber: 4
     }
   }, __jsx("button", {
@@ -51705,7 +51862,7 @@ function Create(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 60,
       columnNumber: 33
     }
   }, " Publish ")));
@@ -51715,7 +51872,7 @@ function Create(_ref) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************************************/
@@ -51738,5 +51895,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

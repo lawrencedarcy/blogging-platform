@@ -15,6 +15,7 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
   const [value, setValue] = useState('');
   const [headline, setHeadline] = useState('');
   const [tags, setTags] = useState('');
+  const [image, setImage] = useState('');
 
   const createPost = (p) => {
     axios.post('http://localhost:3001/posts', {p})
@@ -28,10 +29,11 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 
 
   const submitHandler = () => {
-    const combinePost = {headline, tags, body: value};
+    const combinePost = {headline, tags, body: value, image: image};
     createPost(combinePost);
     setValue('');
     setHeadline('');
+    setImage('');
   }
 
   const changeHandler = (e) => {
@@ -39,6 +41,9 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
   }
   const tagChangeHandler = (e) => {
     setTags(e.target.value);
+  }
+  const imageChangeHandler = (e) => {
+    setImage(e.target.value);
   }
  
   return (
@@ -48,6 +53,8 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
       <input className="create_headline" value={headline} onChange={changeHandler} placeholder='Title your piece...'></input>
       <span className="headline_span">Tags:</span>
       <input className="create_tags" value={tags} onChange={tagChangeHandler} placeholder='Up to four key topics, comma separated...' ></input>
+      <span className="headline_span">Image:</span>
+      <input className="create_tags" value={image} onChange={imageChangeHandler} placeholder='Add an optional image url...' ></input>
     <span className="body_span">Body:</span>
     <ReactQuill theme="snow" value={value} onChange={setValue}  />
    <div className="btn_wrapper"><button className="submit_btn" type="submit" onClick={submitHandler} > Publish </button></div> 

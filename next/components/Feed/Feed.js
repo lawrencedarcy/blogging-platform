@@ -17,7 +17,7 @@ function Feed({posts}) {
    
     <div>
      
-     { sortedList.slice(0, 8).map(post => (
+     { sortedList.slice(0, 15).map(post => (
         <Link href={`/post/${post._id}`}  >
         <div className={styles.feed_card}>
           <Card key={post.id} post={post} />

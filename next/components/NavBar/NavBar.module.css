@@ -14,7 +14,13 @@
   align-items: center;
   padding: 1rem 2.3rem;
   margin-bottom: 1.5rem;
+ 
+}
 
+@media only screen and (min-width: 1000px) {
+  .navbar {
+    padding: 0 4rem;
+  }
 }
 
 .navbar_logo {
@@ -24,8 +30,18 @@
   font-weight: bold;
   font-size: 1.6rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-self: flex-start;
+  
+
+}
+
+.logo_png {
+
+color: rgba(0, 0, 0, 0.84);
+
+display: inline-block;
+width: 2.5rem;
+padding: .3rem;
 
 }
 

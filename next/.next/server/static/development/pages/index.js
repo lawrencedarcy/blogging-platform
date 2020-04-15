@@ -88,10 +88,32 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "../next-server/lib/router-context":
+/*!**************************************************************!*\
+  !*** external "next/dist/next-server/lib/router-context.js" ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/dist/next-server/lib/router-context.js");
+
+/***/ }),
+
+/***/ "../next-server/lib/utils":
+/*!*****************************************************!*\
+  !*** external "next/dist/next-server/lib/utils.js" ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/dist/next-server/lib/utils.js");
+
+/***/ }),
 
 /***/ "./components/Card/Card.js":
 /*!*********************************!*\
@@ -118,7 +140,7 @@ function Card({
   post
 }) {
   const regex = /\s/g;
-  console.log(post.tags);
+  console.log(post);
   return __jsx("div", {
     __self: this,
     __source: {
@@ -135,7 +157,7 @@ function Card({
       columnNumber: 9
     }
   }, __jsx("img", {
-    src: "https://uploads.guim.co.uk/2020/04/04/daniel-sessler-N98aPtXcDYs-unsplash.jpg",
+    src: post.img_url,
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_img,
     __self: this,
     __source: {
@@ -230,15 +252,24 @@ function Card({
       lineNumber: 44,
       columnNumber: 9
     }
-  }, __jsx("div", {
+  }, __jsx("img", {
+    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_upvote,
+    src: "https://uploads.guim.co.uk/2020/04/15/culture.png",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 9
+    }
+  }), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_votes,
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 45,
-      columnNumber: 11
+      columnNumber: 107
     }
-  }, "\u2661 ", post.votes), __jsx("div", {
+  }, post.votes), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn,
     __self: this,
     __source: {
@@ -268,6 +299,7 @@ module.exports = {
 	"tag": "Card_tag__HkkY2",
 	"card_btn": "Card_card_btn__B3f3Z",
 	"card_img": "Card_card_img__1Mpef",
+	"card_upvote": "Card_card_upvote__2Jvhx",
 	"card_votes": "Card_card_votes__1orTj",
 	"card_line": "Card_card_line__sDNBB",
 	"card_author": "Card_card_author__3ZBUC",
@@ -394,7 +426,7 @@ function Feed({
       lineNumber: 18,
       columnNumber: 5
     }
-  }, sortedList.slice(0, 8).map(post => __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, sortedList.slice(0, 15).map(post => __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: `/post/${post._id}`,
     __self: this,
     __source: {
@@ -494,12 +526,36 @@ function NavBar() {
       lineNumber: 15,
       columnNumber: 7
     }
-  }, __jsx("div", {
-    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navbar_logo,
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16,
+      columnNumber: 7
+    }
+  }, __jsx("a", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 22
+    }
+  }, "  ", __jsx("img", {
+    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logo_png,
+    src: "https://uploads.guim.co.uk/2020/04/15/culture.png",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 27
+    }
+  }))), __jsx("div", {
+    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navbar_logo,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -507,14 +563,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 45
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 60
     }
   }, "Stagetime"))), __jsx("div", {
@@ -522,7 +578,7 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -530,14 +586,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 46
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 66
     }
   }, "Write a post")))));
@@ -559,6 +615,7 @@ module.exports = {
 	"nav_wrapper": "NavBar_nav_wrapper__1WR3A",
 	"navbar": "NavBar_navbar__1e5Hf",
 	"navbar_logo": "NavBar_navbar_logo__3bO5G",
+	"logo_png": "NavBar_logo_png__386SP",
 	"navbar_write": "NavBar_navbar_write__EY4SA"
 };
 
@@ -577,10 +634,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar.module.css */ "./components/Sidebar/Sidebar.module.css");
 /* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -590,6 +653,11 @@ function Sidebar({
   getPostByTag,
   auth
 }) {
+  const {
+    pathname,
+    query
+  } = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])(); // const { isAuthenticated, isLoading, login, logout } = useAuth0();
+
   const {
     user
   } = auth;
@@ -608,16 +676,16 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 27,
       columnNumber: 5
     }
-  }, user && __jsx("div", {
+  }, user ? __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
-      columnNumber: 16
+      lineNumber: 30,
+      columnNumber: 7
     }
   }, __jsx("img", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_img,
@@ -625,7 +693,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 31,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -633,15 +701,72 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 32,
       columnNumber: 9
     }
-  }, " ", user.name)), __jsx("div", {
+  }, " ", user.name), __jsx("button", {
+    onClick: () => logout({
+      returnTo: 'http://localhost:3000'
+    }),
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 7
+    }
+  }, "Logout")) : __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 7
+    }
+  }, __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tagline,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 7
+    }
+  }, "Stagetime is a community of comedians."), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_text,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 91
+    }
+  }, " Sign in below to write a post and join the discussion."), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 9
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/write",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 47
+    }
+  }, __jsx("a", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 67
+    }
+  }, "Login")))), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 42,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -649,15 +774,15 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 43,
       columnNumber: 7
     }
-  }, "Filter by tag"), __jsx("div", {
+  }, "Filter feed by tag"), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tags,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 44,
       columnNumber: 7
     }
   }, tagsArr.map(tag => __jsx("button", {
@@ -667,13 +792,13 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 45,
       columnNumber: 25
     }
   }, `#${tag.toLowerCase()}`))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__["withAuth"])(Sidebar));
+/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["withAuth"])(Sidebar));
 
 /***/ }),
 
@@ -692,7 +817,10 @@ module.exports = {
 	"sidebar_tag": "Sidebar_sidebar_tag__yktie",
 	"sidebar_profile": "Sidebar_sidebar_profile__19RNM",
 	"sidebar_img": "Sidebar_sidebar_img__2FNKS",
-	"sidebar_name": "Sidebar_sidebar_name__3zubS"
+	"sidebar_name": "Sidebar_sidebar_name__3zubS",
+	"sidebar_login": "Sidebar_sidebar_login__2lKjx",
+	"sidebar_text": "Sidebar_sidebar_text__g7JSJ",
+	"sidebar_tagline": "Sidebar_sidebar_tagline__1Rpho"
 };
 
 /***/ }),
@@ -827,9 +955,11 @@ var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
 
 var _url = __webpack_require__(/*! url */ "url");
 
-var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
+var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "../next-server/lib/utils");
 
 var _router = _interopRequireDefault(__webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js"));
+
+var _router2 = __webpack_require__(/*! ../next-server/lib/router/router */ "./node_modules/next/dist/next-server/lib/router/router.js");
 
 function isLocal(href) {
   var url = (0, _url.parse)(href, false, true);
@@ -922,8 +1052,8 @@ class Link extends _react.Component {
 
     this.formatUrls = memoizedFormatUrl((href, asHref) => {
       return {
-        href: formatUrl(href),
-        as: asHref ? formatUrl(asHref) : asHref
+        href: (0, _router2.addBasePath)(formatUrl(href)),
+        as: asHref ? (0, _router2.addBasePath)(formatUrl(asHref)) : asHref
       };
     });
 
@@ -1158,7 +1288,7 @@ var _router2 = _interopRequireWildcard(__webpack_require__(/*! ../next-server/li
 exports.Router = _router2.default;
 exports.NextRouter = _router2.NextRouter;
 
-var _routerContext = __webpack_require__(/*! ../next-server/lib/router-context */ "./node_modules/next/dist/next-server/lib/router-context.js");
+var _routerContext = __webpack_require__(/*! ../next-server/lib/router-context */ "../next-server/lib/router-context");
 
 var _withRouter = _interopRequireDefault(__webpack_require__(/*! ./with-router */ "./node_modules/next/dist/client/with-router.js"));
 
@@ -1178,7 +1308,7 @@ var singletonRouter = {
 
 }; // Create public properties and methods of the router in the singletonRouter
 
-var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback'];
+var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback', 'basePath'];
 var routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
 var coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
 
@@ -1389,34 +1519,6 @@ exports.default = mitt;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/next-server/lib/router-context.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/router-context.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-  result["default"] = mod;
-  return result;
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-const React = __importStar(__webpack_require__(/*! react */ "react"));
-
-exports.RouterContext = React.createContext(null);
-
-/***/ }),
-
 /***/ "./node_modules/next/dist/next-server/lib/router/router.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/next/dist/next-server/lib/router/router.js ***!
@@ -1449,10 +1551,16 @@ const route_matcher_1 = __webpack_require__(/*! ./utils/route-matcher */ "./node
 
 const route_regex_1 = __webpack_require__(/*! ./utils/route-regex */ "./node_modules/next/dist/next-server/lib/router/utils/route-regex.js");
 
+const basePath =  false || '';
+
 function addBasePath(path) {
-  // variable is always a string
-  const p = "";
-  return path.indexOf(p) !== 0 ? p + path : path;
+  return path.indexOf(basePath) !== 0 ? basePath + path : path;
+}
+
+exports.addBasePath = addBasePath;
+
+function delBasePath(path) {
+  return path.indexOf(basePath) === 0 ? path.substr(basePath.length) || '/' : path;
 }
 
 function toRoute(path) {
@@ -1617,6 +1725,7 @@ class Router {
 
     this.asPath = // @ts-ignore this is temporarily global (attached to window)
     is_dynamic_1.isDynamicRoute(pathname) && __NEXT_DATA__.autoExport ? pathname : as;
+    this.basePath = basePath;
     this.sub = subscription;
     this.clc = null;
     this._wrapApp = wrapApp; // make sure to ignore extra popState in safari on navigating
@@ -1707,8 +1816,10 @@ class Router {
       // we'll format them into the string version here.
 
 
-      const url = typeof _url === 'object' ? utils_1.formatWithValidation(_url) : _url;
-      let as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as; // Add the ending slash to the paths. So, we can serve the
+      let url = typeof _url === 'object' ? utils_1.formatWithValidation(_url) : _url;
+      let as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as;
+      url = addBasePath(url);
+      as = addBasePath(as); // Add the ending slash to the paths. So, we can serve the
       // "<page>/index.html" directly for the SSR page.
 
       if (false) {}
@@ -1722,7 +1833,7 @@ class Router {
       if (!options._h && this.onlyAHashChange(as)) {
         this.asPath = as;
         Router.events.emit('hashChangeStart', as);
-        this.changeState(method, url, addBasePath(as), options);
+        this.changeState(method, url, as, options);
         this.scrollToHash(as);
         Router.events.emit('hashChangeComplete', as);
         return resolve(true);
@@ -1791,7 +1902,7 @@ class Router {
         }
 
         Router.events.emit('beforeHistoryChange', as);
-        this.changeState(method, url, addBasePath(as), options);
+        this.changeState(method, url, as, options);
 
         if (true) {
           const appComp = this.components['/_app'].Component;
@@ -2032,7 +2143,8 @@ class Router {
         return;
       }
 
-      Promise.all([this.pageLoader.prefetchData(url, asPath), this.pageLoader[options.priority ? 'loadPage' : 'prefetch'](toRoute(pathname))]).then(() => resolve(), reject);
+      const route = delBasePath(toRoute(pathname));
+      Promise.all([this.pageLoader.prefetchData(url, delBasePath(asPath)), this.pageLoader[options.priority ? 'loadPage' : 'prefetch'](route)]).then(() => resolve(), reject);
     });
   }
 
@@ -2043,6 +2155,7 @@ class Router {
       cancelled = true;
     };
 
+    route = delBasePath(route);
     const componentResult = await this.pageLoader.loadPage(route);
 
     if (cancelled) {
@@ -2168,7 +2281,16 @@ function getRouteMatcher(routeRegex) {
       return false;
     }
 
-    const decode = decodeURIComponent;
+    const decode = param => {
+      try {
+        return decodeURIComponent(param);
+      } catch (_) {
+        const err = new Error('failed to decode param');
+        err.code = 'DECODE_FAILED';
+        throw err;
+      }
+    };
+
     const params = {};
     Object.keys(groups).forEach(slugName => {
       const g = groups[slugName];
@@ -2247,11 +2369,11 @@ const url_1 = __webpack_require__(/*! url */ "url");
 
 function execOnce(fn) {
   let used = false;
-  let result = null;
+  let result;
   return (...args) => {
     if (!used) {
       used = true;
-      result = fn.apply(this, args);
+      result = fn(...args);
     }
 
     return result;
@@ -2510,6 +2632,10 @@ function Create({
     0: tags,
     1: setTags
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
+  const {
+    0: image,
+    1: setImage
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
 
   const createPost = p => {
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:3001/posts', {
@@ -2525,11 +2651,13 @@ function Create({
     const combinePost = {
       headline,
       tags,
-      body: value
+      body: value,
+      image: image
     };
     createPost(combinePost);
     setValue('');
     setHeadline('');
+    setImage('');
   };
 
   const changeHandler = e => {
@@ -2540,12 +2668,16 @@ function Create({
     setTags(e.target.value);
   };
 
+  const imageChangeHandler = e => {
+    setImage(e.target.value);
+  };
+
   return __jsx("div", {
     className: "create_wrapper",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 51,
       columnNumber: 5
     }
   }, __jsx("span", {
@@ -2553,7 +2685,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 52,
       columnNumber: 7
     }
   }, "Headline:"), __jsx("input", {
@@ -2564,7 +2696,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 53,
       columnNumber: 7
     }
   }), __jsx("span", {
@@ -2572,7 +2704,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 54,
       columnNumber: 7
     }
   }, "Tags:"), __jsx("input", {
@@ -2583,7 +2715,26 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 55,
+      columnNumber: 7
+    }
+  }), __jsx("span", {
+    className: "headline_span",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56,
+      columnNumber: 7
+    }
+  }, "Image:"), __jsx("input", {
+    className: "create_tags",
+    value: image,
+    onChange: imageChangeHandler,
+    placeholder: "Add an optional image url...",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
       columnNumber: 7
     }
   }), __jsx("span", {
@@ -2591,7 +2742,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 58,
       columnNumber: 5
     }
   }, "Body:"), __jsx(ReactQuill, {
@@ -2601,7 +2752,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 59,
       columnNumber: 5
     }
   }), __jsx("div", {
@@ -2609,7 +2760,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 60,
       columnNumber: 4
     }
   }, __jsx("button", {
@@ -2619,7 +2770,7 @@ function Create({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 60,
       columnNumber: 33
     }
   }, " Publish ")));
@@ -2629,7 +2780,7 @@ function Create({
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

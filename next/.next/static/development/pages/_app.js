@@ -54,12 +54,36 @@ function NavBar() {
       lineNumber: 15,
       columnNumber: 7
     }
-  }, __jsx("div", {
-    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navbar_logo,
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16,
+      columnNumber: 7
+    }
+  }, __jsx("a", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 22
+    }
+  }, "  ", __jsx("img", {
+    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logo_png,
+    src: "https://uploads.guim.co.uk/2020/04/15/culture.png",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 27
+    }
+  }))), __jsx("div", {
+    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navbar_logo,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -67,14 +91,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 45
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 60
     }
   }, "Stagetime"))), __jsx("div", {
@@ -82,7 +106,7 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -90,14 +114,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 46
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 66
     }
   }, "Write a post")))));
@@ -715,12 +739,13 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "\n.NavBar_nav_wrapper__1WR3A {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n.NavBar_navbar__1e5Hf {\n  background-color: #fde56eb2;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1.5rem;\n\n}\n\n.NavBar_navbar_logo__3bO5G {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.NavBar_navbar_write__EY4SA {\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .7rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.NavBar_navbar_write__EY4SA:hover {\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid #6ecdfd;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .NavBar_navbar_write__EY4SA {\n    font-size: .8rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .NavBar_navbar_write__EY4SA {\n    display: none;\n  }\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/NavBar/NavBar.module.css"],"names":[],"mappings":";AACA;EACE,eAAe;EACf,WAAW;EACX,cAAc;EACd,MAAM;;AAER;AACA;EACE,2BAA2B;EAC3B,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,oBAAoB;EACpB,qBAAqB;;AAEvB;;AAEA;EACE,0BAA0B;EAC1B,cAAc;EACd,0BAA0B;EAC1B,iBAAiB;EACjB,iBAAiB;EACjB,aAAa;EACb,mBAAmB;EACnB,uBAAuB;;AAEzB;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,gBAAgB;EAChB,gBAAgB;EAChB,qCAAqC;EACrC,kBAAkB;;AAEpB;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,yBAAyB;AAC3B;;;AAGA;EACE;IACE,gBAAgB;EAClB;AACF;AACA;EACE;IACE,aAAa;EACf;AACF","file":"NavBar.module.css","sourcesContent":["\n.nav_wrapper {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n.navbar {\n  background-color: #fde56eb2;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1.5rem;\n\n}\n\n.navbar_logo {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.navbar_write {\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .7rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.navbar_write:hover {\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid #6ecdfd;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .navbar_write {\n    font-size: .8rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .navbar_write {\n    display: none;\n  }\n}"]}]);
+exports.push([module.i, "\n.NavBar_nav_wrapper__1WR3A {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n.NavBar_navbar__1e5Hf {\n  background-color: #fde56eb2;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1.5rem;\n \n}\n\n@media only screen and (min-width: 1000px) {\n  .NavBar_navbar__1e5Hf {\n    padding: 0 4rem;\n  }\n}\n\n.NavBar_navbar_logo__3bO5G {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  justify-self: flex-start;\n  \n\n}\n\n.NavBar_logo_png__386SP {\n\ncolor: rgba(0, 0, 0, 0.84);\n\ndisplay: inline-block;\nwidth: 2.5rem;\npadding: .3rem;\n\n}\n\n.NavBar_navbar_write__EY4SA {\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .7rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.NavBar_navbar_write__EY4SA:hover {\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid #6ecdfd;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .NavBar_navbar_write__EY4SA {\n    font-size: .8rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .NavBar_navbar_write__EY4SA {\n    display: none;\n  }\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/NavBar/NavBar.module.css"],"names":[],"mappings":";AACA;EACE,eAAe;EACf,WAAW;EACX,cAAc;EACd,MAAM;;AAER;AACA;EACE,2BAA2B;EAC3B,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,oBAAoB;EACpB,qBAAqB;;AAEvB;;AAEA;EACE;IACE,eAAe;EACjB;AACF;;AAEA;EACE,0BAA0B;EAC1B,cAAc;EACd,0BAA0B;EAC1B,iBAAiB;EACjB,iBAAiB;EACjB,aAAa;EACb,wBAAwB;;;AAG1B;;AAEA;;AAEA,0BAA0B;;AAE1B,qBAAqB;AACrB,aAAa;AACb,cAAc;;AAEd;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,gBAAgB;EAChB,gBAAgB;EAChB,qCAAqC;EACrC,kBAAkB;;AAEpB;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,yBAAyB;AAC3B;;;AAGA;EACE;IACE,gBAAgB;EAClB;AACF;AACA;EACE;IACE,aAAa;EACf;AACF","file":"NavBar.module.css","sourcesContent":["\n.nav_wrapper {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n.navbar {\n  background-color: #fde56eb2;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1.5rem;\n \n}\n\n@media only screen and (min-width: 1000px) {\n  .navbar {\n    padding: 0 4rem;\n  }\n}\n\n.navbar_logo {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  justify-self: flex-start;\n  \n\n}\n\n.logo_png {\n\ncolor: rgba(0, 0, 0, 0.84);\n\ndisplay: inline-block;\nwidth: 2.5rem;\npadding: .3rem;\n\n}\n\n.navbar_write {\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .7rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.navbar_write:hover {\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid #6ecdfd;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .navbar_write {\n    font-size: .8rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .navbar_write {\n    display: none;\n  }\n}"]}]);
 // Exports
 exports.locals = {
 	"nav_wrapper": "NavBar_nav_wrapper__1WR3A",
 	"navbar": "NavBar_navbar__1e5Hf",
 	"navbar_logo": "NavBar_navbar_logo__3bO5G",
+	"logo_png": "NavBar_logo_png__386SP",
 	"navbar_write": "NavBar_navbar_write__EY4SA"
 };
 
@@ -1066,7 +1091,7 @@ module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var e,t=(e=__webpack_require__(/*! querystring */ "./node_modules/querystring-es3/index.js"))&&"object"==typeof e&&"default"in e?e.default:e,r=/https?|ftp|gopher|file/;function o(e){"string"==typeof e&&(e=f(e));var o=function(e,t,r){var o=e.auth,a=e.hostname,s=e.protocol||"",h=e.pathname||"",c=e.hash||"",p=e.query||"",n=!1;o=o?encodeURIComponent(o).replace(/%3A/i,":")+"@":"",e.host?n=o+e.host:a&&(n=o+(~a.indexOf(":")?"["+a+"]":a),e.port&&(n+=":"+e.port)),p&&"object"==typeof p&&(p=t.encode(p));var l=e.search||p&&"?"+p||"";return s&&":"!==s.substr(-1)&&(s+=":"),e.slashes||(!s||r.test(s))&&!1!==n?(n="//"+(n||""),h&&"/"!==h[0]&&(h="/"+h)):n||(n=""),c&&"#"!==c[0]&&(c="#"+c),l&&"?"!==l[0]&&(l="?"+l),{protocol:s,host:n,pathname:h=h.replace(/[?#]/g,encodeURIComponent),search:l=l.replace("#","%23"),hash:c}}(e,t,r);return""+o.protocol+o.host+o.pathname+o.search+o.hash}var a="http://",s="w.w",h=a+s,c=/^https?|ftp|gopher|file/,p=/^(.*?)([#?].*)/,n=/^([a-z0-9.+-]*:)(\/{0,3})(.*)/i,l=/^([a-z0-9.+-]*:)?\/\/\/*/i,i=/^([a-z0-9.+-]*:)(\/{0,2})\[(.*)\]$/i;function u(e){try{return decodeURI(e)}catch(t){return e}}function f(e,r,a){void 0===r&&(r=!1),void 0===a&&(a=!1);var f=(e=e.trim()).match(p);e=f?u(f[1]).replace(/\\/g,"/")+f[2]:u(e).replace(/\\/g,"/"),i.test(e)&&"/"!==e.slice(-1)&&(e+="/");var m=!/(^javascript)/.test(e)&&e.match(n),v=l.test(e),d="";m&&(c.test(m[1])||(d=m[1].toLowerCase(),e=""+m[2]+m[3]),m[2]||(v=!1,c.test(m[1])?(d=m[1],e=""+m[3]):e="//"+m[3]),3!==m[2].length&&1!==m[2].length||(d=m[1],e="/"+m[3]));var g,b=e.match(/(:[0-9]+)/),y="";b&&b[1]&&3===b[1].length&&(e=e.replace(y=b[1],y+"00"));var w={},x="",R="";try{g=new URL(e)}catch(t){x=t,d||a||!/^\/\//.test(e)||/^\/\/.+[@.]/.test(e)||(R="/",e=e.substr(1));try{g=new URL(e,h)}catch(e){return w.protocol=d,w.href=d,w}}w.slashes=v&&!R,w.host=g.host===s?"":g.host,w.hostname=g.hostname===s?"":g.hostname.replace(/(\[|\])/g,""),w.protocol=x?d||null:g.protocol,w.search=g.search.replace(/\\/g,"%5C"),w.hash=g.hash.replace(/\\/g,"%5C");var U=e.split("#");!w.search&&~U[0].indexOf("?")&&(w.search="?"),w.hash||""!==U[1]||(w.hash="#"),w.query=r?t.decode(g.search.substr(1)):w.search.substr(1),w.pathname=R+u(g.pathname).replace(/"/g,"%22"),"about:"===w.protocol&&"blank"===w.pathname&&(w.protocol="",w.pathname=""),x&&"/"!==e[0]&&(w.pathname=w.pathname.substr(1)),d&&!c.test(d)&&"/"!==e.slice(-1)&&"/"===w.pathname&&(w.pathname=""),w.path=w.pathname+w.search,w.auth=[g.username,g.password].map(decodeURIComponent).filter(Boolean).join(":"),w.port=g.port,y&&(w.host=w.host.replace(y+"00",y),w.port=w.port.slice(0,-2)),w.href=R?""+w.pathname+w.search+w.hash:o(w);var j=/^(file)/.test(w.href)?["host","hostname"]:[];return Object.keys(w).forEach(function(e){~j.indexOf(e)||(w[e]=w[e]||null)}),w}var m=/^([a-z0-9.+-]*:\/\/\/)([a-z0-9.+-]:\/*)?/i,v=/https?|ftp|gopher|file/;function d(e,t){var r="string"==typeof e?f(e):e;e="object"==typeof e?o(e):e;var s=f(t),c="";r.protocol&&!r.slashes&&(c=r.protocol,e=e.replace(r.protocol,""),c+="/"===t[0]||"/"===e[0]?"/":""),c&&s.protocol&&(c="",s.slashes||(c=s.protocol,t=t.replace(s.protocol,"")));var p=e.match(m);p&&!s.protocol&&(e=e.substr((c=p[1]+(p[2]||"")).length),/^\/\/[^\/]/.test(t)&&(c=c.slice(0,-1)));var n=new URL(e,h+"/"),l=new URL(t,n).toString().replace(h,""),i=s.protocol||r.protocol;return i+=r.slashes||s.slashes?"//":"",!c&&i?l=l.replace(a,i):c&&(l=l.replace(a,"")),v.test(l)||~t.indexOf(".")||"/"===e.slice(-1)||"/"===t.slice(-1)||"/"!==l.slice(-1)||(l=l.slice(0,-1)),c&&(l=c+("/"===l[0]?l.substr(1):l)),l}exports.parse=f,exports.format=o,exports.resolve=d,exports.resolveObject=function(e,t){return f(d(e,t))};
+var e,t=(e=__webpack_require__(/*! querystring */ "./node_modules/querystring-es3/index.js"))&&"object"==typeof e&&"default"in e?e.default:e,r=/https?|ftp|gopher|file/;function o(e){"string"==typeof e&&(e=g(e));var o=function(e,t,r){var o=e.auth,a=e.hostname,s=e.protocol||"",c=e.pathname||"",h=e.hash||"",p=e.query||"",n=!1;o=o?encodeURIComponent(o).replace(/%3A/i,":")+"@":"",e.host?n=o+e.host:a&&(n=o+(~a.indexOf(":")?"["+a+"]":a),e.port&&(n+=":"+e.port)),p&&"object"==typeof p&&(p=t.encode(p));var l=e.search||p&&"?"+p||"";return s&&":"!==s.substr(-1)&&(s+=":"),e.slashes||(!s||r.test(s))&&!1!==n?(n="//"+(n||""),c&&"/"!==c[0]&&(c="/"+c)):n||(n=""),h&&"#"!==h[0]&&(h="#"+h),l&&"?"!==l[0]&&(l="?"+l),{protocol:s,host:n,pathname:c=c.replace(/[?#]/g,encodeURIComponent),search:l=l.replace("#","%23"),hash:h}}(e,t,r);return""+o.protocol+o.host+o.pathname+o.search+o.hash}var a="http://",s="w.w",c=a+s,h=/^([a-z0-9.+-]*:\/\/\/)([a-z0-9.+-]:\/*)?/i,p=/https?|ftp|gopher|file/;function n(e,t){var r="string"==typeof e?g(e):e;e="object"==typeof e?o(e):e;var s=g(t),n="";r.protocol&&!r.slashes&&(n=r.protocol,e=e.replace(r.protocol,""),n+="/"===t[0]||"/"===e[0]?"/":""),n&&s.protocol&&(n="",s.slashes||(n=s.protocol,t=t.replace(s.protocol,"")));var l=e.match(h);l&&!s.protocol&&(e=e.substr((n=l[1]+(l[2]||"")).length),/^\/\/[^/]/.test(t)&&(n=n.slice(0,-1)));var i=new URL(e,c+"/"),f=new URL(t,i).toString().replace(c,""),u=s.protocol||r.protocol;return u+=r.slashes||s.slashes?"//":"",!n&&u?f=f.replace(a,u):n&&(f=f.replace(a,"")),p.test(f)||~t.indexOf(".")||"/"===e.slice(-1)||"/"===t.slice(-1)||"/"!==f.slice(-1)||(f=f.slice(0,-1)),n&&(f=n+("/"===f[0]?f.substr(1):f)),f}function l(){}l.parse=g,l.format=o,l.resolve=n,l.resolveObject=n;var i=/^https?|ftp|gopher|file/,f=/^(.*?)([#?].*)/,u=/^([a-z0-9.+-]*:)(\/{0,3})(.*)/i,m=/^([a-z0-9.+-]*:)?\/\/\/*/i,v=/^([a-z0-9.+-]*:)(\/{0,2})\[(.*)\]$/i;function d(e){try{return decodeURI(e)}catch(t){return e}}function g(e,r,a){if(void 0===r&&(r=!1),void 0===a&&(a=!1),e&&"object"==typeof e&&e instanceof l)return e;var h=(e=e.trim()).match(f);e=h?d(h[1]).replace(/\\/g,"/")+h[2]:d(e).replace(/\\/g,"/"),v.test(e)&&"/"!==e.slice(-1)&&(e+="/");var p=!/(^javascript)/.test(e)&&e.match(u),n=m.test(e),g="";p&&(i.test(p[1])||(g=p[1].toLowerCase(),e=""+p[2]+p[3]),p[2]||(n=!1,i.test(p[1])?(g=p[1],e=""+p[3]):e="//"+p[3]),3!==p[2].length&&1!==p[2].length||(g=p[1],e="/"+p[3]));var b,y=(h?h[1]:e).match(/(:[0-9]+)/),j="";y&&y[1]&&3===y[1].length&&(e=e.replace(j=y[1],j+"00"));var w=new l,x="",U="";try{b=new URL(e)}catch(t){x=t,g||a||!/^\/\//.test(e)||/^\/\/.+[@.]/.test(e)||(U="/",e=e.substr(1));try{b=new URL(e,c)}catch(e){return w.protocol=g,w.href=g,w}}w.slashes=n&&!U,w.host=b.host===s?"":b.host,w.hostname=b.hostname===s?"":b.hostname.replace(/(\[|\])/g,""),w.protocol=x?g||null:b.protocol,w.search=b.search.replace(/\\/g,"%5C"),w.hash=b.hash.replace(/\\/g,"%5C");var R=e.split("#");!w.search&&~R[0].indexOf("?")&&(w.search="?"),w.hash||""!==R[1]||(w.hash="#"),w.query=r?t.decode(b.search.substr(1)):w.search.substr(1),w.pathname=U+d(b.pathname).replace(/"/g,"%22"),"about:"===w.protocol&&"blank"===w.pathname&&(w.protocol="",w.pathname=""),x&&"/"!==e[0]&&(w.pathname=w.pathname.substr(1)),g&&!i.test(g)&&"/"!==e.slice(-1)&&"/"===w.pathname&&(w.pathname=""),w.path=w.pathname+w.search,w.auth=[b.username,b.password].map(decodeURIComponent).filter(Boolean).join(":"),w.port=b.port,j&&(w.host=w.host.replace(j+"00",j),w.port=w.port.slice(0,-2)),w.href=U?""+w.pathname+w.search+w.hash:o(w);var O=/^(file)/.test(w.href)?["host","hostname"]:[];return Object.keys(w).forEach(function(e){~O.indexOf(e)||(w[e]=w[e]||null)}),w}exports.parse=g,exports.format=o,exports.resolve=n,exports.resolveObject=function(e,t){return g(n(e,t))},exports.Url=l;
 //# sourceMappingURL=index.js.map
 
 
@@ -1169,6 +1194,8 @@ var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules
 
 var _router = _interopRequireDefault(__webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js"));
 
+var _router2 = __webpack_require__(/*! ../next-server/lib/router/router */ "./node_modules/next/dist/next-server/lib/router/router.js");
+
 function isLocal(href) {
   var url = (0, _url.parse)(href, false, true);
   var origin = (0, _url.parse)((0, _utils.getLocationOrigin)(), false, true);
@@ -1268,8 +1295,8 @@ var Link = /*#__PURE__*/function (_react$Component) {
 
     _this.formatUrls = memoizedFormatUrl(function (href, asHref) {
       return {
-        href: formatUrl(href),
-        as: asHref ? formatUrl(asHref) : asHref
+        href: (0, _router2.addBasePath)(formatUrl(href)),
+        as: asHref ? (0, _router2.addBasePath)(formatUrl(asHref)) : asHref
       };
     });
 
@@ -1537,7 +1564,7 @@ var singletonRouter = {
   }
 }; // Create public properties and methods of the router in the singletonRouter
 
-var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback'];
+var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback', 'basePath'];
 var routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
 var coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
 
@@ -1732,6 +1759,10 @@ var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/
 
 exports.AmpStateContext = React.createContext({});
 
+if (true) {
+  exports.AmpStateContext.displayName = 'AmpStateContext';
+}
+
 /***/ }),
 
 /***/ "./node_modules/next/dist/next-server/lib/amp.js":
@@ -1808,6 +1839,10 @@ Object.defineProperty(exports, "__esModule", {
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 exports.HeadManagerContext = React.createContext(null);
+
+if (true) {
+  exports.HeadManagerContext.displayName = 'HeadManagerContext';
+}
 
 /***/ }),
 
@@ -2072,6 +2107,10 @@ var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/
 
 exports.RouterContext = React.createContext(null);
 
+if (true) {
+  exports.RouterContext.displayName = 'RouterContext';
+}
+
 /***/ }),
 
 /***/ "./node_modules/next/dist/next-server/lib/router/router.js":
@@ -2114,10 +2153,16 @@ var route_matcher_1 = __webpack_require__(/*! ./utils/route-matcher */ "./node_m
 
 var route_regex_1 = __webpack_require__(/*! ./utils/route-regex */ "./node_modules/next/dist/next-server/lib/router/utils/route-regex.js");
 
+var basePath =  false || '';
+
 function addBasePath(path) {
-  // variable is always a string
-  var p = "";
-  return path.indexOf(p) !== 0 ? p + path : path;
+  return path.indexOf(basePath) !== 0 ? basePath + path : path;
+}
+
+exports.addBasePath = addBasePath;
+
+function delBasePath(path) {
+  return path.indexOf(basePath) === 0 ? path.substr(basePath.length) || '/' : path;
 }
 
 function toRoute(path) {
@@ -2289,6 +2334,7 @@ var Router = /*#__PURE__*/function () {
 
     this.asPath = // @ts-ignore this is temporarily global (attached to window)
     is_dynamic_1.isDynamicRoute(pathname) && __NEXT_DATA__.autoExport ? pathname : as;
+    this.basePath = basePath;
     this.sub = subscription;
     this.clc = null;
     this._wrapApp = wrapApp; // make sure to ignore extra popState in safari on navigating
@@ -2395,7 +2441,9 @@ var Router = /*#__PURE__*/function () {
 
 
         var url = typeof _url === 'object' ? utils_1.formatWithValidation(_url) : _url;
-        var as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as; // Add the ending slash to the paths. So, we can serve the
+        var as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as;
+        url = addBasePath(url);
+        as = addBasePath(as); // Add the ending slash to the paths. So, we can serve the
         // "<page>/index.html" directly for the SSR page.
 
         if (false) { var rewriteUrlForNextExport; }
@@ -2411,7 +2459,7 @@ var Router = /*#__PURE__*/function () {
           _this2.asPath = as;
           Router.events.emit('hashChangeStart', as);
 
-          _this2.changeState(method, url, addBasePath(as), options);
+          _this2.changeState(method, url, as, options);
 
           _this2.scrollToHash(as);
 
@@ -2481,7 +2529,7 @@ var Router = /*#__PURE__*/function () {
 
           Router.events.emit('beforeHistoryChange', as);
 
-          _this2.changeState(method, url, addBasePath(as), options);
+          _this2.changeState(method, url, as, options);
 
           if (true) {
             var appComp = _this2.components['/_app'].Component;
@@ -2751,7 +2799,8 @@ var Router = /*#__PURE__*/function () {
           return;
         }
 
-        Promise.all([_this4.pageLoader.prefetchData(url, asPath), _this4.pageLoader[options.priority ? 'loadPage' : 'prefetch'](toRoute(pathname))]).then(function () {
+        var route = delBasePath(toRoute(pathname));
+        Promise.all([_this4.pageLoader.prefetchData(url, delBasePath(asPath)), _this4.pageLoader[options.priority ? 'loadPage' : 'prefetch'](route)]).then(function () {
           return resolve();
         }, reject);
       });
@@ -2770,14 +2819,15 @@ var Router = /*#__PURE__*/function () {
                 cancelled = true;
               };
 
-              _context.next = 4;
+              route = delBasePath(route);
+              _context.next = 5;
               return _regeneratorRuntime.awrap(this.pageLoader.loadPage(route));
 
-            case 4:
+            case 5:
               componentResult = _context.sent;
 
               if (!cancelled) {
-                _context.next = 9;
+                _context.next = 10;
                 break;
               }
 
@@ -2785,14 +2835,14 @@ var Router = /*#__PURE__*/function () {
               error.cancelled = true;
               throw error;
 
-            case 9:
+            case 10:
               if (cancel === this.clc) {
                 this.clc = null;
               }
 
               return _context.abrupt("return", componentResult);
 
-            case 11:
+            case 12:
             case "end":
               return _context.stop();
           }
@@ -2921,7 +2971,16 @@ function getRouteMatcher(routeRegex) {
       return false;
     }
 
-    var decode = decodeURIComponent;
+    var decode = function decode(param) {
+      try {
+        return decodeURIComponent(param);
+      } catch (_) {
+        var err = new Error('failed to decode param');
+        err.code = 'DECODE_FAILED';
+        throw err;
+      }
+    };
+
     var params = {};
     Object.keys(groups).forEach(function (slugName) {
       var g = groups[slugName];
@@ -3112,19 +3171,12 @@ var url_1 = __webpack_require__(/*! url */ "./node_modules/native-url/dist/index
 
 
 function execOnce(fn) {
-  var _this = this;
-
   var used = false;
-  var result = null;
+  var result;
   return function () {
     if (!used) {
       used = true;
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      result = fn.apply(_this, args);
+      result = fn.apply(void 0, arguments);
     }
 
     return result;
@@ -6734,7 +6786,7 @@ function parse(input, options) {
 
 		// Missing `=` should be `null`:
 		// http://w3.org/TR/2012/WD-url-20120524/#collect-url-parameters
-		value = value === undefined ? null : options.arrayFormat === 'comma' ? value : decode(value, options);
+		value = value === undefined ? null : ['comma', 'separator'].includes(options.arrayFormat) ? value : decode(value, options);
 		formatter(decode(key, options), value, ret);
 	}
 
@@ -6964,28 +7016,28 @@ function MyApp(_ref) {
       lineNumber: 18,
       columnNumber: 5
     }
-  })), __jsx(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_7__["Auth0Provider"], {
-    domain: 'dev-yf8xdikq.eu.auth0.com',
-    clientId: 'k6MOcu2j7WVg5ZfForZqdq6RVVIwyNpm',
-    redirectUri: 'http://localhost:3000',
+  })), __jsx(_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20,
       columnNumber: 6
     }
-  }, __jsx(_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), __jsx(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_7__["Auth0Provider"], {
+    domain: 'dev-yf8xdikq.eu.auth0.com',
+    clientId: 'k6MOcu2j7WVg5ZfForZqdq6RVVIwyNpm',
+    redirectUri: 'http://localhost:3000',
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 21,
       columnNumber: 6
     }
-  }), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+  }, __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 5
     }
   }))));

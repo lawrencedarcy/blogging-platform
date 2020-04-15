@@ -93,6 +93,28 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "../next-server/lib/router-context":
+/*!**************************************************************!*\
+  !*** external "next/dist/next-server/lib/router-context.js" ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/dist/next-server/lib/router-context.js");
+
+/***/ }),
+
+/***/ "../next-server/lib/utils":
+/*!*****************************************************!*\
+  !*** external "next/dist/next-server/lib/utils.js" ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/dist/next-server/lib/utils.js");
+
+/***/ }),
+
 /***/ "./components/NavBar/NavBar.js":
 /*!*************************************!*\
   !*** ./components/NavBar/NavBar.js ***!
@@ -147,12 +169,36 @@ function NavBar() {
       lineNumber: 15,
       columnNumber: 7
     }
-  }, __jsx("div", {
-    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navbar_logo,
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16,
+      columnNumber: 7
+    }
+  }, __jsx("a", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 22
+    }
+  }, "  ", __jsx("img", {
+    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logo_png,
+    src: "https://uploads.guim.co.uk/2020/04/15/culture.png",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 27
+    }
+  }))), __jsx("div", {
+    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navbar_logo,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -160,14 +206,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 45
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 60
     }
   }, "Stagetime"))), __jsx("div", {
@@ -175,7 +221,7 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -183,14 +229,14 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 46
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 66
     }
   }, "Write a post")))));
@@ -212,6 +258,7 @@ module.exports = {
 	"nav_wrapper": "NavBar_nav_wrapper__1WR3A",
 	"navbar": "NavBar_navbar__1e5Hf",
 	"navbar_logo": "NavBar_navbar_logo__3bO5G",
+	"logo_png": "NavBar_logo_png__386SP",
 	"navbar_write": "NavBar_navbar_write__EY4SA"
 };
 
@@ -359,9 +406,11 @@ var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
 
 var _url = __webpack_require__(/*! url */ "url");
 
-var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
+var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "../next-server/lib/utils");
 
 var _router = _interopRequireDefault(__webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js"));
+
+var _router2 = __webpack_require__(/*! ../next-server/lib/router/router */ "./node_modules/next/dist/next-server/lib/router/router.js");
 
 function isLocal(href) {
   var url = (0, _url.parse)(href, false, true);
@@ -454,8 +503,8 @@ class Link extends _react.Component {
 
     this.formatUrls = memoizedFormatUrl((href, asHref) => {
       return {
-        href: formatUrl(href),
-        as: asHref ? formatUrl(asHref) : asHref
+        href: (0, _router2.addBasePath)(formatUrl(href)),
+        as: asHref ? (0, _router2.addBasePath)(formatUrl(asHref)) : asHref
       };
     });
 
@@ -690,7 +739,7 @@ var _router2 = _interopRequireWildcard(__webpack_require__(/*! ../next-server/li
 exports.Router = _router2.default;
 exports.NextRouter = _router2.NextRouter;
 
-var _routerContext = __webpack_require__(/*! ../next-server/lib/router-context */ "./node_modules/next/dist/next-server/lib/router-context.js");
+var _routerContext = __webpack_require__(/*! ../next-server/lib/router-context */ "../next-server/lib/router-context");
 
 var _withRouter = _interopRequireDefault(__webpack_require__(/*! ./with-router */ "./node_modules/next/dist/client/with-router.js"));
 
@@ -710,7 +759,7 @@ var singletonRouter = {
 
 }; // Create public properties and methods of the router in the singletonRouter
 
-var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback'];
+var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback', 'basePath'];
 var routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
 var coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
 
@@ -921,34 +970,6 @@ exports.default = mitt;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/next-server/lib/router-context.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/router-context.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-  result["default"] = mod;
-  return result;
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-const React = __importStar(__webpack_require__(/*! react */ "react"));
-
-exports.RouterContext = React.createContext(null);
-
-/***/ }),
-
 /***/ "./node_modules/next/dist/next-server/lib/router/router.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/next/dist/next-server/lib/router/router.js ***!
@@ -981,10 +1002,16 @@ const route_matcher_1 = __webpack_require__(/*! ./utils/route-matcher */ "./node
 
 const route_regex_1 = __webpack_require__(/*! ./utils/route-regex */ "./node_modules/next/dist/next-server/lib/router/utils/route-regex.js");
 
+const basePath =  false || '';
+
 function addBasePath(path) {
-  // variable is always a string
-  const p = "";
-  return path.indexOf(p) !== 0 ? p + path : path;
+  return path.indexOf(basePath) !== 0 ? basePath + path : path;
+}
+
+exports.addBasePath = addBasePath;
+
+function delBasePath(path) {
+  return path.indexOf(basePath) === 0 ? path.substr(basePath.length) || '/' : path;
 }
 
 function toRoute(path) {
@@ -1149,6 +1176,7 @@ class Router {
 
     this.asPath = // @ts-ignore this is temporarily global (attached to window)
     is_dynamic_1.isDynamicRoute(pathname) && __NEXT_DATA__.autoExport ? pathname : as;
+    this.basePath = basePath;
     this.sub = subscription;
     this.clc = null;
     this._wrapApp = wrapApp; // make sure to ignore extra popState in safari on navigating
@@ -1239,8 +1267,10 @@ class Router {
       // we'll format them into the string version here.
 
 
-      const url = typeof _url === 'object' ? utils_1.formatWithValidation(_url) : _url;
-      let as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as; // Add the ending slash to the paths. So, we can serve the
+      let url = typeof _url === 'object' ? utils_1.formatWithValidation(_url) : _url;
+      let as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as;
+      url = addBasePath(url);
+      as = addBasePath(as); // Add the ending slash to the paths. So, we can serve the
       // "<page>/index.html" directly for the SSR page.
 
       if (false) {}
@@ -1254,7 +1284,7 @@ class Router {
       if (!options._h && this.onlyAHashChange(as)) {
         this.asPath = as;
         Router.events.emit('hashChangeStart', as);
-        this.changeState(method, url, addBasePath(as), options);
+        this.changeState(method, url, as, options);
         this.scrollToHash(as);
         Router.events.emit('hashChangeComplete', as);
         return resolve(true);
@@ -1323,7 +1353,7 @@ class Router {
         }
 
         Router.events.emit('beforeHistoryChange', as);
-        this.changeState(method, url, addBasePath(as), options);
+        this.changeState(method, url, as, options);
 
         if (true) {
           const appComp = this.components['/_app'].Component;
@@ -1564,7 +1594,8 @@ class Router {
         return;
       }
 
-      Promise.all([this.pageLoader.prefetchData(url, asPath), this.pageLoader[options.priority ? 'loadPage' : 'prefetch'](toRoute(pathname))]).then(() => resolve(), reject);
+      const route = delBasePath(toRoute(pathname));
+      Promise.all([this.pageLoader.prefetchData(url, delBasePath(asPath)), this.pageLoader[options.priority ? 'loadPage' : 'prefetch'](route)]).then(() => resolve(), reject);
     });
   }
 
@@ -1575,6 +1606,7 @@ class Router {
       cancelled = true;
     };
 
+    route = delBasePath(route);
     const componentResult = await this.pageLoader.loadPage(route);
 
     if (cancelled) {
@@ -1700,7 +1732,16 @@ function getRouteMatcher(routeRegex) {
       return false;
     }
 
-    const decode = decodeURIComponent;
+    const decode = param => {
+      try {
+        return decodeURIComponent(param);
+      } catch (_) {
+        const err = new Error('failed to decode param');
+        err.code = 'DECODE_FAILED';
+        throw err;
+      }
+    };
+
     const params = {};
     Object.keys(groups).forEach(slugName => {
       const g = groups[slugName];
@@ -1779,11 +1820,11 @@ const url_1 = __webpack_require__(/*! url */ "url");
 
 function execOnce(fn) {
   let used = false;
-  let result = null;
+  let result;
   return (...args) => {
     if (!used) {
       used = true;
-      result = fn.apply(this, args);
+      result = fn(...args);
     }
 
     return result;
@@ -1911,7 +1952,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
-var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
+var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "../next-server/lib/utils");
 
 exports.AppInitialProps = _utils.AppInitialProps;
 /**
@@ -2123,28 +2164,28 @@ function MyApp({
       lineNumber: 18,
       columnNumber: 5
     }
-  })), __jsx(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_6__["Auth0Provider"], {
-    domain: 'dev-yf8xdikq.eu.auth0.com',
-    clientId: 'k6MOcu2j7WVg5ZfForZqdq6RVVIwyNpm',
-    redirectUri: 'http://localhost:3000',
+  })), __jsx(_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20,
       columnNumber: 6
     }
-  }, __jsx(_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), __jsx(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_6__["Auth0Provider"], {
+    domain: 'dev-yf8xdikq.eu.auth0.com',
+    clientId: 'k6MOcu2j7WVg5ZfForZqdq6RVVIwyNpm',
+    redirectUri: 'http://localhost:3000',
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 21,
       columnNumber: 6
     }
-  }), __jsx(Component, _extends({}, pageProps, {
+  }, __jsx(Component, _extends({}, pageProps, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 5
     }
   }))));

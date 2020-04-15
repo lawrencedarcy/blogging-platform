@@ -27,10 +27,16 @@
   border-radius: 4px;
 }
 
+
 .footer_upvote:hover, .footer_share:hover{
   background-color: #9efd6e;
 }
 
+.footer_logo{
+  width: 30px;
+  display: block;
+  margin: 0rem;
+}
 
 @media only screen and (max-width: 400px) {
   .footer_upvote, .footer_share {
