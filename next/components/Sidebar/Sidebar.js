@@ -19,7 +19,7 @@ function Sidebar({tags, getPostByTag, auth}) {
   const tagsArr = Array.from(tagsList);
 
   const clickHandler = (evt) => {
-    console.log('clickhandler says', evt.target.value)
+  
     getPostByTag(evt.target.value);
   }
 
@@ -42,6 +42,7 @@ function Sidebar({tags, getPostByTag, auth}) {
       <div className={styles.sidebar_search}></div>
       <div className={styles.sidebar_title}>Filter feed by tag</div>
       <div className={styles.sidebar_tags}>
+      
     {tagsArr.map(tag => <button className={styles.sidebar_tag} value={tag} onClick={clickHandler}>{`#${tag.toLowerCase()}`}</button>)}
         
       </div>

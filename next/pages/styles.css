@@ -159,3 +159,27 @@ p {
 .submit_btn:hover {
   background-color: #9efd6e;
 }
+
+.submitted{
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  padding: 9rem 0rem;
+  font-size: 1.2rem;
+}
+
+
+.feed_btn {
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  height: 3rem;
+  width: 11rem;
+  background-color: #6ecdfd;
+  
+  font-size: 1.1rem;
+}
+
+.feed_btn:hover {
+  background-color: #9efd6e;
+}

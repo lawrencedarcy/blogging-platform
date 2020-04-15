@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -142,6 +142,7 @@ function Card({
   const regex = /\s/g;
   console.log(post);
   return __jsx("div", {
+    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_width,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -293,6 +294,7 @@ function Card({
 
 // Exports
 module.exports = {
+	"card_width": "Card_card_width__1u695",
 	"feed_card_inner": "Card_feed_card_inner__164zN",
 	"card_title": "Card_card_title__2OGLL",
 	"card_tags": "Card_card_tags__dn97P",
@@ -426,7 +428,7 @@ function Feed({
       lineNumber: 18,
       columnNumber: 5
     }
-  }, sortedList.slice(0, 15).map(post => __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, sortedList.map(post => __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: `/post/${post._id}`,
     __self: this,
     __source: {
@@ -667,7 +669,6 @@ function Sidebar({
   const tagsArr = Array.from(tagsList);
 
   const clickHandler = evt => {
-    console.log('clickhandler says', evt.target.value);
     getPostByTag(evt.target.value);
   };
 
@@ -792,7 +793,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 25
     }
   }, `#${tag.toLowerCase()}`))));
@@ -2602,10 +2603,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/pages/write/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 /* import ReactQuill from 'react-quill'; 
@@ -2620,6 +2624,9 @@ const ReactQuill = false ? undefined : () => false;
 function Create({
   auth
 }) {
+  const {
+    user
+  } = auth;
   const {
     0: value,
     1: setValue
@@ -2652,12 +2659,11 @@ function Create({
       headline,
       tags,
       body: value,
-      image: image
+      image: image,
+      author: user.name
     };
     createPost(combinePost);
-    setValue('');
-    setHeadline('');
-    setImage('');
+    next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push('/submitted');
   };
 
   const changeHandler = e => {
@@ -2776,11 +2782,11 @@ function Create({
   }, " Publish ")));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__["withLoginRequired"])(Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__["withAuth"])(Create)));
+/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["withLoginRequired"])(Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["withAuth"])(Create)));
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

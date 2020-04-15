@@ -7,7 +7,7 @@ function Card({ post }) {
   console.log(post)
   return (
   
-    <div>
+    <div className={styles.card_width}>
       
         <div className={styles.feed_card_inner}>
           <img

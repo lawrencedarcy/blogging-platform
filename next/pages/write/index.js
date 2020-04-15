@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import Router from 'next/router'
+
 /* import ReactQuill from 'react-quill'; 
  */
 const ReactQuill = typeof window === 'object' ? require('react-quill') : () => false;
@@ -11,7 +13,7 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 
 
  function Create({auth}) {
-
+  const { user } = auth;
   const [value, setValue] = useState('');
   const [headline, setHeadline] = useState('');
   const [tags, setTags] = useState('');
@@ -29,11 +31,9 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 
 
   const submitHandler = () => {
-    const combinePost = {headline, tags, body: value, image: image};
+    const combinePost = {headline, tags, body: value, image: image, author: user.name};
     createPost(combinePost);
-    setValue('');
-    setHeadline('');
-    setImage('');
+    Router.push('/submitted');
   }
 
   const changeHandler = (e) => {
