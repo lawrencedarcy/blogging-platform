@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -577,15 +577,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar.module.css */ "./components/Sidebar/Sidebar.module.css");
 /* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 function Sidebar({
   tags,
-  getPostByTag
+  getPostByTag,
+  auth
 }) {
+  const {
+    user
+  } = auth;
+  console.log('user', user);
   const tagsList = new Set();
   tags.map(arr => arr.map(tag => tagsList.add(tag)));
   const tagsArr = Array.from(tagsList);
@@ -600,23 +608,40 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 5
     }
-  }, __jsx("div", {
+  }, user && __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 20,
+      columnNumber: 16
+    }
+  }, __jsx("img", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_img,
+    src: user.picture,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
       columnNumber: 7
     }
   }), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_name,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 9
+    }
+  }, " ", user.name)), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 26,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -624,7 +649,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 27,
       columnNumber: 7
     }
   }, "Filter by tag"), __jsx("div", {
@@ -632,7 +657,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 28,
       columnNumber: 7
     }
   }, tagsArr.map(tag => __jsx("button", {
@@ -642,13 +667,13 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 29,
       columnNumber: 25
     }
   }, `#${tag.toLowerCase()}`))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Sidebar);
+/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__["withAuth"])(Sidebar));
 
 /***/ }),
 
@@ -664,7 +689,10 @@ module.exports = {
 	"sidebar": "Sidebar_sidebar__ma1yP",
 	"sidebar_title": "Sidebar_sidebar_title__3lZ-e",
 	"sidebar_tags": "Sidebar_sidebar_tags__1IP9J",
-	"sidebar_tag": "Sidebar_sidebar_tag__yktie"
+	"sidebar_tag": "Sidebar_sidebar_tag__yktie",
+	"sidebar_profile": "Sidebar_sidebar_profile__19RNM",
+	"sidebar_img": "Sidebar_sidebar_img__2FNKS",
+	"sidebar_name": "Sidebar_sidebar_name__3zubS"
 };
 
 /***/ }),
@@ -2373,7 +2401,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function App({
   postList,
-  tags
+  tags,
+  auth
 }) {
   const {
     0: posts,
@@ -2600,7 +2629,7 @@ function Create({
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

@@ -659,8 +659,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar.module.css */ "./components/Sidebar/Sidebar.module.css");
 /* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! use-auth0-hooks */ "./node_modules/use-auth0-hooks/dist/index.js");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -668,7 +671,10 @@ function Sidebar(_ref) {
   var _this = this;
 
   var tags = _ref.tags,
-      getPostByTag = _ref.getPostByTag;
+      getPostByTag = _ref.getPostByTag,
+      auth = _ref.auth;
+  var user = auth.user;
+  console.log('user', user);
   var tagsList = new Set();
   tags.map(function (arr) {
     return arr.map(function (tag) {
@@ -687,23 +693,40 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 5
     }
-  }, __jsx("div", {
+  }, user && __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 20,
+      columnNumber: 16
+    }
+  }, __jsx("img", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_img,
+    src: user.picture,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
       columnNumber: 7
     }
   }), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_name,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 9
+    }
+  }, " ", user.name)), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 26,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -711,7 +734,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 27,
       columnNumber: 7
     }
   }, "Filter by tag"), __jsx("div", {
@@ -719,7 +742,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 28,
       columnNumber: 7
     }
   }, tagsArr.map(function (tag) {
@@ -730,14 +753,14 @@ function Sidebar(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
+        lineNumber: 29,
         columnNumber: 25
       }
     }, "#".concat(tag.toLowerCase()));
   })));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Sidebar);
+/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__["withAuth"])(Sidebar));
 
 /***/ }),
 
@@ -6084,13 +6107,16 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n\n  min-width: 20vw;\n  flex: 2 1;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n \n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,eAAe;EACf,SAAO;EACP,oCAAoC;EACpC,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,aAAa;;AAEf;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;;;AAGA;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n\n  min-width: 20vw;\n  flex: 2;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_tags {\n \n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}"]}]);
+exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n\n  min-width: 20vw;\n  flex: 2 1;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n \n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.Sidebar_sidebar_profile__19RNM {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: 1rem;\n  \n}\n\n.Sidebar_sidebar_img__2FNKS {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.Sidebar_sidebar_name__3zubS {\n  padding: 1rem;\n  font-weight: 500;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,eAAe;EACf,SAAO;EACP,oCAAoC;EACpC,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,aAAa;;AAEf;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;;;AAGA;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd;;AAEA;EACE,UAAU;EACV,oCAAoC;EACpC,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,wBAAwB;EACxB,kBAAkB;EAClB,aAAa;;AAEf;;AAEA;EACE,UAAU;EACV,kBAAkB;EAClB,YAAY;EACZ,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;AAClB","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n\n  min-width: 20vw;\n  flex: 2;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  \n}\n\n@media only screen and (max-width: 740px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_tags {\n \n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.sidebar_profile {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: 1rem;\n  \n}\n\n.sidebar_img {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.sidebar_name {\n  padding: 1rem;\n  font-weight: 500;\n}"]}]);
 // Exports
 exports.locals = {
 	"sidebar": "Sidebar_sidebar__ma1yP",
 	"sidebar_title": "Sidebar_sidebar_title__3lZ-e",
 	"sidebar_tags": "Sidebar_sidebar_tags__1IP9J",
-	"sidebar_tag": "Sidebar_sidebar_tag__yktie"
+	"sidebar_tag": "Sidebar_sidebar_tag__yktie",
+	"sidebar_profile": "Sidebar_sidebar_profile__19RNM",
+	"sidebar_img": "Sidebar_sidebar_img__2FNKS",
+	"sidebar_name": "Sidebar_sidebar_name__3zubS"
 };
 
 /***/ }),
@@ -51422,7 +51448,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 function App(_ref) {
   var postList = _ref.postList,
-      tags = _ref.tags;
+      tags = _ref.tags,
+      auth = _ref.auth;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       posts = _useState[0],
@@ -51688,7 +51715,7 @@ function Create(_ref) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************************************/
@@ -51711,5 +51738,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

@@ -6,7 +6,7 @@ import Create from './write';
 import Post from './post';
 
 
-function App({ postList, tags }) {
+function App({ postList, tags, auth }) {
 
   const [posts, setPosts] = useState([]);
 
