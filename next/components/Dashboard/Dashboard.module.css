@@ -3,9 +3,14 @@
 .body_wrapper{
   background-color: #fafafa;
   display: flex;
-
-  width: 100%;
+  width: 90%;
   margin: auto;
   padding-top: calc(2vh + 2%);
 }
 
+
+@media only screen and (max-width: 1000px) {
+  .body_wrapper {
+    width: 100%;
+  }
+}

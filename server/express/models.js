@@ -4,13 +4,13 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
   
-  title: String,
-  body: String,
-  tags: [String],
+  title: { type: String, text: true },
+  body: { type: String, text: true },
+  tags: { type: [String], text: true },
   img_url: String,
   timestamp: Number,
   votes: Number,
-  author: String,
+  author: { type: String, text: true },
   url: String
 });
 

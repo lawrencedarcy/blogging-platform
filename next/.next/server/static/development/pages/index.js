@@ -338,7 +338,8 @@ function Dashboard({
   posts,
   upVote,
   tags,
-  getPostByTag
+  getPostByTag,
+  searchPosts
 }) {
   return __jsx("div", {
     className: _Dashboard_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.body_wrapper,
@@ -351,6 +352,7 @@ function Dashboard({
   }, __jsx(_Sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], {
     tags: tags,
     getPostByTag: getPostByTag,
+    searchPosts: searchPosts,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -474,155 +476,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./components/NavBar/NavBar.js":
-/*!*************************************!*\
-  !*** ./components/NavBar/NavBar.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavBar.module.css */ "./components/NavBar/NavBar.module.css");
-/* harmony import */ var _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_NavBar_module_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/NavBar/NavBar.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-
-function NavBar() {
-  const {
-    isAuthenticated,
-    isLoading,
-    login,
-    logout
-  } = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["useAuth"])();
-  const {
-    pathname,
-    query
-  } = Object(next_router__WEBPACK_IMPORTED_MODULE_4__["useRouter"])();
-  return __jsx("div", {
-    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.nav_wrapper,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 5
-    }
-  }, __jsx("div", {
-    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navbar,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 7
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 7
-    }
-  }, __jsx("a", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 22
-    }
-  }, "  ", __jsx("img", {
-    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logo_png,
-    src: "https://uploads.guim.co.uk/2020/04/15/culture.png",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 27
-    }
-  }))), __jsx("div", {
-    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navbar_logo,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18,
-      columnNumber: 9
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18,
-      columnNumber: 45
-    }
-  }, __jsx("a", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18,
-      columnNumber: 60
-    }
-  }, "Stagetime"))), __jsx("div", {
-    className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navbar_write,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 9
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/write",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 46
-    }
-  }, __jsx("a", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 66
-    }
-  }, "Write a post")))));
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (NavBar);
-
-/***/ }),
-
-/***/ "./components/NavBar/NavBar.module.css":
-/*!*********************************************!*\
-  !*** ./components/NavBar/NavBar.module.css ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// Exports
-module.exports = {
-	"nav_wrapper": "NavBar_nav_wrapper__1WR3A",
-	"navbar": "NavBar_navbar__1e5Hf",
-	"navbar_logo": "NavBar_navbar_logo__3bO5G",
-	"logo_png": "NavBar_logo_png__386SP",
-	"navbar_write": "NavBar_navbar_write__EY4SA"
-};
-
-/***/ }),
-
 /***/ "./components/Sidebar/Sidebar.js":
 /*!***************************************!*\
   !*** ./components/Sidebar/Sidebar.js ***!
@@ -653,23 +506,44 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function Sidebar({
   tags,
   getPostByTag,
-  auth
+  auth,
+  searchPosts
 }) {
   const {
     pathname,
     query
-  } = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])(); // const { isAuthenticated, isLoading, login, logout } = useAuth0();
-
+  } = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])();
+  const {
+    isLoading,
+    login,
+    logout
+  } = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["useAuth"])();
   const {
     user
-  } = auth;
-  console.log('user', user);
+  } = auth; // handle tags - create a unique list to display
+
   const tagsList = new Set();
   tags.map(arr => arr.map(tag => tagsList.add(tag)));
-  const tagsArr = Array.from(tagsList);
+  const tagsArr = Array.from(tagsList); //handle search state 
+
+  const {
+    0: term,
+    1: setTerm
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
 
   const clickHandler = evt => {
     getPostByTag(evt.target.value);
+  };
+
+  const searchSubmit = e => {
+    event.stopPropagation();
+    e.preventDefault();
+    searchPosts(term);
+    setTerm('');
+  };
+
+  const handleChange = e => {
+    setTerm(e.target.value);
   };
 
   return __jsx("div", {
@@ -677,7 +551,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 37,
       columnNumber: 5
     }
   }, user ? __jsx("div", {
@@ -685,7 +559,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 40,
       columnNumber: 7
     }
   }, __jsx("img", {
@@ -694,7 +568,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 41,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -702,17 +576,18 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 42,
       columnNumber: 9
     }
   }, " ", user.name), __jsx("button", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
     onClick: () => logout({
       returnTo: 'http://localhost:3000'
     }),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 43,
       columnNumber: 7
     }
   }, "Logout")) : __jsx("div", {
@@ -720,7 +595,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 47,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -728,7 +603,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 48,
       columnNumber: 7
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
@@ -736,46 +611,53 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 48,
       columnNumber: 91
     }
   }, " Sign in below to write a post and join the discussion."), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
+    onClick: () => login({
+      appState: {
+        returnTo: {
+          pathname,
+          query
+        }
+      }
+    }),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 49,
       columnNumber: 9
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: "/write",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 47
-    }
-  }, __jsx("a", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 67
-    }
-  }, "Login")))), __jsx("div", {
+  }, "Login")), __jsx("form", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
+    onSubmit: searchSubmit,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 52,
       columnNumber: 7
     }
-  }), __jsx("div", {
+  }, __jsx("input", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search_input,
+    type: "text",
+    placeholder: "Search posts...",
+    onChange: handleChange,
+    value: term,
+    id: "searchPosts",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 9
+    }
+  })), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_title,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 61,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -783,7 +665,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 62,
       columnNumber: 7
     }
   }, tagsArr.map(tag => __jsx("button", {
@@ -793,7 +675,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 64,
       columnNumber: 25
     }
   }, `#${tag.toLowerCase()}`))));
@@ -814,6 +696,8 @@ function Sidebar({
 module.exports = {
 	"sidebar": "Sidebar_sidebar__ma1yP",
 	"sidebar_title": "Sidebar_sidebar_title__3lZ-e",
+	"sidebar_search": "Sidebar_sidebar_search__6hfx8",
+	"sidebar_search_input": "Sidebar_sidebar_search_input__8zQ9W",
 	"sidebar_tags": "Sidebar_sidebar_tags__1IP9J",
 	"sidebar_tag": "Sidebar_sidebar_tag__yktie",
 	"sidebar_profile": "Sidebar_sidebar_profile__19RNM",
@@ -821,7 +705,8 @@ module.exports = {
 	"sidebar_name": "Sidebar_sidebar_name__3zubS",
 	"sidebar_login": "Sidebar_sidebar_login__2lKjx",
 	"sidebar_text": "Sidebar_sidebar_text__g7JSJ",
-	"sidebar_tagline": "Sidebar_sidebar_tagline__1Rpho"
+	"sidebar_tagline": "Sidebar_sidebar_tagline__1Rpho",
+	"login_btn": "Sidebar_login_btn__3RDmD"
 };
 
 /***/ }),
@@ -2508,16 +2393,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/NavBar/NavBar */ "./components/NavBar/NavBar.js");
-/* harmony import */ var _components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Dashboard/Dashboard */ "./components/Dashboard/Dashboard.js");
-/* harmony import */ var _write__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./write */ "./pages/write/index.js");
-/* harmony import */ var _post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./post */ "./pages/post/index.js");
-/* harmony import */ var _post__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_post__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Dashboard/Dashboard */ "./components/Dashboard/Dashboard.js");
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
 
 
 
@@ -2535,14 +2413,12 @@ function App({
     setPosts(postList);
   }, []);
 
-  const findPost = url => {
-    const res = posts.filter(post => post.title && post.title.replace(/\s/g, '-').toLowerCase() === url);
-    console.log('foundpost', res[0]);
-    return res[0];
+  const getPostByTag = async tag => {
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/posts/${tag}`).then(data => setPosts(data.data));
   };
 
-  const getPostByTag = async tag => {
-    const res = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/posts/${tag}`).then(data => setPosts(data.data));
+  const searchPosts = async term => {
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/posts/search/${term}`).then(data => setPosts(data.data));
   };
 
   return __jsx("div", {
@@ -2550,17 +2426,18 @@ function App({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 28,
       columnNumber: 5
     }
-  }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
     posts: posts,
     tags: tags,
     getPostByTag: getPostByTag,
+    searchPosts: searchPosts,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 30,
       columnNumber: 7
     }
   }));
@@ -2576,213 +2453,6 @@ App.getInitialProps = async ctx => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
-
-/***/ }),
-
-/***/ "./pages/post/index.js":
-/*!*****************************!*\
-  !*** ./pages/post/index.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./pages/write/index.js":
-/*!******************************!*\
-  !*** ./pages/write/index.js ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/pages/write/index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-/* import ReactQuill from 'react-quill'; 
- */
-
-const ReactQuill = false ? undefined : () => false;
-/* https://github.com/zenoamaro/react-quill
- */
-
-
-
-function Create({
-  auth
-}) {
-  const {
-    user
-  } = auth;
-  const {
-    0: value,
-    1: setValue
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const {
-    0: headline,
-    1: setHeadline
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const {
-    0: tags,
-    1: setTags
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const {
-    0: image,
-    1: setImage
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-
-  const createPost = p => {
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:3001/posts', {
-      p
-    }).then(function (response) {
-      console.log(response);
-    }).catch(function (error) {
-      console.log(error);
-    });
-  };
-
-  const submitHandler = () => {
-    const combinePost = {
-      headline,
-      tags,
-      body: value,
-      image: image,
-      author: user.name
-    };
-    createPost(combinePost);
-    next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push('/submitted');
-  };
-
-  const changeHandler = e => {
-    setHeadline(e.target.value);
-  };
-
-  const tagChangeHandler = e => {
-    setTags(e.target.value);
-  };
-
-  const imageChangeHandler = e => {
-    setImage(e.target.value);
-  };
-
-  return __jsx("div", {
-    className: "create_wrapper",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51,
-      columnNumber: 5
-    }
-  }, __jsx("span", {
-    className: "headline_span",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52,
-      columnNumber: 7
-    }
-  }, "Headline:"), __jsx("input", {
-    className: "create_headline",
-    value: headline,
-    onChange: changeHandler,
-    placeholder: "Title your piece...",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 7
-    }
-  }), __jsx("span", {
-    className: "headline_span",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 7
-    }
-  }, "Tags:"), __jsx("input", {
-    className: "create_tags",
-    value: tags,
-    onChange: tagChangeHandler,
-    placeholder: "Up to four key topics, comma separated...",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55,
-      columnNumber: 7
-    }
-  }), __jsx("span", {
-    className: "headline_span",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56,
-      columnNumber: 7
-    }
-  }, "Image:"), __jsx("input", {
-    className: "create_tags",
-    value: image,
-    onChange: imageChangeHandler,
-    placeholder: "Add an optional image url...",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 7
-    }
-  }), __jsx("span", {
-    className: "body_span",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 5
-    }
-  }, "Body:"), __jsx(ReactQuill, {
-    theme: "snow",
-    value: value,
-    onChange: setValue,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 5
-    }
-  }), __jsx("div", {
-    className: "btn_wrapper",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 4
-    }
-  }, __jsx("button", {
-    className: "submit_btn",
-    type: "submit",
-    onClick: submitHandler,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 33
-    }
-  }, " Publish ")));
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["withLoginRequired"])(Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["withAuth"])(Create)));
 
 /***/ }),
 

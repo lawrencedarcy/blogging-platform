@@ -1,6 +1,5 @@
 .footer_wrapper {
   width: 80%;
-  
   height: 3rem;
   position: fixed;
   left: 10%;
@@ -18,7 +17,8 @@
 
 }
 
-.footer_upvote, .footer_share {
+.footer_upvote, .footer_upvote_clicked, .footer_share {
   color: white;
   cursor: pointer;
 }
+

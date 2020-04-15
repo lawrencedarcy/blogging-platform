@@ -1,7 +1,7 @@
 const {Post}= require('./models');
 
 const getPosts = async (req, res) => {
- 
+  console.log('hi from getPosts')
   try {
     const posts = await Post.find();   
     res.json(posts);
@@ -22,9 +22,26 @@ const getTags = async (req, res) => {
 };
 
 const getPostsByTag = async (req, res) => {
- 
+  
   try {
     const posts = await Post.find({tags: {$in: req.params.tag}});   
+    res.json(posts);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+const searchPosts = async (req, res) => {
+  console.log(req.params.term)
+  try {
+    const posts = await Post.find({
+      $text:
+        {
+          $search: req.params.term,
+          $language: "en",
+          $caseSensitive: false
+        }
+    });   
     res.json(posts);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -81,6 +98,7 @@ const getPostByUrl = () => {
 
 
 module.exports = {
+  searchPosts,
   getPosts,
   getTags,
   getPostsByTag,

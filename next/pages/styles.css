@@ -89,7 +89,7 @@ p {
 }
 
 .article_tag {
-  cursor: pointer;
+  
   padding: .3rem;
   font-size: .75rem;
   background-color: #fd6e9e;
@@ -97,6 +97,7 @@ p {
   margin: 0.2rem 0rem 0rem 0.2rem;
   outline: none;
   border: none;
+  text-transform: lowercase;
 }
 
 

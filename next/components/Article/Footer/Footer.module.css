@@ -18,18 +18,36 @@
 
 }
 
-.footer_upvote, .footer_share {
+.footer_upvote, .footer_upvote_clicked, .footer_share {
   color: white;
   cursor: pointer;
   border: 1px solid white;
-  padding: .4rem .6rem;
+  padding: .4rem .8rem;
   font-size: .9rem;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 80px;
 }
 
 
-.footer_upvote:hover, .footer_share:hover{
+.footer_upvote_clicked {
   background-color: #9efd6e;
+  cursor: default;
+}
+
+.footer_upvote:hover, .footer_share:hover{
+  border: 1px solid #9efd6e;
+  transform: scale(1.1);
+}
+
+.votes_wrapper {
+  display: flex;
+}
+
+.footer_votes {
+
 }
 
 .footer_logo{
