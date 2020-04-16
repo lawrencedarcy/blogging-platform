@@ -10,6 +10,7 @@ function Sidebar({tags, getPostByTag, auth, searchPosts}) {
   const { isLoading, login, logout } = useAuth();
   const { user } = auth;
   
+  
   console.log(user);
   // handle tags - create a unique list to display
   const tagsList = new Set;

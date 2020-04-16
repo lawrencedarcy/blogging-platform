@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -232,67 +232,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./components/SideBar/Article_Sidebar.js":
-/*!***********************************************!*\
-  !*** ./components/SideBar/Article_Sidebar.js ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar.module.css */ "./components/SideBar/Sidebar.module.css");
-/* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/SideBar/Article_Sidebar.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-function Article_Sidebar(props) {
-  return __jsx("div", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6,
-      columnNumber: 5
-    }
-  }, "Hello from article sidebar");
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Article_Sidebar);
-
-/***/ }),
-
-/***/ "./components/SideBar/Sidebar.module.css":
-/*!***********************************************!*\
-  !*** ./components/SideBar/Sidebar.module.css ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// Exports
-module.exports = {
-	"sidebar": "Sidebar_sidebar__zKOuU",
-	"sidebar_title": "Sidebar_sidebar_title__v9ukD",
-	"sidebar_reading": "Sidebar_sidebar_reading__2gW2W",
-	"sidebar_search": "Sidebar_sidebar_search__3IOXr",
-	"sidebar_search_input": "Sidebar_sidebar_search_input__28ZON",
-	"sidebar_tags": "Sidebar_sidebar_tags__1SUs_",
-	"sidebar_tag": "Sidebar_sidebar_tag__2BMYF",
-	"sidebar_profile": "Sidebar_sidebar_profile__2Lket",
-	"sidebar_img": "Sidebar_sidebar_img__3d5Ud",
-	"sidebar_name": "Sidebar_sidebar_name__29kfy",
-	"sidebar_login": "Sidebar_sidebar_login__3j9SP",
-	"sidebar_text": "Sidebar_sidebar_text__SeytN",
-	"sidebar_tagline": "Sidebar_sidebar_tagline__qvFKA",
-	"login_btn": "Sidebar_login_btn__AV-87"
-};
-
-/***/ }),
-
 /***/ "./pages/post/[id].js":
 /*!****************************!*\
   !*** ./pages/post/[id].js ***!
@@ -311,10 +250,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var interweave__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(interweave__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var disqus_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! disqus-react */ "disqus-react");
 /* harmony import */ var disqus_react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(disqus_react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_SideBar_Article_Sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/SideBar/Article_Sidebar */ "./components/SideBar/Article_Sidebar.js");
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/pages/post/[id].js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -336,7 +273,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 24,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -344,7 +281,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 27,
       columnNumber: 4
     }
   }), __jsx("div", {
@@ -352,7 +289,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 29,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -360,7 +297,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 31,
       columnNumber: 7
     }
   }, post.title), __jsx("div", {
@@ -368,7 +305,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 32,
       columnNumber: 7
     }
   }, post.author), __jsx("div", {
@@ -376,7 +313,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 33,
       columnNumber: 5
     }
   }, post.tags.slice(0, 3).map(tag => __jsx("div", {
@@ -384,7 +321,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 33,
       columnNumber: 68
     }
   }, "#", tag))), __jsx("div", {
@@ -392,7 +329,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 34,
       columnNumber: 6
     }
   }, __jsx(interweave__WEBPACK_IMPORTED_MODULE_3__["Markup"], {
@@ -400,7 +337,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 37,
       columnNumber: 8
     }
   }), __jsx("div", {
@@ -409,7 +346,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 42,
       columnNumber: 1
     }
   }, __jsx(disqus_react__WEBPACK_IMPORTED_MODULE_4__["DiscussionEmbed"], {
@@ -424,7 +361,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 43,
       columnNumber: 5
     }
   }))), __jsx(_components_Article_Footer_Footer__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -433,7 +370,7 @@ function Post({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 53,
       columnNumber: 7
     }
   })));
@@ -456,7 +393,7 @@ Post.getInitialProps = async ({
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!**********************************!*\
   !*** multi ./pages/post/[id].js ***!
   \**********************************/

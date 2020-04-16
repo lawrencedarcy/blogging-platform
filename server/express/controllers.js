@@ -1,4 +1,4 @@
-const {Post}= require('./models');
+const {Post, User}= require('./models');
 
 const getPosts = async (req, res) => {
   console.log('hi from getPosts')
@@ -73,7 +73,7 @@ const addPost = async (req, res) => {
 
 const upVote = async (req, res) => {
   try {
-    const upVoted = await Post.findOneAndUpdate({_id: req.params.id}, { $inc: { votes: 1}});
+    const upVoted = await Post.findOneAndUpdate({_id: req.params.id}, { $inc: { votes: 1}}, {new: true});
     res.status(200).json(upVoted); 
   } catch (err) {
     res.status(500).json({ message: err.message }); 
@@ -89,10 +89,45 @@ const getPostById = async (req, res) => {
   }
 };
 
-const getPostByUrl = () => {
-  
-  
+
+const addUser = async (req, res) => {
+
+  const user = new User (
+    {
+    name: req.body.name,
+    }
+  );
+  try {
+    const newUser = await user.save();
+    res.status(201).json(newUser);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+
 }
+
+const getUser = async (req, res) => {
+  
+  try {
+    const user = await User.find({name: req.params.name});   
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+
+const editUser = async (req, res) => {
+  console.log('rhi from edituser body', req.body);// eslint-disable-line
+  try {
+    const edited = await User.findOneAndUpdate({name: req.params.name}, {
+      $push: { reading: req.body.reading}
+      }, {new: true});
+    res.status(200).json(edited); 
+  } catch (err) {
+    res.status(500).json({ message: err.message }); 
+  }
+};
 
 
 
@@ -104,7 +139,10 @@ module.exports = {
   getPostsByTag,
   addPost,
   upVote,
-  getPostById
+  getPostById,
+  addUser,
+  getUser,
+  editUser
 }; 
 
 

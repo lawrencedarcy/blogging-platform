@@ -3,7 +3,6 @@ import Footer from '../../components/Article/Footer/Footer';
 import axios from 'axios';
 import { Markup } from 'interweave';
 import { DiscussionEmbed } from 'disqus-react';
-import Article_Sidebar from '../../components/SideBar/Article_Sidebar';
 
 
 

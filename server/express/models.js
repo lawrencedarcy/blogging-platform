@@ -15,5 +15,16 @@ const postSchema = new Schema({
 });
 
 
+const userSchema = new Schema({
+  
+  name: String,
+  bio: String,
+  posts: [postSchema],
+  comments: [],
+  reading: [String]
+
+});
+
 const Post = mongoose.model('Post', postSchema);
-module.exports = {Post};
+const User = mongoose.model('User', userSchema);
+module.exports = {Post, User};
