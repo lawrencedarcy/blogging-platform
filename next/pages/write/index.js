@@ -31,7 +31,7 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 
 
   const submitHandler = () => {
-    const combinePost = {headline, tags, body: value, image: image, author: user.name};
+    const combinePost = {headline, tags, body: value, image: image, author: user.nickname || user.name};
     createPost(combinePost);
     Router.push('/submitted');
   }

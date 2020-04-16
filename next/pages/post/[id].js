@@ -2,6 +2,9 @@ import React from 'react';
 import Footer from '../../components/Article/Footer/Footer';
 import axios from 'axios';
 import { Markup } from 'interweave';
+import { DiscussionEmbed } from 'disqus-react';
+import Article_Sidebar from '../../components/SideBar/Article_Sidebar';
+
 
 
 function Post({post}) {
@@ -20,9 +23,12 @@ function Post({post}) {
   return (
    
     <div>
+
+
    <div className="whitespace"></div>
-   
+
     <div className="body_wrapper">
+    
       <div className="article_title">{post.title}</div>
       <div className="article_author">{post.author}</div>
     <div className="article_tags">{post.tags.slice(0,3).map(tag => <div className="article_tag">#{tag}</div>)}</div>
@@ -31,14 +37,25 @@ function Post({post}) {
        
        <Markup content={post.body}/> 
 
+       
 
-      </div>
+
+<div className="article_disqus" id="disqus">
+    <DiscussionEmbed
+    shortname='stagetime' 
+    config={
+        {url: post.id},
+        {identifier: post.id},
+        {title: post.title}
+    }/>
+</div>
+
+      </div> 
       <Footer upVote={upVote} post={post}/>
     </div>
 
-    <div className="article_sidebar"></div>
+   
 
-    
     </div>
   );
 };

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -339,7 +339,8 @@ function Dashboard({
   upVote,
   tags,
   getPostByTag,
-  searchPosts
+  searchPosts,
+  feedState
 }) {
   return __jsx("div", {
     className: _Dashboard_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.body_wrapper,
@@ -362,6 +363,7 @@ function Dashboard({
   }), __jsx(_Feed_Feed__WEBPACK_IMPORTED_MODULE_1__["default"], {
     posts: posts,
     upVote: upVote,
+    feedState: feedState,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -405,6 +407,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Feed_module_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Feed_module_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _FeedHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FeedHeader */ "./components/Feed/FeedHeader.js");
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -412,8 +415,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 function Feed({
-  posts
+  posts,
+  feedState
 }) {
   console.log(posts);
   /* const URL_title = post.title.replace(regex, '-').toLowerCase(); */
@@ -430,12 +435,28 @@ function Feed({
       lineNumber: 18,
       columnNumber: 5
     }
-  }, sortedList.map(post => __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, feedState === 'tags' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    filter: 'tags',
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 31
+    }
+  }), feedState === 'search' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    filter: 'search',
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 33
+    }
+  }), sortedList.map(post => __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: `/post/${post._id}`,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -443,7 +464,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 23,
       columnNumber: 9
     }
   }, __jsx(_Card_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -452,7 +473,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 24,
       columnNumber: 11
     }
   })))));
@@ -471,8 +492,98 @@ function Feed({
 
 // Exports
 module.exports = {
-	"feed_card": "Feed_feed_card__1q6Np"
+	"feed_card": "Feed_feed_card__1q6Np",
+	"feed_header": "Feed_feed_header__2zt6O",
+	"link": "Feed_link__1Uj-G"
 };
+
+/***/ }),
+
+/***/ "./components/Feed/FeedHeader.js":
+/*!***************************************!*\
+  !*** ./components/Feed/FeedHeader.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Feed_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Feed.module.css */ "./components/Feed/Feed.module.css");
+/* harmony import */ var _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Feed_module_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/FeedHeader.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+function FeedHeader({
+  filter
+}) {
+  return __jsx("div", {
+    className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.feed_header,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 5
+    }
+  }, filter == 'tags' ? __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 5
+    }
+  }, "Feed filtered by tag. ", __jsx("span", {
+    className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.link,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 32
+    }
+  }, __jsx("a", {
+    href: "/",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 62
+    }
+  }, "Refresh the feed."), " ")) : __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 5
+    }
+  }, "Your search results. ", __jsx("span", {
+    className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.link,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 31
+    }
+  }, __jsx("a", {
+    href: "/",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 61
+    }
+  }, "Refresh the feed."))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (FeedHeader);
 
 /***/ }),
 
@@ -493,11 +604,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
 /* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -520,7 +628,8 @@ function Sidebar({
   } = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["useAuth"])();
   const {
     user
-  } = auth; // handle tags - create a unique list to display
+  } = auth;
+  console.log(user); // handle tags - create a unique list to display
 
   const tagsList = new Set();
   tags.map(arr => arr.map(tag => tagsList.add(tag)));
@@ -551,7 +660,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 38,
       columnNumber: 5
     }
   }, user ? __jsx("div", {
@@ -559,7 +668,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 41,
       columnNumber: 7
     }
   }, __jsx("img", {
@@ -568,7 +677,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 42,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -576,10 +685,18 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 43,
+      columnNumber: 7
+    }
+  }, " ", user.nickname || user.name), __jsx("div", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_reading,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44,
       columnNumber: 9
     }
-  }, " ", user.name), __jsx("button", {
+  }, "\uD83D\uDCDA Go to your reading list"), __jsx("button", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
     onClick: () => logout({
       returnTo: 'http://localhost:3000'
@@ -587,7 +704,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 45,
       columnNumber: 7
     }
   }, "Logout")) : __jsx("div", {
@@ -595,7 +712,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 49,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -603,7 +720,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 50,
       columnNumber: 7
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
@@ -611,7 +728,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 50,
       columnNumber: 91
     }
   }, " Sign in below to write a post and join the discussion."), __jsx("div", {
@@ -627,7 +744,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 51,
       columnNumber: 9
     }
   }, "Login")), __jsx("form", {
@@ -636,7 +753,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 54,
       columnNumber: 7
     }
   }, __jsx("input", {
@@ -649,7 +766,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 55,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -657,7 +774,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 63,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -665,7 +782,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 64,
       columnNumber: 7
     }
   }, tagsArr.map(tag => __jsx("button", {
@@ -675,7 +792,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 66,
       columnNumber: 25
     }
   }, `#${tag.toLowerCase()}`))));
@@ -696,6 +813,7 @@ function Sidebar({
 module.exports = {
 	"sidebar": "Sidebar_sidebar__ma1yP",
 	"sidebar_title": "Sidebar_sidebar_title__3lZ-e",
+	"sidebar_reading": "Sidebar_sidebar_reading__1DUV3",
 	"sidebar_search": "Sidebar_sidebar_search__6hfx8",
 	"sidebar_search_input": "Sidebar_sidebar_search_input__8zQ9W",
 	"sidebar_tags": "Sidebar_sidebar_tags__1IP9J",
@@ -2409,16 +2527,27 @@ function App({
     0: posts,
     1: setPosts
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
+  const {
+    0: feed,
+    1: setFeed
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('normal');
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     setPosts(postList);
+    setFeed('normal');
   }, []);
 
   const getPostByTag = async tag => {
-    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/posts/${tag}`).then(data => setPosts(data.data));
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/posts/${tag}`).then(data => {
+      setPosts(data.data);
+      setFeed('tags');
+    });
   };
 
   const searchPosts = async term => {
-    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/posts/search/${term}`).then(data => setPosts(data.data));
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/posts/search/${term}`).then(data => {
+      setPosts(data.data);
+      setFeed('search');
+    });
   };
 
   return __jsx("div", {
@@ -2426,7 +2555,7 @@ function App({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 35,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2434,10 +2563,11 @@ function App({
     tags: tags,
     getPostByTag: getPostByTag,
     searchPosts: searchPosts,
+    feedState: feed,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 37,
       columnNumber: 7
     }
   }));
@@ -2456,7 +2586,7 @@ App.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

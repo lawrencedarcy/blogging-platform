@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './Sidebar.module.css';
 import { useRouter } from 'next/router';
 import { useAuth, withAuth } from 'use-auth0-hooks';
-import Link from 'next/link';
+
 
 
 function Sidebar({tags, getPostByTag, auth, searchPosts}) {
@@ -10,6 +10,7 @@ function Sidebar({tags, getPostByTag, auth, searchPosts}) {
   const { isLoading, login, logout } = useAuth();
   const { user } = auth;
   
+  console.log(user);
   // handle tags - create a unique list to display
   const tagsList = new Set;
   tags.map(arr => arr.map(tag => tagsList.add(tag)));
@@ -39,7 +40,8 @@ function Sidebar({tags, getPostByTag, auth, searchPosts}) {
       {user ? 
       <div className={styles.sidebar_profile}>
       <img className={styles.sidebar_img} src={user.picture} />
-        <div className={styles.sidebar_name}> {user.name}</div>
+      <div className={styles.sidebar_name}> {user.nickname || user.name}</div>
+        <div className={styles.sidebar_reading}>📚 Go to your reading list</div>
       <button className={styles.sidebar_login} onClick={() => logout({ returnTo: 'http://localhost:3000' })}>Logout</button>
      
       </div>

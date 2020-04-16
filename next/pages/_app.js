@@ -4,7 +4,6 @@ import Head from 'next/head';
 import App from 'next/app';
 import NavBar from '../components/NavBar/NavBar';
 import 'react-quill/dist/quill.snow.css';
-
 import { Auth0Provider } from 'use-auth0-hooks';
 
 

@@ -5,6 +5,7 @@
   margin: 0;
   outline: none;
   font-family: 'Roboto', sans-serif;
+  color: rgba(0, 0, 0, 0.788);
 }
 
 .form {
@@ -13,7 +14,6 @@
 }
 
 a {
-
   text-decoration: none;
   color: inherit;
   font-family: inherit;
@@ -41,9 +41,7 @@ body {
 
 }
 
-p {
-  
-}
+
 
 .whitespace{
   height: 12vh;
@@ -53,11 +51,16 @@ p {
   margin: 0rem auto;
   height: 100%;
   width: 80%;
-  max-width: 800px;
   border: 1px solid rgb(199, 199, 199);
   background-color: white;
   padding: 2rem;
   overflow: hidden;
+}
+
+@media only screen and (min-width: 1200px) {
+  .body_wrapper {
+    width: 60%;
+  }
 }
 
 .article_title {
@@ -81,6 +84,7 @@ p {
   font-weight: medium;
   font-size: 1.3rem;
   padding: .5rem 0;
+  text-transform: capitalize;
 }
 
 .article_tags{

@@ -17,3 +17,23 @@
   
 }
 
+.feed_header {
+  cursor: pointer;
+  padding: 1.5rem;
+  margin: .5rem auto;
+  border: 1px solid rgb(199, 199, 199);
+  background-color: white;
+  width: 100%;
+  overflow: auto;
+  flex: 7;
+  min-width: calc(250px + 25vw);
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.link{
+  color: #fd6e9e;
+}

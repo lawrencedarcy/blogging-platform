@@ -2,9 +2,9 @@ import React from 'react';
 import Card from '../Card/Card';
 import styles from './Feed.module.css';
 import Link from 'next/link';
+import FeedHeader from './FeedHeader';
 
-
-function Feed({posts}) {
+function Feed({posts, feedState}) {
 
   console.log(posts);
   /* const URL_title = post.title.replace(regex, '-').toLowerCase(); */
@@ -16,7 +16,8 @@ function Feed({posts}) {
   return (
    
     <div>
-     
+     {feedState === 'tags' && <FeedHeader filter={'tags'} />}
+     {feedState === 'search' && <FeedHeader filter={'search'} />}
      { sortedList.map(post => (
         <Link href={`/post/${post._id}`}  >
         <div className={styles.feed_card}>
