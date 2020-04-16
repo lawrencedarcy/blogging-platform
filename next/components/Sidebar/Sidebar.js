@@ -5,11 +5,10 @@ import { useAuth, withAuth } from 'use-auth0-hooks';
 
 
 
-function Sidebar({tags, getPostByTag, auth, searchPosts}) {
+function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
   const { pathname, query } = useRouter();
   const { isLoading, login, logout } = useAuth();
   const { user } = auth;
-  
   
   console.log(user);
   // handle tags - create a unique list to display
@@ -23,6 +22,10 @@ function Sidebar({tags, getPostByTag, auth, searchPosts}) {
   const clickHandler = (evt) => {
     getPostByTag(evt.target.value);
   }
+  const readingClickHandler = (evt) => {
+    getReadingList(user);
+  }
+
 
   const searchSubmit = (e) => {
     event.stopPropagation();
@@ -42,7 +45,7 @@ function Sidebar({tags, getPostByTag, auth, searchPosts}) {
       <div className={styles.sidebar_profile}>
       <img className={styles.sidebar_img} src={user.picture} />
       <div className={styles.sidebar_name}> {user.nickname || user.name}</div>
-        <div className={styles.sidebar_reading}>📚 Go to your reading list</div>
+        <div className={styles.sidebar_reading} onClick={readingClickHandler}>📚 Go to your reading list</div>
       <button className={styles.sidebar_login} onClick={() => logout({ returnTo: 'http://localhost:3000' })}>Logout</button>
      
       </div>

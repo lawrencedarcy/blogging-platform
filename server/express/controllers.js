@@ -95,6 +95,7 @@ const addUser = async (req, res) => {
   const user = new User (
     {
     name: req.body.name,
+    reading: req.body.reading
     }
   );
   try {
@@ -129,6 +130,17 @@ const editUser = async (req, res) => {
   }
 };
 
+const getList = async (req, res) => {
+  console.log('hi from getList', req.query.list)
+  const arrayOfIds = req.query.list;
+  try {
+    const posts = await Post.find({ _id: { $in : arrayOfIds } });   
+    res.json(posts);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 
 
 
@@ -142,7 +154,8 @@ module.exports = {
   getPostById,
   addUser,
   getUser,
-  editUser
+  editUser,
+  getList
 }; 
 
 
