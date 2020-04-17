@@ -32,7 +32,7 @@ function Footer(_ref) {
   }, []);
 
   var clickHandler = function clickHandler() {
-    setVote === false && upVote(post._id);
+    upVote(post._id);
     setVote(true);
     localStorage.setItem(post._id, true);
   };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Card from '../Card/Card';
 import styles from './Feed.module.css';
 import FeedHeader from './FeedHeader';
@@ -14,10 +14,11 @@ function Feed({ posts, feedState, addToList, deleteFromList, checkReadingList })
   });
 
   return (
-    <div>
+    <div className={styles.feed_body}>
       {feedState === 'tags' && <FeedHeader filter={'tags'} />}
       {feedState === 'search' && <FeedHeader filter={'search'} />}
       {feedState === 'list' && <FeedHeader filter={'list'} />}
+
       {sortedList.map(post => (
         <div className={styles.feed_card}>
           <Card
@@ -29,7 +30,10 @@ function Feed({ posts, feedState, addToList, deleteFromList, checkReadingList })
             checkReadingList={checkReadingList}
           />
         </div>
+
       ))}
+     
+
     </div>
   );
 }

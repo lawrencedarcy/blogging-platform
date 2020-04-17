@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styles from './Sidebar.module.css';
 import { useRouter } from 'next/router';
 import { useAuth, withAuth } from 'use-auth0-hooks';
+import Skeleton from 'react-loading-skeleton';
 
 
 
@@ -10,7 +11,7 @@ function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
   const { isLoading, login, logout } = useAuth();
   const { user } = auth;
   
-  console.log(user);
+
   // handle tags - create a unique list to display
   const tagsList = new Set;
   tags.map(arr => arr.map(tag => tagsList.add(tag)));
@@ -40,8 +41,11 @@ function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
 
   return (
     <div className={styles.sidebar}>
-    
-      {user ? 
+      
+      {
+      isLoading ? <div><Skeleton count={11}/></div> :
+
+      user ? 
       <div className={styles.sidebar_profile}>
       <img className={styles.sidebar_img} src={user.picture} />
       <div className={styles.sidebar_name}> {user.nickname || user.name}</div>
@@ -55,6 +59,8 @@ function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
         <div className={styles.sidebar_login} onClick={() => login({ appState: { returnTo: { pathname, query } } })}>Sign in</div>
       </div>
       }
+    
+    
       <form className={styles.sidebar_search}  onSubmit={searchSubmit}>
         <input className={styles.sidebar_search_input} 
                 type="text" 

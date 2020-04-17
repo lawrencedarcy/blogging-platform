@@ -125,7 +125,7 @@ function Footer({
   }, []);
 
   const clickHandler = () => {
-    setVote === false && upVote(post._id);
+    upVote(post._id);
     setVote(true);
     localStorage.setItem(post._id, true);
   };

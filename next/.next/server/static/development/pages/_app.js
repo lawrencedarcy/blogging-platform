@@ -229,15 +229,15 @@ function NavBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 46
+      lineNumber: 23,
+      columnNumber: 11
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 66
+      lineNumber: 23,
+      columnNumber: 31
     }
   }, "Write a post")))));
 }

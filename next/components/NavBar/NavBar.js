@@ -18,7 +18,10 @@ function NavBar() {
         <div className={styles.navbar_logo}><Link href="/"><a>       
  Stagetime</a></Link></div>
 
-        <div className={styles.navbar_write}><Link href="/write"><a>Write a post</a></Link></div>
+        <div className={styles.navbar_write}>
+          
+          <Link href="/write"><a>Write a post</a></Link></div>
+          
       </div>
     </div>
   );
