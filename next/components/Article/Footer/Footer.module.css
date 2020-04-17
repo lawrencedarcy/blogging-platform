@@ -22,7 +22,7 @@
 }
 
 .footer {
-  background-color: #6ecdfd;
+  background-color: #6E86FD;
   height: 3.6rem;
   display: flex;
   justify-content: space-between;
@@ -61,12 +61,12 @@
 
 
 .footer_upvote_clicked {
-  background-color: #9efd6e;
+  background-color: #6EFD9D;
   cursor: default;
 }
 
 .footer_upvote:hover, .footer_share:hover, .footer_discuss:hover {
-  border: 1px solid #9efd6e;
+  border: 1px solid #6EFD9D;
   transform: scale(1.1);
 }
 

@@ -49,11 +49,11 @@
   border-radius: 4px;
   height: 3rem;
   width: 14rem;
-  background-color: #6ecdfd;
+  background-color: #6E86FD;
   
   font-size: 1.1rem;
 }
 
 .submit_btn:hover {
-  background-color: #9efd6e;
+  background-color: #6EFD9D;
 }

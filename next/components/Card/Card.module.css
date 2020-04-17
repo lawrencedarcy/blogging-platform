@@ -32,7 +32,7 @@
   cursor: pointer;
   font-size: .7rem;
   padding: 0.25rem;
-  background-color: #fd6e9e;
+  background-color: #FD6ECE;
   color: white;
   margin: 0.1rem 0rem 0rem 0.27rem;
   text-transform: lowercase;
@@ -43,7 +43,7 @@
   float: right;
   padding: .3rem .4rem;
   color: white;
-  background-color: #6ecdfd;
+  background-color: #6E86FD;
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: 4px;
@@ -53,12 +53,12 @@
 }
 
 .card_btn_clicked {
-  background-color: #9efd6e;
+  background-color: #6EFD9D;
 }
 
 .card_btn:hover {
   
-  background-color: #9efd6e;
+  background-color: #6EFD9D;
   
 }
 

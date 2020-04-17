@@ -7,7 +7,7 @@
   
 }
 .navbar {
-  background-color: #fde56eb2;
+  background-color: #FDE56E;
   height: 3.6rem;
   display: flex;
   justify-content: space-between;
@@ -58,8 +58,8 @@ margin: 0 2rem 0 0;
 
 .navbar_write:hover {
   color: white;
-  background-color: #6ecdfd;
-  border: 1px solid #6ecdfd;
+  background-color: #6E86FD;
+  border: 1px solid #6E86FD;
 }
 
 

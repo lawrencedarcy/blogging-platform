@@ -96,7 +96,7 @@ body {
   
   padding: .3rem;
   font-size: .75rem;
-  background-color: #fd6e9e;
+  background-color: #FD6ECE;
   color: white;
   margin: 0.2rem 0rem 0rem 0.2rem;
   outline: none;
@@ -156,13 +156,13 @@ body {
   border-radius: 4px;
   height: 3rem;
   width: 14rem;
-  background-color: #6ecdfd;
+  background-color: #6E86FD;
   
   font-size: 1.1rem;
 }
 
 .submit_btn:hover {
-  background-color: #9efd6e;
+  background-color: #6EFD9D;
 }
 
 .submitted{
@@ -180,11 +180,11 @@ body {
   border-radius: 4px;
   height: 3rem;
   width: 11rem;
-  background-color: #6ecdfd;
+  background-color: #6E86FD;
   
   font-size: 1.1rem;
 }
 
 .feed_btn:hover {
-  background-color: #9efd6e;
+  background-color: #6EFD9D;
 }

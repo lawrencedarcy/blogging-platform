@@ -2239,7 +2239,7 @@ function MyApp({
     }
   }), __jsx("meta", {
     name: "theme-color",
-    content: "background-color: #fde56e",
+    content: "#fde56e",
     __self: this,
     __source: {
       fileName: _jsxFileName,
