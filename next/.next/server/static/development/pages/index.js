@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -147,11 +147,12 @@ function Card({
   addToList,
   auth,
   feedState,
-  deleteFromList
+  deleteFromList,
+  checkReadingList
 }) {
-  const regex = /\s/g;
   const {
-    login
+    login,
+    isLoading
   } = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["useAuth"])();
   const {
     user
@@ -160,11 +161,20 @@ function Card({
     0: isClicked,
     1: setIsClicked
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: onList,
+    1: setOnList
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (user) {
+      checkReadingList(user, post._id).then(isOnList => setOnList(isOnList));
+    }
+  }, [user]);
 
   const clickHandler = e => {
     console.log(post._id);
     user ? addToList(user, post._id) : login();
-    setIsClicked(true);
+    setOnList(true);
   };
 
   return __jsx("div", {
@@ -172,7 +182,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 35,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -180,15 +190,15 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
-      columnNumber: 9
+      lineNumber: 36,
+      columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: `/post/${post._id}`,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 37,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -196,8 +206,8 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
-      columnNumber: 44
+      lineNumber: 38,
+      columnNumber: 11
     }
   }, __jsx("img", {
     src: post.img_url,
@@ -205,86 +215,86 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
-      columnNumber: 11
+      lineNumber: 39,
+      columnNumber: 13
     }
   }), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_title,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
-      columnNumber: 11
+      lineNumber: 40,
+      columnNumber: 13
     }
   }, post.title), post.tags.length > 0 && __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_tags,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 14
+      lineNumber: 43,
+      columnNumber: 15
     }
   }, post.tags.slice(0, 3).map(tag => __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
-      columnNumber: 47
+      lineNumber: 45,
+      columnNumber: 19
     }
   }, '#' + tag))), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_line,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
-      columnNumber: 11
+      lineNumber: 50,
+      columnNumber: 13
     }
   }, __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_author,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
-      columnNumber: 13
+      lineNumber: 51,
+      columnNumber: 15
     }
   }, post.author, " "), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_timestamp,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
-      columnNumber: 13
+      lineNumber: 52,
+      columnNumber: 15
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
-      columnNumber: 15
+      lineNumber: 53,
+      columnNumber: 17
     }
   }, __jsx(react_moment__WEBPACK_IMPORTED_MODULE_2___default.a, {
     format: "LL",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
-      columnNumber: 20
+      lineNumber: 54,
+      columnNumber: 19
     }
   }, post.timestamp))))))), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_bottom,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
-      columnNumber: 9
+      lineNumber: 61,
+      columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: `/post/${post._id}`,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 62,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -292,8 +302,8 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 44
+      lineNumber: 63,
+      columnNumber: 11
     }
   }, __jsx("img", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_upvote,
@@ -301,16 +311,16 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 9
+      lineNumber: 64,
+      columnNumber: 13
     }
   }), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_votes,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 107
+      lineNumber: 68,
+      columnNumber: 13
     }
   }, post.votes))), feedState === 'list' ? __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn,
@@ -318,19 +328,19 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 73,
       columnNumber: 11
     }
-  }, "\uD83D\uDCDA Remove") : __jsx("div", {
-    className: isClicked ? _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn_clicked : _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn,
+  }, "\uD83D\uDCDA Remove") : !isLoading && __jsx("div", {
+    className: onList ? _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn_clicked : _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn,
     onClick: () => clickHandler(),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 81,
       columnNumber: 11
     }
-  }, isClicked ? '📚 Saved' : '📚 Save')));
+  }, onList ? '📚 Saved' : '📚 Save')));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["withAuth"])(Card));
@@ -398,7 +408,8 @@ function Dashboard({
   feedState,
   addToList,
   getReadingList,
-  deleteFromList
+  deleteFromList,
+  checkReadingList
 }) {
   return __jsx("div", {
     className: _Dashboard_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.body_wrapper,
@@ -425,10 +436,11 @@ function Dashboard({
     feedState: feedState,
     addToList: addToList,
     deleteFromList: deleteFromList,
+    checkReadingList: checkReadingList,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 15,
       columnNumber: 7
     }
   }));
@@ -467,11 +479,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Feed_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Feed.module.css */ "./components/Feed/Feed.module.css");
 /* harmony import */ var _Feed_module_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Feed_module_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _FeedHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FeedHeader */ "./components/Feed/FeedHeader.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -481,11 +490,9 @@ function Feed({
   posts,
   feedState,
   addToList,
-  deleteFromList
+  deleteFromList,
+  checkReadingList
 }) {
-  console.log(posts);
-  /* const URL_title = post.title.replace(regex, '-').toLowerCase(); */
-
   const sortedList = posts.sort(function (a, b) {
     a = a.votes;
     b = b.votes;
@@ -504,7 +511,7 @@ function Feed({
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18,
-      columnNumber: 31
+      columnNumber: 32
     }
   }), feedState === 'search' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
     filter: 'search',
@@ -512,7 +519,7 @@ function Feed({
     __source: {
       fileName: _jsxFileName,
       lineNumber: 19,
-      columnNumber: 33
+      columnNumber: 34
     }
   }), feedState === 'list' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
     filter: 'list',
@@ -520,14 +527,14 @@ function Feed({
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20,
-      columnNumber: 31
+      columnNumber: 32
     }
   }), sortedList.map(post => __jsx("div", {
     className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.feed_card,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 22,
       columnNumber: 9
     }
   }, __jsx(_Card_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -536,10 +543,11 @@ function Feed({
     addToList: addToList,
     feedState: feedState,
     deleteFromList: deleteFromList,
+    checkReadingList: checkReadingList,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 23,
       columnNumber: 11
     }
   }))));
@@ -578,14 +586,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Feed_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Feed.module.css */ "./components/Feed/Feed.module.css");
 /* harmony import */ var _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Feed_module_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/FeedHeader.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
 
 
 
@@ -597,14 +599,14 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 7,
       columnNumber: 5
     }
   }, filter === 'list' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 9,
       columnNumber: 9
     }
   }, "These are your saved articles.", ' ', __jsx("span", {
@@ -612,7 +614,7 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 11,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -620,14 +622,14 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 12,
       columnNumber: 13
     }
-  }, "Refresh the feed."))), filter === 'tags' && __jsx("div", {
+  }, "Go back to the feed."))), filter === 'tags' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 18,
       columnNumber: 9
     }
   }, "Feed filtered by tag.", ' ', __jsx("span", {
@@ -635,7 +637,7 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 20,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -643,14 +645,14 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 21,
       columnNumber: 13
     }
   }, "Refresh the feed."), ' ')), filter === 'search' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 26,
       columnNumber: 9
     }
   }, "Your search results.", ' ', __jsx("span", {
@@ -658,7 +660,7 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 28,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -666,7 +668,7 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 29,
       columnNumber: 13
     }
   }, "Refresh the feed."))));
@@ -2607,11 +2609,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Dashboard/Dashboard */ "./components/Dashboard/Dashboard.js");
-/* harmony import */ var zlib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! zlib */ "zlib");
-/* harmony import */ var zlib__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(zlib__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -2696,12 +2695,20 @@ function App({
     });
   };
 
+  const checkReadingList = async (user, postId) => {
+    return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/users/${user.nickname}`).then(res => {
+      const list = res.data[0].reading;
+      console.log('checked the list!', list.includes(postId) ? true : false);
+      return list.includes(postId) ? true : false;
+    });
+  };
+
   return __jsx("div", {
     className: "app_body",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 85,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2713,10 +2720,11 @@ function App({
     feedState: feed,
     getReadingList: getReadingList,
     deleteFromList: deleteFromList,
+    checkReadingList: checkReadingList,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 87,
       columnNumber: 7
     }
   }));
@@ -2735,7 +2743,7 @@ App.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2843,17 +2851,6 @@ module.exports = require("url");
 /***/ (function(module, exports) {
 
 module.exports = require("use-auth0-hooks");
-
-/***/ }),
-
-/***/ "zlib":
-/*!***********************!*\
-  !*** external "zlib" ***!
-  \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("zlib");
 
 /***/ })
 

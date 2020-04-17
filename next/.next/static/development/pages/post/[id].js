@@ -26,9 +26,15 @@ function Footer(_ref) {
       vote = _useState[0],
       setVote = _useState[1];
 
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var getVote = localStorage.getItem(post._id);
+    setVote(getVote);
+  }, []);
+
   var clickHandler = function clickHandler() {
-    upVote(post._id);
+    setVote === false && upVote(post._id);
     setVote(true);
+    localStorage.setItem(post._id, true);
   };
 
   return __jsx("div", {
@@ -36,7 +42,7 @@ function Footer(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 20,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -44,7 +50,7 @@ function Footer(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 21,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -53,7 +59,7 @@ function Footer(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 22,
       columnNumber: 9
     }
   }, ' ', __jsx("img", {
@@ -62,7 +68,7 @@ function Footer(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 27,
       columnNumber: 11
     }
   }), __jsx("div", {
@@ -70,7 +76,7 @@ function Footer(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 31,
       columnNumber: 11
     }
   }, vote ? post.votes + 1 : post.votes)), __jsx("div", {
@@ -78,7 +84,7 @@ function Footer(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 45,
       columnNumber: 9
     }
   }, __jsx("a", {
@@ -87,7 +93,7 @@ function Footer(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 46,
       columnNumber: 9
     }
   }, " ", __jsx("img", {
@@ -96,7 +102,7 @@ function Footer(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 46,
       columnNumber: 58
     }
   })), __jsx("a", {
@@ -105,7 +111,7 @@ function Footer(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 50,
       columnNumber: 11
     }
   }, "Discuss"))));
@@ -6180,7 +6186,7 @@ Post.getInitialProps = function _callee(_ref2) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!***************************************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fpost%2F%5Bid%5D&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Fpost%2F%5Bid%5D.js ***!
   \***************************************************************************************************************************************************************************************************************************/
@@ -6203,5 +6209,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[5,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

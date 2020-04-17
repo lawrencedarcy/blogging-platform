@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 
 const postSchema = new Schema({
-  
   title: { type: String, text: true },
   body: { type: String, text: true },
   tags: { type: [String], text: true },
@@ -16,10 +15,10 @@ const postSchema = new Schema({
 
 
 const userSchema = new Schema({
-  
   name: String,
   bio: String,
   posts: [postSchema],
+  upvoted: [String],
   comments: [],
   reading: [String]
 

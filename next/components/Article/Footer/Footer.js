@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Footer.module.css';
 
 function Footer({ upVote, post }) {
   const [vote, setVote] = useState(false);
 
+  useEffect(() => {
+    const getVote = localStorage.getItem(post._id);
+    setVote(getVote);
+  }, []);
+
   const clickHandler = () => {
+    setVote === false &&
     upVote(post._id);
     setVote(true);
+    localStorage.setItem(post._id, true);
   };
   return (
    

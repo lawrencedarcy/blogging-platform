@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Dashboard from '../components/Dashboard/Dashboard';
-import { deflateRawSync } from 'zlib';
 
 
 function App({ postList, tags, auth }) {
@@ -73,6 +72,14 @@ function App({ postList, tags, auth }) {
    });
   }
 
+  const checkReadingList = async(user, postId) => {
+    return axios.get(`http://localhost:3001/users/${user.nickname}`)
+    .then((res) => {
+      const list = res.data[0].reading;
+      console.log('checked the list!', list.includes(postId) ? true : false);
+      return list.includes(postId) ? true : false;
+    })
+  }
 
   return (
     <div className="app_body">
@@ -85,6 +92,7 @@ function App({ postList, tags, auth }) {
                   feedState={feed}
                   getReadingList={getReadingList}
                   deleteFromList={deleteFromList}
+                  checkReadingList={checkReadingList}
                   />
     </div>
   );

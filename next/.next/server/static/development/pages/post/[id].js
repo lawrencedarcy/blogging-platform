@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -119,10 +119,15 @@ function Footer({
     0: vote,
     1: setVote
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    const getVote = localStorage.getItem(post._id);
+    setVote(getVote);
+  }, []);
 
   const clickHandler = () => {
-    upVote(post._id);
+    setVote === false && upVote(post._id);
     setVote(true);
+    localStorage.setItem(post._id, true);
   };
 
   return __jsx("div", {
@@ -130,7 +135,7 @@ function Footer({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 20,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -138,7 +143,7 @@ function Footer({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 21,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -147,7 +152,7 @@ function Footer({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 22,
       columnNumber: 9
     }
   }, ' ', __jsx("img", {
@@ -156,7 +161,7 @@ function Footer({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 27,
       columnNumber: 11
     }
   }), __jsx("div", {
@@ -164,7 +169,7 @@ function Footer({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 31,
       columnNumber: 11
     }
   }, vote ? post.votes + 1 : post.votes)), __jsx("div", {
@@ -172,7 +177,7 @@ function Footer({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 45,
       columnNumber: 9
     }
   }, __jsx("a", {
@@ -181,7 +186,7 @@ function Footer({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 46,
       columnNumber: 9
     }
   }, " ", __jsx("img", {
@@ -190,7 +195,7 @@ function Footer({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 46,
       columnNumber: 58
     }
   })), __jsx("a", {
@@ -199,7 +204,7 @@ function Footer({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 50,
       columnNumber: 11
     }
   }, "Discuss"))));
@@ -391,7 +396,7 @@ Post.getInitialProps = async ({
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!**********************************!*\
   !*** multi ./pages/post/[id].js ***!
   \**********************************/

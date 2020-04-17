@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Feed.module.css';
-import Link from 'next/link';
-import Router from 'next/router';
+
 
 function FeedHeader({ filter }) {
   return (
@@ -10,7 +9,7 @@ function FeedHeader({ filter }) {
         <div>
           These are your saved articles.{' '}
           <span className={styles.link}>
-            <a href='/'>Refresh the feed.</a>
+            <a href='/'>Go back to the feed.</a>
           </span>
         </div>
       )}
