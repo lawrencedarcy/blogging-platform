@@ -28,9 +28,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function Card(_ref) {
+  var _this = this;
+
   var post = _ref.post,
       addToList = _ref.addToList,
-      auth = _ref.auth;
+      auth = _ref.auth,
+      feedState = _ref.feedState,
+      deleteFromList = _ref.deleteFromList;
   var regex = /\s/g;
 
   var _useAuth = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["useAuth"])(),
@@ -38,9 +42,14 @@ function Card(_ref) {
 
   var user = auth.user;
 
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      isClicked = _useState[0],
+      setIsClicked = _useState[1];
+
   var clickHandler = function clickHandler(e) {
     console.log(post._id);
     user ? addToList(user, post._id) : login();
+    setIsClicked(true);
   };
 
   return __jsx("div", {
@@ -67,7 +76,8 @@ function Card(_ref) {
       lineNumber: 31,
       columnNumber: 9
     }
-  }, __jsx("a", {
+  }, __jsx("div", {
+    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_link_block,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -96,39 +106,25 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 13
+      lineNumber: 39,
+      columnNumber: 14
     }
-  }, post.tags[0] && __jsx("div", {
-    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43,
-      columnNumber: 17
-    }
-  }, '#' + post.tags[0]), post.tags[1] && __jsx("div", {
-    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46,
-      columnNumber: 17
-    }
-  }, post.tags[1] && '#' + post.tags[1]), post.tags[2] && __jsx("div", {
-    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51,
-      columnNumber: 17
-    }
-  }, post.tags[2] && '#' + post.tags[2])), __jsx("div", {
+  }, post.tags.slice(0, 3).map(function (tag) {
+    return __jsx("div", {
+      className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40,
+        columnNumber: 47
+      }
+    }, '#' + tag);
+  })), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_line,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 44,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -136,7 +132,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 45,
       columnNumber: 13
     }
   }, post.author, " "), __jsx("div", {
@@ -144,14 +140,14 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 46,
       columnNumber: 13
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 47,
       columnNumber: 15
     }
   }, __jsx(react_moment__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -159,7 +155,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 47,
       columnNumber: 20
     }
   }, post.timestamp))))))), __jsx("div", {
@@ -167,8 +163,24 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 52,
       columnNumber: 9
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/post/".concat(post._id),
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.votes_bottom,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 44
     }
   }, __jsx("img", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_upvote,
@@ -176,7 +188,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 54,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -184,21 +196,32 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 54,
       columnNumber: 107
     }
-  }, post.votes), __jsx("div", {
+  }, post.votes))), feedState === 'list' ? __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn,
+    onClick: function onClick() {
+      return deleteFromList(user, post._id);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
+      columnNumber: 11
+    }
+  }, "\uD83D\uDCDA Remove") : __jsx("div", {
+    className: isClicked ? _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn_clicked : _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn,
     onClick: function onClick() {
       return clickHandler();
     },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 59,
       columnNumber: 11
     }
-  }, "Save")));
+  }, isClicked ? '📚 Saved' : '📚 Save')));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["withAuth"])(Card));
@@ -296,7 +319,8 @@ function Dashboard(_ref) {
       searchPosts = _ref.searchPosts,
       feedState = _ref.feedState,
       addToList = _ref.addToList,
-      getReadingList = _ref.getReadingList;
+      getReadingList = _ref.getReadingList,
+      deleteFromList = _ref.deleteFromList;
   return __jsx("div", {
     className: _Dashboard_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.body_wrapper,
     __self: this,
@@ -321,6 +345,7 @@ function Dashboard(_ref) {
     upVote: upVote,
     feedState: feedState,
     addToList: addToList,
+    deleteFromList: deleteFromList,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -425,7 +450,8 @@ function Feed(_ref) {
 
   var posts = _ref.posts,
       feedState = _ref.feedState,
-      addToList = _ref.addToList;
+      addToList = _ref.addToList,
+      deleteFromList = _ref.deleteFromList;
   console.log(posts);
   /* const URL_title = post.title.replace(regex, '-').toLowerCase(); */
 
@@ -478,6 +504,8 @@ function Feed(_ref) {
       key: post.id,
       post: post,
       addToList: addToList,
+      feedState: feedState,
+      deleteFromList: deleteFromList,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
@@ -781,7 +809,7 @@ function Sidebar(_ref) {
       lineNumber: 48,
       columnNumber: 9
     }
-  }, "\uD83D\uDCDA Go to your reading list"), __jsx("button", {
+  }, "\uD83D\uDCDA Reading list"), __jsx("button", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
     onClick: function onClick() {
       return logout({
@@ -836,7 +864,7 @@ function Sidebar(_ref) {
       lineNumber: 55,
       columnNumber: 9
     }
-  }, "Login")), __jsx("form", {
+  }, "Sign in")), __jsx("form", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
     onSubmit: searchSubmit,
     __self: this,
@@ -6842,15 +6870,17 @@ function objectToString(o) {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Card_card_width__1u695 {\n  width: 100%;\n}\n\n.Card_feed_card_inner__164zN {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.Card_card_title__2OGLL {\n  font-size: 2rem;\n  margin: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 2.1rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.Card_card_tags__dn97P {\n  display: flex;\n  padding: 0.5rem .1rem;\n}\n\n.Card_tag__HkkY2 {\n  cursor: pointer;\n  font-size: .75rem;\n  padding: 0.25rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n  text-transform: lowercase;\n}\n\n\n.Card_card_btn__B3f3Z {\n  float: right;\n  padding: .5rem;\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n}\n\n\n.Card_card_btn__B3f3Z:hover {\n  \n  background-color: #9efd6e;\n  \n}\n\n.Card_card_img__1Mpef {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  \n  \n}\n\n.Card_card_upvote__2Jvhx {\nflex: 1 1;\nwidth: 5%;\nheight: 5%;\n\nmin-width: 30px;\nmax-width: 35px;\npadding: 0rem;\n\n}\n\n.Card_card_votes__1orTj {\n  flex: 15 1;\n font-size: 1.3rem; \n color: rgba(0, 0, 0, 0.747);\n margin: 0 .5rem;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: center;\n font-family: 'Roboto', sans-serif !important;\n\n}\n.Card_card_line__sDNBB {\n  display: flex;\n}\n.Card_card_author__3ZBUC {\n  font-size: 1rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 500;\n}\n\n.Card_card_timestamp__3sHBz {\n  color: rgba(0, 0, 0, 0.548);\n  font-size: 1rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.Card_card_font__2FMP5 {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.Card_card_bottom__8m777 {\n  margin-top: 1rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n}\n\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Card/Card.module.css"],"names":[],"mappings":"AAAA;EACE,WAAW;AACb;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,eAAe;EACf,aAAa;EACb,0BAA0B;EAC1B,iBAAiB;EACjB,mBAAmB;EACnB,0BAA0B;;AAE5B;;AAEA;EACE,aAAa;EACb,qBAAqB;AACvB;;AAEA;EACE,eAAe;EACf,iBAAiB;EACjB,gBAAgB;EAChB,yBAAyB;EACzB,YAAY;EACZ,gCAAgC;EAChC,yBAAyB;AAC3B;;;AAGA;EACE,YAAY;EACZ,cAAc;EACd,YAAY;EACZ,yBAAyB;EACzB,6BAA6B;EAC7B,eAAe;EACf,kBAAkB;EAClB,gBAAgB;AAClB;;;AAGA;;EAEE,yBAAyB;;AAE3B;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,mBAAmB;;;AAGrB;;AAEA;AACA,SAAO;AACP,SAAS;AACT,UAAU;;AAEV,eAAe;AACf,eAAe;AACf,aAAa;;AAEb;;AAEA;EACE,UAAQ;CACT,iBAAiB;CACjB,2BAA2B;CAC3B,eAAe;CACf,UAAU;CACV,aAAa;CACb,sBAAsB;CACtB,qBAAqB;CACrB,uBAAuB;CACvB,4CAA4C;;AAE7C;AACA;EACE,aAAa;AACf;AACA;EACE,eAAe;EACf,sBAAsB;EACtB,2BAA2B;EAC3B,4CAA4C;EAC5C,gBAAgB;AAClB;;AAEA;EACE,2BAA2B;EAC3B,eAAe;EACf,sBAAsB;AACxB;;AAEA;EACE,iCAAiC;;AAEnC;;AAEA;EACE,gBAAgB;EAChB,kBAAkB;EAClB,aAAa;EACb,8BAA8B;AAChC","file":"Card.module.css","sourcesContent":[".card_width {\n  width: 100%;\n}\n\n.feed_card_inner {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.card_title {\n  font-size: 2rem;\n  margin: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 2.1rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.card_tags {\n  display: flex;\n  padding: 0.5rem .1rem;\n}\n\n.tag {\n  cursor: pointer;\n  font-size: .75rem;\n  padding: 0.25rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n  text-transform: lowercase;\n}\n\n\n.card_btn {\n  float: right;\n  padding: .5rem;\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n}\n\n\n.card_btn:hover {\n  \n  background-color: #9efd6e;\n  \n}\n\n.card_img {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  \n  \n}\n\n.card_upvote {\nflex: 1;\nwidth: 5%;\nheight: 5%;\n\nmin-width: 30px;\nmax-width: 35px;\npadding: 0rem;\n\n}\n\n.card_votes {\n  flex: 15;\n font-size: 1.3rem; \n color: rgba(0, 0, 0, 0.747);\n margin: 0 .5rem;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: center;\n font-family: 'Roboto', sans-serif !important;\n\n}\n.card_line {\n  display: flex;\n}\n.card_author {\n  font-size: 1rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 500;\n}\n\n.card_timestamp {\n  color: rgba(0, 0, 0, 0.548);\n  font-size: 1rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.card_font {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.card_bottom {\n  margin-top: 1rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n}\n\n"]}]);
+exports.push([module.i, ".Card_card_width__1u695 {\n  width: 100%;\n}\n\n.Card_card_link_block__Fv0jP {\n  margin: 0;\n  padding: 0;\n}\n\n.Card_feed_card_inner__164zN {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.Card_card_title__2OGLL {\n  font-size: 2rem;\n  margin: 0 .5rem .5rem .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 2.1rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.Card_card_tags__dn97P {\n  display: flex;\n  padding: 0.3rem .1rem;\n}\n\n.Card_tag__HkkY2 {\n  cursor: pointer;\n  font-size: .75rem;\n  padding: 0.25rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n  text-transform: lowercase;\n}\n\n\n.Card_card_btn__B3f3Z, .Card_card_btn_clicked__e3gsr {\n  float: right;\n  padding: .3rem .4rem;\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n  text-align: center;\n \n}\n\n.Card_card_btn_clicked__e3gsr {\n  background-color: #9efd6e;\n}\n\n.Card_card_btn__B3f3Z:hover {\n  \n  background-color: #9efd6e;\n  \n}\n\n.Card_card_img__1Mpef {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  margin-top: 1rem;\n  \n}\n\n.Card_card_upvote__2Jvhx {\nflex: 1 1;\nmin-height: 22px;\nmax-height: 27px;\n\nmin-width: 25px;\nmax-width: 30px;\npadding: 0rem;\nmargin-left: 0rem;\n\n\n}\n\n.Card_card_votes__1orTj {\n  flex: 15 1;\n font-size: 1rem; \n color: rgba(0, 0, 0, 0.747);\n margin: 0 .3rem;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: center;\n font-family: 'Roboto', sans-serif !important;\n\n}\n.Card_card_line__sDNBB {\n  display: flex;\n}\n.Card_card_author__3ZBUC {\n  font-size: .9rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 500;\n}\n\n.Card_card_timestamp__3sHBz {\n  color: rgba(0, 0, 0, 0.116);\n  font-size: .9rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.Card_card_font__2FMP5 {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.Card_card_bottom__8m777 {\n  margin-top: .3rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n \n}\n\n.Card_votes_bottom__1T5AD {\n \n  display: flex;\n  margin-left: .3rem;\n  justify-content: center;\n align-items: center;\n padding-right: calc(8rem + 14vw);\n \n}\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Card/Card.module.css"],"names":[],"mappings":"AAAA;EACE,WAAW;AACb;;AAEA;EACE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,eAAe;EACf,2BAA2B;EAC3B,0BAA0B;EAC1B,iBAAiB;EACjB,mBAAmB;EACnB,0BAA0B;;AAE5B;;AAEA;EACE,aAAa;EACb,qBAAqB;AACvB;;AAEA;EACE,eAAe;EACf,iBAAiB;EACjB,gBAAgB;EAChB,yBAAyB;EACzB,YAAY;EACZ,gCAAgC;EAChC,yBAAyB;AAC3B;;;AAGA;EACE,YAAY;EACZ,oBAAoB;EACpB,YAAY;EACZ,yBAAyB;EACzB,6BAA6B;EAC7B,eAAe;EACf,kBAAkB;EAClB,gBAAgB;EAChB,kBAAkB;;AAEpB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;;EAEE,yBAAyB;;AAE3B;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,mBAAmB;EACnB,gBAAgB;;AAElB;;AAEA;AACA,SAAO;AACP,gBAAgB;AAChB,gBAAgB;;AAEhB,eAAe;AACf,eAAe;AACf,aAAa;AACb,iBAAiB;;;AAGjB;;AAEA;EACE,UAAQ;CACT,eAAe;CACf,2BAA2B;CAC3B,eAAe;CACf,UAAU;CACV,aAAa;CACb,sBAAsB;CACtB,qBAAqB;CACrB,uBAAuB;CACvB,4CAA4C;;AAE7C;AACA;EACE,aAAa;AACf;AACA;EACE,gBAAgB;EAChB,sBAAsB;EACtB,2BAA2B;EAC3B,4CAA4C;EAC5C,gBAAgB;AAClB;;AAEA;EACE,2BAA2B;EAC3B,gBAAgB;EAChB,sBAAsB;AACxB;;AAEA;EACE,iCAAiC;;AAEnC;;AAEA;EACE,iBAAiB;EACjB,kBAAkB;EAClB,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;;AAErB;;AAEA;;EAEE,aAAa;EACb,kBAAkB;EAClB,uBAAuB;CACxB,mBAAmB;CACnB,gCAAgC;;AAEjC","file":"Card.module.css","sourcesContent":[".card_width {\n  width: 100%;\n}\n\n.card_link_block {\n  margin: 0;\n  padding: 0;\n}\n\n.feed_card_inner {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.card_title {\n  font-size: 2rem;\n  margin: 0 .5rem .5rem .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 2.1rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.card_tags {\n  display: flex;\n  padding: 0.3rem .1rem;\n}\n\n.tag {\n  cursor: pointer;\n  font-size: .75rem;\n  padding: 0.25rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n  text-transform: lowercase;\n}\n\n\n.card_btn, .card_btn_clicked {\n  float: right;\n  padding: .3rem .4rem;\n  color: white;\n  background-color: #6ecdfd;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n  text-align: center;\n \n}\n\n.card_btn_clicked {\n  background-color: #9efd6e;\n}\n\n.card_btn:hover {\n  \n  background-color: #9efd6e;\n  \n}\n\n.card_img {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  margin-top: 1rem;\n  \n}\n\n.card_upvote {\nflex: 1;\nmin-height: 22px;\nmax-height: 27px;\n\nmin-width: 25px;\nmax-width: 30px;\npadding: 0rem;\nmargin-left: 0rem;\n\n\n}\n\n.card_votes {\n  flex: 15;\n font-size: 1rem; \n color: rgba(0, 0, 0, 0.747);\n margin: 0 .3rem;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: center;\n font-family: 'Roboto', sans-serif !important;\n\n}\n.card_line {\n  display: flex;\n}\n.card_author {\n  font-size: .9rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 500;\n}\n\n.card_timestamp {\n  color: rgba(0, 0, 0, 0.116);\n  font-size: .9rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.card_font {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.card_bottom {\n  margin-top: .3rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n \n}\n\n.votes_bottom {\n \n  display: flex;\n  margin-left: .3rem;\n  justify-content: center;\n align-items: center;\n padding-right: calc(8rem + 14vw);\n \n}\n"]}]);
 // Exports
 exports.locals = {
 	"card_width": "Card_card_width__1u695",
+	"card_link_block": "Card_card_link_block__Fv0jP",
 	"feed_card_inner": "Card_feed_card_inner__164zN",
 	"card_title": "Card_card_title__2OGLL",
 	"card_tags": "Card_card_tags__dn97P",
 	"tag": "Card_tag__HkkY2",
 	"card_btn": "Card_card_btn__B3f3Z",
+	"card_btn_clicked": "Card_card_btn_clicked__e3gsr",
 	"card_img": "Card_card_img__1Mpef",
 	"card_upvote": "Card_card_upvote__2Jvhx",
 	"card_votes": "Card_card_votes__1orTj",
@@ -6858,7 +6888,8 @@ exports.locals = {
 	"card_author": "Card_card_author__3ZBUC",
 	"card_timestamp": "Card_card_timestamp__3sHBz",
 	"card_font": "Card_card_font__2FMP5",
-	"card_bottom": "Card_card_bottom__8m777"
+	"card_bottom": "Card_card_bottom__8m777",
+	"votes_bottom": "Card_votes_bottom__1T5AD"
 };
 
 /***/ }),
@@ -6889,7 +6920,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n\n\n}\n\n.Feed_feed_card__1q6Np:hover {\n \n  \n}\n\n.Feed_feed_header__2zt6O {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.Feed_link__1Uj-G{\n  color: #fd6e9e;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;EACP,6BAA6B;;;AAG/B;;AAEA;;;AAGA;;AAEA;EACE,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;EACP,6BAA6B;;EAE7B,aAAa;EACb,mBAAmB;EACnB,uBAAuB;;AAEzB;;AAEA;EACE,cAAc;AAChB","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n\n\n}\n\n.feed_card:hover {\n \n  \n}\n\n.feed_header {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.link{\n  color: #fd6e9e;\n}"]}]);
+exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 0rem 1rem 1rem 1rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n  \n}\n\n.Feed_feed_card__1q6Np:hover {\n \n  \n}\n\n.Feed_feed_header__2zt6O {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.Feed_link__1Uj-G{\n  color: #fd6e9e;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,4BAA4B;EAC5B,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;EACP,6BAA6B;;AAE/B;;AAEA;;;AAGA;;AAEA;EACE,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;EACP,6BAA6B;;EAE7B,aAAa;EACb,mBAAmB;EACnB,uBAAuB;;AAEzB;;AAEA;EACE,cAAc;AAChB","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 0rem 1rem 1rem 1rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n  \n}\n\n.feed_card:hover {\n \n  \n}\n\n.feed_header {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.link{\n  color: #fd6e9e;\n}"]}]);
 // Exports
 exports.locals = {
 	"feed_card": "Feed_feed_card__1q6Np",
@@ -6908,7 +6939,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n\n  min-width: calc(20vw + 15px);\n  flex: 2 1;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n  \n}\n\n@media only screen and (max-width: 745px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3 {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .4rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3:hover {\n  color: #fd6e9e;\n  cursor: pointer;\n}\n\n.Sidebar_sidebar_search__6hfx8 {\n  width: 100%;\n  margin: auto;\n}\n.Sidebar_sidebar_search_input__8zQ9W {\n  width: 100%;\n  height: 2rem;\n  background-color: #fafafa;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n height: 40vh;\n overflow: scroll;\n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.Sidebar_sidebar_tag__yktie:focus {\n  background-color: #6ecdfd;\n}\n\n.Sidebar_sidebar_profile__19RNM {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.Sidebar_sidebar_img__2FNKS {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.Sidebar_sidebar_name__3zubS {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.Sidebar_sidebar_login__2lKjx{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid #6ecdfd;  border-radius: 5px;\n  background-color: #6ecdfd;\n  color: white;\n  width: 50%;\n  min-width: 4rem;\n}\n\n.Sidebar_sidebar_login__2lKjx:hover {\n \n  background-color: #9efd6e;\n  border: 1px solid #9efd6e;\n}\n\n.Sidebar_sidebar_text__g7JSJ {\n  font-size: 1rem;\n  padding: .4rem;\n\n}\n\n\n.Sidebar_sidebar_tagline__1Rpho {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 990px) {\n  .Sidebar_sidebar_text__g7JSJ {\n    display: none;\n  }\n  .Sidebar_sidebar_tagline__1Rpho {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.Sidebar_login_btn__3RDmD {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #6ecdfd;\n  \n  font-size: 1.1rem;\n}\n\n.Sidebar_login_btn__3RDmD:hover {\n  background-color: #9efd6e;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,4BAA4B;EAC5B,SAAO;EACP,oCAAoC;EACpC,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,aAAa;EACb,gBAAgB;;;AAGlB;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;AAChB;;AAEA;EACE,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,WAAW;EACX,YAAY;AACd;AACA;EACE,WAAW;EACX,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,oCAAoC;EACpC,gBAAgB;EAChB,oBAAoB;EACpB,gBAAgB;EAChB,oBAAoB;EACpB,kBAAkB;AACpB;;AAEA;CACC,YAAY;CACZ,gBAAgB;;AAEjB;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,UAAU;EACV,oCAAoC;EACpC,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,wBAAwB;EACxB,kBAAkB;EAClB,cAAc;;;AAGhB;;AAEA;EACE,UAAU;EACV,kBAAkB;EAClB,YAAY;EACZ,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;AAClB;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,kBAAkB;EAClB,gBAAgB;EAChB,gBAAgB;EAChB,yBAAyB,GAAG,kBAAkB;EAC9C,yBAAyB;EACzB,YAAY;EACZ,UAAU;EACV,eAAe;AACjB;;AAEA;;EAEE,yBAAyB;EACzB,yBAAyB;AAC3B;;AAEA;EACE,eAAe;EACf,cAAc;;AAEhB;;;AAGA;EACE,eAAe;EACf,cAAc;EACd,gBAAgB;;AAElB;;AAEA;EACE;IACE,aAAa;EACf;EACA;IACE,gBAAgB;IAChB,aAAa;EACf;AACF;AACA;EACE,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,yBAAyB;;EAEzB,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;AAC3B","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n\n  min-width: calc(20vw + 15px);\n  flex: 2;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n  \n}\n\n@media only screen and (max-width: 745px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_reading {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .4rem;\n}\n\n.sidebar_reading:hover {\n  color: #fd6e9e;\n  cursor: pointer;\n}\n\n.sidebar_search {\n  width: 100%;\n  margin: auto;\n}\n.sidebar_search_input {\n  width: 100%;\n  height: 2rem;\n  background-color: #fafafa;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.sidebar_tags {\n height: 40vh;\n overflow: scroll;\n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.sidebar_tag:focus {\n  background-color: #6ecdfd;\n}\n\n.sidebar_profile {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.sidebar_img {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.sidebar_name {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.sidebar_login{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid #6ecdfd;  border-radius: 5px;\n  background-color: #6ecdfd;\n  color: white;\n  width: 50%;\n  min-width: 4rem;\n}\n\n.sidebar_login:hover {\n \n  background-color: #9efd6e;\n  border: 1px solid #9efd6e;\n}\n\n.sidebar_text {\n  font-size: 1rem;\n  padding: .4rem;\n\n}\n\n\n.sidebar_tagline {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 990px) {\n  .sidebar_text {\n    display: none;\n  }\n  .sidebar_tagline {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.login_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #6ecdfd;\n  \n  font-size: 1.1rem;\n}\n\n.login_btn:hover {\n  background-color: #9efd6e;\n}"]}]);
+exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n\n  min-width: calc(20vw + 15px);\n  flex: 2 1;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n  \n}\n\n@media only screen and (max-width: 745px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3 {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .4rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3:hover {\n  color: #fd6e9e;\n  cursor: pointer;\n}\n\n.Sidebar_sidebar_search__6hfx8 {\n  width: 100%;\n  margin: auto;\n}\n.Sidebar_sidebar_search_input__8zQ9W {\n  width: 100%;\n  height: 2rem;\n  background-color: #fafafa;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n height: 40vh;\n overflow: scroll;\n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.Sidebar_sidebar_tag__yktie:focus {\n  background-color: #6ecdfd;\n}\n\n.Sidebar_sidebar_profile__19RNM {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.Sidebar_sidebar_img__2FNKS {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.Sidebar_sidebar_name__3zubS {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.Sidebar_sidebar_login__2lKjx{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .8rem;\n  max-height: 3rem;\n  border: 1px solid #6ecdfd;  border-radius: 5px;\n  background-color: #6ecdfd;\n  color: white;\n  width: 50%;\n  min-width: 4.7rem;\n}\n\n.Sidebar_sidebar_login__2lKjx:hover {\n \n  background-color: #9efd6e;\n  border: 1px solid #9efd6e;\n}\n\n.Sidebar_sidebar_text__g7JSJ {\n  font-size: .9rem;\n  padding: .4rem;\n\n}\n\n\n.Sidebar_sidebar_tagline__1Rpho {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 1100px) {\n  .Sidebar_sidebar_text__g7JSJ {\n    display: none;\n  }\n  .Sidebar_sidebar_tagline__1Rpho {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.Sidebar_login_btn__3RDmD {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #6ecdfd;\n  \n  font-size: 1.1rem;\n}\n\n.Sidebar_login_btn__3RDmD:hover {\n  background-color: #9efd6e;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,4BAA4B;EAC5B,SAAO;EACP,oCAAoC;EACpC,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,aAAa;EACb,gBAAgB;;;AAGlB;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;AAChB;;AAEA;EACE,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,WAAW;EACX,YAAY;AACd;AACA;EACE,WAAW;EACX,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,oCAAoC;EACpC,gBAAgB;EAChB,oBAAoB;EACpB,gBAAgB;EAChB,oBAAoB;EACpB,kBAAkB;AACpB;;AAEA;CACC,YAAY;CACZ,gBAAgB;;AAEjB;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,UAAU;EACV,oCAAoC;EACpC,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,wBAAwB;EACxB,kBAAkB;EAClB,cAAc;;;AAGhB;;AAEA;EACE,UAAU;EACV,kBAAkB;EAClB,YAAY;EACZ,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;AAClB;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,kBAAkB;EAClB,gBAAgB;EAChB,gBAAgB;EAChB,yBAAyB,GAAG,kBAAkB;EAC9C,yBAAyB;EACzB,YAAY;EACZ,UAAU;EACV,iBAAiB;AACnB;;AAEA;;EAEE,yBAAyB;EACzB,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;EAChB,cAAc;;AAEhB;;;AAGA;EACE,eAAe;EACf,cAAc;EACd,gBAAgB;;AAElB;;AAEA;EACE;IACE,aAAa;EACf;EACA;IACE,gBAAgB;IAChB,aAAa;EACf;AACF;AACA;EACE,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,yBAAyB;;EAEzB,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;AAC3B","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n\n  min-width: calc(20vw + 15px);\n  flex: 2;\n  border: 1px solid rgb(199, 199, 199);\n  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n  \n}\n\n@media only screen and (max-width: 745px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_reading {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .4rem;\n}\n\n.sidebar_reading:hover {\n  color: #fd6e9e;\n  cursor: pointer;\n}\n\n.sidebar_search {\n  width: 100%;\n  margin: auto;\n}\n.sidebar_search_input {\n  width: 100%;\n  height: 2rem;\n  background-color: #fafafa;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.sidebar_tags {\n height: 40vh;\n overflow: scroll;\n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #fd6e9e;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.sidebar_tag:focus {\n  background-color: #6ecdfd;\n}\n\n.sidebar_profile {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.sidebar_img {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.sidebar_name {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.sidebar_login{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .8rem;\n  max-height: 3rem;\n  border: 1px solid #6ecdfd;  border-radius: 5px;\n  background-color: #6ecdfd;\n  color: white;\n  width: 50%;\n  min-width: 4.7rem;\n}\n\n.sidebar_login:hover {\n \n  background-color: #9efd6e;\n  border: 1px solid #9efd6e;\n}\n\n.sidebar_text {\n  font-size: .9rem;\n  padding: .4rem;\n\n}\n\n\n.sidebar_tagline {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 1100px) {\n  .sidebar_text {\n    display: none;\n  }\n  .sidebar_tagline {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.login_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #6ecdfd;\n  \n  font-size: 1.1rem;\n}\n\n.login_btn:hover {\n  background-color: #9efd6e;\n}"]}]);
 // Exports
 exports.locals = {
 	"sidebar": "Sidebar_sidebar__ma1yP",
@@ -40708,7 +40739,6 @@ function App(_ref) {
                   reading: post
                 });
               } else {
-                console.log('hi from create');
                 createUser(user.nickname, post);
               }
             }));
@@ -40757,7 +40787,8 @@ function App(_ref) {
         }
       }
     }, null, null, null, Promise);
-  };
+  }; //part of get reading list and delete from list
+
 
   var listHelper = function listHelper(list) {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function listHelper$(_context6) {
@@ -40782,12 +40813,33 @@ function App(_ref) {
     }, null, null, null, Promise);
   };
 
+  var deleteFromList = function deleteFromList(user, postid) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function deleteFromList$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            _context7.next = 2;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("http://localhost:3001/list/".concat(user.nickname), {
+              reading: postid
+            }).then(function (res) {
+              var list = res.data.reading;
+              listHelper(list);
+            }));
+
+          case 2:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, null, null, null, Promise);
+  };
+
   return __jsx("div", {
     className: "app_body",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 78,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -40798,10 +40850,11 @@ function App(_ref) {
     searchPosts: searchPosts,
     feedState: feed,
     getReadingList: getReadingList,
+    deleteFromList: deleteFromList,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 80,
       columnNumber: 7
     }
   }));
@@ -40809,28 +40862,28 @@ function App(_ref) {
 
 App.getInitialProps = function _callee(ctx) {
   var res, tags;
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context7) {
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context8) {
     while (1) {
-      switch (_context7.prev = _context7.next) {
+      switch (_context8.prev = _context8.next) {
         case 0:
-          _context7.next = 2;
+          _context8.next = 2;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost:3001/posts'));
 
         case 2:
-          res = _context7.sent;
-          _context7.next = 5;
+          res = _context8.sent;
+          _context8.next = 5;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost:3001/tags'));
 
         case 5:
-          tags = _context7.sent;
-          return _context7.abrupt("return", {
+          tags = _context8.sent;
+          return _context8.abrupt("return", {
             postList: res.data,
             tags: tags.data
           });
 
         case 7:
         case "end":
-          return _context7.stop();
+          return _context8.stop();
       }
     }
   }, null, null, null, Promise);

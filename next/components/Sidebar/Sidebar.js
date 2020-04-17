@@ -45,14 +45,14 @@ function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
       <div className={styles.sidebar_profile}>
       <img className={styles.sidebar_img} src={user.picture} />
       <div className={styles.sidebar_name}> {user.nickname || user.name}</div>
-        <div className={styles.sidebar_reading} onClick={readingClickHandler}>📚 Go to your reading list</div>
+        <div className={styles.sidebar_reading} onClick={readingClickHandler}>📚 Reading list</div>
       <button className={styles.sidebar_login} onClick={() => logout({ returnTo: 'http://localhost:3000' })}>Logout</button>
      
       </div>
       : 
       <div className={styles.sidebar_profile}>
       <div className={styles.sidebar_tagline}>Stagetime is a community of comedians.</div><div className={styles.sidebar_text}> Sign in below to write a post and join the discussion.</div>
-        <div className={styles.sidebar_login} onClick={() => login({ appState: { returnTo: { pathname, query } } })}>Login</div>
+        <div className={styles.sidebar_login} onClick={() => login({ appState: { returnTo: { pathname, query } } })}>Sign in</div>
       </div>
       }
       <form className={styles.sidebar_search}  onSubmit={searchSubmit}>

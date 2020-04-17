@@ -3,12 +3,12 @@ import Feed from '../Feed/Feed';
 import Sidebar from '../Sidebar/Sidebar';
 import styles from './Dashboard.module.css';
 
-function Dashboard({ posts, upVote, tags, getPostByTag, searchPosts, feedState, addToList, getReadingList }) {
+function Dashboard({ posts, upVote, tags, getPostByTag, searchPosts, feedState, addToList, getReadingList, deleteFromList }) {
   return (
     <div className={styles.body_wrapper}>
     
       <Sidebar tags={tags} getPostByTag={getPostByTag} searchPosts={searchPosts} getReadingList={getReadingList}/>
-      <Feed posts={posts} upVote={upVote}  feedState={feedState} addToList={addToList}/>
+      <Feed posts={posts} upVote={upVote}  feedState={feedState} addToList={addToList} deleteFromList={deleteFromList}/>
       
     </div>
   );

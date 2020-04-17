@@ -3,7 +3,7 @@ import Card from '../Card/Card';
 import styles from './Feed.module.css';
 import FeedHeader from './FeedHeader';
 import Link from 'next/link';
-function Feed({posts, feedState, addToList }) {
+function Feed({posts, feedState, addToList, deleteFromList }) {
 
   console.log(posts);
   /* const URL_title = post.title.replace(regex, '-').toLowerCase(); */
@@ -22,7 +22,7 @@ function Feed({posts, feedState, addToList }) {
        
         <div className={styles.feed_card}>
            
-          <Card key={post.id} post={post} addToList={addToList }/>
+          <Card key={post.id} post={post} addToList={addToList} feedState={feedState} deleteFromList={deleteFromList}/>
          
         </div>
          

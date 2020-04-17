@@ -145,7 +145,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function Card({
   post,
   addToList,
-  auth
+  auth,
+  feedState,
+  deleteFromList
 }) {
   const regex = /\s/g;
   const {
@@ -154,10 +156,15 @@ function Card({
   const {
     user
   } = auth;
+  const {
+    0: isClicked,
+    1: setIsClicked
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
 
   const clickHandler = e => {
     console.log(post._id);
     user ? addToList(user, post._id) : login();
+    setIsClicked(true);
   };
 
   return __jsx("div", {
@@ -184,7 +191,8 @@ function Card({
       lineNumber: 31,
       columnNumber: 9
     }
-  }, __jsx("a", {
+  }, __jsx("div", {
+    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_link_block,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -213,39 +221,23 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 13
+      lineNumber: 39,
+      columnNumber: 14
     }
-  }, post.tags[0] && __jsx("div", {
+  }, post.tags.slice(0, 3).map(tag => __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
-      columnNumber: 17
+      lineNumber: 40,
+      columnNumber: 47
     }
-  }, '#' + post.tags[0]), post.tags[1] && __jsx("div", {
-    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46,
-      columnNumber: 17
-    }
-  }, post.tags[1] && '#' + post.tags[1]), post.tags[2] && __jsx("div", {
-    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51,
-      columnNumber: 17
-    }
-  }, post.tags[2] && '#' + post.tags[2])), __jsx("div", {
+  }, '#' + tag))), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_line,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 44,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -253,7 +245,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 45,
       columnNumber: 13
     }
   }, post.author, " "), __jsx("div", {
@@ -261,14 +253,14 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 46,
       columnNumber: 13
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 47,
       columnNumber: 15
     }
   }, __jsx(react_moment__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -276,7 +268,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 47,
       columnNumber: 20
     }
   }, post.timestamp))))))), __jsx("div", {
@@ -284,8 +276,24 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 52,
       columnNumber: 9
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: `/post/${post._id}`,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.votes_bottom,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 44
     }
   }, __jsx("img", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_upvote,
@@ -293,7 +301,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 54,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -301,19 +309,28 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 54,
       columnNumber: 107
     }
-  }, post.votes), __jsx("div", {
+  }, post.votes))), feedState === 'list' ? __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn,
+    onClick: () => deleteFromList(user, post._id),
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
+      columnNumber: 11
+    }
+  }, "\uD83D\uDCDA Remove") : __jsx("div", {
+    className: isClicked ? _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn_clicked : _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn,
     onClick: () => clickHandler(),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 59,
       columnNumber: 11
     }
-  }, "Save")));
+  }, isClicked ? '📚 Saved' : '📚 Save')));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["withAuth"])(Card));
@@ -330,11 +347,13 @@ function Card({
 // Exports
 module.exports = {
 	"card_width": "Card_card_width__1u695",
+	"card_link_block": "Card_card_link_block__Fv0jP",
 	"feed_card_inner": "Card_feed_card_inner__164zN",
 	"card_title": "Card_card_title__2OGLL",
 	"card_tags": "Card_card_tags__dn97P",
 	"tag": "Card_tag__HkkY2",
 	"card_btn": "Card_card_btn__B3f3Z",
+	"card_btn_clicked": "Card_card_btn_clicked__e3gsr",
 	"card_img": "Card_card_img__1Mpef",
 	"card_upvote": "Card_card_upvote__2Jvhx",
 	"card_votes": "Card_card_votes__1orTj",
@@ -342,7 +361,8 @@ module.exports = {
 	"card_author": "Card_card_author__3ZBUC",
 	"card_timestamp": "Card_card_timestamp__3sHBz",
 	"card_font": "Card_card_font__2FMP5",
-	"card_bottom": "Card_card_bottom__8m777"
+	"card_bottom": "Card_card_bottom__8m777",
+	"votes_bottom": "Card_votes_bottom__1T5AD"
 };
 
 /***/ }),
@@ -377,7 +397,8 @@ function Dashboard({
   searchPosts,
   feedState,
   addToList,
-  getReadingList
+  getReadingList,
+  deleteFromList
 }) {
   return __jsx("div", {
     className: _Dashboard_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.body_wrapper,
@@ -403,6 +424,7 @@ function Dashboard({
     upVote: upVote,
     feedState: feedState,
     addToList: addToList,
+    deleteFromList: deleteFromList,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -458,7 +480,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function Feed({
   posts,
   feedState,
-  addToList
+  addToList,
+  deleteFromList
 }) {
   console.log(posts);
   /* const URL_title = post.title.replace(regex, '-').toLowerCase(); */
@@ -511,6 +534,8 @@ function Feed({
     key: post.id,
     post: post,
     addToList: addToList,
+    feedState: feedState,
+    deleteFromList: deleteFromList,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -766,7 +791,7 @@ function Sidebar({
       lineNumber: 48,
       columnNumber: 9
     }
-  }, "\uD83D\uDCDA Go to your reading list"), __jsx("button", {
+  }, "\uD83D\uDCDA Reading list"), __jsx("button", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
     onClick: () => logout({
       returnTo: 'http://localhost:3000'
@@ -817,7 +842,7 @@ function Sidebar({
       lineNumber: 55,
       columnNumber: 9
     }
-  }, "Login")), __jsx("form", {
+  }, "Sign in")), __jsx("form", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
     onSubmit: searchSubmit,
     __self: this,
@@ -2631,7 +2656,6 @@ function App({
           reading: post
         });
       } else {
-        console.log('hi from create');
         createUser(user.nickname, post);
       }
     });
@@ -2649,7 +2673,8 @@ function App({
       const list = res.data[0].reading;
       listHelper(list);
     });
-  };
+  }; //part of get reading list and delete from list
+
 
   const listHelper = async list => {
     await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/list`, {
@@ -2662,12 +2687,21 @@ function App({
     });
   };
 
+  const deleteFromList = async (user, postid) => {
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(`http://localhost:3001/list/${user.nickname}`, {
+      reading: postid
+    }).then(res => {
+      const list = res.data.reading;
+      listHelper(list);
+    });
+  };
+
   return __jsx("div", {
     className: "app_body",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 78,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2678,10 +2712,11 @@ function App({
     searchPosts: searchPosts,
     feedState: feed,
     getReadingList: getReadingList,
+    deleteFromList: deleteFromList,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 80,
       columnNumber: 7
     }
   }));

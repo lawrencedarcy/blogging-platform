@@ -37,10 +37,9 @@ function App({ postList, tags, auth }) {
     await axios.get(`http://localhost:3001/users/${user.nickname}`)
     .then((res) => {
       if(res.data[0]){
-        axios.put(`http://localhost:3001/users/${user.nickname}`, {reading: post})
+        axios.put(`http://localhost:3001/users/${user.nickname}`, {reading: post});
       }
       else{
-        console.log('hi from create');
        createUser(user.nickname, post)
       }
     })
@@ -51,21 +50,27 @@ function App({ postList, tags, auth }) {
   }
 
   const getReadingList = async(user) => {
-  
     await axios.get(`http://localhost:3001/users/${user.nickname}`)
     .then((res) => {
       const list = res.data[0].reading;
       listHelper(list);
     })
-
   }
-
+ //part of get reading list and delete from list
   const listHelper = async(list) => {
     await axios.get(`http://localhost:3001/list`, { params: {list: list}})
     .then((res) => {
       setPosts(res.data);
       setFeed('list');
     });
+  }
+
+  const deleteFromList = async(user, postid) => {
+   await axios.put(`http://localhost:3001/list/${user.nickname}`, {reading: postid})
+   .then(res =>  {
+     const list = res.data.reading;
+    listHelper(list); 
+   });
   }
 
 
@@ -79,6 +84,7 @@ function App({ postList, tags, auth }) {
                   searchPosts={searchPosts}
                   feedState={feed}
                   getReadingList={getReadingList}
+                  deleteFromList={deleteFromList}
                   />
     </div>
   );

@@ -31,6 +31,7 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 
 
   const submitHandler = () => {
+    if(value.length < 10 || headline.length < 5){ alert('You must add a headline and body before submitting!'); return false;}
     const combinePost = {headline, tags, body: value, image: image, author: user.nickname || user.name};
     createPost(combinePost);
     Router.push('/submitted');

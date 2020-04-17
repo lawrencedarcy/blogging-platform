@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import styles from './Card.module.css';
 import Moment from 'react-moment';
 import Link from 'next/link';
@@ -7,11 +7,11 @@ import { useAuth, withAuth  } from 'use-auth0-hooks';
 
 
 
-function Card({ post, addToList, auth }) {
+function Card({ post, addToList, auth, feedState, deleteFromList }) {
   const regex = /\s/g;
   const { login} = useAuth();
   const { user } = auth;
- 
+  const [isClicked, setIsClicked] = useState(false);
 
 
   const clickHandler = (e) => {
@@ -20,7 +20,7 @@ function Card({ post, addToList, auth }) {
     addToList(user, post._id)
     :
     login();
-
+    setIsClicked(true);
   }
 
   return (
@@ -28,31 +28,17 @@ function Card({ post, addToList, auth }) {
     <div className={styles.card_width}>
         
         <div className={styles.feed_card_inner}>
-        <Link href={`/post/${post._id}`}  ><a>
+        <Link href={`/post/${post._id}`}  ><div className={styles.card_link_block}>
           <img
             src={post.img_url}
             className={styles.card_img}
           ></img>
           <div className={styles.card_title}>{post.title}</div>
 
-        
-
           {post.tags.length > 0 && (
-            <div className={styles.card_tags}>
-              {post.tags[0] && (
-                <div className={styles.tag}>{'#' + post.tags[0]}</div>
-              )}
-              {post.tags[1] && (
-                <div className={styles.tag}>
-                  {post.tags[1] && '#' + post.tags[1]}
-                </div>
-              )}
-              {post.tags[2] && (
-                <div className={styles.tag}>
-                  {post.tags[2] && '#' + post.tags[2]}
-                </div>
-              )}
-            </div>
+             <div className={styles.card_tags}>
+            { post.tags.slice(0,3).map(tag => <div className={styles.tag}>{'#' + tag}</div>) }
+             </div>
           )}  
   
           <div className={styles.card_line}>
@@ -61,14 +47,17 @@ function Card({ post, addToList, auth }) {
               <div><Moment format="LL">{post.timestamp}</Moment></div>
             </div>
           </div>
-          </a></Link>
+          </div></Link>
         </div>
         <div className={styles.card_bottom}>
-        
+        <Link href={`/post/${post._id}`}  ><div className={styles.votes_bottom}>
         <img className={styles.card_upvote} src="https://uploads.guim.co.uk/2020/04/15/culture.png"></img><div className={styles.card_votes}>{post.votes}</div>
-        
-       
-          <div className={styles.card_btn} onClick={() => clickHandler()}>Save</div>
+        </div></Link>
+       {feedState === 'list' ? 
+          <div className={styles.card_btn} onClick={() => deleteFromList(user, post._id)}>📚 Remove</div>
+          :
+          <div className={isClicked ? styles.card_btn_clicked : styles.card_btn}  onClick={() => clickHandler()}>{isClicked ? '📚 Saved' : '📚 Save'}</div>
+        }
         </div>
       
     </div>

@@ -1,6 +1,6 @@
 .feed_card {
   cursor: pointer;
-  padding: 1.5rem;
+  padding: 0rem 1rem 1rem 1rem;
   margin: .5rem auto;
   border: 1px solid rgb(199, 199, 199);
   background-color: white;
@@ -8,8 +8,7 @@
   overflow: auto;
   flex: 7;
   min-width: calc(250px + 25vw);
-
-
+  
 }
 
 .feed_card:hover {
