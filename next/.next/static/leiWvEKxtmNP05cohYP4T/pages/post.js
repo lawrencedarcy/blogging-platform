@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{"0gSU":function(n,o,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/post",function(){return w("Wtup")}])},Wtup:function(n,o){}},[["0gSU",0]]]);

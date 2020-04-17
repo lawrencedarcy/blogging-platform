@@ -2146,13 +2146,113 @@ function MyApp({
       lineNumber: 15,
       columnNumber: 6
     }
-  }, __jsx("link", {
+  }, __jsx("meta", {
+    charset: "utf-8",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 6
+    }
+  }), __jsx("meta", {
+    "http-equiv": "X-UA-Compatible",
+    content: "IE=edge",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 7
+    }
+  }), __jsx("meta", {
+    name: "viewport",
+    content: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 7
+    }
+  }), __jsx("meta", {
+    name: "description",
+    content: "Description",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 7
+    }
+  }), __jsx("meta", {
+    name: "keywords",
+    content: "Keywords",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 7
+    }
+  }), __jsx("title", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 7
+    }
+  }, "Stagetime"), __jsx("link", {
+    rel: "manifest",
+    href: "/manifest.json",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 7
+    }
+  }), __jsx("link", {
+    href: "./public/favicons/favicon-16x16.png",
+    rel: "icon",
+    type: "image/png",
+    sizes: "16x16",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 7
+    }
+  }), __jsx("link", {
+    href: "./public/favicons/favicon-32x32.png",
+    rel: "icon",
+    type: "image/png",
+    sizes: "32x32",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 7
+    }
+  }), __jsx("link", {
+    rel: "apple-touch-icon",
+    href: "/apple-icon.png",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 7
+    }
+  }), __jsx("meta", {
+    name: "theme-color",
+    content: "background-color: #fde56e",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 7
+    }
+  }), __jsx("link", {
     href: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap",
     rel: "stylesheet",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 31,
       columnNumber: 6
     }
   }), __jsx("link", {
@@ -2161,14 +2261,14 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 32,
       columnNumber: 5
     }
   })), __jsx(_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 34,
       columnNumber: 6
     }
   }), __jsx(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_6__["Auth0Provider"], {
@@ -2178,14 +2278,14 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 35,
       columnNumber: 6
     }
   }, __jsx(Component, _extends({}, pageProps, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 40,
       columnNumber: 5
     }
   }))));
