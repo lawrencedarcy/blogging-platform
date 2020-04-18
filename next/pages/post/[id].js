@@ -22,6 +22,7 @@ function Post({ post }) {
 
       <div className='body_wrapper'>
         <div className='article_title'>{post.title}</div>
+        {post.img_url && <img src={post.img_url} alt={post.title} class="article_img" ></img>}
         <div className='article_author'>{post.author}</div>
         <div className='article_tags'>
           {post.tags.slice(0, 3).map(tag => (

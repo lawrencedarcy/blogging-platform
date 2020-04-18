@@ -112,8 +112,9 @@ const getUser = async (req, res) => {
 
 const editUser = async (req, res) => {
   try {
+    console.log('req body', req.body);
     const edited = await User.findOneAndUpdate({name: req.params.name}, {
-      $push: { reading: req.body.reading, posts: req.body.post}
+      $push: {reading: req.body.reading}
       }, {new: true});
     res.status(200).json(edited); 
   } catch (err) {

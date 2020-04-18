@@ -78,6 +78,12 @@ body {
   }
 }
 
+.article_img {
+  width: 100%;
+  margin: auto;
+  margin-bottom: .5rem;
+}
+
 
 .article_author {
   color: rgba(0, 0, 0, 0.548);
@@ -156,13 +162,14 @@ body {
   border-radius: 4px;
   height: 3rem;
   width: 14rem;
-  background-color: #5da2d5;
+  background-color: #4d9bd6;
   
   font-size: 1.1rem;
 }
 
 .submit_btn:hover {
-  background-color: #6EFD9D;
+  background-color: #f3d250 ;
+  color: black;
 }
 
 .submitted{
@@ -180,11 +187,12 @@ body {
   border-radius: 4px;
   height: 3rem;
   width: 11rem;
-  background-color: #4d9bd6;;
+  background-color: #4d9bd6;
   
   font-size: 1.1rem;
 }
 
 .feed_btn:hover {
-  background-color: #4d9bd6;;
+  background-color: #f3d250 ;
+  color: black;
 }

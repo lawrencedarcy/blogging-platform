@@ -31,6 +31,7 @@ function Card(_ref) {
   var _this = this;
 
   var post = _ref.post,
+      id = _ref.id,
       addToList = _ref.addToList,
       auth = _ref.auth,
       feedState = _ref.feedState,
@@ -44,12 +45,8 @@ function Card(_ref) {
   var user = auth.user;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      isClicked = _useState[0],
-      setIsClicked = _useState[1];
-
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      onList = _useState2[0],
-      setOnList = _useState2[1];
+      onList = _useState[0],
+      setOnList = _useState[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (user) {
@@ -60,7 +57,6 @@ function Card(_ref) {
   }, [user]);
 
   var clickHandler = function clickHandler(e) {
-    console.log(post._id);
     user ? addToList(user, post._id) : login();
     setOnList(true);
   };
@@ -70,7 +66,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 34,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -78,7 +74,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 35,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -86,7 +82,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 36,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -94,25 +90,25 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 37,
       columnNumber: 11
     }
-  }, post.img_url && __jsx("img", {
+  }, post.img_url && id == 0 && __jsx("img", {
     src: post.img_url,
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_img,
     alt: post.title,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 29
+      lineNumber: 38,
+      columnNumber: 40
     }
   }), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_title,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 39,
       columnNumber: 13
     }
   }, post.title), post.tags.length > 0 && __jsx("div", {
@@ -120,7 +116,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 42,
       columnNumber: 15
     }
   }, post.tags.slice(0, 3).map(function (tag) {
@@ -130,7 +126,7 @@ function Card(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 44,
         columnNumber: 19
       }
     }, '#' + tag);
@@ -139,7 +135,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 49,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -147,7 +143,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 50,
       columnNumber: 15
     }
   }, post.author, " "), __jsx("div", {
@@ -155,14 +151,14 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 51,
       columnNumber: 15
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 52,
       columnNumber: 17
     }
   }, __jsx(react_moment__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -170,7 +166,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 53,
       columnNumber: 19
     }
   }, post.timestamp))))))), __jsx("div", {
@@ -178,7 +174,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 60,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -186,7 +182,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 61,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -194,7 +190,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 62,
       columnNumber: 11
     }
   }, __jsx("img", {
@@ -204,7 +200,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 63,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -212,7 +208,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 68,
       columnNumber: 13
     }
   }, post.votes))), feedState === 'list' ? __jsx("div", {
@@ -223,7 +219,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 73,
       columnNumber: 11
     }
   }, "\uD83D\uDCDA Remove") : !isLoading && __jsx("div", {
@@ -234,7 +230,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 81,
       columnNumber: 11
     }
   }, onList ? '📚 Saved' : '📚 Save')));
@@ -468,17 +464,43 @@ function Feed(_ref) {
       addToList = _ref.addToList,
       deleteFromList = _ref.deleteFromList,
       checkReadingList = _ref.checkReadingList;
-  var sortedList = posts.sort(function (a, b) {
-    a = a.votes;
-    b = b.votes;
-    return a > b ? -1 : a < b ? 1 : 0;
-  });
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('popular'),
+      method = _useState[0],
+      setMethod = _useState[1];
+
+  var sortBy = function sortBy(posts, method) {
+    var sortedList = [];
+
+    if (method === 'popular') {
+      sortedList = posts.sort(function (a, b) {
+        a = a.votes;
+        b = b.votes;
+        return a > b ? -1 : a < b ? 1 : 0;
+      });
+    }
+
+    if (method === 'latest') {
+      sortedList = posts.sort(function (a, b) {
+        a = a.timestamp;
+        b = b.timestamp;
+        return a > b ? -1 : a < b ? 1 : 0;
+      });
+    }
+
+    return sortedList;
+  };
+
+  var methodHandler = function methodHandler(m) {
+    setMethod(m);
+  };
+
   return __jsx("div", {
     className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.feed_body,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 40,
       columnNumber: 5
     }
   }, feedState === 'tags' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -486,7 +508,7 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 41,
       columnNumber: 32
     }
   }), feedState === 'search' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -494,7 +516,7 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 42,
       columnNumber: 34
     }
   }), feedState === 'list' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -502,20 +524,30 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 43,
       columnNumber: 32
     }
-  }), sortedList.map(function (post) {
+  }), feedState === 'normal' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    filter: 'normal',
+    methodHandler: methodHandler,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 9
+    }
+  }), sortBy(posts, method).map(function (post, i) {
     return __jsx("div", {
       className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.feed_card,
       key: post._id,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 49,
         columnNumber: 9
       }
     }, __jsx(_Card_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      id: i,
       post: post,
       addToList: addToList,
       feedState: feedState,
@@ -524,7 +556,7 @@ function Feed(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 50,
         columnNumber: 11
       }
     }));
@@ -615,20 +647,61 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function FeedHeader(_ref) {
-  var filter = _ref.filter;
+  var filter = _ref.filter,
+      methodHandler = _ref.methodHandler;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('popular'),
+      selected = _useState[0],
+      setSelected = _useState[1];
+
+  var clickHandler = function clickHandler(string) {
+    methodHandler(string);
+    setSelected(string);
+  };
+
   return __jsx("div", {
     className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.feed_header,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 14,
       columnNumber: 5
     }
-  }, filter === 'list' && __jsx("div", {
+  }, filter === 'normal' && __jsx("div", {
+    className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn_container,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 16,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    className: selected == 'popular' ? _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn_selected : _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn,
+    onClick: function onClick() {
+      return clickHandler('popular');
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 11
+    }
+  }, " Popular"), __jsx("div", {
+    className: selected == 'latest' ? _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn_selected : _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn,
+    onClick: function onClick() {
+      return clickHandler('latest');
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 11
+    }
+  }, " Latest")), filter === 'list' && __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
       columnNumber: 9
     }
   }, "These are your saved articles.", ' ', __jsx("span", {
@@ -636,7 +709,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 26,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -644,14 +717,14 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 27,
       columnNumber: 13
     }
   }, "Go back to the feed."))), filter === 'tags' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 33,
       columnNumber: 9
     }
   }, "Feed filtered by tag.", ' ', __jsx("span", {
@@ -659,7 +732,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 35,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -667,14 +740,14 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 36,
       columnNumber: 13
     }
   }, "Refresh the feed."), ' ')), filter === 'search' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 41,
       columnNumber: 9
     }
   }, "Your search results.", ' ', __jsx("span", {
@@ -682,7 +755,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 43,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -690,7 +763,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 44,
       columnNumber: 13
     }
   }, "Refresh the feed."))));
@@ -765,6 +838,7 @@ function Sidebar(_ref) {
 
   var readingClickHandler = function readingClickHandler(evt) {
     getReadingList(user);
+    console.log(user);
   };
 
   var searchSubmit = function searchSubmit(e) {
@@ -783,14 +857,14 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 5
     }
   }, isLoading ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 19
     }
   }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -798,7 +872,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 24
     }
   })) : user ? __jsx("div", {
@@ -806,7 +880,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 52,
       columnNumber: 7
     }
   }, __jsx("img", {
@@ -815,7 +889,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 53,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -823,7 +897,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 54,
       columnNumber: 7
     }
   }, " ", user.nickname || user.name), __jsx("div", {
@@ -832,7 +906,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 55,
       columnNumber: 9
     }
   }, "\uD83D\uDCDA Reading list"), __jsx("button", {
@@ -845,7 +919,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 56,
       columnNumber: 7
     }
   }, "Logout")) : __jsx("div", {
@@ -853,7 +927,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 60,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -861,7 +935,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 7
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
@@ -869,7 +943,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 91
     }
   }, " Sign in below to write a post and join the discussion."), __jsx("div", {
@@ -887,7 +961,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 62,
       columnNumber: 9
     }
   }, "Sign in")), __jsx("form", {
@@ -896,7 +970,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 67,
       columnNumber: 7
     }
   }, __jsx("input", {
@@ -909,7 +983,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 68,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -917,7 +991,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 76,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -925,7 +999,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 77,
       columnNumber: 7
     }
   }, tagsArr.map(function (tag) {
@@ -937,7 +1011,7 @@ function Sidebar(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78,
+        lineNumber: 79,
         columnNumber: 25
       }
     }, "#".concat(tag.toLowerCase()));
@@ -5346,13 +5420,16 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 1.2rem 1.2rem 1.2rem 1.2rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n  \n}\n\n.Feed_feed_card__1q6Np:hover {\n \n  \n}\n\n.Feed_feed_header__2zt6O {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.Feed_feed_body__2_Dc1 {\n  height: 140vh;\n  \n\n}\n\n.Feed_link__1Uj-G{\n  color: #f78888;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,oCAAoC;EACpC,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;EACP,6BAA6B;;AAE/B;;AAEA;;;AAGA;;AAEA;EACE,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;EACP,6BAA6B;;EAE7B,aAAa;EACb,mBAAmB;EACnB,uBAAuB;;AAEzB;;AAEA;EACE,aAAa;;;AAGf;;AAEA;EACE,cAAc;AAChB","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 1.2rem 1.2rem 1.2rem 1.2rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n  \n}\n\n.feed_card:hover {\n \n  \n}\n\n.feed_header {\n  cursor: pointer;\n  padding: 1.5rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.feed_body {\n  height: 140vh;\n  \n\n}\n\n.link{\n  color: #f78888;\n}"]}]);
+exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 1.2rem 1.2rem 1.2rem 1.2rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n  \n}\n\n.Feed_feed_card__1q6Np:hover {\n \n  \n}\n\n.Feed_feed_header__2zt6O {\n  cursor: pointer;\n  padding: .7rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.Feed_feed_body__2_Dc1 {\n  height: 140vh;\n  \n\n}\n\n.Feed_link__1Uj-G{\n  color: #ff6c6c;\n}\n\n.Feed_header_btn__30ClX, .Feed_header_btn_selected__2FI2x {\n  font-size: .9rem;\n  width: 5rem;\n  height: 30px;\n  color: white;\n  border: 1px solid white;\n  padding: 0rem 1rem;\n  margin: 0rem .5rem;\n  text-align: center;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  background-color: #4d9bd6;\n}\n.Feed_header_btn__30ClX:hover{\n  transform: scale(1.1);\n\n}\n\n\n\n.Feed_header_btn_selected__2FI2x {\n  background-color: #f3d250 ;\n  color: black;\n}\n\n.Feed_header_btn_container__35e41 {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,oCAAoC;EACpC,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;EACP,6BAA6B;;AAE/B;;AAEA;;;AAGA;;AAEA;EACE,eAAe;EACf,cAAc;EACd,kBAAkB;EAClB,oCAAoC;EACpC,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;EACP,6BAA6B;;EAE7B,aAAa;EACb,mBAAmB;EACnB,uBAAuB;;AAEzB;;AAEA;EACE,aAAa;;;AAGf;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,WAAW;EACX,YAAY;EACZ,YAAY;EACZ,uBAAuB;EACvB,kBAAkB;EAClB,kBAAkB;EAClB,kBAAkB;EAClB,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,sBAAsB;EACtB,yBAAyB;AAC3B;AACA;EACE,qBAAqB;;AAEvB;;;;AAIA;EACE,0BAA0B;EAC1B,YAAY;AACd;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 1.2rem 1.2rem 1.2rem 1.2rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n  \n}\n\n.feed_card:hover {\n \n  \n}\n\n.feed_header {\n  cursor: pointer;\n  padding: .7rem;\n  margin: .5rem auto;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.feed_body {\n  height: 140vh;\n  \n\n}\n\n.link{\n  color: #ff6c6c;\n}\n\n.header_btn, .header_btn_selected {\n  font-size: .9rem;\n  width: 5rem;\n  height: 30px;\n  color: white;\n  border: 1px solid white;\n  padding: 0rem 1rem;\n  margin: 0rem .5rem;\n  text-align: center;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  background-color: #4d9bd6;\n}\n.header_btn:hover{\n  transform: scale(1.1);\n\n}\n\n\n\n.header_btn_selected {\n  background-color: #f3d250 ;\n  color: black;\n}\n\n.header_btn_container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n"]}]);
 // Exports
 exports.locals = {
 	"feed_card": "Feed_feed_card__1q6Np",
 	"feed_header": "Feed_feed_header__2zt6O",
 	"feed_body": "Feed_feed_body__2_Dc1",
-	"link": "Feed_link__1Uj-G"
+	"link": "Feed_link__1Uj-G",
+	"header_btn": "Feed_header_btn__30ClX",
+	"header_btn_selected": "Feed_header_btn_selected__2FI2x",
+	"header_btn_container": "Feed_header_btn_container__35e41"
 };
 
 /***/ }),
@@ -29062,24 +29139,23 @@ function App(_ref) {
     }, null, null, null, Promise);
   };
 
-  var addToList = function addToList(user, post) {
+  var addToList = function addToList(user, postId) {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function addToList$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            console.log(user.nickname, post);
-            _context3.next = 3;
+            _context3.next = 2;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
               if (res.data[0]) {
                 axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("http://localhost:3001/users/".concat(user.nickname), {
-                  reading: post
+                  reading: postId
                 });
               } else {
-                createUser(user.nickname, post);
+                createUser(user.nickname, postId);
               }
             }));
 
-          case 3:
+          case 2:
           case "end":
             return _context3.stop();
         }
@@ -29087,7 +29163,7 @@ function App(_ref) {
     }, null, null, null, Promise);
   };
 
-  var createUser = function createUser(name, post) {
+  var createUser = function createUser(name, postId) {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function createUser$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
@@ -29095,7 +29171,7 @@ function App(_ref) {
             _context4.next = 2;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("http://localhost:3001/users", {
               name: name,
-              reading: post
+              reading: postId
             }));
 
           case 2:
@@ -29111,13 +29187,21 @@ function App(_ref) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
-            _context5.next = 2;
+            console.log('getting reading lsit');
+            _context5.next = 3;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
-              var list = res.data[0].reading;
-              listHelper(list);
+              if (res.data[0]) {
+                var list = res.data[0].reading;
+                console.log(list);
+                listHelper(list);
+              } else {
+                var _list = [];
+                console.log(_list);
+                listHelper(_list);
+              }
             }));
 
-          case 2:
+          case 3:
           case "end":
             return _context5.stop();
         }
@@ -29176,8 +29260,10 @@ function App(_ref) {
         switch (_context8.prev = _context8.next) {
           case 0:
             return _context8.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
-              var list = res.data[0].reading;
-              return list.includes(postId) ? true : false;
+              if (res.data[0]) {
+                var list = res.data[0].reading;
+                return list.includes(postId) ? true : false;
+              }
             }));
 
           case 1:
@@ -29193,7 +29279,7 @@ function App(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 98,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -29209,7 +29295,7 @@ function App(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 99,
       columnNumber: 7
     }
   }));
@@ -29248,7 +29334,7 @@ App.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 2:
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************************************/
@@ -29271,5 +29357,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

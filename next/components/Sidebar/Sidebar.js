@@ -25,6 +25,7 @@ function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
   }
   const readingClickHandler = (evt) => {
     getReadingList(user);
+    console.log(user);
   }
 
 

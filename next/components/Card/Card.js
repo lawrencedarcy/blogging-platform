@@ -6,6 +6,7 @@ import { useAuth, withAuth } from 'use-auth0-hooks';
 
 function Card({
   post,
+  id,
   addToList,
   auth,
   feedState,
@@ -14,7 +15,6 @@ function Card({
 }) {
   const { login, isLoading } = useAuth();
   const { user } = auth;
-  const [isClicked, setIsClicked] = useState(false);
   const [onList, setOnList] = useState(false);
 
 
@@ -26,7 +26,6 @@ function Card({
   }, [user]); 
 
   const clickHandler = e => {
-    console.log(post._id);
     user ? addToList(user, post._id) : login();
     setOnList(true);
   };
@@ -36,7 +35,7 @@ function Card({
       <div className={styles.feed_card_inner}>
         <Link href={`/post/${post._id}`}>
           <div className={styles.card_link_block}>
-           {post.img_url && <img src={post.img_url} className={styles.card_img} alt={post.title}></img>}
+           {post.img_url && id == 0 && <img src={post.img_url} className={styles.card_img} alt={post.title}></img>}
             <div className={styles.card_title}>{post.title}</div>
 
             {post.tags.length > 0 && (

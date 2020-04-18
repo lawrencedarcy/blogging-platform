@@ -32,7 +32,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/write": [
+    "/post/[id]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

@@ -18,7 +18,7 @@
 
 .feed_header {
   cursor: pointer;
-  padding: 1.5rem;
+  padding: .7rem;
   margin: .5rem auto;
   border: 1px solid rgb(199, 199, 199);
   background-color: white;
@@ -40,5 +40,39 @@
 }
 
 .link{
-  color: #f78888;
+  color: #ff6c6c;
+}
+
+.header_btn, .header_btn_selected {
+  font-size: .9rem;
+  width: 5rem;
+  height: 30px;
+  color: white;
+  border: 1px solid white;
+  padding: 0rem 1rem;
+  margin: 0rem .5rem;
+  text-align: center;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #4d9bd6;
+}
+.header_btn:hover{
+  transform: scale(1.1);
+
+}
+
+
+
+.header_btn_selected {
+  background-color: #f3d250 ;
+  color: black;
+}
+
+.header_btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

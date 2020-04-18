@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -144,6 +144,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function Card({
   post,
+  id,
   addToList,
   auth,
   feedState,
@@ -158,10 +159,6 @@ function Card({
     user
   } = auth;
   const {
-    0: isClicked,
-    1: setIsClicked
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
     0: onList,
     1: setOnList
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
@@ -172,7 +169,6 @@ function Card({
   }, [user]);
 
   const clickHandler = e => {
-    console.log(post._id);
     user ? addToList(user, post._id) : login();
     setOnList(true);
   };
@@ -182,7 +178,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 34,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -190,7 +186,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 35,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -198,7 +194,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 36,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -206,25 +202,25 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 37,
       columnNumber: 11
     }
-  }, post.img_url && __jsx("img", {
+  }, post.img_url && id == 0 && __jsx("img", {
     src: post.img_url,
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_img,
     alt: post.title,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 29
+      lineNumber: 38,
+      columnNumber: 40
     }
   }), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_title,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 39,
       columnNumber: 13
     }
   }, post.title), post.tags.length > 0 && __jsx("div", {
@@ -232,7 +228,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 42,
       columnNumber: 15
     }
   }, post.tags.slice(0, 3).map(tag => __jsx("div", {
@@ -241,7 +237,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 44,
       columnNumber: 19
     }
   }, '#' + tag))), __jsx("div", {
@@ -249,7 +245,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 49,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -257,7 +253,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 50,
       columnNumber: 15
     }
   }, post.author, " "), __jsx("div", {
@@ -265,14 +261,14 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 51,
       columnNumber: 15
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 52,
       columnNumber: 17
     }
   }, __jsx(react_moment__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -280,7 +276,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 53,
       columnNumber: 19
     }
   }, post.timestamp))))))), __jsx("div", {
@@ -288,7 +284,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 60,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -296,7 +292,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 61,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -304,7 +300,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 62,
       columnNumber: 11
     }
   }, __jsx("img", {
@@ -314,7 +310,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 63,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -322,7 +318,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 68,
       columnNumber: 13
     }
   }, post.votes))), feedState === 'list' ? __jsx("div", {
@@ -331,7 +327,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 73,
       columnNumber: 11
     }
   }, "\uD83D\uDCDA Remove") : !isLoading && __jsx("div", {
@@ -340,7 +336,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 81,
       columnNumber: 11
     }
   }, onList ? '📚 Saved' : '📚 Save')));
@@ -496,17 +492,43 @@ function Feed({
   deleteFromList,
   checkReadingList
 }) {
-  const sortedList = posts.sort(function (a, b) {
-    a = a.votes;
-    b = b.votes;
-    return a > b ? -1 : a < b ? 1 : 0;
-  });
+  const {
+    0: method,
+    1: setMethod
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('popular');
+
+  const sortBy = (posts, method) => {
+    let sortedList = [];
+
+    if (method === 'popular') {
+      sortedList = posts.sort(function (a, b) {
+        a = a.votes;
+        b = b.votes;
+        return a > b ? -1 : a < b ? 1 : 0;
+      });
+    }
+
+    if (method === 'latest') {
+      sortedList = posts.sort(function (a, b) {
+        a = a.timestamp;
+        b = b.timestamp;
+        return a > b ? -1 : a < b ? 1 : 0;
+      });
+    }
+
+    return sortedList;
+  };
+
+  const methodHandler = m => {
+    setMethod(m);
+  };
+
   return __jsx("div", {
     className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.feed_body,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 40,
       columnNumber: 5
     }
   }, feedState === 'tags' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -514,7 +536,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 41,
       columnNumber: 32
     }
   }), feedState === 'search' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -522,7 +544,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 42,
       columnNumber: 34
     }
   }), feedState === 'list' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -530,19 +552,29 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 43,
       columnNumber: 32
     }
-  }), sortedList.map(post => __jsx("div", {
+  }), feedState === 'normal' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    filter: 'normal',
+    methodHandler: methodHandler,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 9
+    }
+  }), sortBy(posts, method).map((post, i) => __jsx("div", {
     className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.feed_card,
     key: post._id,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 49,
       columnNumber: 9
     }
   }, __jsx(_Card_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    id: i,
     post: post,
     addToList: addToList,
     feedState: feedState,
@@ -551,7 +583,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 50,
       columnNumber: 11
     }
   }))));
@@ -573,7 +605,10 @@ module.exports = {
 	"feed_card": "Feed_feed_card__1q6Np",
 	"feed_header": "Feed_feed_header__2zt6O",
 	"feed_body": "Feed_feed_body__2_Dc1",
-	"link": "Feed_link__1Uj-G"
+	"link": "Feed_link__1Uj-G",
+	"header_btn": "Feed_header_btn__30ClX",
+	"header_btn_selected": "Feed_header_btn_selected__2FI2x",
+	"header_btn_container": "Feed_header_btn_container__35e41"
 };
 
 /***/ }),
@@ -597,21 +632,58 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function FeedHeader({
-  filter
+  filter,
+  methodHandler
 }) {
+  const {
+    0: selected,
+    1: setSelected
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('popular');
+
+  const clickHandler = string => {
+    methodHandler(string);
+    setSelected(string);
+  };
+
   return __jsx("div", {
     className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.feed_header,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 14,
       columnNumber: 5
     }
-  }, filter === 'list' && __jsx("div", {
+  }, filter === 'normal' && __jsx("div", {
+    className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn_container,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 16,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    className: selected == 'popular' ? _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn_selected : _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn,
+    onClick: () => clickHandler('popular'),
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 11
+    }
+  }, " Popular"), __jsx("div", {
+    className: selected == 'latest' ? _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn_selected : _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn,
+    onClick: () => clickHandler('latest'),
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 11
+    }
+  }, " Latest")), filter === 'list' && __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
       columnNumber: 9
     }
   }, "These are your saved articles.", ' ', __jsx("span", {
@@ -619,7 +691,7 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 26,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -627,14 +699,14 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 27,
       columnNumber: 13
     }
   }, "Go back to the feed."))), filter === 'tags' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 33,
       columnNumber: 9
     }
   }, "Feed filtered by tag.", ' ', __jsx("span", {
@@ -642,7 +714,7 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 35,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -650,14 +722,14 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 36,
       columnNumber: 13
     }
   }, "Refresh the feed."), ' ')), filter === 'search' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 41,
       columnNumber: 9
     }
   }, "Your search results.", ' ', __jsx("span", {
@@ -665,7 +737,7 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 43,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -673,7 +745,7 @@ function FeedHeader({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 44,
       columnNumber: 13
     }
   }, "Refresh the feed."))));
@@ -745,6 +817,7 @@ function Sidebar({
 
   const readingClickHandler = evt => {
     getReadingList(user);
+    console.log(user);
   };
 
   const searchSubmit = e => {
@@ -763,14 +836,14 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 5
     }
   }, isLoading ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 19
     }
   }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -778,7 +851,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 24
     }
   })) : user ? __jsx("div", {
@@ -786,7 +859,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 52,
       columnNumber: 7
     }
   }, __jsx("img", {
@@ -795,7 +868,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 53,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -803,7 +876,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 54,
       columnNumber: 7
     }
   }, " ", user.nickname || user.name), __jsx("div", {
@@ -812,7 +885,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 55,
       columnNumber: 9
     }
   }, "\uD83D\uDCDA Reading list"), __jsx("button", {
@@ -823,7 +896,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 56,
       columnNumber: 7
     }
   }, "Logout")) : __jsx("div", {
@@ -831,7 +904,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 60,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -839,7 +912,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 7
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
@@ -847,7 +920,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 91
     }
   }, " Sign in below to write a post and join the discussion."), __jsx("div", {
@@ -863,7 +936,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 62,
       columnNumber: 9
     }
   }, "Sign in")), __jsx("form", {
@@ -872,7 +945,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 67,
       columnNumber: 7
     }
   }, __jsx("input", {
@@ -885,7 +958,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 68,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -893,7 +966,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 76,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -901,7 +974,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 77,
       columnNumber: 7
     }
   }, tagsArr.map(tag => __jsx("button", {
@@ -912,7 +985,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 79,
       columnNumber: 25
     }
   }, `#${tag.toLowerCase()}`))));
@@ -2670,30 +2743,37 @@ function App({
     });
   };
 
-  const addToList = async (user, post) => {
-    console.log(user.nickname, post);
+  const addToList = async (user, postId) => {
     await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/users/${user.nickname}`).then(res => {
       if (res.data[0]) {
         axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(`http://localhost:3001/users/${user.nickname}`, {
-          reading: post
+          reading: postId
         });
       } else {
-        createUser(user.nickname, post);
+        createUser(user.nickname, postId);
       }
     });
   };
 
-  const createUser = async (name, post) => {
+  const createUser = async (name, postId) => {
     await axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(`http://localhost:3001/users`, {
       name: name,
-      reading: post
+      reading: postId
     });
   };
 
   const getReadingList = async user => {
+    console.log('getting reading lsit');
     await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/users/${user.nickname}`).then(res => {
-      const list = res.data[0].reading;
-      listHelper(list);
+      if (res.data[0]) {
+        const list = res.data[0].reading;
+        console.log(list);
+        listHelper(list);
+      } else {
+        const list = [];
+        console.log(list);
+        listHelper(list);
+      }
     });
   }; //part of get reading list and delete from list
 
@@ -2720,8 +2800,10 @@ function App({
 
   const checkReadingList = async (user, postId) => {
     return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/users/${user.nickname}`).then(res => {
-      const list = res.data[0].reading;
-      return list.includes(postId) ? true : false;
+      if (res.data[0]) {
+        const list = res.data[0].reading;
+        return list.includes(postId) ? true : false;
+      }
     });
   };
 
@@ -2730,7 +2812,7 @@ function App({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 98,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2746,7 +2828,7 @@ function App({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 99,
       columnNumber: 7
     }
   }));
@@ -2765,7 +2847,7 @@ App.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

@@ -31,6 +31,19 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
     });
   };
 
+  const addToPosts = async(user, postId) => {
+    await axios.get(`http://localhost:3001/users/${user.nickname}`)
+    .then((res) => {
+    
+      if(res.data[0]){
+        axios.put(`http://localhost:3001/users/${user.nickname}`, {post: postId});
+      }
+      else{
+       //TODO: create user with post
+      }
+    })
+  }
+
 
   const submitHandler = () => {
     if(value.length < 10 || headline.length < 5){ alert('You must add a headline and body before submitting!'); return false;}
