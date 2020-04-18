@@ -17,7 +17,6 @@ function Feed({
 
  const loadFunc = () => {
   setPostsToShow((postsToShow => postsToShow+3));
-  console.log('posts to show', postsToShow);
  }
 
   const sortBy = (posts, method) => {
@@ -41,8 +40,8 @@ function Feed({
 
     if (method === 'feed') {
       sortedList = posts.sort(function(a, b) {
-      a = a.timestamp/100000000  + (a.votes/10);
-      b = b.timestamp/100000000 + (b.votes/10) ;
+      a = a.timestamp/100000000  + (a.votes/3);
+      b = b.timestamp/100000000 + (b.votes/3) ;
       return a > b ? -1 : a < b ? 1 : 0;
     });
   }
@@ -55,7 +54,7 @@ function Feed({
   return (
     <div className={styles.feed_body} >
       {feedState === 'tags' && <FeedHeader filter={'tags'} />}
-      {feedState === 'search' && <FeedHeader filter={'search'} />}
+      {feedState === 'search' && <FeedHeader filter={'search'} posts={posts} />}
       {feedState === 'list' && <FeedHeader filter={'list'} />}
       {feedState === 'normal' && (
         <FeedHeader filter={'normal'} methodHandler={methodHandler} />

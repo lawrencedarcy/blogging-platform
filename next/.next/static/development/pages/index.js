@@ -480,7 +480,6 @@ function Feed(_ref) {
     setPostsToShow(function (postsToShow) {
       return postsToShow + 3;
     });
-    console.log('posts to show', postsToShow);
   };
 
   var sortBy = function sortBy(posts, method) {
@@ -504,8 +503,8 @@ function Feed(_ref) {
 
     if (method === 'feed') {
       sortedList = posts.sort(function (a, b) {
-        a = a.timestamp / 100000000 + a.votes / 10;
-        b = b.timestamp / 100000000 + b.votes / 10;
+        a = a.timestamp / 100000000 + a.votes / 3;
+        b = b.timestamp / 100000000 + b.votes / 3;
         return a > b ? -1 : a < b ? 1 : 0;
       });
     }
@@ -522,7 +521,7 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 55,
       columnNumber: 5
     }
   }, feedState === 'tags' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -530,15 +529,16 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 56,
       columnNumber: 32
     }
   }), feedState === 'search' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
     filter: 'search',
+    posts: posts,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 57,
       columnNumber: 34
     }
   }), feedState === 'list' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -546,7 +546,7 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 58,
       columnNumber: 32
     }
   }), feedState === 'normal' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -555,7 +555,7 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 60,
       columnNumber: 9
     }
   }), __jsx(react_infinite_scroller__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -568,14 +568,14 @@ function Feed(_ref) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68,
+        lineNumber: 67,
         columnNumber: 13
       }
     }, "Loading ..."),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 63,
       columnNumber: 1
     }
   }, sortBy(posts, method).slice(0, postsToShow).map(function (post, i) {
@@ -585,7 +585,7 @@ function Feed(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72,
+        lineNumber: 71,
         columnNumber: 9
       }
     }, __jsx(_Card_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -598,7 +598,7 @@ function Feed(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73,
+        lineNumber: 72,
         columnNumber: 11
       }
     }));
@@ -690,7 +690,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function FeedHeader(_ref) {
   var filter = _ref.filter,
-      methodHandler = _ref.methodHandler;
+      methodHandler = _ref.methodHandler,
+      posts = _ref.posts;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('feed'),
       selected = _useState[0],
@@ -803,7 +804,7 @@ function FeedHeader(_ref) {
       lineNumber: 42,
       columnNumber: 9
     }
-  }, "Your search results.", ' ', __jsx("span", {
+  }, posts.length > 0 ? 'Displaying your search results.' : 'No results were found.', ' ', __jsx("span", {
     className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.link,
     __self: this,
     __source: {
@@ -841,12 +842,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "./node_modules/use-auth0-hooks/dist/index.js");
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-loading-skeleton */ "./node_modules/react-loading-skeleton/lib/index.js");
-/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! use-auth0-hooks */ "./node_modules/use-auth0-hooks/dist/index.js");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-loading-skeleton */ "./node_modules/react-loading-skeleton/lib/index.js");
+/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -866,7 +870,7 @@ function Sidebar(_ref) {
       pathname = _useRouter.pathname,
       query = _useRouter.query;
 
-  var _useAuth = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["useAuth"])(),
+  var _useAuth = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["useAuth"])(),
       isLoading = _useAuth.isLoading,
       login = _useAuth.login,
       logout = _useAuth.logout;
@@ -876,7 +880,7 @@ function Sidebar(_ref) {
   var tagsList = new Set();
   tags.map(function (arr) {
     return arr.map(function (tag) {
-      return tagsList.add(tag);
+      return tagsList.add(tag.toLowerCase());
     });
   });
   var tagsArr = Array.from(tagsList); //handle search state 
@@ -890,6 +894,11 @@ function Sidebar(_ref) {
   };
 
   var readingClickHandler = function readingClickHandler(evt) {
+    getReadingList(user);
+    console.log(user);
+  };
+
+  var profileClickHandler = function profileClickHandler(evt) {
     getReadingList(user);
     console.log(user);
   };
@@ -910,22 +919,22 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 52,
       columnNumber: 5
     }
   }, isLoading ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 55,
       columnNumber: 19
     }
-  }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5___default.a, {
     count: 11,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 55,
       columnNumber: 24
     }
   })) : user ? __jsx("div", {
@@ -933,7 +942,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 58,
       columnNumber: 7
     }
   }, __jsx("img", {
@@ -942,7 +951,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 59,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -950,7 +959,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 60,
       columnNumber: 7
     }
   }, " ", user.nickname || user.name), __jsx("div", {
@@ -959,10 +968,19 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 61,
       columnNumber: 9
     }
-  }, "\uD83D\uDCDA Reading list"), __jsx("button", {
+  }, "\uD83D\uDCDA Reading list"), __jsx("a", {
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_edit_profile,
+    href: "/editbio",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62,
+      columnNumber: 9
+    }
+  }, "\uD83D\uDC64 Edit your profile"), __jsx("button", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
     onClick: function onClick() {
       return logout({
@@ -972,7 +990,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 64,
       columnNumber: 7
     }
   }, "Logout")) : __jsx("div", {
@@ -980,7 +998,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 68,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -988,7 +1006,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 69,
       columnNumber: 7
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
@@ -996,7 +1014,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 69,
       columnNumber: 91
     }
   }, " Sign in below to write a post and join the discussion."), __jsx("div", {
@@ -1014,7 +1032,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 70,
       columnNumber: 9
     }
   }, "Sign in")), __jsx("form", {
@@ -1023,7 +1041,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 75,
       columnNumber: 7
     }
   }, __jsx("input", {
@@ -1036,7 +1054,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 76,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -1044,7 +1062,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 84,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -1052,7 +1070,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 85,
       columnNumber: 7
     }
   }, tagsArr.map(function (tag) {
@@ -1064,14 +1082,14 @@ function Sidebar(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79,
+        lineNumber: 87,
         columnNumber: 25
       }
     }, "#".concat(tag.toLowerCase()));
   })));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["withAuth"])(Sidebar));
+/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["withAuth"])(Sidebar));
 
 /***/ }),
 
@@ -5423,7 +5441,7 @@ module.exports = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Card_card_width__1u695 {\n  width: 100%;\n}\n\n.Card_card_link_block__Fv0jP {\n  margin: 0;\n  padding: 0;\n}\n\n.Card_feed_card_inner__164zN {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.Card_card_title__2OGLL {\n  font-size: 2rem;\n  margin: 0 .5rem .5rem .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 2.1rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.Card_card_tags__dn97P {\n  display: flex;\n  padding: 0.3rem .1rem;\n}\n\n.Card_tag__HkkY2 {\n  cursor: pointer;\n  font-size: .7rem;\n  padding: 0.25rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n  text-transform: lowercase;\n}\n\n\n.Card_card_btn__B3f3Z, .Card_card_btn_clicked__e3gsr {\n  float: right;\n  padding: .3rem .4rem;\n  color: white;\n  background-color: #4d9bd6;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n  text-align: center;\n \n}\n\n.Card_card_btn_clicked__e3gsr {\n  color: rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n}\n\n.Card_card_btn__B3f3Z:hover {\n  color: black;\n  background-color: #f3d250;\n  \n}\n\n.Card_card_img__1Mpef {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  \n}\n\n.Card_card_upvote__2Jvhx {\nflex: 1 1;\nmin-height: 25px;\nmax-height: 25px;\n\nmin-width: 25px;\nmax-width: 25px;\npadding: 0rem;\nmargin-left: 0rem;\n\n\n}\n\n.Card_card_votes__1orTj {\n  flex: 15 1;\n font-size: 1rem; \n color: rgba(0, 0, 0, 0.747);\n margin: 0 .3rem;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: center;\n\n\n}\n.Card_card_line__sDNBB {\n  display: flex;\n}\n.Card_card_author__3ZBUC {\n  font-size: .9rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-weight: 500;\n  text-transform: capitalize;\n}\n\n.Card_card_timestamp__3sHBz {\n  color: rgba(0, 0, 0, 0.116);\n  font-size: .9rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.Card_card_font__2FMP5 {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.Card_card_bottom__8m777 {\n  margin-top: .3rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n \n}\n\n.Card_votes_bottom__1T5AD {\n \n  display: flex;\n  margin-left: .3rem;\n  justify-content: center;\n align-items: center;\n padding-right: calc(8rem + 14vw);\n \n}\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Card/Card.module.css"],"names":[],"mappings":"AAAA;EACE,WAAW;AACb;;AAEA;EACE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,eAAe;EACf,2BAA2B;EAC3B,0BAA0B;EAC1B,iBAAiB;EACjB,mBAAmB;EACnB,0BAA0B;;AAE5B;;AAEA;EACE,aAAa;EACb,qBAAqB;AACvB;;AAEA;EACE,eAAe;EACf,gBAAgB;EAChB,gBAAgB;EAChB,yBAAyB;EACzB,YAAY;EACZ,gCAAgC;EAChC,yBAAyB;AAC3B;;;AAGA;EACE,YAAY;EACZ,oBAAoB;EACpB,YAAY;EACZ,yBAAyB;EACzB,6BAA6B;EAC7B,eAAe;EACf,kBAAkB;EAClB,gBAAgB;EAChB,kBAAkB;;AAEpB;;AAEA;EACE,0BAA0B;EAC1B,yBAAyB;AAC3B;;AAEA;EACE,YAAY;EACZ,yBAAyB;;AAE3B;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,mBAAmB;;AAErB;;AAEA;AACA,SAAO;AACP,gBAAgB;AAChB,gBAAgB;;AAEhB,eAAe;AACf,eAAe;AACf,aAAa;AACb,iBAAiB;;;AAGjB;;AAEA;EACE,UAAQ;CACT,eAAe;CACf,2BAA2B;CAC3B,eAAe;CACf,UAAU;CACV,aAAa;CACb,sBAAsB;CACtB,qBAAqB;CACrB,uBAAuB;;;AAGxB;AACA;EACE,aAAa;AACf;AACA;EACE,gBAAgB;EAChB,sBAAsB;EACtB,2BAA2B;EAC3B,gBAAgB;EAChB,0BAA0B;AAC5B;;AAEA;EACE,2BAA2B;EAC3B,gBAAgB;EAChB,sBAAsB;AACxB;;AAEA;EACE,iCAAiC;;AAEnC;;AAEA;EACE,iBAAiB;EACjB,kBAAkB;EAClB,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;;AAErB;;AAEA;;EAEE,aAAa;EACb,kBAAkB;EAClB,uBAAuB;CACxB,mBAAmB;CACnB,gCAAgC;;AAEjC","file":"Card.module.css","sourcesContent":[".card_width {\n  width: 100%;\n}\n\n.card_link_block {\n  margin: 0;\n  padding: 0;\n}\n\n.feed_card_inner {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.card_title {\n  font-size: 2rem;\n  margin: 0 .5rem .5rem .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 2.1rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.card_tags {\n  display: flex;\n  padding: 0.3rem .1rem;\n}\n\n.tag {\n  cursor: pointer;\n  font-size: .7rem;\n  padding: 0.25rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n  text-transform: lowercase;\n}\n\n\n.card_btn, .card_btn_clicked {\n  float: right;\n  padding: .3rem .4rem;\n  color: white;\n  background-color: #4d9bd6;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n  text-align: center;\n \n}\n\n.card_btn_clicked {\n  color: rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n}\n\n.card_btn:hover {\n  color: black;\n  background-color: #f3d250;\n  \n}\n\n.card_img {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  \n}\n\n.card_upvote {\nflex: 1;\nmin-height: 25px;\nmax-height: 25px;\n\nmin-width: 25px;\nmax-width: 25px;\npadding: 0rem;\nmargin-left: 0rem;\n\n\n}\n\n.card_votes {\n  flex: 15;\n font-size: 1rem; \n color: rgba(0, 0, 0, 0.747);\n margin: 0 .3rem;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: center;\n\n\n}\n.card_line {\n  display: flex;\n}\n.card_author {\n  font-size: .9rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-weight: 500;\n  text-transform: capitalize;\n}\n\n.card_timestamp {\n  color: rgba(0, 0, 0, 0.116);\n  font-size: .9rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.card_font {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.card_bottom {\n  margin-top: .3rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n \n}\n\n.votes_bottom {\n \n  display: flex;\n  margin-left: .3rem;\n  justify-content: center;\n align-items: center;\n padding-right: calc(8rem + 14vw);\n \n}\n"]}]);
+exports.push([module.i, ".Card_card_width__1u695 {\n  width: 100%;\n}\n\n.Card_card_link_block__Fv0jP {\n  margin: 0;\n  padding: 0;\n}\n\n.Card_feed_card_inner__164zN {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.Card_card_title__2OGLL {\n  font-size: 1.7rem;\n  margin: 0 .5rem .5rem .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 1.9rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.Card_card_tags__dn97P {\n  display: flex;\n  padding: 0.3rem .1rem;\n}\n\n.Card_tag__HkkY2 {\n  cursor: pointer;\n  font-size: .7rem;\n  padding: 0.25rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n  text-transform: lowercase;\n}\n\n\n.Card_card_btn__B3f3Z, .Card_card_btn_clicked__e3gsr {\n  float: right;\n  padding: .3rem .4rem;\n  color: white;\n  background-color: #4d9bd6;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n  text-align: center;\n \n}\n\n.Card_card_btn_clicked__e3gsr {\n  color: rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n}\n\n.Card_card_btn__B3f3Z:hover {\n  color: black;\n  background-color: #f3d250;\n  \n}\n\n.Card_card_img__1Mpef {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  \n}\n\n.Card_card_upvote__2Jvhx {\nflex: 1 1;\nmin-height: 25px;\nmax-height: 25px;\n\nmin-width: 25px;\nmax-width: 25px;\npadding: 0rem;\nmargin-left: 0rem;\n\n\n}\n\n.Card_card_votes__1orTj {\n  flex: 15 1;\n font-size: 1rem; \n color: rgba(0, 0, 0, 0.747);\n margin: 0 .3rem;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: center;\n\n\n}\n.Card_card_line__sDNBB {\n  display: flex;\n}\n.Card_card_author__3ZBUC {\n  font-size: .9rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-weight: 500;\n  text-transform: capitalize;\n}\n\n.Card_card_timestamp__3sHBz {\n  color: rgba(0, 0, 0, 0.116);\n  font-size: .9rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.Card_card_font__2FMP5 {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.Card_card_bottom__8m777 {\n  margin-top: .3rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n \n}\n\n.Card_votes_bottom__1T5AD {\n \n  display: flex;\n  margin-left: .3rem;\n  justify-content: center;\n align-items: center;\n padding-right: calc(8rem + 14vw);\n \n}\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Card/Card.module.css"],"names":[],"mappings":"AAAA;EACE,WAAW;AACb;;AAEA;EACE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,iBAAiB;EACjB,2BAA2B;EAC3B,0BAA0B;EAC1B,iBAAiB;EACjB,mBAAmB;EACnB,0BAA0B;;AAE5B;;AAEA;EACE,aAAa;EACb,qBAAqB;AACvB;;AAEA;EACE,eAAe;EACf,gBAAgB;EAChB,gBAAgB;EAChB,yBAAyB;EACzB,YAAY;EACZ,gCAAgC;EAChC,yBAAyB;AAC3B;;;AAGA;EACE,YAAY;EACZ,oBAAoB;EACpB,YAAY;EACZ,yBAAyB;EACzB,6BAA6B;EAC7B,eAAe;EACf,kBAAkB;EAClB,gBAAgB;EAChB,kBAAkB;;AAEpB;;AAEA;EACE,0BAA0B;EAC1B,yBAAyB;AAC3B;;AAEA;EACE,YAAY;EACZ,yBAAyB;;AAE3B;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,mBAAmB;;AAErB;;AAEA;AACA,SAAO;AACP,gBAAgB;AAChB,gBAAgB;;AAEhB,eAAe;AACf,eAAe;AACf,aAAa;AACb,iBAAiB;;;AAGjB;;AAEA;EACE,UAAQ;CACT,eAAe;CACf,2BAA2B;CAC3B,eAAe;CACf,UAAU;CACV,aAAa;CACb,sBAAsB;CACtB,qBAAqB;CACrB,uBAAuB;;;AAGxB;AACA;EACE,aAAa;AACf;AACA;EACE,gBAAgB;EAChB,sBAAsB;EACtB,2BAA2B;EAC3B,gBAAgB;EAChB,0BAA0B;AAC5B;;AAEA;EACE,2BAA2B;EAC3B,gBAAgB;EAChB,sBAAsB;AACxB;;AAEA;EACE,iCAAiC;;AAEnC;;AAEA;EACE,iBAAiB;EACjB,kBAAkB;EAClB,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;;AAErB;;AAEA;;EAEE,aAAa;EACb,kBAAkB;EAClB,uBAAuB;CACxB,mBAAmB;CACnB,gCAAgC;;AAEjC","file":"Card.module.css","sourcesContent":[".card_width {\n  width: 100%;\n}\n\n.card_link_block {\n  margin: 0;\n  padding: 0;\n}\n\n.feed_card_inner {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.card_title {\n  font-size: 1.7rem;\n  margin: 0 .5rem .5rem .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  line-height: 1.9rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n.card_tags {\n  display: flex;\n  padding: 0.3rem .1rem;\n}\n\n.tag {\n  cursor: pointer;\n  font-size: .7rem;\n  padding: 0.25rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.1rem 0rem 0rem 0.27rem;\n  text-transform: lowercase;\n}\n\n\n.card_btn, .card_btn_clicked {\n  float: right;\n  padding: .3rem .4rem;\n  color: white;\n  background-color: #4d9bd6;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 4px;\n  font-size: .8rem;\n  text-align: center;\n \n}\n\n.card_btn_clicked {\n  color: rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n}\n\n.card_btn:hover {\n  color: black;\n  background-color: #f3d250;\n  \n}\n\n.card_img {\n  width: 100%;\n  margin: auto;\n  margin-bottom: 1rem;\n  \n}\n\n.card_upvote {\nflex: 1;\nmin-height: 25px;\nmax-height: 25px;\n\nmin-width: 25px;\nmax-width: 25px;\npadding: 0rem;\nmargin-left: 0rem;\n\n\n}\n\n.card_votes {\n  flex: 15;\n font-size: 1rem; \n color: rgba(0, 0, 0, 0.747);\n margin: 0 .3rem;\n padding: 0;\n display: flex;\n flex-direction: column;\n align-content: center; \n justify-content: center;\n\n\n}\n.card_line {\n  display: flex;\n}\n.card_author {\n  font-size: .9rem;\n  padding: 0.4rem 0.4rem;\n  color: rgba(0, 0, 0, 0.548);\n  font-weight: 500;\n  text-transform: capitalize;\n}\n\n.card_timestamp {\n  color: rgba(0, 0, 0, 0.116);\n  font-size: .9rem; \n  padding: 0.4rem 0.4rem;\n}\n\n.card_font {\n  font-family: 'Roboto', sans-serif;\n\n}\n\n.card_bottom {\n  margin-top: .3rem;\n  margin-left: .3rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n \n}\n\n.votes_bottom {\n \n  display: flex;\n  margin-left: .3rem;\n  justify-content: center;\n align-items: center;\n padding-right: calc(8rem + 14vw);\n \n}\n"]}]);
 // Exports
 exports.locals = {
 	"card_width": "Card_card_width__1u695",
@@ -5473,7 +5491,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 1.2rem 1.2rem 1.2rem 1.2rem;\n  margin: .5rem auto;\n/*   border: 1px solid rgb(199, 199, 199);\n */  background-color: white;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n  \n}\n\n.Feed_feed_header__2zt6O {\n  cursor: pointer;\n  padding: .7rem;\n  margin: .5rem auto;\n  /* border: 1px solid rgb(199, 199, 199); */\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.Feed_feed_body__2_Dc1 {\n  height: 140vh;\n  width: 100%;\n}\n\n.Feed_link__1Uj-G{\n  color: #ff6c6c;\n}\n\n.Feed_header_btn__30ClX, .Feed_header_btn_selected__2FI2x {\n  font-size: .8rem;\n  width: 5rem;\n  height: 30px;\n  color: white;\n  border: 2px solid white;\n  padding: 0rem 1rem;\n  margin: 0rem .5rem;\n  text-align: center;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  background-color: #4d9bd6;\n}\n.Feed_header_btn__30ClX:hover{\n  transform: scale(1.0);\n  border: 2px solid #f3d250;\n}\n\n\n\n.Feed_header_btn_selected__2FI2x {\n  background-color: #f3d250 ;\n  color: black;\n}\n\n.Feed_header_btn_container__35e41 {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,oCAAoC;EACpC,kBAAkB;AACpB;EACE,GAAG,uBAAuB;EAC1B,cAAc;EACd,SAAO;EACP,6BAA6B;;AAE/B;;AAEA;EACE,eAAe;EACf,cAAc;EACd,kBAAkB;EAClB,0CAA0C;EAC1C,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;EACP,6BAA6B;;EAE7B,aAAa;EACb,mBAAmB;EACnB,uBAAuB;;AAEzB;;AAEA;EACE,aAAa;EACb,WAAW;AACb;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,WAAW;EACX,YAAY;EACZ,YAAY;EACZ,uBAAuB;EACvB,kBAAkB;EAClB,kBAAkB;EAClB,kBAAkB;EAClB,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,sBAAsB;EACtB,yBAAyB;AAC3B;AACA;EACE,qBAAqB;EACrB,yBAAyB;AAC3B;;;;AAIA;EACE,0BAA0B;EAC1B,YAAY;AACd;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 1.2rem 1.2rem 1.2rem 1.2rem;\n  margin: .5rem auto;\n/*   border: 1px solid rgb(199, 199, 199);\n */  background-color: white;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n  \n}\n\n.feed_header {\n  cursor: pointer;\n  padding: .7rem;\n  margin: .5rem auto;\n  /* border: 1px solid rgb(199, 199, 199); */\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.feed_body {\n  height: 140vh;\n  width: 100%;\n}\n\n.link{\n  color: #ff6c6c;\n}\n\n.header_btn, .header_btn_selected {\n  font-size: .8rem;\n  width: 5rem;\n  height: 30px;\n  color: white;\n  border: 2px solid white;\n  padding: 0rem 1rem;\n  margin: 0rem .5rem;\n  text-align: center;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  background-color: #4d9bd6;\n}\n.header_btn:hover{\n  transform: scale(1.0);\n  border: 2px solid #f3d250;\n}\n\n\n\n.header_btn_selected {\n  background-color: #f3d250 ;\n  color: black;\n}\n\n.header_btn_container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n"]}]);
+exports.push([module.i, ".Feed_feed_card__1q6Np {\n  cursor: pointer;\n  padding: 1.2rem 1.2rem 1.2rem 1.2rem;\n  margin: .5rem auto;\n/*   border: 1px solid rgb(199, 199, 199);\n */  background-color: white;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n  \n}\n\n.Feed_feed_header__2zt6O {\n  cursor: pointer;\n  padding: .7rem;\n  margin: .5rem auto;\n  /* border: 1px solid rgb(199, 199, 199); */\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7 1;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.Feed_feed_body__2_Dc1 {\n  height: 140vh;\n  width: 100%;\n}\n\n.Feed_link__1Uj-G{\n  color: #ff6c6c;\n}\n\n.Feed_header_btn__30ClX, .Feed_header_btn_selected__2FI2x {\n  font-size: .8rem;\n  width: 5rem;\n  height: 30px;\n  color: white;\n  border: 2px solid white;\n  padding: 0rem 1rem;\n  margin: 0rem .5rem;\n  text-align: center;\n  border-radius: 5px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  background-color: #4d9bd6;\n}\n.Feed_header_btn__30ClX:hover{\n  transform: scale(1.0);\n  border: 2px solid #f3d250;\n}\n\n.Feed_header_btn_selected__2FI2x {\n  background-color: #f3d250 ;\n  color: black;\n}\n\n.Feed_header_btn_container__35e41 {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.module.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,oCAAoC;EACpC,kBAAkB;AACpB;EACE,GAAG,uBAAuB;EAC1B,cAAc;EACd,SAAO;EACP,6BAA6B;;AAE/B;;AAEA;EACE,eAAe;EACf,cAAc;EACd,kBAAkB;EAClB,0CAA0C;EAC1C,uBAAuB;EACvB,WAAW;EACX,cAAc;EACd,SAAO;EACP,6BAA6B;;EAE7B,aAAa;EACb,mBAAmB;EACnB,uBAAuB;;AAEzB;;AAEA;EACE,aAAa;EACb,WAAW;AACb;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,WAAW;EACX,YAAY;EACZ,YAAY;EACZ,uBAAuB;EACvB,kBAAkB;EAClB,kBAAkB;EAClB,kBAAkB;EAClB,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,sBAAsB;EACtB,yBAAyB;AAC3B;AACA;EACE,qBAAqB;EACrB,yBAAyB;AAC3B;;AAEA;EACE,0BAA0B;EAC1B,YAAY;AACd;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB","file":"Feed.module.css","sourcesContent":[".feed_card {\n  cursor: pointer;\n  padding: 1.2rem 1.2rem 1.2rem 1.2rem;\n  margin: .5rem auto;\n/*   border: 1px solid rgb(199, 199, 199);\n */  background-color: white;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n  \n}\n\n.feed_header {\n  cursor: pointer;\n  padding: .7rem;\n  margin: .5rem auto;\n  /* border: 1px solid rgb(199, 199, 199); */\n  background-color: white;\n  width: 100%;\n  overflow: auto;\n  flex: 7;\n  min-width: calc(250px + 25vw);\n \n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n}\n\n.feed_body {\n  height: 140vh;\n  width: 100%;\n}\n\n.link{\n  color: #ff6c6c;\n}\n\n.header_btn, .header_btn_selected {\n  font-size: .8rem;\n  width: 5rem;\n  height: 30px;\n  color: white;\n  border: 2px solid white;\n  padding: 0rem 1rem;\n  margin: 0rem .5rem;\n  text-align: center;\n  border-radius: 5px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  background-color: #4d9bd6;\n}\n.header_btn:hover{\n  transform: scale(1.0);\n  border: 2px solid #f3d250;\n}\n\n.header_btn_selected {\n  background-color: #f3d250 ;\n  color: black;\n}\n\n.header_btn_container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n"]}]);
 // Exports
 exports.locals = {
 	"feed_card": "Feed_feed_card__1q6Np",
@@ -5496,12 +5514,13 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n\n  min-width: calc(20vw + 15px);\n  flex: 2 1;\n/*   border: 1px solid rgb(199, 199, 199);\n */  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n}\n\n@media only screen and (max-width: 745px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3 {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .4rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3:hover {\n  color: #f78888;\n  cursor: pointer;\n}\n\n.Sidebar_sidebar_search__6hfx8 {\n  width: 100%;\n  margin: auto;\n}\n.Sidebar_sidebar_search_input__8zQ9W {\n  width: 100%;\n  height: 2rem;\n  background-color: #ececec;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n height: 40vh;\n overflow: scroll;\n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.Sidebar_sidebar_tag__yktie:focus {\n  background-color: #4d9bd6;\n}\n\n.Sidebar_sidebar_profile__19RNM {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.Sidebar_sidebar_img__2FNKS {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.Sidebar_sidebar_name__3zubS {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.Sidebar_sidebar_login__2lKjx{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .8rem;\n  max-height: 3rem;\n  border: 1px solid #4d9bd6;  border-radius: 5px;\n  background-color: #4d9bd6;\n  color: white;\n  width: 50%;\n  min-width: 4.7rem;\n}\n\n.Sidebar_sidebar_login__2lKjx:hover {\n  color:rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n  border: 1px solid #f3d250;\n}\n\n.Sidebar_sidebar_text__g7JSJ {\n  font-size: .9rem;\n  padding: .4rem;\n\n}\n\n\n.Sidebar_sidebar_tagline__1Rpho {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 1100px) {\n  .Sidebar_sidebar_text__g7JSJ {\n    display: none;\n  }\n  .Sidebar_sidebar_tagline__1Rpho {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.Sidebar_login_btn__3RDmD {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #4d9bd6;\n  \n  font-size: 1.1rem;\n}\n\n.Sidebar_login_btn__3RDmD:hover {\n  background-color: #f3d250;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,4BAA4B;EAC5B,SAAO;AACT;EACE,GAAG,YAAY;EACf,aAAa;EACb,uBAAuB;EACvB,aAAa;EACb,gBAAgB;;AAElB;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;AAChB;;AAEA;EACE,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,WAAW;EACX,YAAY;AACd;AACA;EACE,WAAW;EACX,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,oCAAoC;EACpC,gBAAgB;EAChB,oBAAoB;EACpB,gBAAgB;EAChB,oBAAoB;EACpB,kBAAkB;AACpB;;AAEA;CACC,YAAY;CACZ,gBAAgB;;AAEjB;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,UAAU;EACV,oCAAoC;EACpC,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,wBAAwB;EACxB,kBAAkB;EAClB,cAAc;;;AAGhB;;AAEA;EACE,UAAU;EACV,kBAAkB;EAClB,YAAY;EACZ,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;AAClB;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,kBAAkB;EAClB,gBAAgB;EAChB,gBAAgB;EAChB,yBAAyB,GAAG,kBAAkB;EAC9C,yBAAyB;EACzB,YAAY;EACZ,UAAU;EACV,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,yBAAyB;EACzB,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;EAChB,cAAc;;AAEhB;;;AAGA;EACE,eAAe;EACf,cAAc;EACd,gBAAgB;;AAElB;;AAEA;EACE;IACE,aAAa;EACf;EACA;IACE,gBAAgB;IAChB,aAAa;EACf;AACF;AACA;EACE,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,yBAAyB;;EAEzB,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;AAC3B","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n\n  min-width: calc(20vw + 15px);\n  flex: 2;\n/*   border: 1px solid rgb(199, 199, 199);\n */  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n}\n\n@media only screen and (max-width: 745px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_reading {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .4rem;\n}\n\n.sidebar_reading:hover {\n  color: #f78888;\n  cursor: pointer;\n}\n\n.sidebar_search {\n  width: 100%;\n  margin: auto;\n}\n.sidebar_search_input {\n  width: 100%;\n  height: 2rem;\n  background-color: #ececec;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.sidebar_tags {\n height: 40vh;\n overflow: scroll;\n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.sidebar_tag:focus {\n  background-color: #4d9bd6;\n}\n\n.sidebar_profile {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.sidebar_img {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.sidebar_name {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.sidebar_login{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .8rem;\n  max-height: 3rem;\n  border: 1px solid #4d9bd6;  border-radius: 5px;\n  background-color: #4d9bd6;\n  color: white;\n  width: 50%;\n  min-width: 4.7rem;\n}\n\n.sidebar_login:hover {\n  color:rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n  border: 1px solid #f3d250;\n}\n\n.sidebar_text {\n  font-size: .9rem;\n  padding: .4rem;\n\n}\n\n\n.sidebar_tagline {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 1100px) {\n  .sidebar_text {\n    display: none;\n  }\n  .sidebar_tagline {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.login_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #4d9bd6;\n  \n  font-size: 1.1rem;\n}\n\n.login_btn:hover {\n  background-color: #f3d250;\n}"]}]);
+exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n\n  min-width: calc(20vw + 15px);\n  flex: 2 1;\n/*   border: 1px solid rgb(199, 199, 199);\n */  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n}\n\n@media only screen and (max-width: 745px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3 {\n  font-size: .9rem;\n  padding: .2rem;\n}\n\n\n.Sidebar_sidebar_edit_profile__tqWL7 {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .2rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3:hover,.Sidebar_sidebar_edit_profile__tqWL7:hover {\n  color: #f78888;\n  cursor: pointer;\n}\n\n.Sidebar_sidebar_search__6hfx8 {\n  width: 100%;\n  margin: auto;\n}\n.Sidebar_sidebar_search_input__8zQ9W {\n  width: 100%;\n  height: 2rem;\n  background-color: #ececec;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n height: 40vh;\n overflow: scroll;\n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.Sidebar_sidebar_tag__yktie:focus {\n  background-color: #4d9bd6;\n}\n\n.Sidebar_sidebar_profile__19RNM {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.Sidebar_sidebar_img__2FNKS {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.Sidebar_sidebar_name__3zubS {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.Sidebar_sidebar_login__2lKjx{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .8rem;\n  max-height: 3rem;\n  border: 1px solid #4d9bd6;  border-radius: 5px;\n  background-color: #4d9bd6;\n  color: white;\n  width: 50%;\n  min-width: 4.7rem;\n}\n\n.Sidebar_sidebar_login__2lKjx:hover {\n  color:rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n  border: 1px solid #f3d250;\n}\n\n.Sidebar_sidebar_text__g7JSJ {\n  font-size: .9rem;\n  padding: .4rem;\n\n}\n\n\n.Sidebar_sidebar_tagline__1Rpho {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 1100px) {\n  .Sidebar_sidebar_text__g7JSJ {\n    display: none;\n  }\n  .Sidebar_sidebar_tagline__1Rpho {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.Sidebar_login_btn__3RDmD {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #4d9bd6;\n  \n  font-size: 1.1rem;\n}\n\n.Sidebar_login_btn__3RDmD:hover {\n  background-color: #f3d250;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,4BAA4B;EAC5B,SAAO;AACT;EACE,GAAG,YAAY;EACf,aAAa;EACb,uBAAuB;EACvB,aAAa;EACb,gBAAgB;;AAElB;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;;AAGA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;AAChB;;AAEA;EACE,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,WAAW;EACX,YAAY;AACd;AACA;EACE,WAAW;EACX,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,oCAAoC;EACpC,gBAAgB;EAChB,oBAAoB;EACpB,gBAAgB;EAChB,oBAAoB;EACpB,kBAAkB;AACpB;;AAEA;CACC,YAAY;CACZ,gBAAgB;;AAEjB;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,UAAU;EACV,oCAAoC;EACpC,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,wBAAwB;EACxB,kBAAkB;EAClB,cAAc;;;AAGhB;;AAEA;EACE,UAAU;EACV,kBAAkB;EAClB,YAAY;EACZ,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;AAClB;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,kBAAkB;EAClB,gBAAgB;EAChB,gBAAgB;EAChB,yBAAyB,GAAG,kBAAkB;EAC9C,yBAAyB;EACzB,YAAY;EACZ,UAAU;EACV,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,yBAAyB;EACzB,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;EAChB,cAAc;;AAEhB;;;AAGA;EACE,eAAe;EACf,cAAc;EACd,gBAAgB;;AAElB;;AAEA;EACE;IACE,aAAa;EACf;EACA;IACE,gBAAgB;IAChB,aAAa;EACf;AACF;AACA;EACE,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,yBAAyB;;EAEzB,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;AAC3B","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n\n  min-width: calc(20vw + 15px);\n  flex: 2;\n/*   border: 1px solid rgb(199, 199, 199);\n */  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n}\n\n@media only screen and (max-width: 745px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_reading {\n  font-size: .9rem;\n  padding: .2rem;\n}\n\n\n.sidebar_edit_profile {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .2rem;\n}\n\n.sidebar_reading:hover,.sidebar_edit_profile:hover {\n  color: #f78888;\n  cursor: pointer;\n}\n\n.sidebar_search {\n  width: 100%;\n  margin: auto;\n}\n.sidebar_search_input {\n  width: 100%;\n  height: 2rem;\n  background-color: #ececec;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.sidebar_tags {\n height: 40vh;\n overflow: scroll;\n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.sidebar_tag:focus {\n  background-color: #4d9bd6;\n}\n\n.sidebar_profile {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.sidebar_img {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.sidebar_name {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.sidebar_login{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .8rem;\n  max-height: 3rem;\n  border: 1px solid #4d9bd6;  border-radius: 5px;\n  background-color: #4d9bd6;\n  color: white;\n  width: 50%;\n  min-width: 4.7rem;\n}\n\n.sidebar_login:hover {\n  color:rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n  border: 1px solid #f3d250;\n}\n\n.sidebar_text {\n  font-size: .9rem;\n  padding: .4rem;\n\n}\n\n\n.sidebar_tagline {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 1100px) {\n  .sidebar_text {\n    display: none;\n  }\n  .sidebar_tagline {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.login_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #4d9bd6;\n  \n  font-size: 1.1rem;\n}\n\n.login_btn:hover {\n  background-color: #f3d250;\n}"]}]);
 // Exports
 exports.locals = {
 	"sidebar": "Sidebar_sidebar__ma1yP",
 	"sidebar_title": "Sidebar_sidebar_title__3lZ-e",
 	"sidebar_reading": "Sidebar_sidebar_reading__1DUV3",
+	"sidebar_edit_profile": "Sidebar_sidebar_edit_profile__tqWL7",
 	"sidebar_search": "Sidebar_sidebar_search__6hfx8",
 	"sidebar_search_input": "Sidebar_sidebar_search_input__8zQ9W",
 	"sidebar_tags": "Sidebar_sidebar_tags__1IP9J",
@@ -29705,7 +29724,7 @@ App.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 5:
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************************************/
@@ -29728,5 +29747,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[5,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

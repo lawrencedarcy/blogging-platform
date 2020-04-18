@@ -31,7 +31,7 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
     });
   };
 
-  const addToPosts = async(user, postId) => {
+/*   const addToPosts = async(user, postId) => {
     await axios.get(`http://localhost:3001/users/${user.nickname}`)
     .then((res) => {
     
@@ -43,7 +43,7 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
       }
     })
   }
-
+ */
 
   const submitHandler = () => {
     if(value.length < 10 || headline.length < 5){ alert('You must add a headline and body before submitting!'); return false;}
@@ -56,7 +56,7 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
     setHeadline(e.target.value);
   }
   const tagChangeHandler = (e) => {
-    setTags(e.target.value);
+    setTags(e.target.value.toLowerCase());
   }
   const imageChangeHandler = (e) => {
     setImage(e.target.value);

@@ -24,11 +24,17 @@
 
 .sidebar_reading {
   font-size: .9rem;
-  margin: 0 0 .6rem 0;
-  padding: .4rem;
+  padding: .2rem;
 }
 
-.sidebar_reading:hover {
+
+.sidebar_edit_profile {
+  font-size: .9rem;
+  margin: 0 0 .6rem 0;
+  padding: .2rem;
+}
+
+.sidebar_reading:hover,.sidebar_edit_profile:hover {
   color: #f78888;
   cursor: pointer;
 }

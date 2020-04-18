@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from './Sidebar.module.css';
 import { useRouter } from 'next/router';
+import { Link } from 'next/link';
 import { useAuth, withAuth } from 'use-auth0-hooks';
 import Skeleton from 'react-loading-skeleton';
 
@@ -14,7 +15,7 @@ function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
 
   // handle tags - create a unique list to display
   const tagsList = new Set;
-  tags.map(arr => arr.map(tag => tagsList.add(tag)));
+  tags.map(arr => arr.map(tag => tagsList.add(tag.toLowerCase())));
   const tagsArr = Array.from(tagsList);
   
   //handle search state 
@@ -24,6 +25,11 @@ function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
     getPostByTag(evt.target.value);
   }
   const readingClickHandler = (evt) => {
+    getReadingList(user);
+    console.log(user);
+  }
+
+  const profileClickHandler = (evt) => {
     getReadingList(user);
     console.log(user);
   }
@@ -53,6 +59,8 @@ function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
       <img className={styles.sidebar_img} src={user.picture} />
       <div className={styles.sidebar_name}> {user.nickname || user.name}</div>
         <div className={styles.sidebar_reading} onClick={readingClickHandler}>📚 Reading list</div>
+        <a className={styles.sidebar_edit_profile} href="/editbio">👤 Edit your profile</a>
+
       <button className={styles.sidebar_login} onClick={() => logout({ returnTo: 'http://localhost:3000' })}>Logout</button>
      
       </div>

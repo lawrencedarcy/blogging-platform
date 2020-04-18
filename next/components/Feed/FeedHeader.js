@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './Feed.module.css';
 
 
-function FeedHeader({ filter, methodHandler }) {
+function FeedHeader({ filter, methodHandler, posts }) {
 
   const [selected, setSelected] = useState('feed'); 
   const clickHandler = (string) => {
@@ -40,7 +40,7 @@ function FeedHeader({ filter, methodHandler }) {
       )}
       {filter === 'search' && (
         <div>
-          Your search results.{' '}
+          {posts.length > 0 ? 'Displaying your search results.' : 'No results were found.'}{' '}
           <span className={styles.link}>
             <a href='/'>Refresh the feed.</a>
           </span>
