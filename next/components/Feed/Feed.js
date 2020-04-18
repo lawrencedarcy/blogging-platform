@@ -20,9 +20,9 @@ function Feed({ posts, feedState, addToList, deleteFromList, checkReadingList })
       {feedState === 'list' && <FeedHeader filter={'list'} />}
 
       {sortedList.map(post => (
-        <div className={styles.feed_card}>
+        <div className={styles.feed_card} key={post._id}>
           <Card
-            key={post.id}
+            
             post={post}
             addToList={addToList}
             feedState={feedState}

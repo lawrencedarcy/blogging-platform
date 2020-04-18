@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -237,6 +237,7 @@ function Card({
     }
   }, post.tags.slice(0, 3).map(tag => __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tag,
+    key: tag,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -534,6 +535,7 @@ function Feed({
     }
   }), sortedList.map(post => __jsx("div", {
     className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.feed_card,
+    key: post._id,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -541,7 +543,6 @@ function Feed({
       columnNumber: 9
     }
   }, __jsx(_Card_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    key: post.id,
     post: post,
     addToList: addToList,
     feedState: feedState,
@@ -762,14 +763,14 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 45,
       columnNumber: 5
     }
   }, isLoading ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 48,
       columnNumber: 19
     }
   }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -777,7 +778,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 48,
       columnNumber: 24
     }
   })) : user ? __jsx("div", {
@@ -785,7 +786,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 51,
       columnNumber: 7
     }
   }, __jsx("img", {
@@ -794,7 +795,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 52,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -802,7 +803,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 53,
       columnNumber: 7
     }
   }, " ", user.nickname || user.name), __jsx("div", {
@@ -811,7 +812,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 54,
       columnNumber: 9
     }
   }, "\uD83D\uDCDA Reading list"), __jsx("button", {
@@ -822,7 +823,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 55,
       columnNumber: 7
     }
   }, "Logout")) : __jsx("div", {
@@ -830,7 +831,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 59,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -838,7 +839,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 60,
       columnNumber: 7
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
@@ -846,7 +847,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 60,
       columnNumber: 91
     }
   }, " Sign in below to write a post and join the discussion."), __jsx("div", {
@@ -862,7 +863,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 61,
       columnNumber: 9
     }
   }, "Sign in")), __jsx("form", {
@@ -871,7 +872,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 66,
       columnNumber: 7
     }
   }, __jsx("input", {
@@ -884,7 +885,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 67,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -892,7 +893,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 75,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -900,17 +901,18 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 76,
       columnNumber: 7
     }
   }, tagsArr.map(tag => __jsx("button", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tag,
+    key: tag,
     value: tag,
     onClick: clickHandler,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 78,
       columnNumber: 25
     }
   }, `#${tag.toLowerCase()}`))));
@@ -2719,7 +2721,6 @@ function App({
   const checkReadingList = async (user, postId) => {
     return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/users/${user.nickname}`).then(res => {
       const list = res.data[0].reading;
-      console.log('checked the list!', list.includes(postId) ? true : false);
       return list.includes(postId) ? true : false;
     });
   };
@@ -2764,7 +2765,7 @@ App.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

@@ -113,7 +113,7 @@ const getUser = async (req, res) => {
 const editUser = async (req, res) => {
   try {
     const edited = await User.findOneAndUpdate({name: req.params.name}, {
-      $push: { reading: req.body.reading}
+      $push: { reading: req.body.reading, posts: req.body.post}
       }, {new: true});
     res.status(200).json(edited); 
   } catch (err) {
@@ -132,7 +132,6 @@ const getList = async (req, res) => {
 };
 
 const deleteFromList = async (req, res) => {
-  console.log('deletefromlist controller says', 'user', req.params.name, 'reading param', req.body.reading);
   try {
     const edited = await User.findOneAndUpdate({name: req.params.name}, {
       $pull: { reading: req.body.reading}

@@ -53,7 +53,7 @@
 }
 
 .card_btn_clicked {
-  color: black;
+  color: rgba(0, 0, 0, 0.84);
   background-color: #f3d250;
 }
 

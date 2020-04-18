@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import Router from 'next/router'
 
+
 /* import ReactQuill from 'react-quill'; 
  */
 const ReactQuill = typeof window === 'object' ? require('react-quill') : () => false;
@@ -18,8 +19,6 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
   const [headline, setHeadline] = useState('');
   const [tags, setTags] = useState('');
   const [image, setImage] = useState('');
-
-
 
 
   const createPost = (p) => {

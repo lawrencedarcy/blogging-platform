@@ -17,7 +17,7 @@ const postSchema = new Schema({
 const userSchema = new Schema({
   name: String,
   bio: String,
-  posts: [postSchema],
+  posts: [String],
   upvoted: [String],
   comments: [],
   reading: [String]

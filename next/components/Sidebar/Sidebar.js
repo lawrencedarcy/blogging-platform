@@ -16,7 +16,7 @@ function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
   const tagsList = new Set;
   tags.map(arr => arr.map(tag => tagsList.add(tag)));
   const tagsArr = Array.from(tagsList);
-
+  
   //handle search state 
   const [term, setTerm] = useState();
 
@@ -38,6 +38,8 @@ function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
   const handleChange = (e) => {
     setTerm(e.target.value);
   }
+
+  
 
   return (
     <div className={styles.sidebar}>
@@ -73,7 +75,7 @@ function Sidebar({tags, getPostByTag, auth, searchPosts, getReadingList}) {
       <div className={styles.sidebar_title}>Filter feed by tag</div>
       <div className={styles.sidebar_tags}>
       
-    {tagsArr.map(tag => <button className={styles.sidebar_tag} value={tag} onClick={clickHandler}>{`#${tag.toLowerCase()}`}</button>)}
+    {tagsArr.map(tag => <button className={styles.sidebar_tag} key={tag} value={tag} onClick={clickHandler}>{`#${tag.toLowerCase()}`}</button>)}
         
       </div>
     </div>

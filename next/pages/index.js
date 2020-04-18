@@ -44,6 +44,7 @@ function App({ postList, tags, auth }) {
     })
   }
 
+
   const createUser = async(name, post) => {
     await axios.post(`http://localhost:3001/users`, {name: name, reading: post})
   }
@@ -76,7 +77,6 @@ function App({ postList, tags, auth }) {
     return axios.get(`http://localhost:3001/users/${user.nickname}`)
     .then((res) => {
       const list = res.data[0].reading;
-      console.log('checked the list!', list.includes(postId) ? true : false);
       return list.includes(postId) ? true : false;
     })
   }

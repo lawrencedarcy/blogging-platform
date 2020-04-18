@@ -69,7 +69,7 @@
 }
 
 .sidebar_tag:focus {
-  background-color: #5da2d5;
+  background-color: #4d9bd6;
 }
 
 .sidebar_profile {
@@ -113,7 +113,7 @@
 }
 
 .sidebar_login:hover {
-  color: black;
+  color:rgba(0, 0, 0, 0.84);
   background-color: #f3d250;
   border: 1px solid #f3d250;
 }
@@ -153,5 +153,5 @@
 }
 
 .login_btn:hover {
-  background-color: #6EFD9D;
+  background-color: #f3d250;
 }

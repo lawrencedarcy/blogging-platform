@@ -42,7 +42,7 @@ function Card({
             {post.tags.length > 0 && (
               <div className={styles.card_tags}>
                 {post.tags.slice(0, 3).map(tag => (
-                  <div className={styles.tag}>{'#' + tag}</div>
+                  <div className={styles.tag} key={tag}>{'#' + tag}</div>
                 ))}
               </div>
             )}
