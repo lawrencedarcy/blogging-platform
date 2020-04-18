@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -478,8 +478,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Feed_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Feed.module.css */ "./components/Feed/Feed.module.css");
 /* harmony import */ var _Feed_module_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Feed_module_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _FeedHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FeedHeader */ "./components/Feed/FeedHeader.js");
+/* harmony import */ var react_infinite_scroller__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-infinite-scroller */ "react-infinite-scroller");
+/* harmony import */ var react_infinite_scroller__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_infinite_scroller__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Feed/Feed.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -493,9 +496,18 @@ function Feed({
   checkReadingList
 }) {
   const {
+    0: postsToShow,
+    1: setPostsToShow
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(5);
+  const {
     0: method,
     1: setMethod
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('feed');
+
+  const loadFunc = () => {
+    setPostsToShow(postsToShow => postsToShow + 3);
+    console.log('posts to show', postsToShow);
+  };
 
   const sortBy = (posts, method) => {
     let sortedList = [];
@@ -520,7 +532,6 @@ function Feed({
       sortedList = posts.sort(function (a, b) {
         a = a.timestamp / 100000000 + a.votes / 10;
         b = b.timestamp / 100000000 + b.votes / 10;
-        console.log(a, b);
         return a > b ? -1 : a < b ? 1 : 0;
       });
     }
@@ -537,7 +548,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 56,
       columnNumber: 5
     }
   }, feedState === 'tags' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -545,7 +556,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 57,
       columnNumber: 32
     }
   }), feedState === 'search' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -553,7 +564,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 58,
       columnNumber: 34
     }
   }), feedState === 'list' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -561,7 +572,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 59,
       columnNumber: 32
     }
   }), feedState === 'normal' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -570,16 +581,36 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 61,
       columnNumber: 9
     }
-  }), sortBy(posts, method).map((post, i) => __jsx("div", {
+  }), __jsx(react_infinite_scroller__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    pageStart: 0,
+    loadMore: loadFunc,
+    hasMore: postsToShow < posts.length,
+    loader: __jsx("div", {
+      className: "loader",
+      key: 0,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68,
+        columnNumber: 13
+      }
+    }, "Loading ..."),
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64,
+      columnNumber: 1
+    }
+  }, sortBy(posts, method).slice(0, postsToShow).map((post, i) => __jsx("div", {
     className: _Feed_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.feed_card,
     key: post._id,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 72,
       columnNumber: 9
     }
   }, __jsx(_Card_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -592,10 +623,10 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 73,
       columnNumber: 11
     }
-  }))));
+  })))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Feed);
@@ -2865,7 +2896,7 @@ App.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2929,6 +2960,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-infinite-scroller":
+/*!******************************************!*\
+  !*** external "react-infinite-scroller" ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-infinite-scroller");
 
 /***/ }),
 

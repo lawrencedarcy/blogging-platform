@@ -10,11 +10,6 @@
   
 }
 
-.feed_card:hover {
- 
-  
-}
-
 .feed_header {
   cursor: pointer;
   padding: .7rem;
@@ -46,7 +41,7 @@
   width: 5rem;
   height: 30px;
   color: white;
-  border: 1px solid white;
+  border: 2px solid white;
   padding: 0rem 1rem;
   margin: 0rem .5rem;
   text-align: center;
@@ -58,8 +53,8 @@
   background-color: #4d9bd6;
 }
 .header_btn:hover{
-  transform: scale(1.1);
-
+  transform: scale(1.0);
+  border: 2px solid #f3d250;
 }
 
 

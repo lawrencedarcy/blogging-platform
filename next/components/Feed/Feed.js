@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from '../Card/Card';
 import styles from './Feed.module.css';
 import FeedHeader from './FeedHeader';
+import InfiniteScroll from 'react-infinite-scroller';
 
 function Feed({
   posts,
@@ -11,8 +12,13 @@ function Feed({
   checkReadingList
 }) {
 
+ const [postsToShow, setPostsToShow] = useState(5)
  const [method, setMethod] = useState('feed');
 
+ const loadFunc = () => {
+  setPostsToShow((postsToShow => postsToShow+3));
+  console.log('posts to show', postsToShow);
+ }
 
   const sortBy = (posts, method) => {
     let sortedList = [];
@@ -37,7 +43,6 @@ function Feed({
       sortedList = posts.sort(function(a, b) {
       a = a.timestamp/100000000  + (a.votes/10);
       b = b.timestamp/100000000 + (b.votes/10) ;
-      console.log(a, b);
       return a > b ? -1 : a < b ? 1 : 0;
     });
   }
@@ -48,7 +53,7 @@ function Feed({
 
 
   return (
-    <div className={styles.feed_body}>
+    <div className={styles.feed_body} >
       {feedState === 'tags' && <FeedHeader filter={'tags'} />}
       {feedState === 'search' && <FeedHeader filter={'search'} />}
       {feedState === 'list' && <FeedHeader filter={'list'} />}
@@ -56,8 +61,15 @@ function Feed({
         <FeedHeader filter={'normal'} methodHandler={methodHandler} />
       )}
 
-      { sortBy(posts, method).map((post, i) => (
-        <div className={styles.feed_card} key={post._id}>
+<InfiniteScroll
+    pageStart={0}
+    loadMore={loadFunc}
+    hasMore={postsToShow < posts.length}
+    loader={<div className="loader" key={0}>Loading ...</div>}
+>
+
+   { sortBy(posts, method).slice(0, postsToShow).map((post, i) => (
+        <div className={styles.feed_card} key={post._id} >
           <Card
             id={i}
             post={post}
@@ -68,6 +80,11 @@ function Feed({
           />
         </div>
       ))}
+
+
+</InfiniteScroll>
+
+    
     </div>
   );
 }
