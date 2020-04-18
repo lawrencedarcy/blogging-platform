@@ -36,7 +36,7 @@ function Card({
       <div className={styles.feed_card_inner}>
         <Link href={`/post/${post._id}`}>
           <div className={styles.card_link_block}>
-            <img src={post.img_url} className={styles.card_img}></img>
+           {post.img_url && <img src={post.img_url} className={styles.card_img} alt={post.title}></img>}
             <div className={styles.card_title}>{post.title}</div>
 
             {post.tags.length > 0 && (
@@ -62,6 +62,7 @@ function Card({
         <Link href={`/post/${post._id}`}>
           <div className={styles.votes_bottom}>
             <img
+              alt="upvote"
               className={styles.card_upvote}
               src='https://uploads.guim.co.uk/2020/04/15/culture.png'
             ></img>

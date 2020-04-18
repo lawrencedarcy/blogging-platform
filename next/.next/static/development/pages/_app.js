@@ -72,6 +72,7 @@ function NavBar() {
   }, "  ", __jsx("img", {
     className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logo_png,
     src: "https://uploads.guim.co.uk/2020/04/15/culture.png",
+    alt: "stagetime_logo",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -739,7 +740,7 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "\n.NavBar_nav_wrapper__1WR3A {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n.NavBar_navbar__1e5Hf {\n  background-color: #FDE56E;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1.5rem;\n \n}\n\n@media only screen and (min-width: 1000px) {\n  .NavBar_navbar__1e5Hf {\n    padding: 0 4rem;\n  }\n}\n\n.NavBar_navbar_logo__3bO5G {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  \n\n}\n\n.NavBar_logo_png__386SP {\n\ncolor: rgba(0, 0, 0, 0.84);\n\ndisplay: inline-block;\nwidth: 2.5rem;\npadding: .3rem;\nmargin: 0 2rem 0 0;\n\n}\n\n.NavBar_navbar_write__EY4SA {\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .6rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.NavBar_navbar_write__EY4SA:hover {\n  color: white;\n  background-color: #6E86FD;\n  border: 1px solid #6E86FD;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .NavBar_navbar_write__EY4SA {\n    font-size: .8rem;\n  }\n  .NavBar_logo_png__386SP {\n    margin: 0 .8rem 0 .2rem;\n  }\n\n  .NavBar_navbar__1e5Hf {\n    padding: 1rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .NavBar_navbar_write__EY4SA {\n    display: none;\n  }\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/NavBar/NavBar.module.css"],"names":[],"mappings":";AACA;EACE,eAAe;EACf,WAAW;EACX,cAAc;EACd,MAAM;;AAER;AACA;EACE,yBAAyB;EACzB,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,oBAAoB;EACpB,qBAAqB;;AAEvB;;AAEA;EACE;IACE,eAAe;EACjB;AACF;;AAEA;EACE,0BAA0B;EAC1B,cAAc;EACd,0BAA0B;EAC1B,iBAAiB;EACjB,iBAAiB;EACjB,aAAa;;;AAGf;;AAEA;;AAEA,0BAA0B;;AAE1B,qBAAqB;AACrB,aAAa;AACb,cAAc;AACd,kBAAkB;;AAElB;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,gBAAgB;EAChB,gBAAgB;EAChB,qCAAqC;EACrC,kBAAkB;;AAEpB;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,yBAAyB;AAC3B;;;AAGA;EACE;IACE,gBAAgB;EAClB;EACA;IACE,uBAAuB;EACzB;;EAEA;IACE,aAAa;EACf;AACF;AACA;EACE;IACE,aAAa;EACf;AACF","file":"NavBar.module.css","sourcesContent":["\n.nav_wrapper {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n.navbar {\n  background-color: #FDE56E;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1.5rem;\n \n}\n\n@media only screen and (min-width: 1000px) {\n  .navbar {\n    padding: 0 4rem;\n  }\n}\n\n.navbar_logo {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  \n\n}\n\n.logo_png {\n\ncolor: rgba(0, 0, 0, 0.84);\n\ndisplay: inline-block;\nwidth: 2.5rem;\npadding: .3rem;\nmargin: 0 2rem 0 0;\n\n}\n\n.navbar_write {\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .6rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.navbar_write:hover {\n  color: white;\n  background-color: #6E86FD;\n  border: 1px solid #6E86FD;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .navbar_write {\n    font-size: .8rem;\n  }\n  .logo_png {\n    margin: 0 .8rem 0 .2rem;\n  }\n\n  .navbar {\n    padding: 1rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .navbar_write {\n    display: none;\n  }\n}"]}]);
+exports.push([module.i, "\n.NavBar_nav_wrapper__1WR3A {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n\n/* light blue #90ccf4 */\n/* yello #f3d250 */\n/*darkblue #4d9bd6; */\n/*red #ff6c6c */\n.NavBar_navbar__1e5Hf {\n  background-color: #90ccf4;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1rem;\n \n}\n\n@media only screen and (min-width: 1000px) {\n  .NavBar_navbar__1e5Hf {\n    padding: 0 4rem;\n  }\n}\n\n.NavBar_navbar_logo__3bO5G {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  \n\n}\n\n.NavBar_logo_png__386SP {\n\ncolor: rgba(0, 0, 0, 0.84);\ndisplay: inline-block;\nwidth: 2.5rem;\nheight: 2.5rem;\npadding: .3rem;\nmargin: 0 2rem 0 0;\n\n}\n\n.NavBar_navbar_write__EY4SA {\n  color:rgba(29, 21, 21, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .6rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.NavBar_navbar_write__EY4SA:hover {\n  color: black;\n  background-color: #f3d250;\n  border: 1px solid #f3d250;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .NavBar_navbar_write__EY4SA {\n    font-size: .8rem;\n  }\n  .NavBar_logo_png__386SP {\n    margin: 0 .8rem 0 .2rem;\n  }\n\n  .NavBar_navbar__1e5Hf {\n    padding: 1rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .NavBar_navbar_write__EY4SA {\n    display: none;\n  }\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/NavBar/NavBar.module.css"],"names":[],"mappings":";AACA;EACE,eAAe;EACf,WAAW;EACX,cAAc;EACd,MAAM;;AAER;;AAEA,uBAAuB;AACvB,kBAAkB;AAClB,qBAAqB;AACrB,eAAe;AACf;EACE,yBAAyB;EACzB,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,oBAAoB;EACpB,mBAAmB;;AAErB;;AAEA;EACE;IACE,eAAe;EACjB;AACF;;AAEA;EACE,0BAA0B;EAC1B,cAAc;EACd,0BAA0B;EAC1B,iBAAiB;EACjB,iBAAiB;EACjB,aAAa;;;AAGf;;AAEA;;AAEA,0BAA0B;AAC1B,qBAAqB;AACrB,aAAa;AACb,cAAc;AACd,cAAc;AACd,kBAAkB;;AAElB;;AAEA;EACE,4BAA4B;EAC5B,eAAe;EACf,qBAAqB;EACrB,gBAAgB;EAChB,gBAAgB;EAChB,qCAAqC;EACrC,kBAAkB;;AAEpB;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,yBAAyB;AAC3B;;;AAGA;EACE;IACE,gBAAgB;EAClB;EACA;IACE,uBAAuB;EACzB;;EAEA;IACE,aAAa;EACf;AACF;AACA;EACE;IACE,aAAa;EACf;AACF","file":"NavBar.module.css","sourcesContent":["\n.nav_wrapper {\n  position: fixed;\n  width: 100%;\n  height: 3.8rem;\n  top: 0;\n  \n}\n\n/* light blue #90ccf4 */\n/* yello #f3d250 */\n/*darkblue #4d9bd6; */\n/*red #ff6c6c */\n.navbar {\n  background-color: #90ccf4;\n  height: 3.6rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2.3rem;\n  margin-bottom: 1rem;\n \n}\n\n@media only screen and (min-width: 1000px) {\n  .navbar {\n    padding: 0 4rem;\n  }\n}\n\n.navbar_logo {\n  color: rgba(0, 0, 0, 0.84);\n  padding: .5rem;\n  font-family: 'Lora', serif;\n  font-weight: bold;\n  font-size: 1.6rem;\n  display: flex;\n  \n\n}\n\n.logo_png {\n\ncolor: rgba(0, 0, 0, 0.84);\ndisplay: inline-block;\nwidth: 2.5rem;\nheight: 2.5rem;\npadding: .3rem;\nmargin: 0 2rem 0 0;\n\n}\n\n.navbar_write {\n  color:rgba(29, 21, 21, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .6rem;\n  font-size: .9rem;\n  max-height: 3rem;\n  border: 1px solid rgba(0, 0, 0, 0.84);\n  border-radius: 5px;\n  \n}\n\n.navbar_write:hover {\n  color: black;\n  background-color: #f3d250;\n  border: 1px solid #f3d250;\n}\n\n\n@media only screen and (max-width: 400px) {\n  .navbar_write {\n    font-size: .8rem;\n  }\n  .logo_png {\n    margin: 0 .8rem 0 .2rem;\n  }\n\n  .navbar {\n    padding: 1rem;\n  }\n}\n@media only screen and (max-width: 312px) {\n  .navbar_write {\n    display: none;\n  }\n}"]}]);
 // Exports
 exports.locals = {
 	"nav_wrapper": "NavBar_nav_wrapper__1WR3A",
@@ -774,7 +775,7 @@ exports.push([module.i, "/*!\n * Quill Editor v1.3.7\n * https://quilljs.com/\n 
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "*, html {\n\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n  outline: none;\n  font-family: 'Roboto', sans-serif;\n  color: rgba(0, 0, 0, 0.788);\n}\n\n.form {\n  padding: 6rem;\n  margin: 5rem;\n}\n\na {\n  text-decoration: none;\n  color: inherit;\n  font-family: inherit;\n}\n\n.app_body {\n padding-top: 4rem ;\n width: 90%;\n margin: auto;\n max-width: 1100px;\n \n}\n\nbody {\n  background-color: #fafafa;\n}\n\n\n\n.article_body {\n  font-family: 'Lora', serif;\n  font-size: 1.1rem;\n  margin: 2rem 0rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n\n\n.whitespace{\n  height: 12vh;\n}\n\n.body_wrapper {\n  margin: 0rem auto;\n  height: 100%;\n  width: 80%;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  padding: 2rem;\n  overflow: hidden;\n}\n\n@media only screen and (min-width: 1200px) {\n  .body_wrapper {\n    width: 60%;\n  }\n}\n\n.article_title {\n  color: rgba(0, 0, 0, 0.84);\n  font-family: 'Lora', serif;\n  font-size: 3rem;\n  line-height: 3.7rem;\n  font-weight: bold;\n  padding: 1rem 0rem;\n}\n@media only screen and (max-width: 500px) {\n  .article_title {\n    font-size: 2rem;\n    line-height: 2.4rem;\n  }\n}\n\n\n.article_author {\n  color: rgba(0, 0, 0, 0.548);\n  font-weight: medium;\n  font-size: 1.3rem;\n  padding: .5rem 0;\n  text-transform: capitalize;\n}\n\n.article_tags{\n  display: flex;\n\n}\n\n.article_tag {\n  \n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #FD6ECE;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n  text-transform: lowercase;\n}\n\n\n.headline_span, .body_span  {\n  font-weight: bold;\n  padding: 0;\n  margin: 0;\n  font-family: 'Roboto', sans-serif;\n  color: rgba(0, 0, 0, 0.84);\n}\n\n\n.create_headline, .create_tags  {\n  color: rgba(0, 0, 0, 0.84);\n  width: 100%;\n  padding: .6rem;\n  margin: .4rem 0rem 1rem 0rem;\n  font-size: 1.2rem;\n}\n\n\n.ql-editor {\n/*   font-size: 2.6rem !important; */\n  height: 60vh !important;\n  width: 100% !important;\n  min-width:56vw;\n  background-color: white !important;\n  color: rgba(0, 0, 0, 0.84);\n}\n.ql-toolbar {\n  margin-top: .4rem;\n}\n\n.create_wrapper {\n  height: 100vh;\n  width: 100vw;\n  margin: auto;\n  padding: 7rem 5rem;\n}\n\n.btn_wrapper {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  margin: 1rem 0rem;\n\n}\n\n.submit_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 14rem;\n  background-color: #6E86FD;\n  \n  font-size: 1.1rem;\n}\n\n.submit_btn:hover {\n  background-color: #6EFD9D;\n}\n\n.submitted{\n  margin: auto;\n  text-align: center;\n  width: 100%;\n  padding: 9rem 0rem;\n  font-size: 1.2rem;\n}\n\n\n.feed_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #6E86FD;\n  \n  font-size: 1.1rem;\n}\n\n.feed_btn:hover {\n  background-color: #6EFD9D;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/pages/styles.css"],"names":[],"mappings":"AAAA;;EAEE,sBAAsB;EACtB,UAAU;EACV,SAAS;EACT,aAAa;EACb,iCAAiC;EACjC,2BAA2B;AAC7B;;AAEA;EACE,aAAa;EACb,YAAY;AACd;;AAEA;EACE,qBAAqB;EACrB,cAAc;EACd,oBAAoB;AACtB;;AAEA;CACC,kBAAkB;CAClB,UAAU;CACV,YAAY;CACZ,iBAAiB;;AAElB;;AAEA;EACE,yBAAyB;AAC3B;;;;AAIA;EACE,0BAA0B;EAC1B,iBAAiB;EACjB,iBAAiB;EACjB,0BAA0B;;AAE5B;;;;AAIA;EACE,YAAY;AACd;;AAEA;EACE,iBAAiB;EACjB,YAAY;EACZ,UAAU;EACV,oCAAoC;EACpC,uBAAuB;EACvB,aAAa;EACb,gBAAgB;AAClB;;AAEA;EACE;IACE,UAAU;EACZ;AACF;;AAEA;EACE,0BAA0B;EAC1B,0BAA0B;EAC1B,eAAe;EACf,mBAAmB;EACnB,iBAAiB;EACjB,kBAAkB;AACpB;AACA;EACE;IACE,eAAe;IACf,mBAAmB;EACrB;AACF;;;AAGA;EACE,2BAA2B;EAC3B,mBAAmB;EACnB,iBAAiB;EACjB,gBAAgB;EAChB,0BAA0B;AAC5B;;AAEA;EACE,aAAa;;AAEf;;AAEA;;EAEE,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;EACZ,yBAAyB;AAC3B;;;AAGA;EACE,iBAAiB;EACjB,UAAU;EACV,SAAS;EACT,iCAAiC;EACjC,0BAA0B;AAC5B;;;AAGA;EACE,0BAA0B;EAC1B,WAAW;EACX,cAAc;EACd,4BAA4B;EAC5B,iBAAiB;AACnB;;;AAGA;AACA,oCAAoC;EAClC,uBAAuB;EACvB,sBAAsB;EACtB,cAAc;EACd,kCAAkC;EAClC,0BAA0B;AAC5B;AACA;EACE,iBAAiB;AACnB;;AAEA;EACE,aAAa;EACb,YAAY;EACZ,YAAY;EACZ,kBAAkB;AACpB;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,yBAAyB;EACzB,iBAAiB;;AAEnB;;AAEA;EACE,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,yBAAyB;;EAEzB,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,YAAY;EACZ,kBAAkB;EAClB,WAAW;EACX,kBAAkB;EAClB,iBAAiB;AACnB;;;AAGA;EACE,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,yBAAyB;;EAEzB,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;AAC3B","file":"styles.css","sourcesContent":["*, html {\n\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n  outline: none;\n  font-family: 'Roboto', sans-serif;\n  color: rgba(0, 0, 0, 0.788);\n}\n\n.form {\n  padding: 6rem;\n  margin: 5rem;\n}\n\na {\n  text-decoration: none;\n  color: inherit;\n  font-family: inherit;\n}\n\n.app_body {\n padding-top: 4rem ;\n width: 90%;\n margin: auto;\n max-width: 1100px;\n \n}\n\nbody {\n  background-color: #fafafa;\n}\n\n\n\n.article_body {\n  font-family: 'Lora', serif;\n  font-size: 1.1rem;\n  margin: 2rem 0rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n\n\n.whitespace{\n  height: 12vh;\n}\n\n.body_wrapper {\n  margin: 0rem auto;\n  height: 100%;\n  width: 80%;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  padding: 2rem;\n  overflow: hidden;\n}\n\n@media only screen and (min-width: 1200px) {\n  .body_wrapper {\n    width: 60%;\n  }\n}\n\n.article_title {\n  color: rgba(0, 0, 0, 0.84);\n  font-family: 'Lora', serif;\n  font-size: 3rem;\n  line-height: 3.7rem;\n  font-weight: bold;\n  padding: 1rem 0rem;\n}\n@media only screen and (max-width: 500px) {\n  .article_title {\n    font-size: 2rem;\n    line-height: 2.4rem;\n  }\n}\n\n\n.article_author {\n  color: rgba(0, 0, 0, 0.548);\n  font-weight: medium;\n  font-size: 1.3rem;\n  padding: .5rem 0;\n  text-transform: capitalize;\n}\n\n.article_tags{\n  display: flex;\n\n}\n\n.article_tag {\n  \n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #FD6ECE;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n  text-transform: lowercase;\n}\n\n\n.headline_span, .body_span  {\n  font-weight: bold;\n  padding: 0;\n  margin: 0;\n  font-family: 'Roboto', sans-serif;\n  color: rgba(0, 0, 0, 0.84);\n}\n\n\n.create_headline, .create_tags  {\n  color: rgba(0, 0, 0, 0.84);\n  width: 100%;\n  padding: .6rem;\n  margin: .4rem 0rem 1rem 0rem;\n  font-size: 1.2rem;\n}\n\n\n.ql-editor {\n/*   font-size: 2.6rem !important; */\n  height: 60vh !important;\n  width: 100% !important;\n  min-width:56vw;\n  background-color: white !important;\n  color: rgba(0, 0, 0, 0.84);\n}\n.ql-toolbar {\n  margin-top: .4rem;\n}\n\n.create_wrapper {\n  height: 100vh;\n  width: 100vw;\n  margin: auto;\n  padding: 7rem 5rem;\n}\n\n.btn_wrapper {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  margin: 1rem 0rem;\n\n}\n\n.submit_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 14rem;\n  background-color: #6E86FD;\n  \n  font-size: 1.1rem;\n}\n\n.submit_btn:hover {\n  background-color: #6EFD9D;\n}\n\n.submitted{\n  margin: auto;\n  text-align: center;\n  width: 100%;\n  padding: 9rem 0rem;\n  font-size: 1.2rem;\n}\n\n\n.feed_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #6E86FD;\n  \n  font-size: 1.1rem;\n}\n\n.feed_btn:hover {\n  background-color: #6EFD9D;\n}"]}]);
+exports.push([module.i, "*, html {\n\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n  outline: none;\n  font-family: 'Roboto', sans-serif;\n  color: rgba(0, 0, 0, 0.788);\n}\n\n.form {\n  padding: 6rem;\n  margin: 5rem;\n}\n\na {\n  text-decoration: none;\n  color: inherit;\n  font-family: inherit;\n}\n\n.app_body {\n padding-top: 4rem ;\n width: 90%;\n margin: auto;\n max-width: 1100px;\n \n}\n\nbody {\n  background-color: #ececec;\n}\n\n\n\n.article_body {\n  font-family: 'Lora', serif;\n  font-size: 1.1rem;\n  margin: 2rem 0rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n\n\n.whitespace{\n  height: 12vh;\n}\n\n.body_wrapper {\n  margin: 0rem auto;\n  height: 100%;\n  width: 80%;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  padding: 2rem;\n  overflow: hidden;\n}\n\n@media only screen and (min-width: 1200px) {\n  .body_wrapper {\n    width: 60%;\n  }\n}\n\n.article_title {\n  color: rgba(0, 0, 0, 0.84);\n  font-family: 'Lora', serif;\n  font-size: 3rem;\n  line-height: 3.7rem;\n  font-weight: bold;\n  padding: 1rem 0rem;\n}\n@media only screen and (max-width: 500px) {\n  .article_title {\n    font-size: 2rem;\n    line-height: 2.4rem;\n  }\n}\n\n\n.article_author {\n  color: rgba(0, 0, 0, 0.548);\n  font-weight: medium;\n  font-size: 1.3rem;\n  padding: .5rem 0;\n  text-transform: capitalize;\n}\n\n.article_tags{\n  display: flex;\n\n}\n\n.article_tag {\n  \n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n  text-transform: lowercase;\n}\n\n\n.headline_span, .body_span  {\n  font-weight: bold;\n  padding: 0;\n  margin: 0;\n  font-family: 'Roboto', sans-serif;\n  color: rgba(0, 0, 0, 0.84);\n}\n\n\n.create_headline, .create_tags  {\n  color: rgba(0, 0, 0, 0.84);\n  width: 100%;\n  padding: .6rem;\n  margin: .4rem 0rem 1rem 0rem;\n  font-size: 1.2rem;\n}\n\n\n.ql-editor {\n/*   font-size: 2.6rem !important; */\n  height: 60vh !important;\n  width: 100% !important;\n  min-width:56vw;\n  background-color: white !important;\n  color: rgba(0, 0, 0, 0.84);\n}\n.ql-toolbar {\n  margin-top: .4rem;\n}\n\n.create_wrapper {\n  height: 100vh;\n  width: 100vw;\n  margin: auto;\n  padding: 7rem 5rem;\n}\n\n.btn_wrapper {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  margin: 1rem 0rem;\n\n}\n\n.submit_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 14rem;\n  background-color: #5da2d5;\n  \n  font-size: 1.1rem;\n}\n\n.submit_btn:hover {\n  background-color: #6EFD9D;\n}\n\n.submitted{\n  margin: auto;\n  text-align: center;\n  width: 100%;\n  padding: 9rem 0rem;\n  font-size: 1.2rem;\n}\n\n\n.feed_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #4d9bd6;;\n  \n  font-size: 1.1rem;\n}\n\n.feed_btn:hover {\n  background-color: #4d9bd6;;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/pages/styles.css"],"names":[],"mappings":"AAAA;;EAEE,sBAAsB;EACtB,UAAU;EACV,SAAS;EACT,aAAa;EACb,iCAAiC;EACjC,2BAA2B;AAC7B;;AAEA;EACE,aAAa;EACb,YAAY;AACd;;AAEA;EACE,qBAAqB;EACrB,cAAc;EACd,oBAAoB;AACtB;;AAEA;CACC,kBAAkB;CAClB,UAAU;CACV,YAAY;CACZ,iBAAiB;;AAElB;;AAEA;EACE,yBAAyB;AAC3B;;;;AAIA;EACE,0BAA0B;EAC1B,iBAAiB;EACjB,iBAAiB;EACjB,0BAA0B;;AAE5B;;;;AAIA;EACE,YAAY;AACd;;AAEA;EACE,iBAAiB;EACjB,YAAY;EACZ,UAAU;EACV,oCAAoC;EACpC,uBAAuB;EACvB,aAAa;EACb,gBAAgB;AAClB;;AAEA;EACE;IACE,UAAU;EACZ;AACF;;AAEA;EACE,0BAA0B;EAC1B,0BAA0B;EAC1B,eAAe;EACf,mBAAmB;EACnB,iBAAiB;EACjB,kBAAkB;AACpB;AACA;EACE;IACE,eAAe;IACf,mBAAmB;EACrB;AACF;;;AAGA;EACE,2BAA2B;EAC3B,mBAAmB;EACnB,iBAAiB;EACjB,gBAAgB;EAChB,0BAA0B;AAC5B;;AAEA;EACE,aAAa;;AAEf;;AAEA;;EAEE,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;EACZ,yBAAyB;AAC3B;;;AAGA;EACE,iBAAiB;EACjB,UAAU;EACV,SAAS;EACT,iCAAiC;EACjC,0BAA0B;AAC5B;;;AAGA;EACE,0BAA0B;EAC1B,WAAW;EACX,cAAc;EACd,4BAA4B;EAC5B,iBAAiB;AACnB;;;AAGA;AACA,oCAAoC;EAClC,uBAAuB;EACvB,sBAAsB;EACtB,cAAc;EACd,kCAAkC;EAClC,0BAA0B;AAC5B;AACA;EACE,iBAAiB;AACnB;;AAEA;EACE,aAAa;EACb,YAAY;EACZ,YAAY;EACZ,kBAAkB;AACpB;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,yBAAyB;EACzB,iBAAiB;;AAEnB;;AAEA;EACE,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,yBAAyB;;EAEzB,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,YAAY;EACZ,kBAAkB;EAClB,WAAW;EACX,kBAAkB;EAClB,iBAAiB;AACnB;;;AAGA;EACE,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,yBAAyB;;EAEzB,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;AAC3B","file":"styles.css","sourcesContent":["*, html {\n\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n  outline: none;\n  font-family: 'Roboto', sans-serif;\n  color: rgba(0, 0, 0, 0.788);\n}\n\n.form {\n  padding: 6rem;\n  margin: 5rem;\n}\n\na {\n  text-decoration: none;\n  color: inherit;\n  font-family: inherit;\n}\n\n.app_body {\n padding-top: 4rem ;\n width: 90%;\n margin: auto;\n max-width: 1100px;\n \n}\n\nbody {\n  background-color: #ececec;\n}\n\n\n\n.article_body {\n  font-family: 'Lora', serif;\n  font-size: 1.1rem;\n  margin: 2rem 0rem;\n  color: rgba(0, 0, 0, 0.84);\n\n}\n\n\n\n.whitespace{\n  height: 12vh;\n}\n\n.body_wrapper {\n  margin: 0rem auto;\n  height: 100%;\n  width: 80%;\n  border: 1px solid rgb(199, 199, 199);\n  background-color: white;\n  padding: 2rem;\n  overflow: hidden;\n}\n\n@media only screen and (min-width: 1200px) {\n  .body_wrapper {\n    width: 60%;\n  }\n}\n\n.article_title {\n  color: rgba(0, 0, 0, 0.84);\n  font-family: 'Lora', serif;\n  font-size: 3rem;\n  line-height: 3.7rem;\n  font-weight: bold;\n  padding: 1rem 0rem;\n}\n@media only screen and (max-width: 500px) {\n  .article_title {\n    font-size: 2rem;\n    line-height: 2.4rem;\n  }\n}\n\n\n.article_author {\n  color: rgba(0, 0, 0, 0.548);\n  font-weight: medium;\n  font-size: 1.3rem;\n  padding: .5rem 0;\n  text-transform: capitalize;\n}\n\n.article_tags{\n  display: flex;\n\n}\n\n.article_tag {\n  \n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n  text-transform: lowercase;\n}\n\n\n.headline_span, .body_span  {\n  font-weight: bold;\n  padding: 0;\n  margin: 0;\n  font-family: 'Roboto', sans-serif;\n  color: rgba(0, 0, 0, 0.84);\n}\n\n\n.create_headline, .create_tags  {\n  color: rgba(0, 0, 0, 0.84);\n  width: 100%;\n  padding: .6rem;\n  margin: .4rem 0rem 1rem 0rem;\n  font-size: 1.2rem;\n}\n\n\n.ql-editor {\n/*   font-size: 2.6rem !important; */\n  height: 60vh !important;\n  width: 100% !important;\n  min-width:56vw;\n  background-color: white !important;\n  color: rgba(0, 0, 0, 0.84);\n}\n.ql-toolbar {\n  margin-top: .4rem;\n}\n\n.create_wrapper {\n  height: 100vh;\n  width: 100vw;\n  margin: auto;\n  padding: 7rem 5rem;\n}\n\n.btn_wrapper {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  margin: 1rem 0rem;\n\n}\n\n.submit_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 14rem;\n  background-color: #5da2d5;\n  \n  font-size: 1.1rem;\n}\n\n.submit_btn:hover {\n  background-color: #6EFD9D;\n}\n\n.submitted{\n  margin: auto;\n  text-align: center;\n  width: 100%;\n  padding: 9rem 0rem;\n  font-size: 1.2rem;\n}\n\n\n.feed_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #4d9bd6;;\n  \n  font-size: 1.1rem;\n}\n\n.feed_btn:hover {\n  background-color: #4d9bd6;;\n}"]}]);
 
 
 /***/ }),
@@ -7007,8 +7008,8 @@ function MyApp(_ref) {
       columnNumber: 6
     }
   }), __jsx("meta", {
-    "http-equiv": "X-UA-Compatible",
-    content: "IE=edge",
+    "http-equiv": "content-language",
+    content: "en-us",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -7016,12 +7017,21 @@ function MyApp(_ref) {
       columnNumber: 7
     }
   }), __jsx("meta", {
-    name: "viewport",
-    content: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
+    "http-equiv": "X-UA-Compatible",
+    content: "IE=edge",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 19,
+      columnNumber: 7
+    }
+  }), __jsx("meta", {
+    name: "viewport",
+    content: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5,user-scalable=yes",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
       columnNumber: 7
     }
   }), __jsx("meta", {
@@ -7030,7 +7040,7 @@ function MyApp(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 21,
       columnNumber: 7
     }
   }), __jsx("meta", {
@@ -7039,14 +7049,14 @@ function MyApp(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 7
     }
   }), __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 23,
       columnNumber: 7
     }
   }, "Stagetime"), __jsx("link", {
@@ -7055,7 +7065,7 @@ function MyApp(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 7
     }
   }), __jsx("link", {
@@ -7066,7 +7076,7 @@ function MyApp(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 7
     }
   }), __jsx("link", {
@@ -7077,7 +7087,7 @@ function MyApp(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 7
     }
   }), __jsx("link", {
@@ -7086,7 +7096,7 @@ function MyApp(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 7
     }
   }), __jsx("meta", {
@@ -7095,7 +7105,7 @@ function MyApp(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 29,
       columnNumber: 7
     }
   }), __jsx("link", {
@@ -7104,7 +7114,7 @@ function MyApp(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 6
     }
   }), __jsx("link", {
@@ -7113,14 +7123,14 @@ function MyApp(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 5
     }
   })), __jsx(_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 6
     }
   }), __jsx(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_7__["Auth0Provider"], {
@@ -7130,14 +7140,14 @@ function MyApp(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 6
     }
   }, __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 41,
       columnNumber: 5
     }
   }))));

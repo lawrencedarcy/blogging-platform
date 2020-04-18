@@ -28,7 +28,7 @@ a {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #ececec;
 }
 
 
@@ -96,7 +96,7 @@ body {
   
   padding: .3rem;
   font-size: .75rem;
-  background-color: #FD6ECE;
+  background-color: #ff6c6c;
   color: white;
   margin: 0.2rem 0rem 0rem 0.2rem;
   outline: none;
@@ -156,7 +156,7 @@ body {
   border-radius: 4px;
   height: 3rem;
   width: 14rem;
-  background-color: #6E86FD;
+  background-color: #5da2d5;
   
   font-size: 1.1rem;
 }
@@ -180,11 +180,11 @@ body {
   border-radius: 4px;
   height: 3rem;
   width: 11rem;
-  background-color: #6E86FD;
+  background-color: #4d9bd6;;
   
   font-size: 1.1rem;
 }
 
 .feed_btn:hover {
-  background-color: #6EFD9D;
+  background-color: #4d9bd6;;
 }

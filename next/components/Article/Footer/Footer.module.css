@@ -22,18 +22,18 @@
 }
 
 .footer {
-  background-color: #6E86FD;
+  background-color:  rgba(128, 128, 128, 0.514);
   height: 3.6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  
+  color: black;
 
 }
 
 .footer_upvote, .footer_upvote_clicked, .footer_share, .footer_discuss  {
-  color: white;
+  color: black;
   cursor: pointer;
   border: 1px solid white;
   padding: .4rem .8rem;
@@ -43,6 +43,7 @@
   align-items: center;
   justify-content: space-around;
   min-width: 80px;
+ background-color: #5da2d5 
 }
 
 .footer_share {
@@ -61,13 +62,17 @@
 
 
 .footer_upvote_clicked {
-  background-color: #6EFD9D;
+  background-color: #5da2d5 ;
   cursor: default;
 }
 
 .footer_upvote:hover, .footer_share:hover, .footer_discuss:hover {
-  border: 1px solid #6EFD9D;
+  border: 1px solid white;
   transform: scale(1.1);
+}
+.footer_upvote:active, .footer_share:active, .footer_discuss:active {
+  border: 1px solid white;
+  transform: scale(1);
 }
 
 .votes_wrapper {

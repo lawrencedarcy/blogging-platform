@@ -187,6 +187,7 @@ function NavBar() {
   }, "  ", __jsx("img", {
     className: _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logo_png,
     src: "https://uploads.guim.co.uk/2020/04/15/culture.png",
+    alt: "stagetime_logo",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -2155,8 +2156,8 @@ function MyApp({
       columnNumber: 6
     }
   }), __jsx("meta", {
-    "http-equiv": "X-UA-Compatible",
-    content: "IE=edge",
+    "http-equiv": "content-language",
+    content: "en-us",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -2164,12 +2165,21 @@ function MyApp({
       columnNumber: 7
     }
   }), __jsx("meta", {
-    name: "viewport",
-    content: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
+    "http-equiv": "X-UA-Compatible",
+    content: "IE=edge",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 19,
+      columnNumber: 7
+    }
+  }), __jsx("meta", {
+    name: "viewport",
+    content: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5,user-scalable=yes",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
       columnNumber: 7
     }
   }), __jsx("meta", {
@@ -2178,7 +2188,7 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 21,
       columnNumber: 7
     }
   }), __jsx("meta", {
@@ -2187,14 +2197,14 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 7
     }
   }), __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 23,
       columnNumber: 7
     }
   }, "Stagetime"), __jsx("link", {
@@ -2203,7 +2213,7 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 7
     }
   }), __jsx("link", {
@@ -2214,7 +2224,7 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 7
     }
   }), __jsx("link", {
@@ -2225,7 +2235,7 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 7
     }
   }), __jsx("link", {
@@ -2234,7 +2244,7 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 7
     }
   }), __jsx("meta", {
@@ -2243,7 +2253,7 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 29,
       columnNumber: 7
     }
   }), __jsx("link", {
@@ -2252,7 +2262,7 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 6
     }
   }), __jsx("link", {
@@ -2261,14 +2271,14 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 5
     }
   })), __jsx(_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 6
     }
   }), __jsx(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_6__["Auth0Provider"], {
@@ -2278,14 +2288,14 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 6
     }
   }, __jsx(Component, _extends({}, pageProps, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 41,
       columnNumber: 5
     }
   }))));

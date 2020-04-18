@@ -1,11 +1,11 @@
 
 
 .body_wrapper{
-  background-color: #fafafa;
+  background-color: #ececec;
   display: flex;
   width: 90%;
   margin: auto;
-  padding-top: calc(2vh + 2%);
+  padding-top: calc(0vh + 1%);
 }
 
 

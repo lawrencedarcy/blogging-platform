@@ -6,14 +6,19 @@
   top: 0;
   
 }
+
+/* light blue #90ccf4 */
+/* yello #f3d250 */
+/*darkblue #4d9bd6; */
+/*red #ff6c6c */
 .navbar {
-  background-color: #FDE56E;
+  background-color: #90ccf4;
   height: 3.6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2.3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
  
 }
 
@@ -37,16 +42,16 @@
 .logo_png {
 
 color: rgba(0, 0, 0, 0.84);
-
 display: inline-block;
 width: 2.5rem;
+height: 2.5rem;
 padding: .3rem;
 margin: 0 2rem 0 0;
 
 }
 
 .navbar_write {
-  color:rgba(0, 0, 0, 0.84);
+  color:rgba(29, 21, 21, 0.84);
   cursor: pointer;
   padding: 0.5rem .6rem;
   font-size: .9rem;
@@ -57,9 +62,9 @@ margin: 0 2rem 0 0;
 }
 
 .navbar_write:hover {
-  color: white;
-  background-color: #6E86FD;
-  border: 1px solid #6E86FD;
+  color: black;
+  background-color: #f3d250;
+  border: 1px solid #f3d250;
 }
 
 

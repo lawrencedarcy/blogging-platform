@@ -209,14 +209,15 @@ function Card({
       lineNumber: 38,
       columnNumber: 11
     }
-  }, __jsx("img", {
+  }, post.img_url && __jsx("img", {
     src: post.img_url,
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_img,
+    alt: post.title,
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39,
-      columnNumber: 13
+      columnNumber: 29
     }
   }), __jsx("div", {
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_title,
@@ -306,6 +307,7 @@ function Card({
       columnNumber: 11
     }
   }, __jsx("img", {
+    alt: "upvote",
     className: _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_upvote,
     src: "https://uploads.guim.co.uk/2020/04/15/culture.png",
     __self: this,
@@ -319,7 +321,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 69,
       columnNumber: 13
     }
   }, post.votes))), feedState === 'list' ? __jsx("div", {
@@ -328,7 +330,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 74,
       columnNumber: 11
     }
   }, "\uD83D\uDCDA Remove") : !isLoading && __jsx("div", {
@@ -337,7 +339,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 82,
       columnNumber: 11
     }
   }, onList ? '📚 Saved' : '📚 Save')));
