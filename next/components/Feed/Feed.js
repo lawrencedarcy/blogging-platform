@@ -27,9 +27,19 @@ function Feed({
         sortedList = posts.sort(function(a, b) {
         a = a.timestamp;
         b = b.timestamp;
+        
         return a > b ? -1 : a < b ? 1 : 0;
       });
     }
+
+    if (method === 'feed') {
+      sortedList = posts.sort(function(a, b) {
+      a = a.timestamp/100000000  + (a.votes/10);
+      b = b.timestamp/100000000 + (b.votes/10) ;
+      console.log(a, b);
+      return a > b ? -1 : a < b ? 1 : 0;
+    });
+  }
     return sortedList;
   };
 

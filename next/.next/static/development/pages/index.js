@@ -488,6 +488,15 @@ function Feed(_ref) {
       });
     }
 
+    if (method === 'feed') {
+      sortedList = posts.sort(function (a, b) {
+        a = a.timestamp / 100000000 + a.votes / 10;
+        b = b.timestamp / 100000000 + b.votes / 10;
+        console.log(a, b);
+        return a > b ? -1 : a < b ? 1 : 0;
+      });
+    }
+
     return sortedList;
   };
 
@@ -500,7 +509,7 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 50,
       columnNumber: 5
     }
   }, feedState === 'tags' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -508,7 +517,7 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 51,
       columnNumber: 32
     }
   }), feedState === 'search' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -516,7 +525,7 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 52,
       columnNumber: 34
     }
   }), feedState === 'list' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -524,7 +533,7 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 53,
       columnNumber: 32
     }
   }), feedState === 'normal' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -533,7 +542,7 @@ function Feed(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 55,
       columnNumber: 9
     }
   }), sortBy(posts, method).map(function (post, i) {
@@ -543,7 +552,7 @@ function Feed(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49,
+        lineNumber: 59,
         columnNumber: 9
       }
     }, __jsx(_Card_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -556,7 +565,7 @@ function Feed(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50,
+        lineNumber: 60,
         columnNumber: 11
       }
     }));
@@ -650,7 +659,7 @@ function FeedHeader(_ref) {
   var filter = _ref.filter,
       methodHandler = _ref.methodHandler;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('popular'),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('feed'),
       selected = _useState[0],
       setSelected = _useState[1];
 
@@ -676,6 +685,17 @@ function FeedHeader(_ref) {
       columnNumber: 9
     }
   }, __jsx("div", {
+    className: selected == 'feed' ? _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn_selected : _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn,
+    onClick: function onClick() {
+      return clickHandler('feed');
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 11
+    }
+  }, " Feed"), __jsx("div", {
     className: selected == 'popular' ? _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn_selected : _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn,
     onClick: function onClick() {
       return clickHandler('popular');
@@ -683,7 +703,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 18,
       columnNumber: 11
     }
   }, " Popular"), __jsx("div", {
@@ -694,14 +714,14 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 19,
       columnNumber: 11
     }
   }, " Latest")), filter === 'list' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 9
     }
   }, "These are your saved articles.", ' ', __jsx("span", {
@@ -709,7 +729,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -717,14 +737,14 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 13
     }
   }, "Go back to the feed."))), filter === 'tags' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 34,
       columnNumber: 9
     }
   }, "Feed filtered by tag.", ' ', __jsx("span", {
@@ -732,7 +752,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -740,14 +760,14 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 13
     }
   }, "Refresh the feed."), ' ')), filter === 'search' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 42,
       columnNumber: 9
     }
   }, "Your search results.", ' ', __jsx("span", {
@@ -755,7 +775,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 44,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -763,7 +783,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 45,
       columnNumber: 13
     }
   }, "Refresh the feed."))));
