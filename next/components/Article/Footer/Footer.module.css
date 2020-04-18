@@ -29,8 +29,8 @@
   align-items: center;
   padding: 1rem 3rem;
   color: black;
-  border-top: 1px solid rgb(199, 199, 199);
-}
+/*   border-top: 1px solid rgb(199, 199, 199);
+ */}
 
 .footer_upvote, .footer_upvote_clicked, .footer_share, .footer_discuss  {
   color: black;

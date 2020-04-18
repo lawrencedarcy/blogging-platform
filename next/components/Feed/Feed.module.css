@@ -2,9 +2,8 @@
   cursor: pointer;
   padding: 1.2rem 1.2rem 1.2rem 1.2rem;
   margin: .5rem auto;
-  border: 1px solid rgb(199, 199, 199);
-  background-color: white;
-  width: 100%;
+/*   border: 1px solid rgb(199, 199, 199);
+ */  background-color: white;
   overflow: auto;
   flex: 7;
   min-width: calc(250px + 25vw);
@@ -20,7 +19,7 @@
   cursor: pointer;
   padding: .7rem;
   margin: .5rem auto;
-  border: 1px solid rgb(199, 199, 199);
+  /* border: 1px solid rgb(199, 199, 199); */
   background-color: white;
   width: 100%;
   overflow: auto;
@@ -35,8 +34,7 @@
 
 .feed_body {
   height: 140vh;
-  
-
+  width: 100%;
 }
 
 .link{
@@ -44,7 +42,7 @@
 }
 
 .header_btn, .header_btn_selected {
-  font-size: .9rem;
+  font-size: .8rem;
   width: 5rem;
   height: 30px;
   color: white;

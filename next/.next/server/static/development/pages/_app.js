@@ -2241,6 +2241,15 @@ function MyApp({
       columnNumber: 7
     }
   }), __jsx("link", {
+    href: "https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap",
+    rel: "stylesheet",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 7
+    }
+  }), __jsx("link", {
     href: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap",
     rel: "stylesheet",
     __self: this,
