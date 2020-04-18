@@ -11,7 +11,8 @@ function Feed({
   checkReadingList
 }) {
 
- const [method, setMethod] = useState('popular');
+ const [method, setMethod] = useState('feed');
+
 
   const sortBy = (posts, method) => {
     let sortedList = [];

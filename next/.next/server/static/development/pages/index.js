@@ -495,7 +495,7 @@ function Feed({
   const {
     0: method,
     1: setMethod
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('popular');
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('feed');
 
   const sortBy = (posts, method) => {
     let sortedList = [];
@@ -537,7 +537,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 51,
       columnNumber: 5
     }
   }, feedState === 'tags' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -545,7 +545,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 52,
       columnNumber: 32
     }
   }), feedState === 'search' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -553,7 +553,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 53,
       columnNumber: 34
     }
   }), feedState === 'list' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -561,7 +561,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 54,
       columnNumber: 32
     }
   }), feedState === 'normal' && __jsx(_FeedHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -570,7 +570,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 56,
       columnNumber: 9
     }
   }), sortBy(posts, method).map((post, i) => __jsx("div", {
@@ -579,7 +579,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 60,
       columnNumber: 9
     }
   }, __jsx(_Card_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -592,7 +592,7 @@ function Feed({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 11
     }
   }))));

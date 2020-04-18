@@ -465,7 +465,7 @@ function Feed(_ref) {
       deleteFromList = _ref.deleteFromList,
       checkReadingList = _ref.checkReadingList;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('popular'),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('feed'),
       method = _useState[0],
       setMethod = _useState[1];
 
