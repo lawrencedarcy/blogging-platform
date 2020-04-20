@@ -111,11 +111,13 @@ const getUser = async (req, res) => {
 
 
 const editUser = async (req, res) => {
+ 
+  const reading = {reading: req.body.reading};
+  if(reading.length < 1) delete reading;
+
   try {
-    console.log('req body', req.body);
     const edited = await User.findOneAndUpdate({name: req.params.name}, {
-      $push: {reading: req.body.reading}
-      }, {new: true});
+      $push: {reading: req.body.reading}}, {new: true});
     res.status(200).json(edited); 
   } catch (err) {
     res.status(500).json({ message: err.message }); 
@@ -143,6 +145,17 @@ const deleteFromList = async (req, res) => {
   }
 };
 
+const editBio = async (req, res) => {
+  console.log('edit user body', req.body)
+  try {
+    const edited = await User.findOneAndUpdate({name: req.params.name}, {bio: req.body.bio, location: req.body.location, image: req.body.image, website: req.body.website
+      }, {new: true});
+    res.status(200).json(edited); 
+  } catch (err) {
+    res.status(500).json({ message: err.message }); 
+  }
+};
+
 
 
 
@@ -158,7 +171,8 @@ module.exports = {
   getUser,
   editUser,
   getList,
-  deleteFromList
+  deleteFromList,
+  editBio
 }; 
 
 

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -828,15 +828,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-loading-skeleton */ "react-loading-skeleton");
-/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-loading-skeleton */ "react-loading-skeleton");
+/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -858,14 +855,14 @@ function Sidebar({
     isLoading,
     login,
     logout
-  } = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["useAuth"])();
+  } = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["useAuth"])();
   const {
     user
   } = auth; // handle tags - create a unique list to display
 
   const tagsList = new Set();
   tags.map(arr => arr.map(tag => tagsList.add(tag.toLowerCase())));
-  const tagsArr = Array.from(tagsList); //handle search state 
+  const tagsArr = Array.from(tagsList); //handle search state
 
   const {
     0: term,
@@ -877,11 +874,6 @@ function Sidebar({
   };
 
   const readingClickHandler = evt => {
-    getReadingList(user);
-    console.log(user);
-  };
-
-  const profileClickHandler = evt => {
     getReadingList(user);
     console.log(user);
   };
@@ -902,31 +894,31 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 39,
       columnNumber: 5
     }
   }, isLoading ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
-      columnNumber: 19
+      lineNumber: 41,
+      columnNumber: 9
     }
-  }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5___default.a, {
+  }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default.a, {
     count: 11,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
-      columnNumber: 24
+      lineNumber: 42,
+      columnNumber: 11
     }
   })) : user ? __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 7
+      lineNumber: 45,
+      columnNumber: 9
     }
   }, __jsx("img", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_img,
@@ -934,25 +926,25 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 7
+      lineNumber: 46,
+      columnNumber: 11
     }
   }), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_name,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 7
+      lineNumber: 47,
+      columnNumber: 11
     }
-  }, " ", user.nickname || user.name), __jsx("div", {
+  }, ' ', user.nickname || user.name), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_reading,
     onClick: readingClickHandler,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 9
+      lineNumber: 51,
+      columnNumber: 11
     }
   }, "\uD83D\uDCDA Reading list"), __jsx("a", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_edit_profile,
@@ -960,8 +952,8 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
-      columnNumber: 9
+      lineNumber: 54,
+      columnNumber: 11
     }
   }, "\uD83D\uDC64 Edit your profile"), __jsx("button", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
@@ -971,34 +963,34 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
-      columnNumber: 7
+      lineNumber: 58,
+      columnNumber: 11
     }
   }, "Logout")) : __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
-      columnNumber: 7
+      lineNumber: 66,
+      columnNumber: 9
     }
   }, __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tagline,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
-      columnNumber: 7
+      lineNumber: 67,
+      columnNumber: 11
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_text,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
-      columnNumber: 91
+      lineNumber: 70,
+      columnNumber: 11
     }
-  }, " Sign in below to write a post and join the discussion."), __jsx("div", {
+  }, ' ', "Sign in below to write a post and join the discussion."), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
     onClick: () => login({
       appState: {
@@ -1011,8 +1003,8 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
-      columnNumber: 9
+      lineNumber: 74,
+      columnNumber: 11
     }
   }, "Sign in")), __jsx("form", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
@@ -1020,7 +1012,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 85,
       columnNumber: 7
     }
   }, __jsx("input", {
@@ -1033,7 +1025,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 86,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -1041,7 +1033,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 95,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -1049,7 +1041,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 96,
       columnNumber: 7
     }
   }, tagsArr.map(tag => __jsx("button", {
@@ -1060,13 +1052,13 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
-      columnNumber: 25
+      lineNumber: 98,
+      columnNumber: 11
     }
   }, `#${tag.toLowerCase()}`))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["withAuth"])(Sidebar));
+/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["withAuth"])(Sidebar));
 
 /***/ }),
 
@@ -2900,7 +2892,7 @@ function App({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 109,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2916,7 +2908,7 @@ function App({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 110,
       columnNumber: 7
     }
   }));
@@ -2935,7 +2927,7 @@ App.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

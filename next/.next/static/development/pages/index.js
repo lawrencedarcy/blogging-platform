@@ -850,15 +850,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! use-auth0-hooks */ "./node_modules/use-auth0-hooks/dist/index.js");
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-loading-skeleton */ "./node_modules/react-loading-skeleton/lib/index.js");
-/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "./node_modules/use-auth0-hooks/dist/index.js");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-loading-skeleton */ "./node_modules/react-loading-skeleton/lib/index.js");
+/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -878,7 +875,7 @@ function Sidebar(_ref) {
       pathname = _useRouter.pathname,
       query = _useRouter.query;
 
-  var _useAuth = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["useAuth"])(),
+  var _useAuth = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["useAuth"])(),
       isLoading = _useAuth.isLoading,
       login = _useAuth.login,
       logout = _useAuth.logout;
@@ -891,7 +888,7 @@ function Sidebar(_ref) {
       return tagsList.add(tag.toLowerCase());
     });
   });
-  var tagsArr = Array.from(tagsList); //handle search state 
+  var tagsArr = Array.from(tagsList); //handle search state
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
       term = _useState[0],
@@ -902,11 +899,6 @@ function Sidebar(_ref) {
   };
 
   var readingClickHandler = function readingClickHandler(evt) {
-    getReadingList(user);
-    console.log(user);
-  };
-
-  var profileClickHandler = function profileClickHandler(evt) {
     getReadingList(user);
     console.log(user);
   };
@@ -927,31 +919,31 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 39,
       columnNumber: 5
     }
   }, isLoading ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
-      columnNumber: 19
+      lineNumber: 41,
+      columnNumber: 9
     }
-  }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5___default.a, {
+  }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default.a, {
     count: 11,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
-      columnNumber: 24
+      lineNumber: 42,
+      columnNumber: 11
     }
   })) : user ? __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 7
+      lineNumber: 45,
+      columnNumber: 9
     }
   }, __jsx("img", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_img,
@@ -959,25 +951,25 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 7
+      lineNumber: 46,
+      columnNumber: 11
     }
   }), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_name,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 7
+      lineNumber: 47,
+      columnNumber: 11
     }
-  }, " ", user.nickname || user.name), __jsx("div", {
+  }, ' ', user.nickname || user.name), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_reading,
     onClick: readingClickHandler,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 9
+      lineNumber: 51,
+      columnNumber: 11
     }
   }, "\uD83D\uDCDA Reading list"), __jsx("a", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_edit_profile,
@@ -985,8 +977,8 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
-      columnNumber: 9
+      lineNumber: 54,
+      columnNumber: 11
     }
   }, "\uD83D\uDC64 Edit your profile"), __jsx("button", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
@@ -998,34 +990,34 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
-      columnNumber: 7
+      lineNumber: 58,
+      columnNumber: 11
     }
   }, "Logout")) : __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
-      columnNumber: 7
+      lineNumber: 66,
+      columnNumber: 9
     }
   }, __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tagline,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
-      columnNumber: 7
+      lineNumber: 67,
+      columnNumber: 11
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_text,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
-      columnNumber: 91
+      lineNumber: 70,
+      columnNumber: 11
     }
-  }, " Sign in below to write a post and join the discussion."), __jsx("div", {
+  }, ' ', "Sign in below to write a post and join the discussion."), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
     onClick: function onClick() {
       return login({
@@ -1040,8 +1032,8 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
-      columnNumber: 9
+      lineNumber: 74,
+      columnNumber: 11
     }
   }, "Sign in")), __jsx("form", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
@@ -1049,7 +1041,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 85,
       columnNumber: 7
     }
   }, __jsx("input", {
@@ -1062,7 +1054,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 86,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -1070,7 +1062,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 95,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -1078,7 +1070,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 96,
       columnNumber: 7
     }
   }, tagsArr.map(function (tag) {
@@ -1090,14 +1082,14 @@ function Sidebar(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
-        columnNumber: 25
+        lineNumber: 98,
+        columnNumber: 11
       }
     }, "#".concat(tag.toLowerCase()));
   })));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["withAuth"])(Sidebar));
+/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["withAuth"])(Sidebar));
 
 /***/ }),
 
@@ -29701,7 +29693,7 @@ function App(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 109,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -29717,7 +29709,7 @@ function App(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 110,
       columnNumber: 7
     }
   }));
@@ -29756,7 +29748,7 @@ App.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************************************/
@@ -29779,5 +29771,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

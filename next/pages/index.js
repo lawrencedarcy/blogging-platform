@@ -104,6 +104,7 @@ function App({ postList, tags}) {
       });
   };
 
+
   return (
     <div className='app_body'>
       <Dashboard
@@ -116,6 +117,7 @@ function App({ postList, tags}) {
         getReadingList={getReadingList}
         deleteFromList={deleteFromList}
         checkReadingList={checkReadingList}
+      
       />
     </div>
   );
