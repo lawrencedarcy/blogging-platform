@@ -29750,7 +29750,7 @@ App.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 4:
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************************************/
@@ -29773,5 +29773,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

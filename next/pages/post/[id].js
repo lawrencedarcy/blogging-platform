@@ -30,7 +30,7 @@ function Post({ post }) {
         {post.img_url && (
           <img src={post.img_url} alt={post.title} class='article_img'></img>
         )}
-        <div className='article_author'>{post.author}</div>
+        <a href="#authorCard" className='article_author'>{post.author}</a>
         <div className='article_date'><Moment format='LL'>{post.timestamp}</Moment></div>
         <div className='article_tags'>
           {post.tags.slice(0, 3).map(tag => (

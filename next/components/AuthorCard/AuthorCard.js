@@ -17,7 +17,7 @@ function AuthorCard({ author }) {
 
   return (
     authorBio ?
-    <div className={styles.author_card}>
+    <div id="authorCard" className={styles.author_card}>
       <div className={styles.card_image}>
         {authorBio && (
           <img

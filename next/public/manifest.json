@@ -1,9 +1,10 @@
 {
   "name": "Stagetime",
   "short_name": "Stagetime",
-  "theme_color": "#fde56e",
-  "background_color": "#fde56e",
+  "theme_color": "#90ccf4",
+  "background_color": "#90ccf4",
   "display": "fullscreen",
+  "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",
   "icons": [
