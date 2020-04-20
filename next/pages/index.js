@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Dashboard from '../components/Dashboard/Dashboard';
 
-function App({ postList, tags, auth }) {
+function App({ postList, tags}) {
   const [posts, setPosts] = useState([]);
   const [feed, setFeed] = useState('normal');
 
@@ -10,6 +10,7 @@ function App({ postList, tags, auth }) {
     setPosts(postList);
     setFeed('normal');
   }, []);
+
 
   const getPostByTag = async tag => {
     await axios.get(`http://localhost:3001/posts/${tag}`).then(data => {
@@ -47,29 +48,39 @@ function App({ postList, tags, auth }) {
   };
 
   const getReadingList = async user => {
-    console.log('getting reading lsit');
     await axios
       .get(`http://localhost:3001/users/${user.nickname}`)
       .then(res => {
-        if(res.data[0]){
-        const list = res.data[0].reading;
-        console.log(list);
-        listHelper(list);}
-
-        else{
-        const list = [];
-        console.log(list);
-        listHelper(list);}
+        if (res.data[0]) {
+          const list = res.data[0].reading;
+          getListHelper(list);
+        } else {
+          const list = [];
+          console.log('calling get List helper')
+          getListHelper(list);
         }
-      );
+      });
   };
-  //part of get reading list and delete from list
-  const listHelper = async list => {
+
+  const getListHelper = async list => {
     await axios
       .get(`http://localhost:3001/list`, { params: { list: list } })
       .then(res => {
         setPosts(res.data);
         setFeed('list');
+      });
+  };
+
+  //part of delete from list
+  const listHelper = async list => {
+    await axios
+      .get(`http://localhost:3001/list`, { params: { list: list } })
+      .then(res => {
+        console.log('res', res.data);
+        if (feed == 'list') {
+          setPosts(res.data);
+          setFeed('list');
+        }
       });
   };
 
@@ -90,7 +101,6 @@ function App({ postList, tags, auth }) {
           const list = res.data[0].reading;
           return list.includes(postId) ? true : false;
         }
-        
       });
   };
 

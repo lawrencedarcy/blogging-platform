@@ -9,7 +9,7 @@ function Feed({
   feedState,
   addToList,
   deleteFromList,
-  checkReadingList
+  checkReadingList,
 }) {
 
  const [postsToShow, setPostsToShow] = useState(5)

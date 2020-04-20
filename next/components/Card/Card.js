@@ -26,8 +26,13 @@ function Card({
   }, [user]); 
 
   const clickHandler = e => {
+    if(e.target.value === 'Save'){
     user ? addToList(user, post._id) : login();
-    setOnList(true);
+    setOnList(true);}
+    if(e.target.value === 'Saved'){
+      deleteFromList(user, post._id);
+      setOnList(false);
+    }
   };
 
   return (
@@ -78,12 +83,13 @@ function Card({
           </div>
         ) : !isLoading &&
         (
-          <div
+          <button
             className={onList ? styles.card_btn_clicked : styles.card_btn}
-            onClick={() => clickHandler()}
+            onClick={(e) => clickHandler(e)}
+            value={onList ? 'Saved' : 'Save'}
           >
             { onList  ? '📚 Saved' : '📚 Save' }
-          </div>
+          </button>
         )}
       </div>
     </div>

@@ -57,8 +57,15 @@ function Card(_ref) {
   }, [user]);
 
   var clickHandler = function clickHandler(e) {
-    user ? addToList(user, post._id) : login();
-    setOnList(true);
+    if (e.target.value === 'Save') {
+      user ? addToList(user, post._id) : login();
+      setOnList(true);
+    }
+
+    if (e.target.value === 'Saved') {
+      deleteFromList(user, post._id);
+      setOnList(false);
+    }
   };
 
   return __jsx("div", {
@@ -66,7 +73,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 39,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -74,7 +81,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 40,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -82,7 +89,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 41,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -90,7 +97,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 42,
       columnNumber: 11
     }
   }, post.img_url && id == 0 && __jsx("img", {
@@ -100,7 +107,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 43,
       columnNumber: 40
     }
   }), __jsx("div", {
@@ -108,7 +115,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 44,
       columnNumber: 13
     }
   }, post.title), post.tags.length > 0 && __jsx("div", {
@@ -116,7 +123,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 47,
       columnNumber: 15
     }
   }, post.tags.slice(0, 3).map(function (tag) {
@@ -126,7 +133,7 @@ function Card(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44,
+        lineNumber: 49,
         columnNumber: 19
       }
     }, '#' + tag);
@@ -135,7 +142,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 54,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -143,7 +150,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 55,
       columnNumber: 15
     }
   }, post.author, " "), __jsx("div", {
@@ -151,14 +158,14 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 56,
       columnNumber: 15
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 57,
       columnNumber: 17
     }
   }, __jsx(react_moment__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -166,7 +173,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 58,
       columnNumber: 19
     }
   }, post.timestamp))))))), __jsx("div", {
@@ -174,7 +181,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 65,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -182,7 +189,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 66,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -190,7 +197,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 67,
       columnNumber: 11
     }
   }, __jsx("img", {
@@ -200,7 +207,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 68,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -208,7 +215,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 73,
       columnNumber: 13
     }
   }, post.votes))), feedState === 'list' ? __jsx("div", {
@@ -219,18 +226,19 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 78,
       columnNumber: 11
     }
-  }, "\uD83D\uDCDA Remove") : !isLoading && __jsx("div", {
+  }, "\uD83D\uDCDA Remove") : !isLoading && __jsx("button", {
     className: onList ? _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn_clicked : _Card_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.card_btn,
-    onClick: function onClick() {
-      return clickHandler();
+    onClick: function onClick(e) {
+      return clickHandler(e);
     },
+    value: onList ? 'Saved' : 'Save',
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 86,
       columnNumber: 11
     }
   }, onList ? '📚 Saved' : '📚 Save')));
@@ -339,7 +347,7 @@ function Dashboard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 19,
       columnNumber: 5
     }
   }, __jsx(_Sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -350,7 +358,7 @@ function Dashboard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 20,
       columnNumber: 7
     }
   }), __jsx(_Feed_Feed__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -363,7 +371,7 @@ function Dashboard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 27,
       columnNumber: 7
     }
   }));
@@ -707,7 +715,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 12,
       columnNumber: 5
     }
   }, filter === 'normal' && __jsx("div", {
@@ -715,7 +723,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 14,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -726,10 +734,10 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 15,
       columnNumber: 11
     }
-  }, " Feed"), __jsx("div", {
+  }, ' ', "Feed"), __jsx("div", {
     className: selected == 'popular' ? _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn_selected : _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn,
     onClick: function onClick() {
       return clickHandler('popular');
@@ -737,10 +745,10 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 26,
       columnNumber: 11
     }
-  }, " Popular"), __jsx("div", {
+  }, ' ', "Popular"), __jsx("div", {
     className: selected == 'latest' ? _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn_selected : _Feed_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.header_btn,
     onClick: function onClick() {
       return clickHandler('latest');
@@ -748,14 +756,14 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 37,
       columnNumber: 11
     }
-  }, " Latest")), filter === 'list' && __jsx("div", {
+  }, ' ', "Latest")), filter === 'list' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 52,
       columnNumber: 9
     }
   }, "These are your saved articles.", ' ', __jsx("span", {
@@ -763,7 +771,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 54,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -771,14 +779,14 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 55,
       columnNumber: 13
     }
   }, "Go back to the feed."))), filter === 'tags' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 61,
       columnNumber: 9
     }
   }, "Feed filtered by tag.", ' ', __jsx("span", {
@@ -786,7 +794,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 63,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -794,14 +802,14 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 64,
       columnNumber: 13
     }
   }, "Refresh the feed."), ' ')), filter === 'search' && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 69,
       columnNumber: 9
     }
   }, posts.length > 0 ? 'Displaying your search results.' : 'No results were found.', ' ', __jsx("span", {
@@ -809,7 +817,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 73,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -817,7 +825,7 @@ function FeedHeader(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 74,
       columnNumber: 13
     }
   }, "Refresh the feed."))));
@@ -29475,8 +29483,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 function App(_ref) {
   var postList = _ref.postList,
-      tags = _ref.tags,
-      auth = _ref.auth;
+      tags = _ref.tags;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       posts = _useState[0],
@@ -29577,31 +29584,28 @@ function App(_ref) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
-            console.log('getting reading lsit');
-            _context5.next = 3;
+            _context5.next = 2;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
               if (res.data[0]) {
                 var list = res.data[0].reading;
-                console.log(list);
-                listHelper(list);
+                getListHelper(list);
               } else {
                 var _list = [];
-                console.log(_list);
-                listHelper(_list);
+                console.log('calling get List helper');
+                getListHelper(_list);
               }
             }));
 
-          case 3:
+          case 2:
           case "end":
             return _context5.stop();
         }
       }
     }, null, null, null, Promise);
-  }; //part of get reading list and delete from list
+  };
 
-
-  var listHelper = function listHelper(list) {
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function listHelper$(_context6) {
+  var getListHelper = function getListHelper(list) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getListHelper$(_context6) {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
@@ -29621,19 +29625,26 @@ function App(_ref) {
         }
       }
     }, null, null, null, Promise);
-  };
+  }; //part of delete from list
 
-  var deleteFromList = function deleteFromList(user, postid) {
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function deleteFromList$(_context7) {
+
+  var listHelper = function listHelper(list) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function listHelper$(_context7) {
       while (1) {
         switch (_context7.prev = _context7.next) {
           case 0:
             _context7.next = 2;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("http://localhost:3001/list/".concat(user.nickname), {
-              reading: postid
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/list", {
+              params: {
+                list: list
+              }
             }).then(function (res) {
-              var list = res.data.reading;
-              listHelper(list);
+              console.log('res', res.data);
+
+              if (feed == 'list') {
+                setPosts(res.data);
+                setFeed('list');
+              }
             }));
 
           case 2:
@@ -29644,12 +29655,33 @@ function App(_ref) {
     }, null, null, null, Promise);
   };
 
-  var checkReadingList = function checkReadingList(user, postId) {
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function checkReadingList$(_context8) {
+  var deleteFromList = function deleteFromList(user, postid) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function deleteFromList$(_context8) {
       while (1) {
         switch (_context8.prev = _context8.next) {
           case 0:
-            return _context8.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
+            _context8.next = 2;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("http://localhost:3001/list/".concat(user.nickname), {
+              reading: postid
+            }).then(function (res) {
+              var list = res.data.reading;
+              listHelper(list);
+            }));
+
+          case 2:
+          case "end":
+            return _context8.stop();
+        }
+      }
+    }, null, null, null, Promise);
+  };
+
+  var checkReadingList = function checkReadingList(user, postId) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function checkReadingList$(_context9) {
+      while (1) {
+        switch (_context9.prev = _context9.next) {
+          case 0:
+            return _context9.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
               if (res.data[0]) {
                 var list = res.data[0].reading;
                 return list.includes(postId) ? true : false;
@@ -29658,7 +29690,7 @@ function App(_ref) {
 
           case 1:
           case "end":
-            return _context8.stop();
+            return _context9.stop();
         }
       }
     }, null, null, null, Promise);
@@ -29669,7 +29701,7 @@ function App(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 108,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -29685,7 +29717,7 @@ function App(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 109,
       columnNumber: 7
     }
   }));
@@ -29693,28 +29725,28 @@ function App(_ref) {
 
 App.getInitialProps = function _callee(ctx) {
   var res, tags;
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context9) {
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context10) {
     while (1) {
-      switch (_context9.prev = _context9.next) {
+      switch (_context10.prev = _context10.next) {
         case 0:
-          _context9.next = 2;
+          _context10.next = 2;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost:3001/posts'));
 
         case 2:
-          res = _context9.sent;
-          _context9.next = 5;
+          res = _context10.sent;
+          _context10.next = 5;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost:3001/tags'));
 
         case 5:
-          tags = _context9.sent;
-          return _context9.abrupt("return", {
+          tags = _context10.sent;
+          return _context10.abrupt("return", {
             postList: res.data,
             tags: tags.data
           });
 
         case 7:
         case "end":
-          return _context9.stop();
+          return _context10.stop();
       }
     }
   }, null, null, null, Promise);
@@ -29724,7 +29756,7 @@ App.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 2:
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************************************/
@@ -29747,5 +29779,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
