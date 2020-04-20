@@ -17,7 +17,7 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
   const { user } = auth;
   const [value, setValue] = useState('');
   const [headline, setHeadline] = useState('');
-  const [tags, setTags] = useState('');
+  const [tags, setTags] = useState();
   const [image, setImage] = useState('');
 
 

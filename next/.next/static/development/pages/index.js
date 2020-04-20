@@ -880,7 +880,8 @@ function Sidebar(_ref) {
       login = _useAuth.login,
       logout = _useAuth.logout;
 
-  var user = auth.user; // handle tags - create a unique list to display
+  var user = auth.user;
+  user && console.log(user); // handle tags - create a unique list to display
 
   var tagsList = new Set();
   tags.map(function (arr) {
@@ -900,7 +901,6 @@ function Sidebar(_ref) {
 
   var readingClickHandler = function readingClickHandler(evt) {
     getReadingList(user);
-    console.log(user);
   };
 
   var searchSubmit = function searchSubmit(e) {
@@ -919,14 +919,14 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 40,
       columnNumber: 5
     }
   }, isLoading ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 42,
       columnNumber: 9
     }
   }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -934,7 +934,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 43,
       columnNumber: 11
     }
   })) : user ? __jsx("div", {
@@ -942,7 +942,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 9
     }
   }, __jsx("img", {
@@ -951,7 +951,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 47,
       columnNumber: 11
     }
   }), __jsx("div", {
@@ -959,7 +959,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 11
     }
   }, ' ', user.nickname || user.name), __jsx("div", {
@@ -968,7 +968,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 52,
       columnNumber: 11
     }
   }, "\uD83D\uDCDA Reading list"), __jsx("a", {
@@ -977,7 +977,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 55,
       columnNumber: 11
     }
   }, "\uD83D\uDC64 Edit your profile"), __jsx("button", {
@@ -990,7 +990,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 11
     }
   }, "Logout")) : __jsx("div", {
@@ -998,7 +998,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 67,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -1006,7 +1006,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 68,
       columnNumber: 11
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
@@ -1014,7 +1014,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 71,
       columnNumber: 11
     }
   }, ' ', "Sign in below to write a post and join the discussion."), __jsx("div", {
@@ -1032,7 +1032,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 75,
       columnNumber: 11
     }
   }, "Sign in")), __jsx("form", {
@@ -1041,7 +1041,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 86,
       columnNumber: 7
     }
   }, __jsx("input", {
@@ -1054,7 +1054,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 87,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -1062,7 +1062,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 96,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -1070,7 +1070,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 97,
       columnNumber: 7
     }
   }, tagsArr.map(function (tag) {
@@ -1082,7 +1082,7 @@ function Sidebar(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98,
+        lineNumber: 99,
         columnNumber: 11
       }
     }, "#".concat(tag.toLowerCase()));
@@ -29475,7 +29475,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 function App(_ref) {
   var postList = _ref.postList,
-      tags = _ref.tags;
+      tags = _ref.tags,
+      auth = _ref.auth;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       posts = _useState[0],
@@ -29535,13 +29536,14 @@ function App(_ref) {
           case 0:
             _context3.next = 2;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
-              if (res.data[0]) {
-                axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("http://localhost:3001/users/".concat(user.nickname), {
-                  reading: postId
-                });
-              } else {
-                createUser(user.nickname, postId);
+              if (!res.data[0]) {
+                createUser(user.nickname);
+                return res;
               }
+            }).then(function (res) {
+              axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("http://localhost:3001/users/".concat(user.nickname), {
+                reading: postId
+              });
             }));
 
           case 2:
@@ -29552,7 +29554,7 @@ function App(_ref) {
     }, null, null, null, Promise);
   };
 
-  var createUser = function createUser(name, postId) {
+  var createUser = function createUser(name) {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function createUser$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
@@ -29560,7 +29562,7 @@ function App(_ref) {
             _context4.next = 2;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("http://localhost:3001/users", {
               name: name,
-              reading: postId
+              image: user.picture
             }));
 
           case 2:
@@ -29693,7 +29695,7 @@ function App(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 112,
       columnNumber: 5
     }
   }, __jsx(_components_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -29709,7 +29711,7 @@ function App(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 113,
       columnNumber: 7
     }
   }));
@@ -29748,7 +29750,7 @@ App.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************************************/
@@ -29771,5 +29773,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

@@ -9,6 +9,8 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
   const { isLoading, login, logout } = useAuth();
   const { user } = auth;
 
+  user && console.log(user);
+
   // handle tags - create a unique list to display
   const tagsList = new Set();
   tags.map(arr => arr.map(tag => tagsList.add(tag.toLowerCase())));
@@ -22,7 +24,6 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
   };
   const readingClickHandler = evt => {
     getReadingList(user);
-    console.log(user);
   };
 
   const searchSubmit = e => {

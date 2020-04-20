@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Dashboard from '../components/Dashboard/Dashboard';
 
-function App({ postList, tags}) {
+function App({ postList, tags, auth}) {
   const [posts, setPosts] = useState([]);
   const [feed, setFeed] = useState('normal');
+
 
   useEffect(() => {
     setPosts(postList);
@@ -29,21 +30,23 @@ function App({ postList, tags}) {
   const addToList = async (user, postId) => {
     await axios
       .get(`http://localhost:3001/users/${user.nickname}`)
+      .then(
+        res => { if(!res.data[0]) {
+          createUser(user.nickname);
+          return res;
+        }}
+      )
       .then(res => {
-        if (res.data[0]) {
           axios.put(`http://localhost:3001/users/${user.nickname}`, {
             reading: postId
           });
-        } else {
-          createUser(user.nickname, postId);
-        }
       });
   };
 
-  const createUser = async (name, postId) => {
+  const createUser = async (name) => {
     await axios.post(`http://localhost:3001/users`, {
       name: name,
-      reading: postId
+      image: user.picture
     });
   };
 

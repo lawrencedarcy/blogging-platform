@@ -196,3 +196,9 @@ body {
   background-color: #f3d250 ;
   color: black;
 }
+
+.article_date {
+
+  font-size: .9rem;
+  padding: .2rem;
+}
