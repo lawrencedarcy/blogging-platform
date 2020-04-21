@@ -18,13 +18,13 @@ function NavBar() {
         </Link>
 
         <div className={styles.navbar_logo}>
-          <Link href='/'>
+          <Link href='https://stagetime.now.sh'>
             <a>Stagetime</a>
           </Link>
         </div>
 
         <div className={styles.navbar_write}>
-          <Link href='/write'>
+          <Link href='https://stagetime.now.sh/write'>
             <a>Write a post</a>
           </Link>
         </div>
