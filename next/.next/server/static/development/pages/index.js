@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -871,7 +871,7 @@ function Sidebar({
   }, []);
 
   const getLocalUser = async () => {
-    user && (await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(`http://localhost:3001/users/${user.nickname}`).then(res => {
+    user && (await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`).then(res => {
       setLocalUser(res.data[0]);
       console.log(res.data);
     }));
@@ -911,14 +911,14 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 54,
       columnNumber: 5
     }
   }, isLoading ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 56,
       columnNumber: 9
     }
   }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -926,7 +926,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 57,
       columnNumber: 11
     }
   })) : user ? __jsx("div", {
@@ -934,7 +934,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 60,
       columnNumber: 9
     }
   }, __jsx("img", {
@@ -943,7 +943,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 11
     }
   }), __jsx("div", {
@@ -951,7 +951,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 62,
       columnNumber: 11
     }
   }, ' ', user.nickname || user.name), __jsx("div", {
@@ -960,27 +960,27 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 66,
       columnNumber: 11
     }
   }, "\uD83D\uDCDA Reading list"), __jsx("a", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_edit_profile,
-    href: "/editbio",
+    href: "https://stagetime.now.sh/editbio",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 69,
       columnNumber: 11
     }
   }, "\uD83D\uDC64 Edit your profile"), __jsx("button", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
     onClick: () => logout({
-      returnTo: 'http://localhost:3000'
+      returnTo: 'https://stagetime.now.sh'
     }),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 73,
       columnNumber: 11
     }
   }, "Logout")) : __jsx("div", {
@@ -988,7 +988,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 81,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -996,7 +996,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 82,
       columnNumber: 11
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
@@ -1004,23 +1004,25 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 85,
       columnNumber: 11
     }
   }, ' ', "Sign in below to write a post and join the discussion."), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
-    onClick: () => login({
-      appState: {
-        returnTo: {
-          pathname,
-          query
+    onClick: () => {
+      login({
+        appState: {
+          returnTo: {
+            pathname,
+            query
+          }
         }
-      }
-    }),
+      });
+    },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 89,
       columnNumber: 11
     }
   }, "Sign in")), __jsx("form", {
@@ -1029,7 +1031,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 101,
       columnNumber: 7
     }
   }, __jsx("input", {
@@ -1042,7 +1044,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 102,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -1050,7 +1052,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 111,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -1058,7 +1060,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 112,
       columnNumber: 7
     }
   }, tagsArr.map(tag => __jsx("button", {
@@ -1069,7 +1071,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 114,
       columnNumber: 11
     }
   }, `#${tag.toLowerCase()}`))));
@@ -2821,41 +2823,41 @@ function App({
   }, []);
 
   const getPostByTag = async tag => {
-    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/posts/${tag}`).then(data => {
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`https://stagetimeblog.herokuapp.com/posts/${tag}`).then(data => {
       setPosts(data.data);
       setFeed('tags');
     });
   };
 
   const searchPosts = async term => {
-    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/posts/search/${term}`).then(data => {
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`https://stagetimeblog.herokuapp.com/posts/search/${term}`).then(data => {
       setPosts(data.data);
       setFeed('search');
     });
   };
 
   const addToList = async (user, postId) => {
-    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/users/${user.nickname}`).then(res => {
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`).then(res => {
       if (!res.data[0]) {
         createUser(user.nickname);
         return res;
       }
     }).then(res => {
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(`http://localhost:3001/users/${user.nickname}`, {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`, {
         reading: postId
       });
     });
   };
 
   const createUser = async name => {
-    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(`http://localhost:3001/users`, {
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(`https://stagetimeblog.herokuapp.com/users`, {
       name: name,
       image: user.picture
     });
   };
 
   const getReadingList = async user => {
-    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/users/${user.nickname}`).then(res => {
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`).then(res => {
       if (res.data[0]) {
         const list = res.data[0].reading;
         getListHelper(list);
@@ -2868,7 +2870,7 @@ function App({
   };
 
   const getListHelper = async list => {
-    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/list`, {
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`https://stagetimeblog.herokuapp.com/list`, {
       params: {
         list: list
       }
@@ -2880,7 +2882,7 @@ function App({
 
 
   const listHelper = async list => {
-    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/list`, {
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`https://stagetimeblog.herokuapp.com/list`, {
       params: {
         list: list
       }
@@ -2895,7 +2897,7 @@ function App({
   };
 
   const deleteFromList = async (user, postid) => {
-    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(`http://localhost:3001/list/${user.nickname}`, {
+    await axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(`https://stagetimeblog.herokuapp.com/list/${user.nickname}`, {
       reading: postid
     }).then(res => {
       const list = res.data.reading;
@@ -2904,7 +2906,7 @@ function App({
   };
 
   const checkReadingList = async (user, postId) => {
-    return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`http://localhost:3001/users/${user.nickname}`).then(res => {
+    return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`).then(res => {
       if (res.data[0]) {
         const list = res.data[0].reading;
         return list.includes(postId) ? true : false;
@@ -2940,8 +2942,8 @@ function App({
 }
 
 App.getInitialProps = async ctx => {
-  const res = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:3001/posts');
-  const tags = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:3001/tags');
+  const res = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('https://stagetimeblog.herokuapp.com/posts');
+  const tags = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('https://stagetimeblog.herokuapp.com/tags');
   return {
     postList: res.data,
     tags: tags.data
@@ -2952,7 +2954,7 @@ App.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

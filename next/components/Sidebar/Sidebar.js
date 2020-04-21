@@ -24,6 +24,7 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
   };
 
 
+
   // handle tags - create a unique list to display
   const tagsList = new Set();
   tags.map(arr => arr.map(tag => tagsList.add(tag.toLowerCase())));
@@ -71,7 +72,7 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
 
           <button
             className={styles.sidebar_login}
-            onClick={() => logout({ returnTo: 'https://stagetime.now.sh/' })}
+            onClick={() => logout({ returnTo: 'https://stagetime.now.sh' })}
           >
             Logout
           </button>
@@ -87,8 +88,9 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
           </div>
           <div
             className={styles.sidebar_login}
-            onClick={() =>
-              login({ appState: { returnTo: { pathname, query } } })
+            onClick={() =>{
+              login({ appState: { returnTo: { pathname, query } } }  );
+              }
             }
           >
             Sign in

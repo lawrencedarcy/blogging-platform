@@ -1,7 +1,6 @@
 // import App from 'next/app'
 import './styles.css';
 import Head from 'next/head';
-import App from 'next/app';
 import NavBar from '../components/NavBar/NavBar';
 import 'react-quill/dist/quill.snow.css';
 import { Auth0Provider } from 'use-auth0-hooks';
@@ -35,7 +34,7 @@ function MyApp({ Component, pageProps }) {
      <Auth0Provider
      domain={'dev-yf8xdikq.eu.auth0.com'}
      clientId={'k6MOcu2j7WVg5ZfForZqdq6RVVIwyNpm'}
-     redirectUri={'https://stagetime.now.sh/'}>
+     redirectUri={'https://stagetime.now.sh'}>
      
     <Component {...pageProps} />
     </Auth0Provider>

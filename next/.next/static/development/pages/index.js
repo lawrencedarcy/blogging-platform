@@ -909,7 +909,7 @@ function Sidebar(_ref) {
             }
 
             _context.next = 4;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("https://stagetimeblog.herokuapp.com/users/".concat(user.nickname)).then(function (res) {
               setLocalUser(res.data[0]);
               console.log(res.data);
             }));
@@ -959,14 +959,14 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 54,
       columnNumber: 5
     }
   }, isLoading ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 56,
       columnNumber: 9
     }
   }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -974,7 +974,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 57,
       columnNumber: 11
     }
   })) : user ? __jsx("div", {
@@ -982,7 +982,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 60,
       columnNumber: 9
     }
   }, __jsx("img", {
@@ -991,7 +991,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 11
     }
   }), __jsx("div", {
@@ -999,7 +999,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 62,
       columnNumber: 11
     }
   }, ' ', user.nickname || user.name), __jsx("div", {
@@ -1008,29 +1008,29 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 66,
       columnNumber: 11
     }
   }, "\uD83D\uDCDA Reading list"), __jsx("a", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_edit_profile,
-    href: "/editbio",
+    href: "https://stagetime.now.sh/editbio",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 69,
       columnNumber: 11
     }
   }, "\uD83D\uDC64 Edit your profile"), __jsx("button", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_login,
     onClick: function onClick() {
       return logout({
-        returnTo: 'http://localhost:3000'
+        returnTo: 'https://stagetime.now.sh'
       });
     },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 73,
       columnNumber: 11
     }
   }, "Logout")) : __jsx("div", {
@@ -1038,7 +1038,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 81,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -1046,7 +1046,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 82,
       columnNumber: 11
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
@@ -1054,13 +1054,13 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 85,
       columnNumber: 11
     }
   }, ' ', "Sign in below to write a post and join the discussion."), __jsx("div", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_login,
     onClick: function onClick() {
-      return login({
+      login({
         appState: {
           returnTo: {
             pathname: pathname,
@@ -1072,7 +1072,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 89,
       columnNumber: 11
     }
   }, "Sign in")), __jsx("form", {
@@ -1081,7 +1081,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 101,
       columnNumber: 7
     }
   }, __jsx("input", {
@@ -1094,7 +1094,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 102,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -1102,7 +1102,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 111,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -1110,7 +1110,7 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 112,
       columnNumber: 7
     }
   }, tagsArr.map(function (tag) {
@@ -1122,7 +1122,7 @@ function Sidebar(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112,
+        lineNumber: 114,
         columnNumber: 11
       }
     }, "#".concat(tag.toLowerCase()));
@@ -29541,7 +29541,7 @@ function App(_ref) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/posts/".concat(tag)).then(function (data) {
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://stagetimeblog.herokuapp.com/posts/".concat(tag)).then(function (data) {
               setPosts(data.data);
               setFeed('tags');
             }));
@@ -29560,7 +29560,7 @@ function App(_ref) {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/posts/search/".concat(term)).then(function (data) {
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://stagetimeblog.herokuapp.com/posts/search/".concat(term)).then(function (data) {
               setPosts(data.data);
               setFeed('search');
             }));
@@ -29579,13 +29579,13 @@ function App(_ref) {
         switch (_context3.prev = _context3.next) {
           case 0:
             _context3.next = 2;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://stagetimeblog.herokuapp.com/users/".concat(user.nickname)).then(function (res) {
               if (!res.data[0]) {
                 createUser(user.nickname);
                 return res;
               }
             }).then(function (res) {
-              axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("http://localhost:3001/users/".concat(user.nickname), {
+              axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("https://stagetimeblog.herokuapp.com/users/".concat(user.nickname), {
                 reading: postId
               });
             }));
@@ -29604,7 +29604,7 @@ function App(_ref) {
         switch (_context4.prev = _context4.next) {
           case 0:
             _context4.next = 2;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("http://localhost:3001/users", {
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("https://stagetimeblog.herokuapp.com/users", {
               name: name,
               image: user.picture
             }));
@@ -29623,7 +29623,7 @@ function App(_ref) {
         switch (_context5.prev = _context5.next) {
           case 0:
             _context5.next = 2;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://stagetimeblog.herokuapp.com/users/".concat(user.nickname)).then(function (res) {
               if (res.data[0]) {
                 var list = res.data[0].reading;
                 getListHelper(list);
@@ -29648,7 +29648,7 @@ function App(_ref) {
         switch (_context6.prev = _context6.next) {
           case 0:
             _context6.next = 2;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/list", {
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://stagetimeblog.herokuapp.com/list", {
               params: {
                 list: list
               }
@@ -29672,7 +29672,7 @@ function App(_ref) {
         switch (_context7.prev = _context7.next) {
           case 0:
             _context7.next = 2;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/list", {
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://stagetimeblog.herokuapp.com/list", {
               params: {
                 list: list
               }
@@ -29699,7 +29699,7 @@ function App(_ref) {
         switch (_context8.prev = _context8.next) {
           case 0:
             _context8.next = 2;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("http://localhost:3001/list/".concat(user.nickname), {
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("https://stagetimeblog.herokuapp.com/list/".concat(user.nickname), {
               reading: postid
             }).then(function (res) {
               var list = res.data.reading;
@@ -29719,7 +29719,7 @@ function App(_ref) {
       while (1) {
         switch (_context9.prev = _context9.next) {
           case 0:
-            return _context9.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
+            return _context9.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://stagetimeblog.herokuapp.com/users/".concat(user.nickname)).then(function (res) {
               if (res.data[0]) {
                 var list = res.data[0].reading;
                 return list.includes(postId) ? true : false;
@@ -29768,12 +29768,12 @@ App.getInitialProps = function _callee(ctx) {
       switch (_context10.prev = _context10.next) {
         case 0:
           _context10.next = 2;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost:3001/posts'));
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://stagetimeblog.herokuapp.com/posts'));
 
         case 2:
           res = _context10.sent;
           _context10.next = 5;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost:3001/tags'));
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://stagetimeblog.herokuapp.com/tags'));
 
         case 5:
           tags = _context10.sent;
