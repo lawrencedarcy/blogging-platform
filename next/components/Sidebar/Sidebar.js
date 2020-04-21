@@ -66,7 +66,7 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
           <div className={styles.sidebar_reading} onClick={readingClickHandler}>
             📚 Reading list
           </div>
-          <a className={styles.sidebar_edit_profile} href='https://stagetime.now.sh/editbio'>
+          <a className={styles.sidebar_edit_profile} href='https://stagetime.now.sh/editbio-old'>
             👤 Edit your profile
           </a>
 
