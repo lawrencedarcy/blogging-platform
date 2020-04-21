@@ -6,11 +6,5 @@ module.exports = withPWA({
         dest: 'public'
     },
 
-    env: {
-   
-        CUSTOM_KEY: 'testing'
-      } 
-
-
 });
 
