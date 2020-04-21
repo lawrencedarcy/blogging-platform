@@ -28,7 +28,6 @@ function MyApp({ Component, pageProps }) {
       <link rel='apple-touch-icon' href='/apple-icon.png'></link>
       <meta name='theme-color' content='#fde56e' />
 
-      <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet" />
      </Head>
@@ -36,7 +35,7 @@ function MyApp({ Component, pageProps }) {
      <Auth0Provider
      domain={'dev-yf8xdikq.eu.auth0.com'}
      clientId={'k6MOcu2j7WVg5ZfForZqdq6RVVIwyNpm'}
-     redirectUri={'/'}>
+     redirectUri={'https://stagetime.now.sh/'}>
      
     <Component {...pageProps} />
     </Auth0Provider>
