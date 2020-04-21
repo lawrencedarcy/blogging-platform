@@ -1,15 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Sidebar.module.css';
 import { useRouter } from 'next/router';
 import { useAuth, withAuth } from 'use-auth0-hooks';
 import Skeleton from 'react-loading-skeleton';
+import axios from 'axios';
 
 function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
   const { pathname, query } = useRouter();
   const { isLoading, login, logout } = useAuth();
   const { user } = auth;
+  const [ localUser, setLocalUser ] = useState();
 
-  user && console.log(user);
+  useEffect(() => {
+    getLocalUser();
+  }, []);
+
+  const getLocalUser = async () => {
+    user && await axios.get(`http://localhost:3001/users/${user.nickname}`)
+    .then(res => {
+      setLocalUser(res.data[0]);
+      console.log(res.data);
+    });
+  };
+
 
   // handle tags - create a unique list to display
   const tagsList = new Set();
@@ -44,7 +57,7 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
         </div>
       ) : user ? (
         <div className={styles.sidebar_profile}>
-          <img className={styles.sidebar_img} src={user.picture} />
+          <img className={styles.sidebar_img} src={localUser && localUser.image || user.picture} />
           <div className={styles.sidebar_name}>
             {' '}
             {user.nickname || user.name}

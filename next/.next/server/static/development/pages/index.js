@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -832,8 +832,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-loading-skeleton */ "react-loading-skeleton");
 /* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -859,7 +862,21 @@ function Sidebar({
   const {
     user
   } = auth;
-  user && console.log(user); // handle tags - create a unique list to display
+  const {
+    0: localUser,
+    1: setLocalUser
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    getLocalUser();
+  }, []);
+
+  const getLocalUser = async () => {
+    user && (await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(`http://localhost:3001/users/${user.nickname}`).then(res => {
+      setLocalUser(res.data[0]);
+      console.log(res.data);
+    }));
+  }; // handle tags - create a unique list to display
+
 
   const tagsList = new Set();
   tags.map(arr => arr.map(tag => tagsList.add(tag.toLowerCase())));
@@ -894,14 +911,14 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 53,
       columnNumber: 5
     }
   }, isLoading ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 55,
       columnNumber: 9
     }
   }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -909,7 +926,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 56,
       columnNumber: 11
     }
   })) : user ? __jsx("div", {
@@ -917,16 +934,16 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, __jsx("img", {
     className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_img,
-    src: user.picture,
+    src: localUser && localUser.image || user.picture,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 60,
       columnNumber: 11
     }
   }), __jsx("div", {
@@ -934,7 +951,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 61,
       columnNumber: 11
     }
   }, ' ', user.nickname || user.name), __jsx("div", {
@@ -943,7 +960,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 65,
       columnNumber: 11
     }
   }, "\uD83D\uDCDA Reading list"), __jsx("a", {
@@ -952,7 +969,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 68,
       columnNumber: 11
     }
   }, "\uD83D\uDC64 Edit your profile"), __jsx("button", {
@@ -963,7 +980,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 72,
       columnNumber: 11
     }
   }, "Logout")) : __jsx("div", {
@@ -971,7 +988,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 80,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -979,7 +996,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 81,
       columnNumber: 11
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
@@ -987,7 +1004,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 84,
       columnNumber: 11
     }
   }, ' ', "Sign in below to write a post and join the discussion."), __jsx("div", {
@@ -1003,7 +1020,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 88,
       columnNumber: 11
     }
   }, "Sign in")), __jsx("form", {
@@ -1012,7 +1029,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 99,
       columnNumber: 7
     }
   }, __jsx("input", {
@@ -1025,7 +1042,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 100,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -1033,7 +1050,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 109,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
@@ -1041,7 +1058,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 110,
       columnNumber: 7
     }
   }, tagsArr.map(tag => __jsx("button", {
@@ -1052,7 +1069,7 @@ function Sidebar({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 112,
       columnNumber: 11
     }
   }, `#${tag.toLowerCase()}`))));
@@ -2929,7 +2946,7 @@ App.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

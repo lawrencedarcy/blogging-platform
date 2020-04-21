@@ -11,7 +11,6 @@ function AuthorCard({ author }) {
   const getUser = async () => {
     await axios.get(`http://localhost:3001/users/${author}`).then(res => {
       setAuthorBio(res.data[0]);
-      console.log('author bio', res.data[0]);
     });
   };
 

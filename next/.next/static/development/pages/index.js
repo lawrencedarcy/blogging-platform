@@ -844,18 +844,24 @@ function FeedHeader(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar.module.css */ "./components/Sidebar/Sidebar.module.css");
-/* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-auth0-hooks */ "./node_modules/use-auth0-hooks/dist/index.js");
-/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-loading-skeleton */ "./node_modules/react-loading-skeleton/lib/index.js");
-/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Sidebar.module.css */ "./components/Sidebar/Sidebar.module.css");
+/* harmony import */ var _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! use-auth0-hooks */ "./node_modules/use-auth0-hooks/dist/index.js");
+/* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-loading-skeleton */ "./node_modules/react-loading-skeleton/lib/index.js");
+/* harmony import */ var react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
+
 var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -871,17 +877,51 @@ function Sidebar(_ref) {
       searchPosts = _ref.searchPosts,
       getReadingList = _ref.getReadingList;
 
-  var _useRouter = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])(),
+  var _useRouter = Object(next_router__WEBPACK_IMPORTED_MODULE_3__["useRouter"])(),
       pathname = _useRouter.pathname,
       query = _useRouter.query;
 
-  var _useAuth = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["useAuth"])(),
+  var _useAuth = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["useAuth"])(),
       isLoading = _useAuth.isLoading,
       login = _useAuth.login,
       logout = _useAuth.logout;
 
   var user = auth.user;
-  user && console.log(user); // handle tags - create a unique list to display
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
+      localUser = _useState[0],
+      setLocalUser = _useState[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    getLocalUser();
+  }, []);
+
+  var getLocalUser = function getLocalUser() {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getLocalUser$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.t0 = user;
+
+            if (!_context.t0) {
+              _context.next = 4;
+              break;
+            }
+
+            _context.next = 4;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("http://localhost:3001/users/".concat(user.nickname)).then(function (res) {
+              setLocalUser(res.data[0]);
+              console.log(res.data);
+            }));
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, null, null, Promise);
+  }; // handle tags - create a unique list to display
+
 
   var tagsList = new Set();
   tags.map(function (arr) {
@@ -891,9 +931,9 @@ function Sidebar(_ref) {
   });
   var tagsArr = Array.from(tagsList); //handle search state
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
-      term = _useState[0],
-      setTerm = _useState[1];
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
+      term = _useState2[0],
+      setTerm = _useState2[1];
 
   var clickHandler = function clickHandler(evt) {
     getPostByTag(evt.target.value);
@@ -915,73 +955,73 @@ function Sidebar(_ref) {
   };
 
   return __jsx("div", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 53,
       columnNumber: 5
     }
   }, isLoading ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 55,
       columnNumber: 9
     }
-  }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }, __jsx(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_5___default.a, {
     count: 11,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 56,
       columnNumber: 11
     }
   })) : user ? __jsx("div", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_profile,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, __jsx("img", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_img,
-    src: user.picture,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_img,
+    src: localUser && localUser.image || user.picture,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 60,
       columnNumber: 11
     }
   }), __jsx("div", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_name,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_name,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 61,
       columnNumber: 11
     }
   }, ' ', user.nickname || user.name), __jsx("div", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_reading,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_reading,
     onClick: readingClickHandler,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 65,
       columnNumber: 11
     }
   }, "\uD83D\uDCDA Reading list"), __jsx("a", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_edit_profile,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_edit_profile,
     href: "/editbio",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 68,
       columnNumber: 11
     }
   }, "\uD83D\uDC64 Edit your profile"), __jsx("button", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_login,
     onClick: function onClick() {
       return logout({
         returnTo: 'http://localhost:3000'
@@ -990,35 +1030,35 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 72,
       columnNumber: 11
     }
   }, "Logout")) : __jsx("div", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_profile,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_profile,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 80,
       columnNumber: 9
     }
   }, __jsx("div", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tagline,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_tagline,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 81,
       columnNumber: 11
     }
   }, "Stagetime is a community of comedians."), __jsx("div", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_text,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_text,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 84,
       columnNumber: 11
     }
   }, ' ', "Sign in below to write a post and join the discussion."), __jsx("div", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_login,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_login,
     onClick: function onClick() {
       return login({
         appState: {
@@ -1032,20 +1072,20 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 88,
       columnNumber: 11
     }
   }, "Sign in")), __jsx("form", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_search,
     onSubmit: searchSubmit,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 99,
       columnNumber: 7
     }
   }, __jsx("input", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_search_input,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_search_input,
     type: "text",
     placeholder: "Search posts...",
     onChange: handleChange,
@@ -1054,42 +1094,42 @@ function Sidebar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 100,
       columnNumber: 9
     }
   })), __jsx("div", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_title,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_title,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 109,
       columnNumber: 7
     }
   }, "Filter feed by tag"), __jsx("div", {
-    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tags,
+    className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_tags,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 110,
       columnNumber: 7
     }
   }, tagsArr.map(function (tag) {
     return __jsx("button", {
-      className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.sidebar_tag,
+      className: _Sidebar_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.sidebar_tag,
       key: tag,
       value: tag,
       onClick: clickHandler,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99,
+        lineNumber: 112,
         columnNumber: 11
       }
     }, "#".concat(tag.toLowerCase()));
   })));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_3__["withAuth"])(Sidebar));
+/* harmony default export */ __webpack_exports__["default"] = (Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_4__["withAuth"])(Sidebar));
 
 /***/ }),
 
@@ -5514,7 +5554,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n\n  min-width: calc(20vw + 15px);\n  flex: 2 1;\n/*   border: 1px solid rgb(199, 199, 199);\n */  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n}\n\n@media only screen and (max-width: 745px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3 {\n  font-size: .9rem;\n  padding: .2rem;\n}\n\n\n.Sidebar_sidebar_edit_profile__tqWL7 {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .2rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3:hover,.Sidebar_sidebar_edit_profile__tqWL7:hover {\n  color: #f78888;\n  cursor: pointer;\n}\n\n.Sidebar_sidebar_search__6hfx8 {\n  width: 100%;\n  margin: auto;\n}\n.Sidebar_sidebar_search_input__8zQ9W {\n  width: 100%;\n  height: 2rem;\n  background-color: #ececec;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n height: 40vh;\n overflow: scroll;\n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.Sidebar_sidebar_tag__yktie:focus {\n  background-color: #4d9bd6;\n}\n\n.Sidebar_sidebar_profile__19RNM {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.Sidebar_sidebar_img__2FNKS {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.Sidebar_sidebar_name__3zubS {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.Sidebar_sidebar_login__2lKjx{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .8rem;\n  max-height: 3rem;\n  border: 1px solid #4d9bd6;  border-radius: 5px;\n  background-color: #4d9bd6;\n  color: white;\n  width: 50%;\n  min-width: 4.7rem;\n}\n\n.Sidebar_sidebar_login__2lKjx:hover {\n  color:rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n  border: 1px solid #f3d250;\n}\n\n.Sidebar_sidebar_text__g7JSJ {\n  font-size: .9rem;\n  padding: .4rem;\n\n}\n\n\n.Sidebar_sidebar_tagline__1Rpho {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 1100px) {\n  .Sidebar_sidebar_text__g7JSJ {\n    display: none;\n  }\n  .Sidebar_sidebar_tagline__1Rpho {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.Sidebar_login_btn__3RDmD {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #4d9bd6;\n  \n  font-size: 1.1rem;\n}\n\n.Sidebar_login_btn__3RDmD:hover {\n  background-color: #f3d250;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,4BAA4B;EAC5B,SAAO;AACT;EACE,GAAG,YAAY;EACf,aAAa;EACb,uBAAuB;EACvB,aAAa;EACb,gBAAgB;;AAElB;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;;AAGA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;AAChB;;AAEA;EACE,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,WAAW;EACX,YAAY;AACd;AACA;EACE,WAAW;EACX,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,oCAAoC;EACpC,gBAAgB;EAChB,oBAAoB;EACpB,gBAAgB;EAChB,oBAAoB;EACpB,kBAAkB;AACpB;;AAEA;CACC,YAAY;CACZ,gBAAgB;;AAEjB;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,UAAU;EACV,oCAAoC;EACpC,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,wBAAwB;EACxB,kBAAkB;EAClB,cAAc;;;AAGhB;;AAEA;EACE,UAAU;EACV,kBAAkB;EAClB,YAAY;EACZ,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;AAClB;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,kBAAkB;EAClB,gBAAgB;EAChB,gBAAgB;EAChB,yBAAyB,GAAG,kBAAkB;EAC9C,yBAAyB;EACzB,YAAY;EACZ,UAAU;EACV,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,yBAAyB;EACzB,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;EAChB,cAAc;;AAEhB;;;AAGA;EACE,eAAe;EACf,cAAc;EACd,gBAAgB;;AAElB;;AAEA;EACE;IACE,aAAa;EACf;EACA;IACE,gBAAgB;IAChB,aAAa;EACf;AACF;AACA;EACE,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,yBAAyB;;EAEzB,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;AAC3B","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n\n  min-width: calc(20vw + 15px);\n  flex: 2;\n/*   border: 1px solid rgb(199, 199, 199);\n */  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n}\n\n@media only screen and (max-width: 745px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_reading {\n  font-size: .9rem;\n  padding: .2rem;\n}\n\n\n.sidebar_edit_profile {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .2rem;\n}\n\n.sidebar_reading:hover,.sidebar_edit_profile:hover {\n  color: #f78888;\n  cursor: pointer;\n}\n\n.sidebar_search {\n  width: 100%;\n  margin: auto;\n}\n.sidebar_search_input {\n  width: 100%;\n  height: 2rem;\n  background-color: #ececec;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.sidebar_tags {\n height: 40vh;\n overflow: scroll;\n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.sidebar_tag:focus {\n  background-color: #4d9bd6;\n}\n\n.sidebar_profile {\n  width: 98%;\n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.sidebar_img {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.sidebar_name {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.sidebar_login{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .8rem;\n  max-height: 3rem;\n  border: 1px solid #4d9bd6;  border-radius: 5px;\n  background-color: #4d9bd6;\n  color: white;\n  width: 50%;\n  min-width: 4.7rem;\n}\n\n.sidebar_login:hover {\n  color:rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n  border: 1px solid #f3d250;\n}\n\n.sidebar_text {\n  font-size: .9rem;\n  padding: .4rem;\n\n}\n\n\n.sidebar_tagline {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 1100px) {\n  .sidebar_text {\n    display: none;\n  }\n  .sidebar_tagline {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.login_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #4d9bd6;\n  \n  font-size: 1.1rem;\n}\n\n.login_btn:hover {\n  background-color: #f3d250;\n}"]}]);
+exports.push([module.i, ".Sidebar_sidebar__ma1yP {\n\n  min-width: calc(20vw + 15px);\n  flex: 2 1;\n/*   border: 1px solid rgb(199, 199, 199);\n */  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n}\n\n@media only screen and (max-width: 745px) {\n  .Sidebar_sidebar__ma1yP {\n    display: none;\n  }\n}\n\n.Sidebar_sidebar_title__3lZ-e{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3 {\n  font-size: .9rem;\n  padding: .2rem;\n}\n\n\n.Sidebar_sidebar_edit_profile__tqWL7 {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .2rem;\n}\n\n.Sidebar_sidebar_reading__1DUV3:hover,.Sidebar_sidebar_edit_profile__tqWL7:hover {\n  color: #f78888;\n  cursor: pointer;\n}\n\n.Sidebar_sidebar_search__6hfx8 {\n  width: 100%;\n  margin: auto;\n}\n.Sidebar_sidebar_search_input__8zQ9W {\n  width: 100%;\n  height: 2rem;\n  background-color: #ececec;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.Sidebar_sidebar_tags__1IP9J {\n height: 40vh;\n overflow: scroll;\n  \n}\n.Sidebar_sidebar_tag__yktie {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.Sidebar_sidebar_tag__yktie:focus {\n  background-color: #4d9bd6;\n}\n\n.Sidebar_sidebar_profile__19RNM {\n  width: 98%;\n  \n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.Sidebar_sidebar_img__2FNKS {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.Sidebar_sidebar_name__3zubS {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.Sidebar_sidebar_login__2lKjx{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .8rem;\n  max-height: 3rem;\n  border: 1px solid #4d9bd6;  border-radius: 5px;\n  background-color: #4d9bd6;\n  color: white;\n  width: 50%;\n  min-width: 4.7rem;\n}\n\n.Sidebar_sidebar_login__2lKjx:hover {\n  color:rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n  border: 1px solid #f3d250;\n}\n\n.Sidebar_sidebar_text__g7JSJ {\n  font-size: .9rem;\n  padding: .4rem;\n\n}\n\n\n.Sidebar_sidebar_tagline__1Rpho {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 1100px) {\n  .Sidebar_sidebar_text__g7JSJ {\n    display: none;\n  }\n  .Sidebar_sidebar_tagline__1Rpho {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.Sidebar_login_btn__3RDmD {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #4d9bd6;\n  \n  font-size: 1.1rem;\n}\n\n.Sidebar_login_btn__3RDmD:hover {\n  background-color: #f3d250;\n}", "",{"version":3,"sources":["/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/Sidebar/Sidebar.module.css"],"names":[],"mappings":"AAAA;;EAEE,4BAA4B;EAC5B,SAAO;AACT;EACE,GAAG,YAAY;EACf,aAAa;EACb,uBAAuB;EACvB,aAAa;EACb,gBAAgB;;AAElB;;AAEA;EACE;IACE,aAAa;EACf;AACF;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;;AAGA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;AAChB;;AAEA;EACE,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,WAAW;EACX,YAAY;AACd;AACA;EACE,WAAW;EACX,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,oCAAoC;EACpC,gBAAgB;EAChB,oBAAoB;EACpB,gBAAgB;EAChB,oBAAoB;EACpB,kBAAkB;AACpB;;AAEA;CACC,YAAY;CACZ,gBAAgB;;AAEjB;AACA;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;EACzB,YAAY;EACZ,+BAA+B;EAC/B,aAAa;EACb,YAAY;AACd;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,UAAU;;EAEV,oCAAoC;EACpC,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,wBAAwB;EACxB,kBAAkB;EAClB,cAAc;;;AAGhB;;AAEA;EACE,UAAU;EACV,kBAAkB;EAClB,YAAY;EACZ,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;AAClB;;AAEA;EACE,yBAAyB;EACzB,eAAe;EACf,qBAAqB;EACrB,kBAAkB;EAClB,gBAAgB;EAChB,gBAAgB;EAChB,yBAAyB,GAAG,kBAAkB;EAC9C,yBAAyB;EACzB,YAAY;EACZ,UAAU;EACV,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,yBAAyB;EACzB,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;EAChB,cAAc;;AAEhB;;;AAGA;EACE,eAAe;EACf,cAAc;EACd,gBAAgB;;AAElB;;AAEA;EACE;IACE,aAAa;EACf;EACA;IACE,gBAAgB;IAChB,aAAa;EACf;AACF;AACA;EACE,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,yBAAyB;;EAEzB,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;AAC3B","file":"Sidebar.module.css","sourcesContent":[".sidebar {\n\n  min-width: calc(20vw + 15px);\n  flex: 2;\n/*   border: 1px solid rgb(199, 199, 199);\n */  height: 100%;\n  margin: .5rem;\n  background-color: white;\n  padding: 1rem;\n  max-width: 300px;\n  \n}\n\n@media only screen and (max-width: 745px) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.sidebar_title{\n  font-weight: 500;\n  padding: .5rem;\n}\n\n.sidebar_reading {\n  font-size: .9rem;\n  padding: .2rem;\n}\n\n\n.sidebar_edit_profile {\n  font-size: .9rem;\n  margin: 0 0 .6rem 0;\n  padding: .2rem;\n}\n\n.sidebar_reading:hover,.sidebar_edit_profile:hover {\n  color: #f78888;\n  cursor: pointer;\n}\n\n.sidebar_search {\n  width: 100%;\n  margin: auto;\n}\n.sidebar_search_input {\n  width: 100%;\n  height: 2rem;\n  background-color: #ececec;\n  outline: none;\n  border: 1px solid rgb(199, 199, 199);\n  box-shadow: none;\n  padding: .9rem .5rem;\n  font-size: .9rem;\n  font-family: inherit;\n  margin: .7rem auto;\n}\n\n.sidebar_tags {\n height: 40vh;\n overflow: scroll;\n  \n}\n.sidebar_tag {\n  float: left;\n  clear: left;\n  cursor: pointer;\n  padding: .3rem;\n  font-size: .75rem;\n  background-color: #ff6c6c;\n  color: white;\n  margin: 0.2rem 0rem 0rem 0.2rem;\n  outline: none;\n  border: none;\n}\n\n.sidebar_tag:focus {\n  background-color: #4d9bd6;\n}\n\n.sidebar_profile {\n  width: 98%;\n  \n  border: 1px solid rgb(199, 199, 199);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: .4rem auto .7rem;\n  text-align: center;\n  padding: .7rem;\n \n  \n}\n\n.sidebar_img {\n  width: 5vw;\n  border-radius: 50%;\n  margin: auto;\n  display: block;\n}\n\n.sidebar_name {\n  padding: 1rem;\n  font-weight: 500;\n}\n\n.sidebar_login{\n  color:rgba(0, 0, 0, 0.84);\n  cursor: pointer;\n  padding: 0.5rem .3rem;\n  margin: .5rem auto;\n  font-size: .8rem;\n  max-height: 3rem;\n  border: 1px solid #4d9bd6;  border-radius: 5px;\n  background-color: #4d9bd6;\n  color: white;\n  width: 50%;\n  min-width: 4.7rem;\n}\n\n.sidebar_login:hover {\n  color:rgba(0, 0, 0, 0.84);\n  background-color: #f3d250;\n  border: 1px solid #f3d250;\n}\n\n.sidebar_text {\n  font-size: .9rem;\n  padding: .4rem;\n\n}\n\n\n.sidebar_tagline {\n  font-size: 1rem;\n  padding: .4rem;\n  font-weight: 500;\n\n}\n\n@media only screen and (max-width: 1100px) {\n  .sidebar_text {\n    display: none;\n  }\n  .sidebar_tagline {\n    font-size: .9rem;\n    padding: 0rem;\n  }\n}\n.login_btn {\n  color: white;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  height: 3rem;\n  width: 11rem;\n  background-color: #4d9bd6;\n  \n  font-size: 1.1rem;\n}\n\n.login_btn:hover {\n  background-color: #f3d250;\n}"]}]);
 // Exports
 exports.locals = {
 	"sidebar": "Sidebar_sidebar__ma1yP",
@@ -29750,7 +29790,7 @@ App.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flawrence_wakefield%2FDocuments%2FDevelopment%2Fcodeworks%2Ffinal-project%2Fblogging-platform%2Fnext%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************************************/
@@ -29773,5 +29813,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

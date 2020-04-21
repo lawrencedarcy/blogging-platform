@@ -45,11 +45,13 @@ function EditBio({ auth }) {
     await axios
       .get(`http://localhost:3001/users/${user.nickname}`)
       .then(res => {
-        setUserBio(res.data[0]);
+        
+        if (res.data.length > 0) 
+       { setUserBio(res.data[0]);
         setBio(res.data[0].bio);
-        setLocation(res.data[0].location);
-        setImage(res.data[0].image);
-        setWebsite(res.data[0].website);
+        setLocation(res.data[0].location)
+        setImage(res.data[0].image)
+        setWebsite(res.data[0].website); }
       });
   };
 
