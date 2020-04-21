@@ -1,5 +1,5 @@
 {
-  "name": "Stagetime",
+  "name": "stagetime",
   "version": "1.0.0",
   "description": "",
   
@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd server && npm start",
     "install:client": "cd next && npm install",
-    "install:server": "cd server && npm install"
+    "install:server": "cd server && npm install",
+    "install": "npm run install:server"  
 
   },
   "keywords": [],
