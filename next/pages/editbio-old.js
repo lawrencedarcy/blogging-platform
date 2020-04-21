@@ -56,7 +56,6 @@ function EditBio({ auth }) {
 
   const submitHandler = () => {
 
-    const imageString = image.length > 6 ? image : null;
     const combinedPost = { bio, location, website, image};
     editBio(user, combinedPost);
     Router.push('/submitted');

@@ -6,7 +6,7 @@ function Submitted(props) {
     <div className="submitted">
       Submitted!
       <br /><br />
-     <Link href="/"><button className="feed_btn"> Go back to the feed</button></Link>
+      <a href='/' className="feed_btn">Go back to the feed.</a>
     </div>
   );
 }
