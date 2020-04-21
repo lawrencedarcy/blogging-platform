@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Dashboard from '../components/Dashboard/Dashboard';
+import { useAuth, withAuth } from 'use-auth0-hooks';
 
 function App({ postList, tags, auth}) {
   const [posts, setPosts] = useState([]);
   const [feed, setFeed] = useState('normal');
-
+  const { user } = auth;
 
   useEffect(() => {
     setPosts(postList);
@@ -132,4 +133,4 @@ App.getInitialProps = async ctx => {
   return { postList: res.data, tags: tags.data };
 };
 
-export default App;
+export default withAuth(App);
