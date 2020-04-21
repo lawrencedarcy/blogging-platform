@@ -24,8 +24,6 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
     });
   };
 
-
-
   // handle tags - create a unique list to display
   const tagsList = new Set();
   tags.map(arr => arr.map(tag => tagsList.add(tag.toLowerCase())));

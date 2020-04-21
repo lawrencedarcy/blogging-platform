@@ -56,10 +56,13 @@ function App({ postList, tags, auth}) {
     await axios
       .get(`https://stagetimeblog.herokuapp.com/reading/${user.nickname}`)
       .then(res => {
+        console.log('data', res);
         if (res.data[0]) {
+         
           setPosts(res.data);
           setFeed('list');
         } else {
+          console.log('was no data')
           const list = [];
           setPosts(list);
           setFeed('list');
