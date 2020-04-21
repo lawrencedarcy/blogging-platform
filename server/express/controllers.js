@@ -104,6 +104,7 @@ const getReading = async (req, res) => {
     .then( async(result) => {
       const list = result[0].reading;
       const readingPosts = await getRList(list);
+      console.log('hi from get readings');
       res.json(readingPosts);
     })
    

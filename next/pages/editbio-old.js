@@ -13,7 +13,7 @@ function EditBio({ auth }) {
   const [userBio, setUserBio] = useState();
 /*   const [files, setFiles] = useState([]);
  */
-  const API_URL = 'https://stagetimeblog.herokuapp.com/'
+  const API_URL = 'https://stagetimeblog.herokuapp.com'
 
   useEffect(() => {
     getUser();

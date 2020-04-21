@@ -58,7 +58,6 @@ function App({ postList, tags, auth}) {
       .then(res => {
         console.log('data', res);
         if (res.data[0]) {
-         
           setPosts(res.data);
           setFeed('list');
         } else {

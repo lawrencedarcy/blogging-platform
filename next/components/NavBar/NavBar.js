@@ -24,7 +24,7 @@ function NavBar() {
         </div>
 
         <div className={styles.navbar_write}>
-          <Link href='https://stagetime.now.sh/write'>
+          <Link href='/write'>
             <a>Write a post</a>
           </Link>
         </div>
