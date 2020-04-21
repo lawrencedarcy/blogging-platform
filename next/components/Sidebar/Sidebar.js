@@ -71,7 +71,7 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
 
           <button
             className={styles.sidebar_login}
-            onClick={() => logout({ returnTo: '/' })}
+            onClick={() => logout({ returnTo: 'https://stagetime.now.sh' })}
           >
             Logout
           </button>

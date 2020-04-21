@@ -19,8 +19,6 @@ function EditBio({ auth }) {
     getUser();
   }, []);
 
-
-
   const createUser = async name => {
     await axios.post(`${API_URL}/users`, {
       name: name,
@@ -57,10 +55,7 @@ function EditBio({ auth }) {
   };
 
   const submitHandler = () => {
-    if (bio.length < 1 && location.length < 1 && website.length < 1) {
-      alert('You must add some info before submitting!');
-      return false;
-    }
+
     const imageString = image.length > 6 ? image : null;
     const combinedPost = { bio, location, website, image};
     editBio(user, combinedPost);
