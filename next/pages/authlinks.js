@@ -31,12 +31,12 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li>
-                  <button onClick={() => logout({ returnTo: 'http://localhost:3000' })}>Log out</button>
+                  <button onClick={() => logout({ returnTo: '/' })}>Log out</button>
                 </li>
               </>
             ) : (
               <li>
-                <button onClick={() => login({ appState: { returnTo: 'http://localhost:3000' } })}>
+                <button onClick={() => login({ appState: { returnTo: '/' } })}>
                   Log in
                 </button>
               </li>

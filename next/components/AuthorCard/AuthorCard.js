@@ -9,7 +9,7 @@ function AuthorCard({ author }) {
   }, []);
 
   const getUser = async () => {
-    await axios.get(`http://localhost:3001/users/${author}`).then(res => {
+    await axios.get(`https://stagetimeblog.herokuapp.com/${author}`).then(res => {
       setAuthorBio(res.data[0]);
     });
   };

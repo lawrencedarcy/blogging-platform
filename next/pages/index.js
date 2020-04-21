@@ -15,14 +15,14 @@ function App({ postList, tags, auth}) {
 
 
   const getPostByTag = async tag => {
-    await axios.get(`http://localhost:3001/posts/${tag}`).then(data => {
+    await axios.get(`https://stagetimeblog.herokuapp.com/posts/${tag}`).then(data => {
       setPosts(data.data);
       setFeed('tags');
     });
   };
 
   const searchPosts = async term => {
-    await axios.get(`http://localhost:3001/posts/search/${term}`).then(data => {
+    await axios.get(`https://stagetimeblog.herokuapp.com/posts/search/${term}`).then(data => {
       setPosts(data.data);
       setFeed('search');
     });
@@ -30,7 +30,7 @@ function App({ postList, tags, auth}) {
 
   const addToList = async (user, postId) => {
     await axios
-      .get(`http://localhost:3001/users/${user.nickname}`)
+      .get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`)
       .then(
         res => { if(!res.data[0]) {
           createUser(user.nickname);
@@ -38,14 +38,14 @@ function App({ postList, tags, auth}) {
         }}
       )
       .then(res => {
-          axios.put(`http://localhost:3001/users/${user.nickname}`, {
+          axios.put(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`, {
             reading: postId
           });
       });
   };
 
   const createUser = async (name) => {
-    await axios.post(`http://localhost:3001/users`, {
+    await axios.post(`https://stagetimeblog.herokuapp.com/users`, {
       name: name,
       image: user.picture
     });
@@ -53,7 +53,7 @@ function App({ postList, tags, auth}) {
 
   const getReadingList = async user => {
     await axios
-      .get(`http://localhost:3001/users/${user.nickname}`)
+      .get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`)
       .then(res => {
         if (res.data[0]) {
           const list = res.data[0].reading;
@@ -68,7 +68,7 @@ function App({ postList, tags, auth}) {
 
   const getListHelper = async list => {
     await axios
-      .get(`http://localhost:3001/list`, { params: { list: list } })
+      .get(`https://stagetimeblog.herokuapp.com/list`, { params: { list: list } })
       .then(res => {
         setPosts(res.data);
         setFeed('list');
@@ -78,7 +78,7 @@ function App({ postList, tags, auth}) {
   //part of delete from list
   const listHelper = async list => {
     await axios
-      .get(`http://localhost:3001/list`, { params: { list: list } })
+      .get(`https://stagetimeblog.herokuapp.com/list`, { params: { list: list } })
       .then(res => {
         console.log('res', res.data);
         if (feed == 'list') {
@@ -90,7 +90,7 @@ function App({ postList, tags, auth}) {
 
   const deleteFromList = async (user, postid) => {
     await axios
-      .put(`http://localhost:3001/list/${user.nickname}`, { reading: postid })
+      .put(`https://stagetimeblog.herokuapp.com/list/${user.nickname}`, { reading: postid })
       .then(res => {
         const list = res.data.reading;
         listHelper(list);
@@ -99,7 +99,7 @@ function App({ postList, tags, auth}) {
 
   const checkReadingList = async (user, postId) => {
     return axios
-      .get(`http://localhost:3001/users/${user.nickname}`)
+      .get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`)
       .then(res => {
         if (res.data[0]) {
           const list = res.data[0].reading;
@@ -128,8 +128,8 @@ function App({ postList, tags, auth}) {
 }
 
 App.getInitialProps = async ctx => {
-  const res = await axios.get('http://localhost:3001/posts');
-  const tags = await axios.get('http://localhost:3001/tags');
+  const res = await axios.get('https://stagetimeblog.herokuapp.com/posts');
+  const tags = await axios.get('https://stagetimeblog.herokuapp.com/tags');
   return { postList: res.data, tags: tags.data };
 };
 

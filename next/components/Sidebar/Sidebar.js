@@ -16,7 +16,7 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
   }, []);
 
   const getLocalUser = async () => {
-    user && await axios.get(`http://localhost:3001/users/${user.nickname}`)
+    user && await axios.get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`)
     .then(res => {
       setLocalUser(res.data[0]);
       console.log(res.data);

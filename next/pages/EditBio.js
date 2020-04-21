@@ -21,7 +21,7 @@ function EditBio({ auth }) {
 
 
   const createUser = async name => {
-    await axios.post(`http://localhost:3001/users`, {
+    await axios.post(`/users`, {
       name: name,
       image: user.picture
     });
@@ -29,7 +29,7 @@ function EditBio({ auth }) {
 
   const editBio = (user, combinedPost) => {
     axios
-      .get(`http://localhost:3001/users/${user.nickname}`)
+      .get(`/users/${user.nickname}`)
       .then(res => {
         if (!res.data[0]) {
           createUser(user.nickname);
@@ -37,13 +37,13 @@ function EditBio({ auth }) {
         return res;
       })
       .then(res => {
-        axios.put(`http://localhost:3001/bio/${user.nickname}`, combinedPost);
+        axios.put(`/bio/${user.nickname}`, combinedPost);
       });
   };
 
   const getUser = async () => {
     await axios
-      .get(`http://localhost:3001/users/${user.nickname}`)
+      .get(`/users/${user.nickname}`)
       .then(res => {
         
         if (res.data.length > 0) 
