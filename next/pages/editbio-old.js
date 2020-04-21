@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Router from 'next/router';
-import Files from 'react-butterfiles';
 
 import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 
@@ -14,6 +13,8 @@ function EditBio({ auth }) {
   const [userBio, setUserBio] = useState();
 /*   const [files, setFiles] = useState([]);
  */
+  const API_URL = 'https://stagetimeblog.herokuapp.com/'
+
   useEffect(() => {
     getUser();
   }, []);
@@ -21,7 +22,7 @@ function EditBio({ auth }) {
 
 
   const createUser = async name => {
-    await axios.post(`/users`, {
+    await axios.post(`${API_URL}/users`, {
       name: name,
       image: user.picture
     });
@@ -29,7 +30,7 @@ function EditBio({ auth }) {
 
   const editBio = (user, combinedPost) => {
     axios
-      .get(`/users/${user.nickname}`)
+      .get(`${API_URL}/users/${user.nickname}`)
       .then(res => {
         if (!res.data[0]) {
           createUser(user.nickname);
@@ -37,13 +38,13 @@ function EditBio({ auth }) {
         return res;
       })
       .then(res => {
-        axios.put(`/bio/${user.nickname}`, combinedPost);
+        axios.put(`${API_URL}/bio/${user.nickname}`, combinedPost);
       });
   };
 
   const getUser = async () => {
     await axios
-      .get(`/users/${user.nickname}`)
+      .get(`${API_URL}/users/${user.nickname}`)
       .then(res => {
         
         if (res.data.length > 0) 

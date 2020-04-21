@@ -5,21 +5,22 @@ import { useAuth, withAuth } from 'use-auth0-hooks';
 import Skeleton from 'react-loading-skeleton';
 import axios from 'axios';
 
+
 function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
   const { pathname, query } = useRouter();
   const { isLoading, login, logout } = useAuth();
   const { user } = auth;
   const [ localUser, setLocalUser ] = useState();
+  const API_URL = 'https://stagetimeblog.herokuapp.com';
 
   useEffect(() => {
     getLocalUser();
   }, []);
 
   const getLocalUser = async () => {
-    user && await axios.get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`)
+    user && await axios.get(`${API_URL}/users/${user.nickname}`)
     .then(res => {
       setLocalUser(res.data[0]);
-      console.log(res.data);
     });
   };
 
@@ -66,13 +67,13 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
           <div className={styles.sidebar_reading} onClick={readingClickHandler}>
             📚 Reading list
           </div>
-          <a className={styles.sidebar_edit_profile} href='https://stagetime.now.sh/editbio-old'>
+          <a className={styles.sidebar_edit_profile} href='/editbio-old'>
             👤 Edit your profile
           </a>
 
           <button
             className={styles.sidebar_login}
-            onClick={() => logout({ returnTo: 'https://stagetime.now.sh' })}
+            onClick={() => logout({ returnTo: '/' })}
           >
             Logout
           </button>

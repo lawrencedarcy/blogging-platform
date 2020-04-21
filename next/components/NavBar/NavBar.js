@@ -18,7 +18,7 @@ function NavBar() {
         </Link>
 
         <div className={styles.navbar_logo}>
-          <Link href='https://stagetime.now.sh'>
+          <Link href='/'>
             <a>Stagetime</a>
           </Link>
         </div>

@@ -51,6 +51,24 @@ function App({ postList, tags, auth}) {
     });
   };
 
+
+  const getReadingList = async user => {
+    await axios
+      .get(`https://stagetimeblog.herokuapp.com/reading/${user.nickname}`)
+      .then(res => {
+        if (res.data[0]) {
+          setPosts(res.data);
+          setFeed('list');
+        } else {
+          const list = [];
+          setPosts(list);
+          setFeed('list');
+        }
+      });
+  };
+
+
+/* 
   const getReadingList = async user => {
     await axios
       .get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`)
@@ -60,7 +78,6 @@ function App({ postList, tags, auth}) {
           getListHelper(list);
         } else {
           const list = [];
-          console.log('calling get List helper')
           getListHelper(list);
         }
       });
@@ -73,14 +90,13 @@ function App({ postList, tags, auth}) {
         setPosts(res.data);
         setFeed('list');
       });
-  };
+  }; */
 
   //part of delete from list
   const listHelper = async list => {
     await axios
       .get(`https://stagetimeblog.herokuapp.com/list`, { params: { list: list } })
       .then(res => {
-        console.log('res', res.data);
         if (feed == 'list') {
           setPosts(res.data);
           setFeed('list');

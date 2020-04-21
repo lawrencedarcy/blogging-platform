@@ -72,7 +72,7 @@ function NavBar() {
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "https://stagetime.now.sh",
+    href: "/",
     __self: this,
     __source: {
       fileName: _jsxFileName,

@@ -12,7 +12,8 @@ const { getPosts,
         editUser, 
         getList,
         deleteFromList,
-        editBio
+        editBio,
+        getReading
        } = require('./controllers');
 
 
@@ -20,6 +21,7 @@ router.get('/posts/:tag', getPostsByTag);
 router.get('/posts/search/:term', searchPosts);
 router.get('/posts', getPosts);
 router.get('/list', getList);
+router.get('/reading/:name', getReading);
 router.put('/list/:name', deleteFromList);
 router.get('/post/:id', getPostById);
 router.get('/tags', getTags);

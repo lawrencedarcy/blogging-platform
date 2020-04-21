@@ -98,8 +98,28 @@ const addUser = async (req, res) => {
   }
 };
 
+const getReading = async (req, res) => {
+  try {
+     await User.find({ name: req.params.name })
+    .then( async(result) => {
+      const list = result[0].reading;
+      const readingPosts = await getRList(list);
+      res.json(readingPosts);
+    })
+   
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+const getRList = async(list) => {
+    const posts = await Post.find({ _id: { $in: list } });
+    return posts;
+};
+
+
+
 const getUser = async (req, res) => {
-  console.log(req.params.name);
   try {
     const user = await User.find({ name: req.params.name });
     res.json(user);
@@ -132,8 +152,6 @@ const editBio = async (req, res) => {
   }
 
   for (let prop in params){if (!params[prop]) delete params[prop]};
-
-  console.log('these are the params', params);
 
   try {
     const edited = await User.findOneAndUpdate(
@@ -185,5 +203,6 @@ module.exports = {
   editUser,
   getList,
   deleteFromList,
-  editBio
+  editBio,
+  getReading
 };
