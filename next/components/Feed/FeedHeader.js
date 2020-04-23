@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Feed.module.css';
 
-function FeedHeader({ filter, methodHandler, posts, getPosts }) {
+function FeedHeader({ filter, methodHandler, posts }) {
   const [selected, setSelected] = useState('feed');
 
   const clickHandler = string => {

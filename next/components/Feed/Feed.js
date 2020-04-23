@@ -77,7 +77,7 @@ function Feed({
             feedState={feedState}
             deleteFromList={deleteFromList}
             checkReadingList={checkReadingList}
-            getPosts={getPosts}
+         
           />
         </div>
       ))}

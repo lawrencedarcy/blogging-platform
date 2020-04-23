@@ -10,7 +10,6 @@ const { getPosts,
         addUser, 
         getUser, 
         editUser, 
- 
         deleteFromList,
         editBio,
         getReading
@@ -20,7 +19,6 @@ const { getPosts,
 router.get('/posts/:tag', getPostsByTag);
 router.get('/posts/search/:term', searchPosts);
 router.get('/posts', getPosts);
-
 router.get('/reading/:name', getReading);
 router.put('/list/:name', deleteFromList);
 router.get('/post/:id', getPostById);

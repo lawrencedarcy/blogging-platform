@@ -13,13 +13,7 @@ function App({ postList, tags, auth}) {
     setFeed('normal');
   }, []);
 
-  const getPosts = async tag => {
-    await axios.get(`https://stagetimeblog.herokuapp.com/posts`).then(data => {
-      setPosts(data.data);
-      setFeed('normal');
-    });
-  };
-  
+
   const getPostByTag = async tag => {
     await axios.get(`https://stagetimeblog.herokuapp.com/posts/${tag}`).then(data => {
       setPosts(data.data);
@@ -75,50 +69,10 @@ function App({ postList, tags, auth}) {
       });
   };
 
-
-/* 
-  const getReadingList = async user => {
-    await axios
-      .get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`)
-      .then(res => {
-        if (res.data[0]) {
-          const list = res.data[0].reading;
-          getListHelper(list);
-        } else {
-          const list = [];
-          getListHelper(list);
-        }
-      });
-  };
-
-  const getListHelper = async list => {
-    await axios
-      .get(`https://stagetimeblog.herokuapp.com/list`, { params: { list: list } })
-      .then(res => {
-        setPosts(res.data);
-        setFeed('list');
-      });
-  }; */
-
-  //part of delete from list
-  const listHelper = async list => {
-    await axios
-      .get(`https://stagetimeblog.herokuapp.com/list`, { params: { list: list } })
-      .then(res => {
-        if (feed == 'list') {
-          setPosts(res.data);
-          setFeed('list');
-        }
-      });
-  };
-
   const deleteFromList = async (user, postid) => {
-    await axios
-      .put(`https://stagetimeblog.herokuapp.com/list/${user.nickname}`, { reading: postid })
-      .then(res => {
-        const list = res.data.reading;
-        listHelper(list);
-      });
+    axios
+      .put(`https://stagetimeblog.herokuapp.com/list/${user.nickname}`, { reading: postid });
+      setPosts(currentPosts => currentPosts.filter(post => post._id !== postid));
   };
 
   const checkReadingList = async (user, postId) => {
@@ -145,7 +99,6 @@ function App({ postList, tags, auth}) {
         getReadingList={getReadingList}
         deleteFromList={deleteFromList}
         checkReadingList={checkReadingList}
-        getPosts={getPosts}
       />
     </div>
   );

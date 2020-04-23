@@ -14,7 +14,6 @@ function Dashboard({
   getReadingList,
   deleteFromList,
   checkReadingList,
-  getPosts
 
 }) {
   return (
@@ -33,7 +32,6 @@ function Dashboard({
         addToList={addToList}
         deleteFromList={deleteFromList}
         checkReadingList={checkReadingList}   
-        getPosts={getPosts}  
       />
     </div>
   );
