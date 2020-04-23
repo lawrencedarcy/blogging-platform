@@ -14,6 +14,8 @@ function Dashboard({
   getReadingList,
   deleteFromList,
   checkReadingList,
+  getPosts
+
 }) {
   return (
     <div className={styles.body_wrapper}>
@@ -30,8 +32,8 @@ function Dashboard({
         feedState={feedState}
         addToList={addToList}
         deleteFromList={deleteFromList}
-        checkReadingList={checkReadingList}
-     
+        checkReadingList={checkReadingList}   
+        getPosts={getPosts}  
       />
     </div>
   );

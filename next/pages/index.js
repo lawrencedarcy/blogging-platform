@@ -13,7 +13,13 @@ function App({ postList, tags, auth}) {
     setFeed('normal');
   }, []);
 
-
+  const getPosts = async tag => {
+    await axios.get(`https://stagetimeblog.herokuapp.com/posts`).then(data => {
+      setPosts(data.data);
+      setFeed('normal');
+    });
+  };
+  
   const getPostByTag = async tag => {
     await axios.get(`https://stagetimeblog.herokuapp.com/posts/${tag}`).then(data => {
       setPosts(data.data);
@@ -139,7 +145,7 @@ function App({ postList, tags, auth}) {
         getReadingList={getReadingList}
         deleteFromList={deleteFromList}
         checkReadingList={checkReadingList}
-      
+        getPosts={getPosts}
       />
     </div>
   );

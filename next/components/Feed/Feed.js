@@ -10,6 +10,7 @@ function Feed({
   addToList,
   deleteFromList,
   checkReadingList,
+  getPosts
 }) {
 
  const [postsToShow, setPostsToShow] = useState(5)
@@ -57,7 +58,7 @@ function Feed({
       {feedState === 'search' && <FeedHeader filter={'search'} posts={posts} />}
       {feedState === 'list' && <FeedHeader filter={'list'} />}
       {feedState === 'normal' && (
-        <FeedHeader filter={'normal'} methodHandler={methodHandler} />
+        <FeedHeader filter={'normal'} methodHandler={methodHandler} getPosts={getPosts}/>
       )}
 
 <InfiniteScroll
@@ -76,6 +77,7 @@ function Feed({
             feedState={feedState}
             deleteFromList={deleteFromList}
             checkReadingList={checkReadingList}
+            getPosts={getPosts}
           />
         </div>
       ))}

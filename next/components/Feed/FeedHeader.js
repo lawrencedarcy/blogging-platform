@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import styles from './Feed.module.css';
 
-function FeedHeader({ filter, methodHandler, posts}) {
+function FeedHeader({ filter, methodHandler, posts, getPosts }) {
   const [selected, setSelected] = useState('feed');
+
   const clickHandler = string => {
     methodHandler(string);
     setSelected(string);
   };
 
+  const goToFeedHandler = () => {
+    location.reload();
+  }
+  
   return (
     <div className={styles.feed_header}>
       {filter === 'normal' && (
@@ -51,8 +56,7 @@ function FeedHeader({ filter, methodHandler, posts}) {
       {filter === 'list' && (
         <div>
           These are your saved articles.{' '}
-          <span className={styles.link}>
-            <a href='/'>Go back to the feed.</a>
+          <span className={styles.link} onClick={() => goToFeedHandler()}>Go back to the feed.
           </span>
         </div>
       )}
@@ -60,8 +64,7 @@ function FeedHeader({ filter, methodHandler, posts}) {
       {filter === 'tags' && (
         <div>
           Feed filtered by tag.{' '}
-          <span className={styles.link}>
-            <a href='/'>Refresh the feed.</a>{' '}
+          <span className={styles.link} onClick={() => goToFeedHandler()}>Refresh the feed.{' '}
           </span>
         </div>
       )}
@@ -70,8 +73,8 @@ function FeedHeader({ filter, methodHandler, posts}) {
           {posts.length > 0
             ? 'Displaying your search results.'
             : 'No results were found.'}{' '}
-          <span className={styles.link}>
-            <a href='/'>Refresh the feed.</a>
+          <span className={styles.link} onClick={() => goToFeedHandler()}>
+          {' '}  Refresh the feed.
           </span>
         </div>
       )}
