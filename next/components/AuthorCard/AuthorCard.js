@@ -42,7 +42,7 @@ function AuthorCard({ author }) {
       )}
     </div>
     :
-    false
+    null
   );
 }
 

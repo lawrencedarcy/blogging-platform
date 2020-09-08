@@ -1,5 +1,4 @@
 import React from "react"
-
 import { AuthProps, privateRoute } from "../components/private_route";
 import { AuthToken } from "../services/auth_token";
 

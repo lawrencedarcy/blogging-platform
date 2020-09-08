@@ -464,7 +464,7 @@ __webpack_require__.r(__webpack_exports__);
 
 if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
   window.workbox = new workbox_window__WEBPACK_IMPORTED_MODULE_0__["Workbox"]("/sw.js", { scope: "/" })
-  if(true) window.workbox.register()
+  if(false) {}
 }
 
 
