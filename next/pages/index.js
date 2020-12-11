@@ -15,14 +15,14 @@ function App({ postList, tags, auth}) {
 
 
   const getPostByTag = async tag => {
-    await axios.get(`https://stagetimeblog.herokuapp.com/posts/${tag}`).then(data => {
+    await axios.get(`https://stbackend.herokuapp.com/posts/${tag}`).then(data => {
       setPosts(data.data);
       setFeed('tags');
     });
   };
 
   const searchPosts = async term => {
-    await axios.get(`https://stagetimeblog.herokuapp.com/posts/search/${term}`).then(data => {
+    await axios.get(`https://stbackend.herokuapp.com/posts/search/${term}`).then(data => {
       setPosts(data.data);
       setFeed('search');
     });
@@ -30,7 +30,7 @@ function App({ postList, tags, auth}) {
 
   const addToList = async (user, postId) => {
     await axios
-      .get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`)
+      .get(`https://stbackend.herokuapp.com/users/${user.nickname}`)
       .then(
         res => { if(!res.data[0]) {
           createUser(user.nickname);
@@ -38,14 +38,14 @@ function App({ postList, tags, auth}) {
         }}
       )
       .then(res => {
-          axios.put(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`, {
+          axios.put(`https://stbackend.herokuapp.com/users/${user.nickname}`, {
             reading: postId
           });
       });
   };
 
   const createUser = async (name) => {
-    await axios.post(`https://stagetimeblog.herokuapp.com/users`, {
+    await axios.post(`https://stbackend.herokuapp.com/users`, {
       name: name,
       image: user.picture
     });
@@ -54,7 +54,7 @@ function App({ postList, tags, auth}) {
 
   const getReadingList = async user => {
     await axios
-      .get(`https://stagetimeblog.herokuapp.com/reading/${user.nickname}`)
+      .get(`https://stbackend.herokuapp.com/reading/${user.nickname}`)
       .then(res => {
         console.log('data', res);
         if (res.data[0]) {
@@ -71,13 +71,13 @@ function App({ postList, tags, auth}) {
 
   const deleteFromList = async (user, postid) => {
     axios
-      .put(`https://stagetimeblog.herokuapp.com/list/${user.nickname}`, { reading: postid });
+      .put(`https://stbackend.herokuapp.com/list/${user.nickname}`, { reading: postid });
       setPosts(currentPosts => currentPosts.filter(post => post._id !== postid));
   };
 
   const checkReadingList = async (user, postId) => {
     return axios
-      .get(`https://stagetimeblog.herokuapp.com/users/${user.nickname}`)
+      .get(`https://stbackend.herokuapp.com/users/${user.nickname}`)
       .then(res => {
         if (res.data[0]) {
           const list = res.data[0].reading;
@@ -105,8 +105,8 @@ function App({ postList, tags, auth}) {
 }
 
 App.getInitialProps = async ctx => {
-  const res = await axios.get('https://stagetimeblog.herokuapp.com/posts');
-  const tags = await axios.get('https://stagetimeblog.herokuapp.com/tags');
+  const res = await axios.get('https://stbackend.herokuapp.com/posts');
+  const tags = await axios.get('https://stbackend.herokuapp.com/tags');
   return { postList: res.data, tags: tags.data };
 };
 
