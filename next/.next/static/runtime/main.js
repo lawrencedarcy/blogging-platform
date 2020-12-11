@@ -962,7 +962,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/lawrence_wakefield/Documents/dev/codeworks/final-project/blogging-platform/next/.next");
       return error;
     }
   };
@@ -6902,7 +6902,7 @@ try{self["workbox:window:5.1.2"]&&_()}catch(n){}function n(n,t){return new Promi
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/node_modules/next-pwa/register.js */"./node_modules/next-pwa/register.js");
+__webpack_require__(/*! /Users/lawrence_wakefield/Documents/dev/codeworks/final-project/blogging-platform/next/node_modules/next-pwa/register.js */"./node_modules/next-pwa/register.js");
 module.exports = __webpack_require__(/*! ./node_modules/next/dist/client/next-dev.js */"./node_modules/next/dist/client/next-dev.js");
 
 

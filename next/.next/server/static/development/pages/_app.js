@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavBar.module.css */ "./components/NavBar/NavBar.module.css");
 /* harmony import */ var _NavBar_module_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_NavBar_module_css__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/components/NavBar/NavBar.js";
+var _jsxFileName = "/Users/lawrence_wakefield/Documents/dev/codeworks/final-project/blogging-platform/next/components/NavBar/NavBar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1949,7 +1949,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! use-auth0-hooks */ "use-auth0-hooks");
 /* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/lawrence_wakefield/Documents/Development/codeworks/final-project/blogging-platform/next/pages/_app.js";
+var _jsxFileName = "/Users/lawrence_wakefield/Documents/dev/codeworks/final-project/blogging-platform/next/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
