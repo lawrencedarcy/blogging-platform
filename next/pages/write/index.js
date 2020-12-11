@@ -22,7 +22,7 @@ import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 
 
   const createPost = (p) => {
-    axios.post('https://stagetimeblog.herokuapp.com/posts', {p})
+    axios.post('https://stbackend.herokuapp.com/posts', {p})
     .then(function (response) {
       console.log(response);
     })

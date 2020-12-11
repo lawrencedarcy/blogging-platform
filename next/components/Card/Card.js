@@ -16,7 +16,7 @@ function Card({
   const { login, isLoading } = useAuth();
   const { user } = auth;
   const [onList, setOnList] = useState(false);
-
+  
 
   useEffect(() => {
    if (user) {

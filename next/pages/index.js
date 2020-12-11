@@ -7,6 +7,7 @@ function App({ postList, tags, auth}) {
   const [posts, setPosts] = useState([]);
   const [feed, setFeed] = useState('normal');
   const { user } = auth;
+  const API_URL = 'https://stbackend.herokuapp.com/'
 
   useEffect(() => {
     setPosts(postList);
@@ -15,14 +16,14 @@ function App({ postList, tags, auth}) {
 
 
   const getPostByTag = async tag => {
-    await axios.get(`https://stbackend.herokuapp.com/posts/${tag}`).then(data => {
+    await axios.get(`${API_URL}posts/${tag}`).then(data => {
       setPosts(data.data);
       setFeed('tags');
     });
   };
 
   const searchPosts = async term => {
-    await axios.get(`https://stbackend.herokuapp.com/posts/search/${term}`).then(data => {
+    await axios.get(`${API_URL}posts/search/${term}`).then(data => {
       setPosts(data.data);
       setFeed('search');
     });
@@ -30,7 +31,7 @@ function App({ postList, tags, auth}) {
 
   const addToList = async (user, postId) => {
     await axios
-      .get(`https://stbackend.herokuapp.com/users/${user.nickname}`)
+      .get(`${API_URL}users/${user.nickname}`)
       .then(
         res => { if(!res.data[0]) {
           createUser(user.nickname);
@@ -38,14 +39,14 @@ function App({ postList, tags, auth}) {
         }}
       )
       .then(res => {
-          axios.put(`https://stbackend.herokuapp.com/users/${user.nickname}`, {
+          axios.put(`${API_URL}users/${user.nickname}`, {
             reading: postId
           });
       });
   };
 
   const createUser = async (name) => {
-    await axios.post(`https://stbackend.herokuapp.com/users`, {
+    await axios.post(`${API_URL}users`, {
       name: name,
       image: user.picture
     });
@@ -54,7 +55,7 @@ function App({ postList, tags, auth}) {
 
   const getReadingList = async user => {
     await axios
-      .get(`https://stbackend.herokuapp.com/reading/${user.nickname}`)
+      .get(`${API_URL}reading/${user.nickname}`)
       .then(res => {
         console.log('data', res);
         if (res.data[0]) {
@@ -71,13 +72,13 @@ function App({ postList, tags, auth}) {
 
   const deleteFromList = async (user, postid) => {
     axios
-      .put(`https://stbackend.herokuapp.com/list/${user.nickname}`, { reading: postid });
+      .put(`${API_URL}list/${user.nickname}`, { reading: postid });
       setPosts(currentPosts => currentPosts.filter(post => post._id !== postid));
   };
 
   const checkReadingList = async (user, postId) => {
     return axios
-      .get(`https://stbackend.herokuapp.com/users/${user.nickname}`)
+      .get(`${API_URL}users/${user.nickname}`)
       .then(res => {
         if (res.data[0]) {
           const list = res.data[0].reading;

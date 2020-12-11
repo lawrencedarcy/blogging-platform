@@ -11,7 +11,7 @@ function Sidebar({ tags, getPostByTag, auth, searchPosts, getReadingList }) {
   const { isLoading, login, logout } = useAuth();
   const { user } = auth;
   const [ localUser, setLocalUser ] = useState();
-  const API_URL = 'https://stagetimeblog.herokuapp.com';
+  const API_URL = 'https://stbackend.herokuapp.com';
 
   useEffect(() => {
     getLocalUser();

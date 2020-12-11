@@ -10,7 +10,7 @@ function Post({ post }) {
  
   const upVote = id => {
     axios
-      .put(`https://stagetimeblog.herokuapp.com/posts/${id}/up`)
+      .put(`https://stbackend.herokuapp.com/posts/${id}/up`)
       .then(function(res) {
         console.log(res.data);
       })
@@ -58,7 +58,7 @@ function Post({ post }) {
 }
 
 Post.getInitialProps = async ({ query }) => {
-  const res = await axios.get(`https://stagetimeblog.herokuapp.com/post/${query.id}`);
+  const res = await axios.get(`https://stbackend.herokuapp.com/post/${query.id}`);
   const result = res.data;
   console.log(result);
   return { post: result };
