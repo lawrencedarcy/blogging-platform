@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Router from 'next/router';
-import Files from 'react-butterfiles';
 
 import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 

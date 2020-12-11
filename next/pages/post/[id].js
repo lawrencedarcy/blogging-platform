@@ -12,7 +12,7 @@ function Post({ post }) {
     axios
       .put(`https://stbackend.herokuapp.com/posts/${id}/up`)
       .then(function(res) {
-        console.log(res.data);
+        //console.log(res.data);
       })
       .catch(function(error) {
         console.log(error);
@@ -60,7 +60,7 @@ function Post({ post }) {
 Post.getInitialProps = async ({ query }) => {
   const res = await axios.get(`https://stbackend.herokuapp.com/post/${query.id}`);
   const result = res.data;
-  console.log(result);
+ // console.log(result);
   return { post: result };
 };
 

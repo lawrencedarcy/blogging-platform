@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
      <Auth0Provider
      domain={'dev-yf8xdikq.eu.auth0.com'}
      clientId={'k6MOcu2j7WVg5ZfForZqdq6RVVIwyNpm'}
-     redirectUri={'https://stagetime.now.sh'}>
+     redirectUri={'http://localhost:3000'}>
      
     <Component {...pageProps} />
     </Auth0Provider>

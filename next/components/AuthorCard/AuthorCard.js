@@ -9,7 +9,7 @@ function AuthorCard({ author }) {
   }, []);
 
   const getUser = async () => {
-    await axios.get(`https://stbackend.herokuapp.com/posts/users/${author}`).then(res => {
+    await axios.get(`https://stbackend.herokuapp.com/users/${author}`).then(res => {
       setAuthorBio(res.data[0]);
     });
   };
