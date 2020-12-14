@@ -1,7 +1,12 @@
 {
   "/_app": "pages/_app.js",
+  "/editbio-old": "pages/editbio-old.html",
+  "/editbio": "pages/editbio.html",
+  "/": "pages/index.js",
+  "/post/[id]": "pages/post/[id].js",
+  "/submitted": "pages/submitted.html",
+  "/write": "pages/write.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/write": "pages/write.js",
-  "/": "pages/index.js"
+  "/404": "pages/404.html"
 }
