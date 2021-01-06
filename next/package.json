@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.13.5",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "disqus-react": "^1.0.10",
     "dotenv": "^8.2.0",
     "interweave": "^12.6.0",
